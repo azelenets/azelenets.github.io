@@ -534,8 +534,7 @@ Features-stack
 .hero-strip
 ========================================================================== */
 .hero-strip {
-  margin-top: 120px;
-  background: #333844 url("../img/polygonal-bg.jpg") no-repeat center center;
+  background: none;
   padding-bottom: 190px;
   position: relative; }
   .hero-strip i {
@@ -554,6 +553,7 @@ Features-stack
   .hero-strip .btn {
     margin-top: 10px; }
   .hero-strip .logo-placeholder {
+    z-index: 5;
     width: 230px;
     height: 230px;
     position: absolute;
