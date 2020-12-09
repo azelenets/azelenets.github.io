@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.692d75bb.chunk.css",
-    "main.js": "/static/js/main.78d6c1fb.chunk.js",
-    "main.js.map": "/static/js/main.78d6c1fb.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.efcdc3ae.js",
-    "runtime-main.js.map": "/static/js/runtime-main.efcdc3ae.js.map",
-    "static/js/2.798995f1.chunk.js": "/static/js/2.798995f1.chunk.js",
-    "static/js/2.798995f1.chunk.js.map": "/static/js/2.798995f1.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.e56d3841f877431fc85eeb8949bd9562.js": "/precache-manifest.e56d3841f877431fc85eeb8949bd9562.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.692d75bb.chunk.css.map": "/static/css/main.692d75bb.chunk.css.map",
-    "static/js/2.798995f1.chunk.js.LICENSE.txt": "/static/js/2.798995f1.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/azelenets.github.io/static/css/main.692d75bb.chunk.css",
+    "main.js": "/azelenets.github.io/static/js/main.322160c4.chunk.js",
+    "main.js.map": "/azelenets.github.io/static/js/main.322160c4.chunk.js.map",
+    "runtime-main.js": "/azelenets.github.io/static/js/runtime-main.9546e198.js",
+    "runtime-main.js.map": "/azelenets.github.io/static/js/runtime-main.9546e198.js.map",
+    "static/js/2.798995f1.chunk.js": "/azelenets.github.io/static/js/2.798995f1.chunk.js",
+    "static/js/2.798995f1.chunk.js.map": "/azelenets.github.io/static/js/2.798995f1.chunk.js.map",
+    "index.html": "/azelenets.github.io/index.html",
+    "precache-manifest.f7a5a3a3993dfcee276a875acb3cbddf.js": "/azelenets.github.io/precache-manifest.f7a5a3a3993dfcee276a875acb3cbddf.js",
+    "service-worker.js": "/azelenets.github.io/service-worker.js",
+    "static/css/main.692d75bb.chunk.css.map": "/azelenets.github.io/static/css/main.692d75bb.chunk.css.map",
+    "static/js/2.798995f1.chunk.js.LICENSE.txt": "/azelenets.github.io/static/js/2.798995f1.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/azelenets.github.io/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.efcdc3ae.js",
+    "static/js/runtime-main.9546e198.js",
     "static/js/2.798995f1.chunk.js",
     "static/css/main.692d75bb.chunk.css",
-    "static/js/main.78d6c1fb.chunk.js"
+    "static/js/main.322160c4.chunk.js"
   ]
 }
