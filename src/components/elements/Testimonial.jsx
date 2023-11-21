@@ -1,7 +1,10 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Testimonial({ slider }) {
-  const { avatar, userName, subtitle, review } = slider;
+  const {
+    avatar, userName, subtitle, review,
+  } = slider;
   return (
     <div className="testimonial-item text-center mx-auto">
       <div className="thumb mb-3 mx-auto">
@@ -15,5 +18,14 @@ function Testimonial({ slider }) {
     </div>
   );
 }
+
+Testimonial.propTypes = {
+  slider: PropTypes.shape({
+    avatar: PropTypes.string,
+    userName: PropTypes.string,
+    subtitle: PropTypes.string,
+    review: PropTypes.string,
+  }).isRequired,
+};
 
 export default Testimonial;

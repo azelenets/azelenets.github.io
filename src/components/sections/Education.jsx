@@ -1,19 +1,19 @@
-import React from "react";
-import Pagetitle from "../elements/Pagetitle";
-import Timeline from "../elements/Timeline";
+import React from 'react';
+import Pagetitle from '../elements/Pagetitle';
+import Timeline from '../elements/Timeline';
 
 const educationData = [
   {
     id: 1,
-    title: "Master of Science, Dnipro Polytechnic",
-    years: "2012 - 2015",
-    content: "Computerized control systems and process automation.",
+    title: 'Master of Science, Dnipro Polytechnic',
+    years: '2012 - 2015',
+    content: 'Computerized control systems and process automation.',
   },
   {
     id: 2,
-    title: "Polytechnical College, Dnipro Polytechnical College",
-    years: "2009 - 2012",
-    content: "Installation, commissioning, and repairment of the industrial automated control systems.",
+    title: 'Polytechnical College, Dnipro Polytechnical College',
+    years: '2009 - 2012',
+    content: 'Installation, commissioning, and repairment of the industrial automated control systems.',
   },
 ];
 
@@ -28,7 +28,7 @@ function Education() {
               {educationData.map((education) => (
                 <Timeline key={education.id} experience={education} />
               ))}
-              <span className="line"></span>
+              <span className="line" />
             </div>
           </div>
         </div>

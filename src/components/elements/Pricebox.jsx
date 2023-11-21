@@ -1,13 +1,16 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Pricebox({ priceboxItem }) {
-  const { icon, title, content, price, badge, best } = priceboxItem;
+  const {
+    icon, title, content, price, badge, best,
+  } = priceboxItem;
   return (
     <div
       className={
         best
-          ? "price-item bg-white rounded shadow-dark text-center best"
-          : "price-item bg-white rounded shadow-dark text-center"
+          ? 'price-item bg-white rounded shadow-dark text-center best'
+          : 'price-item bg-white rounded shadow-dark text-center'
       }
     >
       {badge && <span className="badge">{badge}</span>}
@@ -27,5 +30,16 @@ function Pricebox({ priceboxItem }) {
     </div>
   );
 }
+
+Pricebox.propTypes = {
+  priceboxItem: PropTypes.shape({
+    icon: PropTypes.string,
+    title: PropTypes.string,
+    content: PropTypes.string,
+    price: PropTypes.string,
+    badge: PropTypes.string,
+    best: PropTypes.bool,
+  }).isRequired,
+};
 
 export default Pricebox;

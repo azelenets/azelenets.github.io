@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Logo({ logoSource, bootstrapNav }) {
   if (bootstrapNav) {
@@ -18,5 +19,14 @@ function Logo({ logoSource, bootstrapNav }) {
     </div>
   );
 }
+
+Logo.defaultProps = {
+  bootstrapNav: false,
+};
+
+Logo.propTypes = {
+  logoSource: PropTypes.string.isRequired,
+  bootstrapNav: PropTypes.bool,
+};
 
 export default Logo;

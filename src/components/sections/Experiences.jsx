@@ -1,14 +1,21 @@
-import React from "react";
-import Pagetitle from "../elements/Pagetitle";
-import Timeline from "../elements/Timeline";
+import React from 'react';
+import Pagetitle from '../elements/Pagetitle';
+import Timeline from '../elements/Timeline';
 
 const experienceData = [
   {
     id: 1,
-    title: <>Senior Full Stack Web Engineer @ <a href='https://seekingalpha.com'>SeekingAlpha</a></>,
-    years: "09/2021 - Present",
+    title:
+  <>
+    Senior Full Stack Web Engineer @
+    <a href="https://seekingalpha.com">SeekingAlpha</a>
+  </>,
+    years: '09/2021 - Present',
     content:
-      <p>Worked in a fully remote distributed team (40+ developers) to develop and maintain large-scale e-commerce web system for publishers using Ruby on Rails and ReactJS.</p>,
+  <p>
+    Worked in a fully remote distributed team (40+ developers) to develop and maintain large-scale
+    e-commerce web system for publishers using Ruby on Rails and ReactJS.
+  </p>,
     responsibilities: [
       'Help architect core parts of our infrastructure from the ground up in a reliable way',
       'Participate in design and planning discussions, and contribute architectural ideas',
@@ -18,7 +25,7 @@ const experienceData = [
       'Optimize application for maximum speed and performance',
       'Sailthru (Marigold Engage) integration',
       'PayPal/Stripe payment system integration',
-      'Improve SEO'
+      'Improve SEO',
     ],
     achievements: [
       'Reduced the development time, and increased stability and scalability of the platform by integration of the modular application architecture',
@@ -68,14 +75,21 @@ const experienceData = [
   },
   {
     id: 2,
-    title: <>Technical Consultant / Senior Full Stack Web Engineer @ <a href='https://theskills.com'>The Skills</a></>,
-    years: "11/2020 - 12/2021",
+    title:
+  <>
+    <span>Technical Consultant / Senior Full Stack Web Engineer @</span>
+    <a href="https://theskills.com">The Skills</a>
+  </>,
+    years: '11/2020 - 12/2021',
     content:
-      <p>
-        Acted as the Technical Consultant in a fully remote distributed team at the startup company for the video-based educational platform.
-        The solution includes an administrator panel, customer web application, and REST API based on the Ruby On Rails / NextJs framework.
-        Worked as a fullstack developer as part of a 4 people team on the solution for the marketing website using the NextJs framework.
-      </p>,
+  <p>
+    Acted as the Technical Consultant in a fully remote distributed team at the
+    startup company for the video-based educational platform.
+    The solution includes an administrator panel, customer web application, and
+    REST API based on the Ruby On Rails / NextJs framework.
+    Worked as a fullstack developer as part of a 4 people team on the solution
+    for the marketing website using the NextJs framework.
+  </p>,
     responsibilities: [
       'Collaborate with the product and marketing managers to find suitable solutions',
       'Ensure the features met the requirements and expectations of stakeholders',
@@ -163,10 +177,14 @@ const experienceData = [
   },
   {
     id: 3,
-    title: <>Senior Full-Stack developer / Technical lead @ <a href='https://sloboda-studio.com'>Sloboda Studio</a></>,
-    years: "08/2019 - 11/2020",
+    title:
+  <>
+    Senior Full-Stack developer / Technical lead @
+    <a href="https://sloboda-studio.com">Sloboda Studio</a>
+  </>,
+    years: '08/2019 - 11/2020',
     content:
-      <p>TBD</p>,
+  <p>TBD</p>,
     responsibilities: [
       'Manage projects with agile methodologies in JIRA via user stories and customer issues',
       'Coordinate teams of programmers and supervise the development process',
@@ -230,7 +248,6 @@ const experienceData = [
       'jenkins',
       'docker',
       'bitbucket',
-      'heroku',
       'logz_io',
       'drawio',
       'facebook',
@@ -247,12 +264,14 @@ const experienceData = [
   },
   {
     id: 4,
-    title: "Senior Full-Stack developer / Technical lead @ Apriorit",
-    years: "01/2019 - 08/2019",
+    title: 'Senior Full-Stack developer / Technical lead @ Apriorit',
+    years: '01/2019 - 08/2019',
     content:
-      <p>
-        Worked on secure, flexible and adaptable identity and access management platform components with full software development cycle - requirements analysis, design, implementation, testing, deployment and technical support.
-      </p>,
+  <p>
+    Worked on secure, flexible and adaptable identity and access management platform
+    components with full software development cycle - requirements analysis, design,
+    implementation, testing, deployment and technical support.
+  </p>,
     responsibilities: [
       'Perform the technical lead role overseeing the development of a multi-factor adaptive authentication and access management solution',
       'Keep the team focused on the project and moving toward reaching its goal - engage, motivate and take care of their needs and maintain a friendly and productive work environment',
@@ -266,6 +285,7 @@ const experienceData = [
     achievements: [
       'Successfully performed code audit to meet the SOC2 application certification. Audit included - Security, Availability, Processing Integrity, Confidentiality, Privacy',
       'Managed team with 6 developers in 3 projects for 1 client',
+      'Organized product-specific domain UI design into the Design System using StoryBook',
       'Contributed over 30 new components to the in-house UI Storybook library to create reusable React components',
       'Handled multiple languages/frameworks development',
     ],
@@ -323,12 +343,12 @@ function Experiences() {
         <Pagetitle title="Experience" />
         <div className="row">
           <div className="col-md-12">
-            <div className="spacer d-md-none d-lg-none" data-height="30"></div>
+            <div className="spacer d-md-none d-lg-none" data-height="30" />
             <div className="timeline exp bg-white rounded shadow-dark padding-30 overflow-hidden">
               {experienceData.map((experience) => (
                 <Timeline key={experience.id} experience={experience} />
               ))}
-              <span className="line"></span>
+              <span className="line" />
             </div>
           </div>
         </div>

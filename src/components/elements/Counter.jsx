@@ -1,5 +1,6 @@
-import React from "react";
-import CountUp from "react-countup";
+import React from 'react';
+import PropTypes from 'prop-types';
+import CountUp from 'react-countup';
 
 function Counter({ counterItem, isVisible }) {
   const { title, count, icon } = counterItem;
@@ -10,12 +11,10 @@ function Counter({ counterItem, isVisible }) {
     }
     return <CountUp end={count} />;
   };
-  const handleIcon = () => {
-    return "icon " + icon;
-  };
+  const handleIcon = () => `icon ${icon}`;
   return (
     <div className="fact-item">
-      <span className={handleIcon()}></span>
+      <span className={handleIcon()} />
       <div className="details">
         <h3 className="mb-0 mt-0 number">
           <em className="count">{countQuery()}</em>
@@ -25,5 +24,18 @@ function Counter({ counterItem, isVisible }) {
     </div>
   );
 }
+
+Counter.defaultProps = {
+  isVisible: false,
+};
+
+Counter.propTypes = {
+  counterItem: PropTypes.shape({
+    title: PropTypes.string,
+    count: PropTypes.number,
+    icon: PropTypes.string,
+  }).isRequired,
+  isVisible: PropTypes.bool,
+};
 
 export default Counter;

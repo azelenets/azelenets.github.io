@@ -1,35 +1,35 @@
-import React, { useState } from "react";
-import ScrollAnimation from "react-animate-on-scroll";
-import Pagetitle from "../elements/Pagetitle";
+import React, { useState } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
+import Pagetitle from '../elements/Pagetitle';
 
 function Contact() {
   const [formdata, setFormdata] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
   });
 
   const [error, setError] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   const submitHandler = (event) => {
     event.preventDefault();
     if (!formdata.name) {
       setError(true);
-      setMessage("Name is required");
+      setMessage('Name is required');
     } else if (!formdata.email) {
       setError(true);
-      setMessage("Email is required");
+      setMessage('Email is required');
     } else if (!formdata.subject) {
       setError(true);
-      setMessage("Subject is required");
+      setMessage('Subject is required');
     } else if (!formdata.message) {
       setError(true);
-      setMessage("Message is required");
+      setMessage('Message is required');
     } else {
       setError(false);
-      setMessage("You message has been sent!!!");
+      setMessage('You message has been sent!!!');
     }
   };
 
@@ -43,11 +43,10 @@ function Contact() {
   const handleAlerts = () => {
     if (error && message) {
       return <div className="alert alert-danger mt-4">{message}</div>;
-    } else if (!error && message) {
+    } if (!error && message) {
       return <div className="alert alert-success mt-4">{message}</div>;
-    } else {
-      return null;
     }
+    return null;
   };
 
   return (
@@ -61,18 +60,20 @@ function Contact() {
               <ScrollAnimation
                 animateIn="fadeInUp"
                 animateOut="fadeInOut"
-                animateOnce={true}
+                animateOnce
               >
-                <h3>Let's talk about everything!</h3>
+                <h3>Let&#39;s talk about everything!</h3>
               </ScrollAnimation>
               <ScrollAnimation
                 animateIn="fadeInUp"
                 animateOut="fadeInOut"
-                animateOnce={true}
+                animateOnce
               >
                 <p>
-                  Don't like forms? Send me an{" "}
-                  <a href="mailto:andrew.zelenets+github@gmail.com">email</a>. 👋
+                  Don&#39;t like forms? Send me an
+                  {' '}
+                  <a href="mailto:andrew.zelenets+github@gmail.com">email</a>
+                  . 👋
                 </p>
               </ScrollAnimation>
             </div>
@@ -137,7 +138,7 @@ function Contact() {
                       placeholder="Message"
                       onChange={handleChange}
                       value={formdata.message}
-                    ></textarea>
+                    />
                   </div>
                 </div>
               </div>

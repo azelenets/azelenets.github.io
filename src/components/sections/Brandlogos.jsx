@@ -1,37 +1,37 @@
-import React from "react";
+import React from 'react';
 
 const brandlogoData = [
   {
     id: 1,
-    image: "images/client-1.svg",
+    image: 'images/client-1.svg',
   },
   {
     id: 2,
-    image: "images/client-2.svg",
+    image: 'images/client-2.svg',
   },
   {
     id: 3,
-    image: "images/client-3.svg",
+    image: 'images/client-3.svg',
   },
   {
     id: 4,
-    image: "images/client-4.svg",
+    image: 'images/client-4.svg',
   },
   {
     id: 5,
-    image: "images/client-5.svg",
+    image: 'images/client-5.svg',
   },
   {
     id: 6,
-    image: "images/client-6.svg",
+    image: 'images/client-6.svg',
   },
   {
     id: 7,
-    image: "images/client-7.svg",
+    image: 'images/client-7.svg',
   },
   {
     id: 8,
-    image: "images/client-8.svg",
+    image: 'images/client-8.svg',
   },
 ];
 

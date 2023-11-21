@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import FsLightbox from "fslightbox-react";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import FsLightbox from 'fslightbox-react';
 
 function Portfolio({ portfolio }) {
-  const { category, title, image, popupLink, link } = portfolio;
+  const {
+    category, title, image, popupLink, link,
+  } = portfolio;
   const [toggler, setToggler] = useState(false);
 
   const handleLightbox = (e) => {
@@ -14,25 +17,24 @@ function Portfolio({ portfolio }) {
 
   const handleIcon = () => {
     if (link) {
-      return <i className="icon-link"></i>;
-    } else if (popupLink) {
+      return <i className="icon-link" />;
+    } if (popupLink) {
       if (popupLink.length > 1) {
         if (popupLink.toString().match(/youtube/g)) {
-          return <i className="icon-camrecorder"></i>;
+          return <i className="icon-camrecorder" />;
         }
-        return <i className="icon-picture"></i>;
-      } else if (popupLink.toString().match(/youtube/g)) {
-        return <i className="icon-camrecorder"></i>;
-      } else {
-        return <i className="icon-magnifier-add"></i>;
+        return <i className="icon-picture" />;
+      } if (popupLink.toString().match(/youtube/g)) {
+        return <i className="icon-camrecorder" />;
       }
+      return <i className="icon-magnifier-add" />;
     }
-    return <i className="icon-magnifier-add"></i>;
+    return <i className="icon-magnifier-add" />;
   };
   return (
     <>
       <a
-        href={link ? link : "!#"}
+        href={link || '!#'}
         className="work-image"
         onClick={handleLightbox}
       >
@@ -44,7 +46,7 @@ function Portfolio({ portfolio }) {
           </div>
           <div className="thumb">
             <img src={image} alt="Portfolio-title" />
-            <div className="mask"></div>
+            <div className="mask" />
           </div>
         </div>
       </a>
@@ -52,5 +54,15 @@ function Portfolio({ portfolio }) {
     </>
   );
 }
+
+Portfolio.propTypes = {
+  portfolio: PropTypes.shape({
+    category: PropTypes.string,
+    title: PropTypes.string,
+    image: PropTypes.string,
+    popupLink: PropTypes.arrayOf(PropTypes.string),
+    link: PropTypes.string,
+  }).isRequired,
+};
 
 export default Portfolio;

@@ -1,13 +1,14 @@
-import React from "react";
-import Typed from "react-typed";
-import { Link } from "react-scroll";
+import React from 'react';
+import Typed from 'react-typed';
+import { Link } from 'react-scroll';
+import PropTypes from 'prop-types';
 
-function Herosection(props) {
-  const { x, y } = props.position;
-  const { height, width } = props.elementDimensions;
+function Herosection({ position, elementDimensions }) {
+  const { x, y } = position;
+  const { height, width } = elementDimensions;
   const activeParallax = (depth = 15) => {
-    let posX = (width / 2 - x) / depth;
-    let posY = (height / 2 - y) / depth;
+    const posX = (width / 2 - x) / depth;
+    const posY = (height / 2 - y) / depth;
     return {
       transform: `translate(${posX}px, ${posY}px)`,
     };
@@ -21,46 +22,48 @@ function Herosection(props) {
 
           <h1 className="mb-2 mt-0">Bolby Doe</h1>
           <p>
-            I'm a{" "}
+            I&#39;m a
+            {' '}
             <Typed
               strings={[
-                "UI/UX designer ",
-                "Front-End developer",
-                "Photography lover",
+                'UI/UX designer ',
+                'Front-End developer',
+                'Photography lover',
               ]}
               typeSpeed={80}
               backSpeed={40}
               attr="value"
               loop
             >
-              <label value></label>
+              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+              <label value />
             </Typed>
           </p>
 
           <ul className="social-icons light list-inline mb-0 mt-4">
             <li className="list-inline-item">
-              <a href="!#">
-                <i className="fab fa-instagram"></i>
+              <a target="_blank" rel="noreferrer" href="https://github.com/azelenets" aria-label="GitHub profile">
+                <i className="fab fa-github" />
               </a>
             </li>
             <li className="list-inline-item">
-              <a href="!#">
-                <i className="fab fa-twitter"></i>
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/andrewzelenets" aria-label="LinkedIn profile">
+                <i className="fab fa-linkedin" />
               </a>
             </li>
             <li className="list-inline-item">
-              <a href="!#">
-                <i className="fab fa-behance"></i>
+              <a target="_blank" rel="noreferrer" href="https://wellfound.com/u/andrew-zelenets" aria-label="AngelList profile">
+                <i className="fab fa-angellist" />
               </a>
             </li>
             <li className="list-inline-item">
-              <a href="!#">
-                <i className="fab fa-dribbble"></i>
+              <a target="_blank" rel="noreferrer" href="https://gist.github.com/azelenets" aria-label="Gist profile">
+                <i className="fa fa-code" />
               </a>
             </li>
             <li className="list-inline-item">
-              <a href="!#">
-                <i className="fab fa-pinterest-p"></i>
+              <a href="mailto:andrew.zelenets+github@gmail.com" aria-label="Email me">
+                <i className="fa fa-envelope" />
               </a>
             </li>
           </ul>
@@ -69,8 +72,8 @@ function Herosection(props) {
             <Link
               className="btn btn-default"
               to="section-contact"
-              spy={true}
-              smooth={true}
+              spy
+              smooth
               duration={500}
             >
               Hire me
@@ -81,14 +84,14 @@ function Herosection(props) {
         <div className="scroll-down">
           <Link
             to="section-about"
-            spy={true}
-            smooth={true}
+            spy
+            smooth
             duration={500}
             className="mouse-wrapper"
           >
             <span>Scroll Down</span>
             <span className="mouse">
-              <span className="wheel"></span>
+              <span className="wheel" />
             </span>
           </Link>
         </div>
@@ -266,5 +269,16 @@ function Herosection(props) {
     </section>
   );
 }
+
+Herosection.propTypes = {
+  position: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  }).isRequired,
+  elementDimensions: PropTypes.shape({
+    height: PropTypes.number,
+    width: PropTypes.number,
+  }).isRequired,
+};
 
 export default Herosection;

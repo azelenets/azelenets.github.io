@@ -1,15 +1,18 @@
-import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
-import {technologyToDescriptionMapping, technologyToIconMapping} from "./Timeline.utils";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ScrollAnimation from 'react-animate-on-scroll';
+import { technologyToDescriptionMapping, technologyToIconMapping } from './Timeline.utils';
 
 function Timeline({ experience }) {
-  const { id, years, title, content, responsibilities = [], achievements = [], technologies = [] } = experience;
+  const {
+    id, years, title, content, responsibilities = [], achievements = [], technologies = [],
+  } = experience;
 
   return (
     <ScrollAnimation
       animateIn="fadeInUp"
       animateOut="fadeInOut"
-      animateOnce={true}
+      animateOnce
     >
       <div className="timeline-container">
         <div className="content">
@@ -18,7 +21,7 @@ function Timeline({ experience }) {
           {content}
 
           {responsibilities && achievements && technologies && (
-            <div className='row gap-3 p-3'>
+            <div className="row gap-3 p-3">
               <ul className="nav nav-pills" id={`timeline-nav-${id}`} role="tablist">
                 {achievements.length > 0 && (
                   <li className="nav-item" role="presentation">
@@ -74,8 +77,8 @@ function Timeline({ experience }) {
                 {achievements.length > 0 && (
                   <div className="tab-pane active" id={`achievements-content-${id}`} role="tabpanel" aria-labelledby={`achievements-tab-${id}`}>
                     <ul>
-                      {achievements.map(achievement => (
-                        <li key={achievement}>{achievement}</li>
+                      {achievements.map((achievement) => (
+                        <li key={`experience-${id}-achievement-${achievement}`}>{achievement}</li>
                       ))}
                     </ul>
                   </div>
@@ -84,8 +87,8 @@ function Timeline({ experience }) {
                 {responsibilities.length > 0 && (
                   <div className="tab-pane" id={`responsibilities-content-${id}`} role="tabpanel" aria-labelledby={`responsibilities-tab-${id}`}>
                     <ul>
-                      {responsibilities.map(responsibility => (
-                        <li key={responsibility}>{responsibility}</li>
+                      {responsibilities.map((responsibility) => (
+                        <li key={`experience-${id}-responsibility-${responsibility}`}>{responsibility}</li>
                       ))}
                     </ul>
                   </div>
@@ -94,10 +97,10 @@ function Timeline({ experience }) {
                 {technologies.length > 0 && (
                   <div className="tab-pane" id={`technologies-content-${id}`} role="tabpanel" aria-labelledby={`technologies-tab-${id}`}>
                     <div className="row">
-                      {technologies.map(technology => (
-                        <div className="col-md-1 col-3 technology-item">
+                      {technologies.map((technology) => (
+                        <div className="col-md-1 col-3 technology-item" key={`experience-${id}-technology-${technology}`}>
                           <figure className="figure">
-                            <img src={technologyToIconMapping[technology]} alt={technology} className="figure-img img-fluid"/>
+                            <img src={technologyToIconMapping[technology]} alt={technology} className="figure-img img-fluid" />
                             <figcaption className="figure-caption">{technologyToDescriptionMapping[technology]}</figcaption>
                           </figure>
                         </div>
@@ -113,5 +116,17 @@ function Timeline({ experience }) {
     </ScrollAnimation>
   );
 }
+
+Timeline.propTypes = {
+  experience: PropTypes.shape({
+    id: PropTypes.number,
+    years: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    responsibilities: PropTypes.arrayOf(PropTypes.string),
+    achievements: PropTypes.arrayOf(PropTypes.string),
+    technologies: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+};
 
 export default Timeline;

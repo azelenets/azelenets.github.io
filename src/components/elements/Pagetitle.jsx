@@ -1,5 +1,6 @@
-import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 function Pagetitle({ title }) {
   return (
@@ -7,13 +8,17 @@ function Pagetitle({ title }) {
       <ScrollAnimation
         animateIn="fadeInUp"
         animateOut="fadeInOut"
-        animateOnce={true}
+        animateOnce
       >
         <h2 className="section-title">{title}</h2>
       </ScrollAnimation>
-      <div className="spacer" data-height="60"></div>
+      <div className="spacer" data-height="60" />
     </>
   );
 }
+
+Pagetitle.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default Pagetitle;
