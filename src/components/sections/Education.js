@@ -26,7 +26,7 @@ function Education() {
           <div className="col-md-12">
             <div className="timeline edu bg-white rounded shadow-dark padding-30 overflow-hidden">
               {educationData.map((education) => (
-                <Timeline key={education.id} education={education} />
+                <Timeline key={education.id} experience={education} />
               ))}
               <span className="line"></span>
             </div>

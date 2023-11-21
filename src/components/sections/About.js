@@ -11,22 +11,22 @@ const aboutContent = {
     <div>
       <p>
         Dynamic and highly skilled Computerized Systems Engineer with a Master's degree in "Computer Systems Control and Automation" and over 12 years of proven success in commercial software development. A results-oriented professional known for:
-
-        <ul>
-          <li>
-            <strong>Engineering Excellence:</strong> Demonstrated strong expertise in developing end-to-end solutions, managing complexities within vast ecosystems, and leading engineering research initiatives.
-          </li>
-          <li>
-            <strong>Innovative Solutions:</strong> Proficient in creating tech designs, overseeing the implementation of proof of concepts (POCs), and ensuring alignment with stakeholders to drive successful project outcomes.
-          </li>
-          <li>
-            <strong>Team Collaboration:</strong> A dedicated team player with exceptional communication and interpersonal skills. Proven ability to collaborate effectively within multidisciplinary teams to achieve project objectives.
-          </li>
-          <li>
-            <strong>Strategic Leadership:</strong> Extensive background in building robust tech foundations, leading engineering efforts, and navigating the challenges of large-scale ecosystems.
-          </li>
-        </ul>
       </p>
+
+      <ul>
+        <li>
+          <strong>Engineering Excellence:</strong> Demonstrated strong expertise in developing end-to-end solutions, managing complexities within vast ecosystems, and leading engineering research initiatives.
+        </li>
+        <li>
+          <strong>Innovative Solutions:</strong> Proficient in creating tech designs, overseeing the implementation of proof of concepts (POCs), and ensuring alignment with stakeholders to drive successful project outcomes.
+        </li>
+        <li>
+          <strong>Team Collaboration:</strong> A dedicated team player with exceptional communication and interpersonal skills. Proven ability to collaborate effectively within multidisciplinary teams to achieve project objectives.
+        </li>
+        <li>
+          <strong>Strategic Leadership:</strong> Extensive background in building robust tech foundations, leading engineering efforts, and navigating the challenges of large-scale ecosystems.
+        </li>
+      </ul>
     </div>,
   name: "Andrew Zelenets",
 };
@@ -34,50 +34,26 @@ const aboutContent = {
 const progressData = [
   {
     id: 1,
-    title: "Front-End Frameworks",
-    percentage: 90,
+    title: "Management Skills", // Time, Risk management, Delegation, Deadline, Multi-tasking
+    percentage: 95,
     progressColor: "#FFD15C",
   },
   {
     id: 2,
-    title: "Server-Side Scripting",
-    percentage: 95,
+    title: "Communication Skills", // Active listening, Attention to detail, Presentation, Leadership, Mentoring
+    percentage: 94,
     progressColor: "#FF4C60",
   },
   {
     id: 3,
-    title: "Cloud Services",
+    title: "Technical Skills", // DevOps and CI/CD, API development, Databases and ORM, Web Security Best Practices
     percentage: 80,
     progressColor: "#6C6CE5",
   },
   {
     id: 4,
-    title: "Databases and ORM",
+    title: "Programming Skills", // Software Architecture,  Front-end development, Back-end development, Testing and Debugging,
     percentage: 80,
-    progressColor: "#6C6CE5",
-  },
-  {
-    id: 5,
-    title: "API Development",
-    percentage: 95,
-    progressColor: "#6C6CE5",
-  },
-  {
-    id: 6,
-    title: "Web Security Best Practices",
-    percentage: 85,
-    progressColor: "#6C6CE5",
-  },
-  {
-    id: 7,
-    title: "Testing and Debugging",
-    percentage: 100,
-    progressColor: "#6C6CE5",
-  },
-  {
-    id: 8,
-    title: "DevOps and CI/CD",
-    percentage: 70,
     progressColor: "#6C6CE5",
   },
 ];

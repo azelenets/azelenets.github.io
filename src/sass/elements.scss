@@ -503,7 +503,63 @@
       }
   }
 
+//
+//  Custom CSS:
+//
 .avatar-main {
   border-radius: 50%;
   width: 13em;
+}
+
+.btn-outline-secondary:active:focus {
+  box-shadow: none;
+}
+
+.timeline-container {
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    background-color: transparent;
+    color: #454360;
+    cursor: auto;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+
+    &:hover {
+      color: #454360;
+      font-size: 18px;
+      text-decoration: none;
+    }
+  }
+
+  .nav-pills .nav-link {
+    padding-left: 0;
+    color: #8b88b1;
+    font-weight: 400;
+    font-size: 14px;
+
+    &:hover {
+      color: $colorpink;
+      font-size: 15px;
+      text-decoration: underline;
+    }
+  }
+}
+
+.technology-item {
+  text-align: center;
+  padding-top: calc(var(--bs-gutter-x) * .5);;
+  padding-left: 0;
+
+  .figure-img {
+    height: 42px;
+  }
+
+  .figure-caption {
+    color: #454360;
+    font-weight: 500;
+    font-size: 0.75em;
+  }
 }

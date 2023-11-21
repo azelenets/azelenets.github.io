@@ -1,7 +1,7 @@
 import React from "react";
 
 function Skill({ progress, isVisible }) {
-  const { title, percentage: percentage, progressColor } = progress;
+  const { title, percentage, progressColor } = progress;
   const winWidth = window.innerWidth;
   const progressQuery = () => {
     if (winWidth && winWidth > 767) {

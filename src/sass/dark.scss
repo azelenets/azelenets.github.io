@@ -113,4 +113,12 @@ body.dark {
       background: #fff;
     }
   }
+
+  .timeline-container .nav-pills .nav-link.active,
+  .timeline-container .nav-pills .show > .nav-link {
+    color: #fff;
+  }
+  .technology-item .figure-caption {
+    color: #fff;
+  }
 }
