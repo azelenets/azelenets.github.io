@@ -2,22 +2,15 @@ import React from 'react';
 import Pagetitle from '../elements/Pagetitle';
 import Timeline from '../elements/Timeline';
 
-const educationData = [
-  {
-    id: 1,
-    title: 'Master of Science, Dnipro Polytechnic',
-    years: '2012 - 2015',
-    content: 'Computerized control systems and process automation.',
-  },
-  {
-    id: 2,
-    title: 'Polytechnical College, Dnipro Polytechnical College',
-    years: '2009 - 2012',
-    content: 'Installation, commissioning, and repairment of the industrial automated control systems.',
-  },
-];
+import educationDpc from '../../json/education/00-dpc.json';
+import educationDpu from '../../json/education/01-dpu.json';
 
 function Education() {
+  const educationData = [
+    educationDpu,
+    educationDpc,
+  ];
+
   return (
     <section id="experience">
       <div className="container">

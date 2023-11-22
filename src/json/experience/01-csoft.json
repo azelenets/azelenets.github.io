@@ -1,0 +1,21 @@
+{
+  "id": "csoft",
+  "position": "Software Engineer",
+  "companyName": "CSoft",
+  "companyWebsite": "https://www.csoft.ru",
+  "years": "11/2012 - 05/2013",
+  "contentParagraphs": [
+    "The CSoft group of companies offers comprehensive solutions for production automation. TDMS provides automation of the entire cycle of tasks related to planning and operational management of works, storage, retrieval and development of technical information and documentation."
+  ],
+  "responsibilities": [
+    "Analyze customer requirements, write specifications",
+    "Designing and implementing an architecture for the System",
+    "Interaction with the QA department and customers to improve product quality"
+  ],
+  "achievements": [""],
+  "technologies": [
+    "microsoft_sql_server",
+    "mysql",
+    "vbscript"
+  ]
+}

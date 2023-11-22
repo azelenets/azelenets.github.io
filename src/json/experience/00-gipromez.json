@@ -1,0 +1,24 @@
+{
+  "id": "gipromez",
+  "position": "Software Engineer",
+  "companyName": "GIPROMEZ",
+  "companyWebsite": "https://gipromez.com.ua/en",
+  "years": "06/2012 - 09/2012",
+  "contentParagraphs": [
+    "Worked as a PLC Software Engineer in the System automation department to help manufacturing enterprises increase the flexibility and efficiency of their manufacturing processes and reduce the time to market new products in metallurgical and machine construction industries."
+  ],
+  "responsibilities": [
+    "Creation of customized automation software / plant software, including visualization for SIMATIC controllers, including safety applications",
+    "Implementation of functions from the standardization or the application system component selection, and implementation of the virtual commissioning in interaction with the plant simulation",
+    "Basic design: Technical conception in case of unspecified customer requirements",
+    "Process-related technical detail clarification",
+    "Ensuring required quality standards and clarification of process-specific technical details",
+    "Commissioning (I/O check, bus technology, safety-relevant applications and automation software) and preparation of documentation for the PLC program and visualization"
+  ],
+  "achievements": [""],
+  "technologies": [
+    "microsoft_sql_server",
+    "simatic",
+    "step7"
+  ]
+}

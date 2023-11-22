@@ -3,7 +3,7 @@ import ReactCursorPosition from 'react-cursor-position';
 import { Element } from 'react-scroll';
 import Header from '../components/layouts/Header';
 import About from '../components/sections/About';
-import Brandlogos from '../components/sections/Brandlogos';
+// import Brandlogos from '../components/sections/Brandlogos';
 import Contact from '../components/sections/Contact';
 import Experiences from '../components/sections/Experiences';
 import Herosection from '../components/sections/Herosection';
@@ -29,11 +29,8 @@ function HomepageDark() {
 
   return (
     <>
-      <Header
-        logoSource="/images/logo-b-light.svg"
-        toggleMenu={toggleMenu}
-        headerToggler={headerToggler}
-      />
+      <Header toggleMenu={toggleMenu} headerToggler={headerToggler} />
+
       <main className={toggleMenu ? 'content-2 open' : 'content-2'}>
         <Element name="section-home">
           <ReactCursorPosition>
@@ -58,9 +55,9 @@ function HomepageDark() {
         <Element name="section-testimoninal">
           <Testimonials />
         </Element>
-        <Element name="section-brandlogos">
-          <Brandlogos />
-        </Element>
+        {/* <Element name="section-brandlogos"> */}
+        {/*   <Brandlogos /> */}
+        {/* </Element> */}
         <Element name="section-contact">
           <Contact />
         </Element>

@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-scroll';
-import Logo from '../elements/Logo';
 
 function Header({
-  light, logoSource, toggleMenu, headerToggler,
+  light, toggleMenu, headerToggler,
 }) {
   const handleClasses = () => {
     let classes = 'desktop-header-2 d-flex align-items-start flex-column';
@@ -39,11 +38,9 @@ function Header({
               <span />
             </button>
           </div>
-          <Logo logoSource={logoSource} />
         </div>
       </header>
       <header className={handleClasses()}>
-        <Logo logoSource={logoSource} />
         <nav>
           <ul className="vertical-menu scrollspy">
             <li>
@@ -126,23 +123,26 @@ function Header({
           </ul>
         </nav>
 
-        <div className="footer">
-          <span className="copyright">
-            &copy;
-            {' '}
-            {new Date().getFullYear()}
-            {' '}
-            Andrew Zelenets.
-          </span>
-        </div>
+        {/* <div className="footer"> */}
+        {/*  <span className="copyright"> */}
+        {/*    &copy; */}
+        {/*    {' '} */}
+        {/*    {new Date().getFullYear()} */}
+        {/*    {' '} */}
+        {/*    Andrew Zelenets. */}
+        {/*  </span> */}
+        {/* </div> */}
       </header>
     </>
   );
 }
 
+Header.defaultProps = {
+  light: false,
+};
+
 Header.propTypes = {
-  light: PropTypes.bool.isRequired,
-  logoSource: PropTypes.string.isRequired,
+  light: PropTypes.bool,
   toggleMenu: PropTypes.bool.isRequired,
   headerToggler: PropTypes.func.isRequired,
 };

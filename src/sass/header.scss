@@ -160,19 +160,19 @@ header.desktop-header-1 {
 		border-right: solid 1px rgba(0, 0, 0, 0.05);
 
 		.vertical-menu li .nav-link.active {
-			color: $colorpink;
+			color: $primaryColor;
 		}
 
 		.vertical-menu li a {
 			color: $colordark;
 
 			&:hover {
-				color: $colorpink;
+				color: $primaryColor;
 			}
 		}
 
 		.vertical-menu li i {
-			color: $colorpink;
+			color: $primaryColor;
 		}
 	}
 }
@@ -236,10 +236,10 @@ header.desktop-header-2 {
 
 		a {
 			&:hover {
-				color: $coloryellow;
+				color: $primaryColor;
 
 				i {
-					color: $coloryellow;
+					color: $primaryColor;
 					opacity: 1;
 				}
 			}

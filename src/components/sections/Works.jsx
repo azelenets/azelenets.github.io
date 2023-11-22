@@ -6,38 +6,58 @@ import Portfolio from '../elements/Portfolio';
 const filters = [
   {
     id: 1,
-    text: 'Everything',
+    text: 'All',
   },
   {
     id: 2,
-    text: 'creative',
+    text: 'E-Commerce',
   },
   {
     id: 3,
-    text: 'art',
+    text: 'Multimedia',
   },
   {
     id: 4,
-    text: 'design',
+    text: 'Navigation',
   },
   {
     id: 5,
-    text: 'branding',
+    text: 'Security',
+  },
+  {
+    id: 6,
+    text: 'Recruitment',
+  },
+  {
+    id: 7,
+    text: 'Non-profit',
+  },
+  {
+    id: 8,
+    text: 'Advertisement',
+  },
+  {
+    id: 9,
+    text: 'Marketplace',
+  },
+  {
+    id: 10,
+    text: 'Education',
   },
 ];
 
 const allData = [
   {
     id: 1,
-    title: 'Project Managment Illustration',
-    category: 'art',
+    title: 'Shark Taxi',
+    category: 'Navigation',
     image: 'images/works/1.svg',
     popupLink: ['images/works/1.svg'],
   },
   {
     id: 2,
-    title: 'Guest App Walkthrough Screens',
-    category: 'creative',
+    title: 'NDA',
+    category: 'Security',
     image: 'images/works/2.svg',
     popupLink: [
       'images/works/2.svg',
@@ -47,15 +67,15 @@ const allData = [
   },
   {
     id: 3,
-    title: 'Delivery App Wireframe',
-    category: 'branding',
+    title: 'LoopMe',
+    category: 'Advertisement',
     image: 'images/works/3.svg',
     popupLink: ['https://www.youtube.com/watch?v=qf9z4ulfmYw'],
   },
   {
     id: 4,
-    title: 'Onboarding Motivation',
-    category: 'creative',
+    title: 'NowShop',
+    category: 'Marketplace',
     image: 'images/works/4.svg',
     popupLink: [
       'https://www.youtube.com/watch?v=URVHRhBSjj8',
@@ -64,66 +84,31 @@ const allData = [
   },
   {
     id: 5,
-    title: 'iMac Mockup Design',
-    category: 'art',
+    title: 'SeekingAlpha',
+    category: 'Marketplace',
     image: 'images/works/5.svg',
     popupLink: ['images/works/5.svg'],
   },
   {
     id: 6,
-    title: 'Game Store App Concept',
-    category: 'design',
+    title: 'The Skills',
+    category: 'Education',
     image: 'images/works/6.svg',
     link: 'https://dribbble.com',
   },
   {
     id: 7,
-    title: 'Project Managment Illustration',
-    category: 'art',
+    title: 'WorldBibleSchool',
+    category: 'Non-profit',
     image: 'images/works/3.svg',
     link: 'https://pinterest.com',
   },
   {
     id: 8,
-    title: 'Guest App Walkthrough Screens',
-    category: 'design',
+    title: 'The Walk',
+    category: 'Non-profit',
     image: 'images/works/1.svg',
     popupLink: ['images/works/1.svg'],
-  },
-  {
-    id: 9,
-    title: 'Delivery App Wireframe',
-    category: 'branding',
-    image: 'images/works/4.svg',
-    popupLink: ['images/works/4.svg'],
-  },
-  {
-    id: 10,
-    title: 'Game Store App Concept',
-    category: 'design',
-    image: 'images/works/6.svg',
-    link: 'https://dribbble.com',
-  },
-  {
-    id: 11,
-    title: 'Project Managment Illustration',
-    category: 'art',
-    image: 'images/works/3.svg',
-    link: 'https://pinterest.com',
-  },
-  {
-    id: 12,
-    title: 'Guest App Walkthrough Screens',
-    category: 'design',
-    image: 'images/works/1.svg',
-    popupLink: ['images/works/1.svg'],
-  },
-  {
-    id: 13,
-    title: 'Delivery App Wireframe',
-    category: 'branding',
-    image: 'images/works/4.svg',
-    popupLink: ['images/works/4.svg'],
   },
 ];
 
@@ -177,7 +162,8 @@ function Works() {
   return (
     <section id="works">
       <div className="container">
-        <Pagetitle title="Recent Works" />
+        <Pagetitle title="Recent Projects" />
+
         {/* Start Portfolio Filters */}
         <ScrollAnimation
           animateIn="fadeInUp"

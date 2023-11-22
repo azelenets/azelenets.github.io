@@ -13,7 +13,7 @@ function Testimonial({ slider }) {
       <h4 className="mt-3 mb-0">{userName}</h4>
       <span className="subtitle">{subtitle}</span>
       <div className="bg-white padding-30 shadow-dark rounded triangle-top position-relative mt-4">
-        <p className="mb-0">{review}</p>
+        <span className="mb-0" dangerouslySetInnerHTML={{ __html: review }} />
       </div>
     </div>
   );

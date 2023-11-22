@@ -146,8 +146,8 @@ only screen and (min-device-pixel-ratio: 1.5){
 	}
 	.parallax {
 		.p1 {
-			left: 10%;
-			top: 10%;
+			left: 0%;
+			top: 3%;
 		}
 		.p2 {
 			left: 15%;
@@ -162,8 +162,8 @@ only screen and (min-device-pixel-ratio: 1.5){
 			bottom: 10%;
 		}
 		.p5 {
-			left: 45%;
-			top: 3%;
+			left: 20%;
+			top: 6%;
 		}
 		.p6 {
 			left: 40%;
@@ -188,6 +188,26 @@ only screen and (min-device-pixel-ratio: 1.5){
 		.p11 {
 			bottom: 10%;
 			right: 10%;
+		}
+		.p12 {
+			bottom: 35%;
+			right: 7%;
+		}
+		.p13 {
+			left: 5%;
+			top: 40%;
+		}
+		.p14 {
+			left: 25%;
+			top: 55%;
+		}
+		.p15 {
+			left: 23%;
+			bottom: 13%;
+		}
+		.p16{
+			right: 5%;
+			top: 30%;
 		}
 	}
 }

@@ -33,7 +33,7 @@ main.content-3 {
 }
 
 section {
-  padding-top: 110px;
+  padding-top: 5em;
   position: relative;
 }
 
@@ -51,14 +51,19 @@ section.home {
     z-index: 1;
 
     h1 {
-      color: #fff;
       font-size: 36px;
     }
 
-    p {
-      color: #fff;
+    .dynamic-text {
       font-size: 18px;
-      margin-bottom: 0;
+    }
+
+    h1, .dynamic-text {
+      background-color: $colordark;
+      color: #fff;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0;
     }
 
     span {
@@ -86,13 +91,9 @@ section.home {
     background: #f9f9ff;
 
     .intro {
-      h1 {
+      h1, .dynamic-text {
+        background-color: #f9f9ff;
         color: $colordark;
-      }
-
-      span,
-      p {
-        color: $colordefault;
       }
     }
 
@@ -142,60 +143,77 @@ section.home {
   .layer {
     position: absolute;
   }
-
   .p1 {
     left: 10%;
     top: 10%;
   }
-
   .p2 {
     left: 25%;
     top: 30%;
   }
-
   .p3 {
     left: 15%;
     bottom: 30%;
   }
-
   .p4 {
     left: 10%;
     bottom: 10%;
   }
-
   .p5 {
     left: 45%;
     top: 10%;
   }
-
   .p6 {
     left: 40%;
     bottom: 10%;
   }
-
   .p7 {
     top: 20%;
     right: 30%;
   }
-
   .p8 {
     right: 30%;
     bottom: 20%;
   }
-
   .p9 {
     right: 10%;
     top: 10%;
   }
-
   .p10 {
     top: 45%;
     right: 20%;
   }
-
   .p11 {
     bottom: 10%;
     right: 10%;
+  }
+  .p12 {
+    bottom: 35%;
+    right: 7%;
+  }
+  .p13 {
+    left: 5%;
+    top: 40%;
+  }
+  .p14 {
+    left: 25%;
+    top: 55%;
+  }
+  .p15 {
+    left: 23%;
+    bottom: 13%;
+  }
+  .p16 {
+    right: 5%;
+    top: 30%;
+  }
+  .p17 {
+    left: 5%;
+    bottom: 37%;
+  }
+  .p18 {
+    top: 35%;
+    right: 33%;
   }
 }
 
@@ -282,7 +300,7 @@ section.home {
 
     span.term {
       color: #fff;
-      background: $colorpink;
+      background: $primaryColor;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
       font-size: 14px;
@@ -364,7 +382,7 @@ section.home {
 
       &:hover,
       &.current {
-        color: $colorpink;
+        color: $primaryColor;
       }
     }
   }
@@ -554,7 +572,7 @@ select.portfolio-filter-mobile {
   }
 
   .category {
-    background: $colorpink;
+    background: $primaryColor;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     color: #fff;
@@ -576,7 +594,7 @@ select.portfolio-filter-mobile {
         color: $colordark;
 
         &:hover {
-          color: $colorpink;
+          color: $primaryColor;
         }
       }
     }
@@ -623,10 +641,10 @@ select.portfolio-filter-mobile {
       font-size: 30px;
 
       a {
-        color: #454360;
+        color: $colordefault;
 
         &:hover {
-          color: #ff4c60;
+          color: $primaryColor;
         }
       }
     }
@@ -652,7 +670,7 @@ select.portfolio-filter-mobile {
           border-radius: 100%;
 
           &:hover {
-            background-color: $colorpink;
+            background-color: $primaryColor;
           }
         }
       }
@@ -691,10 +709,10 @@ select.portfolio-filter-mobile {
   }
 
   .blog-standard .meta li a {
-    color: #353353;
+    color: $colordark;
 
     &:hover {
-      color: #ff4c60;
+      color: $primaryColor;
     }
   }
 
@@ -708,7 +726,7 @@ select.portfolio-filter-mobile {
       line-height: 1;
       padding: 12px 32px;
       color: #fff;
-      background: #ff4c60;
+      background: $primaryColor;
       display: inline-block;
       vertical-align: middle;
       position: relative;
@@ -758,7 +776,7 @@ select.portfolio-filter-mobile {
 
   .widget .searchform input[type="submit"] {
     color: #fff;
-    background: #ff4c60;
+    background: $primaryColor;
     border-radius: 25px;
     padding: 5px 20px;
     border: 0;
@@ -838,7 +856,7 @@ select.portfolio-filter-mobile {
     line-height: 1;
     padding: 12px 32px;
     color: #fff;
-    background: #ff4c60;
+    background: $primaryColor;
     display: inline-block;
     vertical-align: middle;
     position: relative;
@@ -912,7 +930,7 @@ select.portfolio-filter-mobile {
             border-radius: 20px;
             padding: 0px 10px;
             display: inline-block;
-            background-color: #ff4c60;
+            background-color: $primaryColor;
           }
         }
       }
@@ -1104,7 +1122,7 @@ select.portfolio-filter-mobile {
 }
 
 .mouse-wrapper {
-  color: #353353;
+  color: $colordark;
   font-size: 14px;
   display: block;
   max-width: 100px;
@@ -1113,16 +1131,16 @@ select.portfolio-filter-mobile {
   cursor: pointer;
 
   span {
-    color: #353353;
+    color: $colordark;
   }
 
   &:hover {
-    color: #353353;
+    color: $colordark;
   }
 }
 
 .mouse {
-  border: solid 2px #353353;
+  border: solid 2px $colordark;
   border-radius: 16px;
   display: block;
   margin: auto;
@@ -1132,7 +1150,7 @@ select.portfolio-filter-mobile {
   width: 20px;
 
   .wheel {
-    background: #353353;
+    background: $colordark;
     border-radius: 100%;
     display: block;
     position: absolute;

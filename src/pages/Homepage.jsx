@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { Tooltip } from 'react-tooltip';
 import ReactCursorPosition from 'react-cursor-position';
 import { Element } from 'react-scroll';
 import Header from '../components/layouts/Header';
 import About from '../components/sections/About';
-import Brandlogos from '../components/sections/Brandlogos';
 import Contact from '../components/sections/Contact';
 import Experiences from '../components/sections/Experiences';
 import Herosection from '../components/sections/Herosection';
@@ -29,12 +29,8 @@ function Homepage() {
 
   return (
     <>
-      <Header
-        light
-        logoSource="/images/logo-b-dark.svg"
-        toggleMenu={toggleMenu}
-        headerToggler={headerToggler}
-      />
+      <Header light toggleMenu={toggleMenu} headerToggler={headerToggler} />
+
       <main className={toggleMenu ? 'content-2 open' : 'content-2'}>
         <Element name="section-home">
           <ReactCursorPosition>
@@ -59,13 +55,14 @@ function Homepage() {
         <Element name="section-testimoninal">
           <Testimonials />
         </Element>
-        <Element name="section-brandlogos">
-          <Brandlogos />
-        </Element>
+        {/* <Element name="section-brandlogos"> */}
+        {/*  <Brandlogos /> */}
+        {/* </Element> */}
         <Element name="section-contact">
           <Contact />
         </Element>
         <div className="spacer" data-height="96" />
+        <Tooltip id="application-tooltip" variant="dark" clickable />
       </main>
     </>
   );

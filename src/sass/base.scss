@@ -52,7 +52,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #454360;
+    color: $colordefault;
     font-family: $fonthead;
     font-weight: 700;
     margin: 20px 0;
@@ -75,7 +75,7 @@ h4 {
 }
 
 a {
-    color: $colorpink;
+    color: $primaryColor;
     outline: 0;
     @include transition(.3s);
 
@@ -143,8 +143,8 @@ pre {
             width: 16px;
             height: 16px;
             display: block;
-            background: $colorpink;
-            box-shadow: 2px 2px 8px rgba($colorpink, .09);
+            background: $primaryColor;
+            box-shadow: 2px 2px 8px rgba($primaryColor, .09);
             border-radius: 50%;
             transform: rotate(90deg);
             animation: move 6.9s linear infinite;
@@ -199,8 +199,8 @@ pre {
         position: absolute;
         width: 16px;
         height: 16px;
-        background: $colorpink;
-        box-shadow: 2px 2px 8px rgba($colorpink, .09);
+        background: $primaryColor;
+        box-shadow: 2px 2px 8px rgba($primaryColor, .09);
         border-radius: 50%;
         animation: moveSvg 6.9s linear infinite;
         -webkit-filter: url(#goo);
@@ -347,7 +347,7 @@ pre {
 }
 
 .colorpink {
-    color: $colorpink;
+    color: $primaryColor;
 }
 
 .pointer {
