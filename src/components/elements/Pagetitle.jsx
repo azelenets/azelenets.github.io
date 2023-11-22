@@ -4,16 +4,13 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 function Pagetitle({ title }) {
   return (
-    <>
-      <ScrollAnimation
-        animateIn="fadeInUp"
-        animateOut="fadeInOut"
-        animateOnce
-      >
-        <h2 className="section-title">{title}</h2>
-      </ScrollAnimation>
-      <div className="spacer" data-height="60" />
-    </>
+    <ScrollAnimation
+      animateIn="fadeInUp"
+      animateOut="fadeInOut"
+      animateOnce
+    >
+      <h2 className="section-title"><span>{title}</span></h2>
+    </ScrollAnimation>
   );
 }
 

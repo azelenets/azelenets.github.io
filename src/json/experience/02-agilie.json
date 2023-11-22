@@ -1,0 +1,63 @@
+{
+  "id": "agilie",
+  "position": "Junior web developer",
+  "companyName": "Agilie",
+  "companyWebsite": "https://agilie.com",
+  "years": "05/2013 - 01/2015",
+  "contentParagraphs": [
+    "Agilie is an outsource company that provides a full stack of product development services — from intelligent product design to development of mobile iOS and Android apps, mobile-friendly websites and cloud-based solutions. During work, I got experience in a wide range of industries including management, safety, trading, tourism, entertainment, and multimedia."
+  ],
+  "responsibilities": [
+    "Client-Server web applications development",
+    "Develop detailed technical requirements and specifications for software development",
+    "Implement upgrades, patches, code releases, and database changes",
+    "Debugging, data security",
+    "Design and implement performant scalable API architectures",
+    "Cooperate with customers, product managers, system analytics, designers and QA team to ensure the most appropriate business solution",
+    "Prototype, code, test and deploy in an agile development environment"
+  ],
+  "achievements": [
+    "Developed and participated in more than 13 projects",
+    "Redesigned the company’s website introducing responsive design which increased the company’s conversion rate by 220%"
+  ],
+  "technologies": [
+    "amazons3",
+    "bootstrap",
+    "brakeman",
+    "cancancan",
+    "capistrano",
+    "coffeescript",
+    "csharp",
+    "cucumber",
+    "faker",
+    "ffmpeg",
+    "git",
+    "github",
+    "gnubash",
+    "google_maps",
+    "html5",
+    "javascript",
+    "jenkins",
+    "jira",
+    "jquery",
+    "less",
+    "mongodb",
+    "mui",
+    "mysql",
+    "nginx",
+    "postgresql",
+    "postman",
+    "redis",
+    "resque",
+    "rspec",
+    "rubocop",
+    "ruby",
+    "ruby_on_rails",
+    "sass",
+    "selenium",
+    "shoulda_matchers",
+    "sidekiq",
+    "simplecov",
+    "windows_phone"
+  ]
+}

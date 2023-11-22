@@ -63,8 +63,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `npm run deploy` - deploy to github pages
 
-### `npm run build` fails to minify
+# Logos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Mostly all logos have been downloaded from the https://simpleicons.org/ website.
+
+# Icons
+
+- Font Awesome: https://fontawesome.com/
+- Simple line icons: https://simplelineicons.github.io/

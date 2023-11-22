@@ -81,21 +81,6 @@ function Herosection({ position, elementDimensions }) {
           </div>
         </div>
 
-        <div className="scroll-down">
-          <Link
-            to="section-about"
-            spy
-            smooth
-            duration={500}
-            className="mouse-wrapper"
-          >
-            <span>Scroll Down</span>
-            <span className="mouse">
-              <span className="wheel" />
-            </span>
-          </Link>
-        </div>
-
         <div className="parallax" data-relative-input="true">
           <svg
             width="27"

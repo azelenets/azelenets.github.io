@@ -46,8 +46,8 @@
 
 .btn-default {
     color: #fff;
-    background: $colorpink;
-    border-color: $colorpink;
+    background: $primaryColor;
+    border-color: $primaryColor;
     display: inline-block;
     vertical-align: middle;
     position: relative;
@@ -56,9 +56,9 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 
     &:hover {
-        color: $colorpink !important;
-        background: #fff;
-        border-color: $colorpink;
+        color: $primaryColor !important;
+        background: transparent;
+        border-color: $primaryColor;
         -webkit-animation-name: button-push;
         animation-name: button-push;
         -webkit-animation-duration: 0.3s;

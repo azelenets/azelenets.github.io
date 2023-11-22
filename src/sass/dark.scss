@@ -48,14 +48,14 @@ body.dark {
   }
 
   .portfolio-filter li button.current {
-    color: $colorpink;
+    color: $primaryColor;
   }
 
   .blog-item .details h4.title a {
     color: #fff;
 
     &:hover {
-      color: $colorpink;
+      color: $primaryColor;
     }
   }
 
@@ -73,7 +73,7 @@ body.dark {
 
   .content-blog,
   .blog-page-section {
-    background: #353353;
+    background: $colordark;
   }
 
   .bg-white {

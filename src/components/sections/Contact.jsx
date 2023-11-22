@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
-import Pagetitle from '../elements/Pagetitle';
+import Pagetitle from 'components/elements/Pagetitle';
 
 function Contact() {
   const [formdata, setFormdata] = useState({

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { technologyToDescriptionMapping, technologyToIconMapping } from './Timeline.utils';
+
+import { technologyToDescriptionMapping, technologyToIconMapping } from 'components/elements/Timeline.utils';
 
 function Timeline({ experience }) {
   const {
@@ -14,14 +15,14 @@ function Timeline({ experience }) {
       animateOut="fadeInOut"
       animateOnce
     >
-      <div className="timeline-container">
+      <div id={`timeline-${id}`} className="timeline-container">
         <div className="content">
           <span className="time">{years}</span>
           <h3 className="title">{title}</h3>
           {content}
 
-          {responsibilities && achievements && technologies && (
-            <div className="row gap-3 p-3">
+          {(responsibilities.length > 0 || achievements.length > 0 || technologies.length > 0) && (
+            <div className="row gap-2 p-3">
               <ul className="nav nav-pills" id={`timeline-nav-${id}`} role="tablist">
                 {achievements.length > 0 && (
                   <li className="nav-item" role="presentation">
@@ -51,7 +52,7 @@ function Timeline({ experience }) {
                       aria-controls={`responsibilities-content-${id}`}
                       aria-selected="false"
                     >
-                      Responsibilities
+                      Duties
                     </button>
                   </li>
                 )}
@@ -78,7 +79,8 @@ function Timeline({ experience }) {
                   <div className="tab-pane active" id={`achievements-content-${id}`} role="tabpanel" aria-labelledby={`achievements-tab-${id}`}>
                     <ul>
                       {achievements.map((achievement) => (
-                        <li key={`experience-${id}-achievement-${achievement}`}>{achievement}</li>
+                        // eslint-disable-next-line react/no-danger
+                        <li key={`experience-${id}-achievement-${achievement}`} dangerouslySetInnerHTML={{ __html: achievement }} />
                       ))}
                     </ul>
                   </div>
@@ -88,7 +90,8 @@ function Timeline({ experience }) {
                   <div className="tab-pane" id={`responsibilities-content-${id}`} role="tabpanel" aria-labelledby={`responsibilities-tab-${id}`}>
                     <ul>
                       {responsibilities.map((responsibility) => (
-                        <li key={`experience-${id}-responsibility-${responsibility}`}>{responsibility}</li>
+                        // eslint-disable-next-line react/no-danger
+                        <li key={`experience-${id}-responsibility-${responsibility}`} dangerouslySetInnerHTML={{ __html: responsibility }} />
                       ))}
                     </ul>
                   </div>
@@ -119,10 +122,10 @@ function Timeline({ experience }) {
 
 Timeline.propTypes = {
   experience: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     years: PropTypes.string,
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    content: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.string]),
     responsibilities: PropTypes.arrayOf(PropTypes.string),
     achievements: PropTypes.arrayOf(PropTypes.string),
     technologies: PropTypes.arrayOf(PropTypes.string),

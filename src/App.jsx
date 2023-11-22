@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Homepage from './pages/Homepage';
-import HomepageDark from './pages/HomepageDark';
-import './App.scss';
+
+import Homepage from 'pages/Homepage';
+import HomepageDark from 'pages/HomepageDark';
+
+import 'App.scss';
 
 function App() {
   return (

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/layouts/Header';
-import Blog from '../components/elements/Blog';
-import Pagination from '../components/elements/Pagination';
+import classnames from 'classnames';
+
+import Header from 'components/layouts/Header';
+import Blog from 'components/elements/Blog';
+import Pagination from 'components/elements/Pagination';
 
 const allBlogs = [
   {
@@ -117,16 +119,16 @@ function Bloglist() {
     setCurrentPage(pageNumber);
   };
 
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const headerToggler = (e) => {
     e.preventDefault();
-    setToggleMenu(!toggleMenu);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   document.addEventListener('click', (e) => {
     if (e.target.closest('.content')) {
-      setToggleMenu(false);
+      setIsMenuOpen(false);
     }
   });
 
@@ -134,10 +136,10 @@ function Bloglist() {
     <>
       <Header
         logoSource="/images/logo.svg"
-        toggleMenu={toggleMenu}
+        isMenuOpen={isMenuOpen}
         headerToggler={headerToggler}
       />
-      <main className={toggleMenu ? 'content open' : 'content'}>
+      <main className={classnames('content', { open: isMenuOpen })}>
         <div className="spacer" data-height="96" />
         <div className="blog-page-section">
           <div className="container">

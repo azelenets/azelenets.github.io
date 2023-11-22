@@ -1,0 +1,61 @@
+{
+  "id": "griddynamics",
+  "position": "Middle Ruby Developer",
+  "companyName": "GridDynamics",
+  "companyWebsite": "https://www.griddynamics.com",
+  "years": "02/2015 - 11/2015",
+  "contentParagraphs": [
+    "The customer was a British company which creates 100% brand-customized online marketplaces."
+  ],
+  "responsibilities": [
+    "Prototype, code, test and deploy in an agile development environment",
+    "Improve application based on user experience feedback",
+    "Collaborate within the sales team and with security consultants to establish and refine requirements",
+    "Checkout system integration",
+    "Integration with 3rd party sstems (PayPal, SalesForce)"
+  ],
+  "achievements": [
+    "Built B2B service platform from scratch with Ruby on Rails 4.2",
+    "Reorganized checkout flow using PayPal ExpressCheckout, which resulted in increasing sales up to 17%",
+    "Improved existing, and developed new e-commerce products and applications, resulting in a diversified product line and increased customer revenue"
+  ],
+  "technologies": [
+    "amazons3",
+    "bootstrap",
+    "brakeman",
+    "cancancan",
+    "capistrano",
+    "cloudflare",
+    "coffeescript",
+    "confluence",
+    "cucumber",
+    "dotenv",
+    "faker",
+    "git",
+    "github",
+    "gnubash",
+    "html5",
+    "intercom",
+    "javascript",
+    "jenkins",
+    "jira",
+    "jquery",
+    "less",
+    "mysql",
+    "nginx",
+    "postgresql",
+    "postman",
+    "redis",
+    "resque",
+    "rspec",
+    "rubocop",
+    "ruby",
+    "ruby_on_rails",
+    "salesforce",
+    "sass",
+    "shoulda_matchers",
+    "simplecov",
+    "slack",
+    "webpack"
+  ]
+}

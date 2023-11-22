@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Markdown from 'markdown-to-jsx';
 import Disqus from 'disqus-react';
-import Header from '../components/layouts/Header';
+
+import Header from 'components/layouts/Header';
+import classnames from 'classnames';
 
 function BlogDetails({ match: { params } }) {
   const [content, setContent] = useState('');
@@ -25,16 +27,16 @@ function BlogDetails({ match: { params } }) {
     title: blogFile,
   };
 
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const headerToggler = (e) => {
     e.preventDefault();
-    setToggleMenu(!toggleMenu);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   document.addEventListener('click', (e) => {
     if (e.target.closest('.content')) {
-      setToggleMenu(false);
+      setIsMenuOpen(false);
     }
   });
 
@@ -45,10 +47,10 @@ function BlogDetails({ match: { params } }) {
     <>
       <Header
         logoSource="/images/logo.svg"
-        toggleMenu={toggleMenu}
+        isMenuOpen={isMenuOpen}
         headerToggler={headerToggler}
       />
-      <main className={toggleMenu ? 'content open' : 'content'}>
+      <main className={classnames('content', { open: isMenuOpen })}>
         <div className="spacer" data-height="96" />
         <div className="blog-page-section">
           <div className="container">

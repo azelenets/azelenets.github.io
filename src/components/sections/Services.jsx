@@ -1,25 +1,28 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import Pagetitle from '../elements/Pagetitle';
-import Service from '../elements/Service';
 
-import BackEndServiceImage from '../../images/services/backend.svg';
-import FrontEndServiceImage from '../../images/services/frontend.svg';
-import InfrastructureDevelopmentServiceImage from '../../images/services/server.svg';
-import DatabaseDevelopmentServiceImage from '../../images/services/database.svg';
-import TestingServiceImage from '../../images/services/testing.svg';
-import CodeAuditServiceImage from '../../images/services/code-audit.svg';
-import OptimizationServiceImage from '../../images/services/optimization.svg';
+import Pagetitle from 'components/elements/Pagetitle';
+import Service from 'components/elements/Service';
+
+import { COLOR_WHITE } from 'constants';
+
+import BackEndServiceImage from 'images/services/backend.svg';
+import FrontEndServiceImage from 'images/services/frontend.svg';
+import InfrastructureDevelopmentServiceImage from 'images/services/server.svg';
+import DatabaseDevelopmentServiceImage from 'images/services/database.svg';
+import TestingServiceImage from 'images/services/testing.svg';
+import CodeAuditServiceImage from 'images/services/code-audit.svg';
+import OptimizationServiceImage from 'images/services/optimization.svg';
 
 const servicesData = [
   {
     id: 1,
     icon: FrontEndServiceImage,
-    title: 'Frontend development',
+    title: 'Responsive Front-end Development',
     content:
-      'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    color: '#6C6CE5',
-    contentColor: 'light',
+      'Building web solutions that adapt to every device type. Integrating third-party APIs to add functionalities such as payment gateways, social media sharing, analytics, and more.',
+    color: COLOR_WHITE,
+    contentColor: 'dark',
   },
   {
     id: 2,
@@ -27,7 +30,7 @@ const servicesData = [
     title: 'Backend Development',
     content:
       'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    color: '#F9D74C',
+    color: COLOR_WHITE,
     contentColor: 'dark',
   },
   {
@@ -36,8 +39,8 @@ const servicesData = [
     title: 'Database development',
     content:
       'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    color: '#F97B8B',
-    contentColor: 'light',
+    color: COLOR_WHITE,
+    contentColor: 'dark',
   },
   {
     id: 4,
@@ -45,8 +48,8 @@ const servicesData = [
     title: 'Infrastructure development',
     content:
       'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    color: '#F97B8B',
-    contentColor: 'light',
+    color: COLOR_WHITE,
+    contentColor: 'dark',
   },
   {
     id: 5,
@@ -54,25 +57,25 @@ const servicesData = [
     title: 'Automated testing',
     content:
       'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    color: '#6C6CE5',
-    contentColor: 'light',
+    color: COLOR_WHITE,
+    contentColor: 'dark',
   },
   {
     id: 6,
     icon: CodeAuditServiceImage,
-    title: 'Code audit',
+    title: 'MVP Development',
     content:
-      'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    color: '#F9D74C',
+      'Assisting in building a Minimum Viable Product to test market viability.',
+    color: COLOR_WHITE,
     contentColor: 'dark',
   },
   {
     id: 7,
     icon: OptimizationServiceImage,
-    title: 'Performance optimization',
+    title: 'Optimization for Scale',
     content:
-      'Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.',
-    color: '#F9D74C',
+      'Enhancing the product’s capabilities to manage increased demand and usage.',
+    color: COLOR_WHITE,
     contentColor: 'dark',
   },
 ];

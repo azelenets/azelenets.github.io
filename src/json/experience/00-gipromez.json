@@ -1,0 +1,30 @@
+{
+  "id": "gipromez",
+  "position": "Software Engineer",
+  "companyName": "GIPROMEZ",
+  "companyWebsite": "https://gipromez.com.ua/en",
+  "years": "06/2012 - 09/2012",
+  "contentParagraphs": [
+    "Worked in the Automation team as a PLC Software Engineer, to design, build, test and implement industrial control systems software, utilising Programmable Logic Controllers (PLC's), Human Machine Interfaces (HMIs), Supervisory Control and Data Acquisition (SCADA) software packages and Industrial Network solutions."
+  ],
+  "responsibilities": [
+    "Creation of customized automation software (Lad), including visualization (HMI) for SIMATIC controllers, including safety applications.",
+    "Implementation of functions from the standardization or the application system component selection, and implementation of the virtual commissioning in interaction with the plant simulation.",
+    "Basic design: Technical conception in case of unspecified customer requirements.",
+    "Process-related technical detail clarification.",
+    "Ensuring required quality standards and clarification of process-specific technical details.",
+    "Commissioning (I/O check, bus technology, safety-relevant applications and automation software) and preparation of documentation for the PLC program and visualization."
+  ],
+  "achievements": [
+    "Successfully confirmed in practice the theoretical knowledge acquired at the institute and college.",
+    "Received commendation from head manager for proactive problem-solving and innovative solutions, demonstrating exceptional analytical and problem-solving skills.",
+    "Recognized for outstanding teamwork and dedication to delivering high-quality software solutions, contributing to the overall success of automation projects.",
+    "Implemented the solution for the complex metallurgical process.",
+    "Collaborated with cross-functional teams to develop custom industrial network solutions, optimizing communication between various components of the control system."
+  ],
+  "technologies": [
+    "microsoft_sql_server",
+    "simatic",
+    "step7"
+  ]
+}

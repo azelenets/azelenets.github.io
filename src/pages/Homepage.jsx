@@ -1,41 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Tooltip } from 'react-tooltip';
 import ReactCursorPosition from 'react-cursor-position';
 import { Element } from 'react-scroll';
-import Header from '../components/layouts/Header';
-import About from '../components/sections/About';
-import Brandlogos from '../components/sections/Brandlogos';
-import Contact from '../components/sections/Contact';
-import Experiences from '../components/sections/Experiences';
-import Herosection from '../components/sections/Herosection';
-import Services from '../components/sections/Services';
-import Testimonials from '../components/sections/Testimonials';
-import Works from '../components/sections/Works';
-import Education from '../components/sections/Education';
+import classnames from 'classnames';
+
+import Header from 'components/layouts/Header';
+import About from 'components/sections/About';
+import Contact from 'components/sections/Contact';
+import Experiences from 'components/sections/Experiences';
+import Herosection from 'components/sections/Herosection';
+import Services from 'components/sections/Services';
+import Testimonials from 'components/sections/Testimonials';
+import Works from 'components/sections/Works';
+import Education from 'components/sections/Education';
 
 function Homepage() {
-  document.body.classList.remove('dark');
+  useEffect(() => {
+    document.body.classList.remove('dark');
+  }, []);
 
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerToggler = (e) => {
     e.preventDefault();
-    setToggleMenu(!toggleMenu);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   document.addEventListener('click', (e) => {
     if (e.target.closest('.content-2')) {
-      setToggleMenu(false);
+      setIsMenuOpen(false);
     }
   });
 
   return (
     <>
-      <Header
-        light
-        logoSource="/images/logo-b-dark.svg"
-        toggleMenu={toggleMenu}
-        headerToggler={headerToggler}
-      />
-      <main className={toggleMenu ? 'content-2 open' : 'content-2'}>
+      <Header light isMenuOpen={isMenuOpen} headerToggler={headerToggler} />
+
+      <main className={classnames('content-2', { open: isMenuOpen })}>
         <Element name="section-home">
           <ReactCursorPosition>
             <Herosection light />
@@ -47,11 +47,11 @@ function Homepage() {
         <Element name="section-services">
           <Services />
         </Element>
-        <Element name="section-education">
-          <Education />
-        </Element>
         <Element name="section-experiences">
           <Experiences />
+        </Element>
+        <Element name="section-education">
+          <Education />
         </Element>
         <Element name="section-works">
           <Works />
@@ -59,13 +59,14 @@ function Homepage() {
         <Element name="section-testimoninal">
           <Testimonials />
         </Element>
-        <Element name="section-brandlogos">
-          <Brandlogos />
-        </Element>
+        {/* <Element name="section-brandlogos"> */}
+        {/*  <Brandlogos /> */}
+        {/* </Element> */}
         <Element name="section-contact">
           <Contact />
         </Element>
         <div className="spacer" data-height="96" />
+        <Tooltip id="application-tooltip" variant="dark" clickable />
       </main>
     </>
   );

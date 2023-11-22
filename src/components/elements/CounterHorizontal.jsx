@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CountUp from 'react-countup';
 
-function Counter({ counterItem, isVisible }) {
+function CounterHorizontal({ counterItem, isVisible }) {
   const { title, count, icon } = counterItem;
   const winWidth = window.innerWidth;
   const countQuery = () => {
@@ -11,10 +11,10 @@ function Counter({ counterItem, isVisible }) {
     }
     return <CountUp end={count} />;
   };
-  const handleIcon = () => `icon ${icon}`;
+
   return (
     <div className="fact-item">
-      <span className={handleIcon()} />
+      <span className={`icon ${icon}`} />
       <div className="details">
         <h3 className="mb-0 mt-0 number">
           <em className="count">{countQuery()}</em>
@@ -25,11 +25,11 @@ function Counter({ counterItem, isVisible }) {
   );
 }
 
-Counter.defaultProps = {
+CounterHorizontal.defaultProps = {
   isVisible: false,
 };
 
-Counter.propTypes = {
+CounterHorizontal.propTypes = {
   counterItem: PropTypes.shape({
     title: PropTypes.string,
     count: PropTypes.number,
@@ -38,4 +38,4 @@ Counter.propTypes = {
   isVisible: PropTypes.bool,
 };
 
-export default Counter;
+export default CounterHorizontal;
