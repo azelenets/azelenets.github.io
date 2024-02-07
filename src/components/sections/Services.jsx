@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import Pagetitle from '../elements/Pagetitle';
-import Service from '../elements/Service';
 
-import BackEndServiceImage from '../../images/services/backend.svg';
-import FrontEndServiceImage from '../../images/services/frontend.svg';
-import InfrastructureDevelopmentServiceImage from '../../images/services/server.svg';
-import DatabaseDevelopmentServiceImage from '../../images/services/database.svg';
-import TestingServiceImage from '../../images/services/testing.svg';
-import CodeAuditServiceImage from '../../images/services/code-audit.svg';
-import OptimizationServiceImage from '../../images/services/optimization.svg';
+import Pagetitle from 'components/elements/Pagetitle';
+import Service from 'components/elements/Service';
+
+import BackEndServiceImage from 'images/services/backend.svg';
+import FrontEndServiceImage from 'images/services/frontend.svg';
+import InfrastructureDevelopmentServiceImage from 'images/services/server.svg';
+import DatabaseDevelopmentServiceImage from 'images/services/database.svg';
+import TestingServiceImage from 'images/services/testing.svg';
+import CodeAuditServiceImage from 'images/services/code-audit.svg';
+import OptimizationServiceImage from 'images/services/optimization.svg';
 
 const servicesData = [
   {

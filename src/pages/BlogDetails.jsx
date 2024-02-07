@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Markdown from 'markdown-to-jsx';
 import Disqus from 'disqus-react';
-import Header from '../components/layouts/Header';
+
+import Header from 'components/layouts/Header';
 
 function BlogDetails({ match: { params } }) {
   const [content, setContent] = useState('');

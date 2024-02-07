@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb',
+  extends: ['react-app', 'airbnb'],
   overrides: [
     {
       env: {
@@ -22,5 +22,13 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
 };

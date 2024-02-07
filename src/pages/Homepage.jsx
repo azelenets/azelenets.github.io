@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 import ReactCursorPosition from 'react-cursor-position';
 import { Element } from 'react-scroll';
-import Header from '../components/layouts/Header';
-import About from '../components/sections/About';
-import Contact from '../components/sections/Contact';
-import Experiences from '../components/sections/Experiences';
-import Herosection from '../components/sections/Herosection';
-import Services from '../components/sections/Services';
-import Testimonials from '../components/sections/Testimonials';
-import Works from '../components/sections/Works';
-import Education from '../components/sections/Education';
+
+import Header from 'components/layouts/Header';
+import About from 'components/sections/About';
+import Contact from 'components/sections/Contact';
+import Experiences from 'components/sections/Experiences';
+import Herosection from 'components/sections/Herosection';
+import Services from 'components/sections/Services';
+import Testimonials from 'components/sections/Testimonials';
+import Works from 'components/sections/Works';
+import Education from 'components/sections/Education';
 
 function Homepage() {
   document.body.classList.remove('dark');

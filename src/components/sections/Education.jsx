@@ -1,9 +1,10 @@
 import React from 'react';
-import Pagetitle from '../elements/Pagetitle';
-import Timeline from '../elements/Timeline';
 
-import educationDpc from '../../json/education/00-dpc.json';
-import educationDpu from '../../json/education/01-dpu.json';
+import educationDpc from 'json/education/00-dpc.json';
+import educationDpu from 'json/education/01-dpu.json';
+
+import Pagetitle from 'components/elements/Pagetitle';
+import Timeline from 'components/elements/Timeline';
 
 function Education() {
   const educationData = [

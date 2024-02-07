@@ -1,12 +1,14 @@
 import React from 'react';
 import TrackVisibility from 'react-on-screen';
 import moment from 'moment';
-import Counter from '../elements/Counter';
-import Pagetitle from '../elements/Pagetitle';
-// import Skill from '../elements/Skill';
-import avatarImage from '../../images/avatar-without-bg.png';
 
-import counterData from '../../json/about/counters';
+import counterData from 'json/about/counters';
+
+import Counter from 'components/elements/Counter';
+import Pagetitle from 'components/elements/Pagetitle';
+// import Skill from 'components/elements/Skill';
+
+import avatarImage from 'images/avatar-without-bg.png';
 
 const aboutContent = {
   avatarImage,

@@ -1,9 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
-import Pagetitle from '../elements/Pagetitle';
-import Testimonial from '../elements/Testimonial';
-import JeniaZelkindImage from '../../images/testimonials/jenia_zelkind.jpeg';
-import YuliaIoffeImage from '../../images/testimonials/yulia_ioffe.jpeg';
+
+import Pagetitle from 'components/elements/Pagetitle';
+import Testimonial from 'components/elements/Testimonial';
+
+import JeniaZelkindImage from 'images/testimonials/jenia_zelkind.jpeg';
+import YuliaIoffeImage from 'images/testimonials/yulia_ioffe.jpeg';
 
 const sliderData = [
   {

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/layouts/Header';
-import Blog from '../components/elements/Blog';
-import Pagination from '../components/elements/Pagination';
+
+import Header from 'components/layouts/Header';
+import Blog from 'components/elements/Blog';
+import Pagination from 'components/elements/Pagination';
 
 const allBlogs = [
   {

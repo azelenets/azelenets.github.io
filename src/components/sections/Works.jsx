@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
-import Pagetitle from '../elements/Pagetitle';
-import Portfolio from '../elements/Portfolio';
+
+import Pagetitle from 'components/elements/Pagetitle';
+import Portfolio from 'components/elements/Portfolio';
 
 const filters = [
   {

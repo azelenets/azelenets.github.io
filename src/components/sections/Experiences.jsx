@@ -1,17 +1,18 @@
 import React from 'react';
-import Pagetitle from '../elements/Pagetitle';
-import Timeline from '../elements/Timeline';
 
-import gipromezExperience from '../../json/experience/00-gipromez.json';
-import cSoftExperience from '../../json/experience/01-csoft.json';
-import agilieExperience from '../../json/experience/02-agilie.json';
-import gridDynamicsExperience from '../../json/experience/03-griddynamics.json';
-import loopMeExperience from '../../json/experience/04-loopme.json';
-import yalantisExperience from '../../json/experience/05-yalantis.json';
-import aprioritExperience from '../../json/experience/06-apriorit.json';
-import slobodaStudioExperience from '../../json/experience/07-sloboda-studio.json';
-import theSkillsExperience from '../../json/experience/08-the-skills.json';
-import seekingAlphaExperience from '../../json/experience/09-seekingalpha.json';
+import Pagetitle from 'components/elements/Pagetitle';
+import Timeline from 'components/elements/Timeline';
+
+import gipromezExperience from 'json/experience/00-gipromez.json';
+import cSoftExperience from 'json/experience/01-csoft.json';
+import agilieExperience from 'json/experience/02-agilie.json';
+import gridDynamicsExperience from 'json/experience/03-griddynamics.json';
+import loopMeExperience from 'json/experience/04-loopme.json';
+import yalantisExperience from 'json/experience/05-yalantis.json';
+import aprioritExperience from 'json/experience/06-apriorit.json';
+import slobodaStudioExperience from 'json/experience/07-sloboda-studio.json';
+import theSkillsExperience from 'json/experience/08-the-skills.json';
+import seekingAlphaExperience from 'json/experience/09-seekingalpha.json';
 
 const preprocessExperience = (experience = {}) => {
   const {
