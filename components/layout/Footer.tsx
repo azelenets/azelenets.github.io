@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
                 <span className="text-primary/20">|</span>
                 <a className="hover:text-primary transition-colors cursor-pointer">SYSTEM_LOGS</a>
                 <span className="text-primary/20">|</span>
-                <span className="text-hazard">© 2024 ANDRII_ZELENETS_STRATEGIC</span>
+                <span className="text-hazard">© {(new Date).getFullYear()} ANDRII_ZELENETS_STRATEGIC</span>
             </div>
         </div>
     </footer>
