@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from '@/types';
 import { navItems } from '@/constants/navigation';
 
@@ -8,6 +8,20 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
+  const [utcTime, setUtcTime] = useState(() => {
+    const now = new Date();
+    return now.toUTCString().split(' ')[4] + ' UTC';
+  });
+
+  useEffect(() => {
+    const tick = () => {
+      const now = new Date();
+      setUtcTime(now.toUTCString().split(' ')[4] + ' UTC');
+    };
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-primary/20">
       {/* Top Bar */}
@@ -103,7 +117,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
 
           <div className="flex items-center gap-6 text-[9px] font-bold tracking-[0.2em] text-primary/40">
             <span className="hidden md:inline">ENCRYPT: <span className="text-primary/60">AES-256_ACTIVE</span></span>
-            <span className="text-primary">02:14:45 UTC</span>
+            <span id="localTime" className="text-primary">{utcTime}</span>
           </div>
         </div>
       </div>
