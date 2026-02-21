@@ -6,7 +6,7 @@ const MissionLog: React.FC = () => {
   return (
     <div
       className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full px-6 py-12 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full space-y-12">
+      <div className="max-w-[1500px] mx-auto w-full px-6 space-y-12">
         {/* Header */}
         <div className="mb-16 space-y-4">
           <div className="flex items-center gap-3">

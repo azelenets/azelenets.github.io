@@ -4,7 +4,7 @@ import CertCard from './CertCard';
 
 const Credentials: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto w-full space-y-12 px-6 py-16 flex-grow">
+    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 flex-grow">
       {/* Header Title */}
       <div className="mb-12 border-l-4 border-primary pl-8 py-2">
         <div className="text-primary font-bold text-xs tracking-[0.4em] uppercase mb-1">Personnel Authorization File</div>

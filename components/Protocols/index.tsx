@@ -10,8 +10,8 @@ interface ProtocolsProps {
 
 const Protocols: React.FC<ProtocolsProps> = ({ setView }) => {
   return (
-    <div className="flex flex-col items-center py-12 px-6 md:px-20 lg:px-40 relative z-10 w-full">
-      <div className="max-w-7xl mx-auto w-full space-y-12">
+    <div className="flex flex-col items-center py-12 px-6 relative z-10 w-full">
+      <div className="max-w-[1500px] mx-auto w-full px-6 space-y-12">
 
         {/* Top Stats */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-1 font-mono">

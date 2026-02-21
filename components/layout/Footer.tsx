@@ -3,7 +3,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <footer className="mt-auto border-t border-primary/20 bg-black/80 p-6 z-50">
-        <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8 px-8">
+        <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8 px-6 px-8">
             <div className="flex gap-12">
                 <div>
                     <div className="text-[8px] text-primary font-bold uppercase mb-2">Data_Encryption</div>

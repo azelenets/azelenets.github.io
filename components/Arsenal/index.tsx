@@ -7,7 +7,7 @@ import SpecCard from './SpecCard';
 
 const Arsenal: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto w-full space-y-12 px-6 py-16 relative">
+    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
 
       {/* Header */}
       <div className="mb-16 relative">

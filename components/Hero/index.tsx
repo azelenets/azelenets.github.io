@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({ setView }) => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col lg:flex-row items-center gap-16 py-24">
+      <div className="max-w-[1500px] mx-auto w-full flex-1 flex flex-col lg:flex-row items-center px-6 gap-16 py-24">
         {/* Left Content */}
         <div className="flex-1 space-y-8 z-10">
           <div className="space-y-2">
@@ -101,7 +101,7 @@ const Hero: React.FC<HeroProps> = ({ setView }) => {
 
       {/* Bottom Stats */}
       <div className="flex w-full border-t border-primary/20 bg-black/50 py-6">
-        <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-[1600px] w-full mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           <StatBlock label="Nodes_Managed" value="150+" barColor="bg-primary" width="66%" />
           <StatBlock label="Uptime_Record" value="99.9%" barColor="bg-hazard" width="99%" />
           <StatBlock label="Protocols_Mastered" value="20+" barColor="bg-primary" width="50%" />

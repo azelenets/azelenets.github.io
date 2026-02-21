@@ -45,7 +45,7 @@ const labCardChildren: Record<string, React.ReactNode> = {
 
 const Laboratory: React.FC = () => {
   return (
-    <div className="flex flex-col px-6 md:px-20 lg:px-40 py-12 relative overflow-hidden w-full">
+    <div className="flex flex-col px-6 py-12 relative overflow-hidden w-full">
       <div className="absolute top-20 right-10 hidden xl:block opacity-10 pointer-events-none">
         <svg height="400" viewBox="0 0 100 100" width="400">
           <circle className="text-primary" cx="50" cy="50" fill="none" r="48" stroke="currentColor" strokeWidth="0.1"></circle>
@@ -54,7 +54,7 @@ const Laboratory: React.FC = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full space-y-12">
+      <div className="max-w-[1500px] mx-auto w-full px-6 space-y-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-4">
