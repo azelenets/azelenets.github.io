@@ -59,7 +59,7 @@ const Protocols: React.FC<ProtocolsProps> = ({ setView }) => {
 
         {/* CTA */}
         <section className="relative font-mono overflow-hidden py-10">
-          <div className="hud-border bg-surface-terminal/80 p-12 md:p-20 flex flex-col items-center gap-8 relative z-10 slanted-clip mx-auto max-w-4xl">
+          <div className="hud-border bg-surface-terminal/80 p-12 md:p-20 flex flex-col items-center gap-8 relative z-10 slanted-clip mx-auto max-w-[1500px]">
             <div className="text-[10px] text-alert font-bold tracking-[0.3em] uppercase mb-4 animate-pulse">// SYSTEM_READY //</div>
             <h2 className="text-white text-3xl md:text-5xl font-black text-center uppercase tracking-tighter max-w-3xl">
               Initiate Next <span className="text-primary">Operational Phase?</span>
