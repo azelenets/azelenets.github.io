@@ -59,7 +59,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
               <div className="flex items-center gap-2 mt-1">
                 <span className="text-[8px] text-primary/60 font-bold tracking-[0.3em]">SR_SOFTWARE_ENGINEER</span>
                 <span className="h-[1px] w-8 bg-primary/30"></span>
-                <span className="text-[8px] text-experimental/80 font-bold animate-pulse">L7_AUTH_REQ</span>
+                <span className="text-[8px] text-experimental/80 font-bold animate-pulse">WEB_AUTOMATION</span>
               </div>
             </div>
           </div>

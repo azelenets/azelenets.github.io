@@ -8,6 +8,7 @@ import Arsenal from '@/components/Arsenal';
 import Protocols from '@/components/Protocols';
 import Credentials from '@/components/Credentials';
 import Footer from '@/components/layout/Footer';
+import PrivacyBanner from '@/components/layout/PrivacyBanner';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>(View.HOME);
@@ -44,6 +45,7 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
+      <PrivacyBanner />
     </div>
   );
 };
