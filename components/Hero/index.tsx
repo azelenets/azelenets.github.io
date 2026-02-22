@@ -40,9 +40,8 @@ const Hero: React.FC<HeroProps> = ({ setView }) => {
 
           <div className="hud-border p-6 bg-white/5 backdrop-blur-sm max-w-xl">
             <p className="text-lg text-slate-400 border-l-2 border-primary pl-4">
-              Senior Systems Engineer with 13+ years of specialized combat in high-load environments.
-              Mastering <span className="text-white font-bold">Distributed Architectures</span>, <span
-              className="text-white font-bold">Quantum Encryption</span>, and <span className="text-white font-bold">Neural Integration</span>.
+              Senior Software Engineer with 13+ years of specialized combat in high-load environments.{' '}
+              Mastering <span className="text-white font-bold">Distributed Architectures, Secure, High-Performance systems</span>.
             </p>
           </div>
 
