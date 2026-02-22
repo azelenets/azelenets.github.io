@@ -7,11 +7,34 @@ interface NavigationProps {
   setView: (view: View) => void;
 }
 
+type GeoState =
+  | { status: 'pending' }
+  | { status: 'granted'; lat: number; lon: number }
+  | { status: 'denied' };
+
+const formatCoord = (val: number, posLabel: string, negLabel: string) => {
+  const dir = val >= 0 ? posLabel : negLabel;
+  return `${Math.abs(val).toFixed(4)}° ${dir}`;
+};
+
 const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
   const [utcTime, setUtcTime] = useState(() => {
     const now = new Date();
     return now.toUTCString().split(' ')[4] + ' UTC';
   });
+
+  const [geo, setGeo] = useState<GeoState>({ status: 'pending' });
+
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      setGeo({ status: 'denied' });
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => setGeo({ status: 'granted', lat: pos.coords.latitude, lon: pos.coords.longitude }),
+      () => setGeo({ status: 'denied' }),
+    );
+  }, []);
 
   useEffect(() => {
     const tick = () => {
@@ -105,9 +128,18 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
               </span>
               <div>SYSTEM_STATUS: <span className="text-white">OPERATIONAL</span></div>
             </div>
-            <div className="hidden sm:flex items-center gap-2 text-primary/60">
-              <span className="material-symbols-outlined text-[10px]">location_on</span>
-              <span>COORDS: <span className="text-white">40.7128° N, 74.0060° W</span></span>
+            <div id="userLocation" className="hidden sm:flex items-center gap-2 text-primary/60">
+              {geo.status === 'granted' ? (
+                <>
+                  <span className="material-symbols-outlined text-[10px]">location_on</span>
+                  <span>COORDS: <span className="text-white">{formatCoord(geo.lat, 'N', 'S')}, {formatCoord(geo.lon, 'E', 'W')}</span></span>
+                </>
+              ) : (
+                <>
+                  <span className="material-symbols-outlined text-[10px]">location_off</span>
+                  <span>{geo.status === 'pending' ? 'ACQUIRING_LOCATION...' : 'LOC_UNAVAILABLE'}</span>
+                </>
+              )}
             </div>
              <div className="hidden sm:flex items-center gap-2 text-primary/60">
               <span className="material-symbols-outlined text-[10px]">public</span>
