@@ -16,18 +16,55 @@ const Hero: React.FC<HeroProps> = ({ setView }) => {
       .catch(error => console.error('Ошибка:', error));
   }, []);
 
+  useEffect(() => {
+    if (!('vibrate' in navigator)) return;
+
+    const DOT = 100, DASH = 300, INTRA = 100, INTER = 300, WORD = 700;
+    const morseMap: Record<string, string> = {
+      A: '.-',  B: '-...', C: '-.-.', D: '-..', E: '.', F: '..-.',
+      G: '--.', H: '....', I: '..',   J: '.---', K: '-.-', L: '.-..',
+      M: '--',  N: '-.',   O: '---',  P: '.--.', Q: '--.-', R: '.-.',
+      S: '...', T: '-',   U: '..-',  V: '...-', W: '.--', X: '-..-',
+      Y: '-.--', Z: '--..',
+    };
+    const pattern: number[] = [];
+    const words = 'CONTACT ME'.split(' ');
+
+    words.forEach((word, wordIndex) => {
+      word.split('').forEach((char, charIndex) => {
+        const code = morseMap[char];
+        if (!code) return;
+
+        code.split('').forEach((morseSymbol, morseSymbolIndex) => {
+          pattern.push(morseSymbol === '.' ? DOT : DASH);
+          if (morseSymbolIndex < code.length - 1) pattern.push(INTRA);
+        });
+
+        if (charIndex < word.length - 1) pattern.push(INTER);
+      });
+
+      if (wordIndex < words.length - 1) pattern.push(WORD);
+    });
+    navigator.vibrate(pattern);
+  }, []);
+
   return (
     <div
       className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full px-6 py-12 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div
         className="absolute left-6 bottom-48 hidden xl:block text-[9px] leading-tight text-primary/40 space-y-1 font-mono">
-        <p>HOST: ZELENETS_TACTICAL_SRV</p>
         <p>ENCRYPTION: AES-256-GCM</p>
         <p>IP: {localIP}</p>
-        <p>PLATFORM: {'platform' in navigator ? navigator.platform : 'x64_NEURAL_LINK'}</p>
-        <p>CPU: {'hardwareConcurrency' in navigator ? `${navigator.hardwareConcurrency} CORES` : 'UNKNOWN_TOPOLOGY'}</p>
-        <p>MEMORY: {'deviceMemory' in navigator ? `${navigator.deviceMemory} GB` : 'UNKNOWN'}</p>
+        {'platform' in navigator && (
+          <p>PLATFORM: {navigator.platform}</p>
+        )}
+        {'hardwareConcurrency' in navigator && (
+          <p>CPU: {`${navigator.hardwareConcurrency}_CORES`}</p>
+        )}
+        {'deviceMemory' in navigator && (
+          <p>MEMORY: {`${navigator.deviceMemory}_GB`}</p>
+        )}
         <div className="w-32 h-1 bg-white/5 mt-2">
           <div className="w-3/4 h-full bg-primary/50"></div>
         </div>
