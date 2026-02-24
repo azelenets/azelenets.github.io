@@ -27,6 +27,11 @@ export const filterLabels: string[] = [
   'UI_RECON',
   'DB_CLUSTERS',
   'SEC_PROTOCOLS',
+  'AI_TOOLS',
+  'TEST_OPS',
+  'UI_FRAMEWORKS',
+  'BACKEND_FRAMEWORKS',
+  'DOCUMENTATION',
 ];
 
 export const stackColumns: StackColumnData[] = [
@@ -36,8 +41,8 @@ export const stackColumns: StackColumnData[] = [
     id: 'LANG-99',
     desc: 'High-performance low-level system integration focus.',
     items: [
-      { name: 'Rust', version: 'v1.75.0', status: 'DEPLOY_READY', isCritical: true },
-      { name: 'Go (Golang)', version: 'v1.22', status: 'CONCURRENCY_OP' },
+      { name: 'Ruby', version: 'v4.0.1.', status: 'DEPLOY_READY', isCritical: true },
+      { name: 'JavaScript', version: 'ES2026', status: 'CONCURRENCY_OP' },
       { name: 'TypeScript', version: 'v5.4', status: 'TYPED_INTERFACE' },
     ],
   },
@@ -48,6 +53,7 @@ export const stackColumns: StackColumnData[] = [
     desc: 'Orchestrating large-scale autonomous deployments.',
     items: [
       { name: 'Kubernetes', version: 'K8s_v1.29', status: 'GRID_CONTROL', isMaster: true },
+      { name: 'Docker', version: 'K8s_v1.29', status: 'GRID_CONTROL', isMaster: true },
       { name: 'AWS_Solutions', version: 'GLOBAL_EXP', status: 'PROD_SCALE' },
       { name: 'Terraform', version: 'v1.7.0', status: 'I_A_C_PROTOCOL' },
     ],
@@ -61,6 +67,61 @@ export const stackColumns: StackColumnData[] = [
       { name: 'PostgreSQL', version: 'v16.2', status: 'PERSISTENCE_LAYER' },
       { name: 'Redis_Cache', version: 'v7.0', status: 'MEMORY_BUFFER' },
       { name: 'gRPC / Protobuf', version: 'PROTO_v3', status: 'RPC_TRANSPORT' },
+    ],
+  },
+  {
+    type: '04_AI',
+    title: 'AI_Tools',
+    id: 'AI-66',
+    desc: 'Autonomous intelligence augmentation and LLM integration.',
+    items: [
+      { name: 'Claude', version: 'claude-sonnet-4-6', status: 'PRIME_DIRECTIVE', isCritical: true },
+      { name: 'Codex', version: 'GPT-4o', status: 'NEURAL_INTERFACE' },
+      { name: 'Cursor', version: 'v0.45', status: 'CODE_AUGMENT' },
+    ],
+  },
+  {
+    type: '07_BKN',
+    title: 'Backend_Frameworks',
+    id: 'BKN-33',
+    desc: 'Server-side command structures powering high-throughput operations.',
+    items: [
+      { name: 'Ruby_on_Rails', version: 'v8.0', status: 'CORE_COMMAND', isCritical: true },
+      { name: 'NestJS', version: 'v10.0', status: 'API_FORTRESS' },
+      { name: 'GraphQL', version: 'v16.0', status: 'QUERY_LAYER' },
+    ],
+  },
+  {
+    type: '06_UI',
+    title: 'UI_Frameworks',
+    id: 'UI-44',
+    desc: 'Reactive interface construction and design system command.',
+    items: [
+      { name: 'React', version: 'v19.0', status: 'RENDER_PRIME', isCritical: true },
+      { name: 'Tailwind_CSS', version: 'v4.0', status: 'STYLE_ENGINE' },
+      { name: 'shadcn/ui', version: 'v2.0', status: 'COMPONENT_GRID' },
+    ],
+  },
+  {
+    type: '05_TEST',
+    title: 'Test_Ops',
+    id: 'TEST-55',
+    desc: 'Precision strike validation across unit, integration, and E2E layers.',
+    items: [
+      { name: 'RSpec', version: 'v3.13', status: 'UNIT_STRIKE', isCritical: true },
+      { name: 'Cypress', version: 'v13.0', status: 'E2E_SWEEP' },
+      { name: 'Vitest', version: 'v1.6', status: 'COMPONENT_SCAN' },
+    ],
+  },
+  {
+    type: '08_DOCS',
+    title: 'Documentation',
+    id: 'DOCS-22',
+    desc: 'Structured knowledge systems for team alignment and API clarity.',
+    items: [
+      { name: 'Swagger / OpenAPI', version: 'v3.1', status: 'API_MANIFEST', isCritical: true },
+      { name: 'Storybook', version: 'v8.0', status: 'COMPONENT_LOG' },
+      { name: 'Confluence', version: 'CLOUD', status: 'INTEL_ARCHIVE' },
     ],
   },
 ];
