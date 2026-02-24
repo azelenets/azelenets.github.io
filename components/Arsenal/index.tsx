@@ -12,24 +12,14 @@ const Arsenal: React.FC = () => {
       {/* Header */}
       <div className="mb-16 relative">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-l-4 border-primary pl-8">
-          <div className="max-w-2xl">
+          <div className="max-w-[1500px]">
             <p className="text-primary text-xs font-bold mb-2 tracking-[0.4em] uppercase">Tactical Capability Overview</p>
-            <h1 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4 leading-tight">
+            <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter uppercase">
               Tech Stack <span className="text-primary">Arsenal</span> Matrix
             </h1>
             <p className="text-slate-500 text-sm font-medium leading-relaxed uppercase">
               Structural schematic of offensive and defensive engineering assets. High-density deployment capabilities across distributed infrastructure and enterprise-grade environments.
             </p>
-          </div>
-          <div className="flex flex-col items-end gap-1 font-mono shrink-0">
-            <span className="text-[10px] text-primary/60 uppercase">System_Load: Nominal</span>
-            <div className="flex gap-1.5 mb-1">
-              <div className="w-10 h-1 bg-primary"></div>
-              <div className="w-10 h-1 bg-primary"></div>
-              <div className="w-10 h-1 bg-primary"></div>
-              <div className="w-10 h-1 bg-primary/20"></div>
-            </div>
-            <span className="text-4xl font-bold text-primary leading-none">08 <span className="text-xs text-slate-600">UNITS</span></span>
           </div>
         </div>
       </div>

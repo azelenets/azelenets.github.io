@@ -10,10 +10,10 @@ const MissionLog: React.FC = () => {
         {/* Header */}
         <div className="mb-16 space-y-4">
           <div className="flex items-center gap-3">
-            <span className="hazard-stripe h-1 w-12"></span>
-            <span className="text-hazard font-bold text-xs tracking-[0.4em] uppercase">Deployment Archives</span>
+            <span className="hazard-stripe h-4 w-12"></span>
+            <span className="text-hazard font-bold text-xs tracking-[0.3em] uppercase">Sector 2 // Deployment Archives</span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-black text-white leading-none tracking-tighter">
+          <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter uppercase">
             MISSION LOG <span className="text-primary font-light">//</span> HISTORY
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-[10px] text-primary/40 tracking-widest border-t border-primary/10 pt-4">

@@ -32,9 +32,9 @@ const Protocols: React.FC<ProtocolsProps> = ({ setView }) => {
               <span className="text-alert font-mono text-sm font-bold tracking-[0.2em] uppercase">Operational Doctrine</span>
               <div className="h-[1px] flex-1 bg-alert/20"></div>
             </div>
-            <h2 className="text-white text-5xl md:text-6xl font-black leading-none tracking-tighter uppercase font-mono shadow-red-500 drop-shadow-sm">
+            <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter uppercase">
               Strategic Protocols
-            </h2>
+            </h1>
             <p className="text-primary/60 font-mono text-sm max-w-xl uppercase tracking-tighter">
               Executing mission-critical directives to ensure absolute engineering dominance and structural integrity across all deployment theaters.
             </p>

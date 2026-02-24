@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from '@/types';
 import StatBlock from './StatBlock';
 
@@ -7,6 +7,15 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ setView }) => {
+  const [localIP, setLocalIP] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => setLocalIP(data.ip))
+      .catch(error => console.error('Ошибка:', error));
+  }, []);
+
   return (
     <div
       className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full px-6 py-12 relative overflow-hidden">
@@ -14,9 +23,11 @@ const Hero: React.FC<HeroProps> = ({ setView }) => {
       <div
         className="absolute left-6 bottom-48 hidden xl:block text-[9px] leading-tight text-primary/40 space-y-1 font-mono">
         <p>HOST: ZELENETS_TACTICAL_SRV</p>
-        <p>UPTIME: 99.998%</p>
         <p>ENCRYPTION: AES-256-GCM</p>
-        <p>ARCH: x64_NEURAL_LINK</p>
+        <p>IP: {localIP}</p>
+        <p>PLATFORM: {'platform' in navigator ? navigator.platform : 'x64_NEURAL_LINK'}</p>
+        <p>CPU: {'hardwareConcurrency' in navigator ? `${navigator.hardwareConcurrency} CORES` : 'UNKNOWN_TOPOLOGY'}</p>
+        <p>MEMORY: {'deviceMemory' in navigator ? `${navigator.deviceMemory} GB` : 'UNKNOWN'}</p>
         <div className="w-32 h-1 bg-white/5 mt-2">
           <div className="w-3/4 h-full bg-primary/50"></div>
         </div>
@@ -28,8 +39,7 @@ const Hero: React.FC<HeroProps> = ({ setView }) => {
           <div className="space-y-2">
             <div className="flex items-center gap-3">
               <span className="hazard-stripe h-4 w-12"></span>
-              <span
-                className="text-hazard font-bold text-xs tracking-[0.3em] uppercase">Tactical Software Engineering</span>
+              <span className="text-hazard font-bold text-xs tracking-[0.3em] uppercase">Sector 1 // Tactical Software Engineering</span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">
               ARCHITECTING <br/>
@@ -39,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ setView }) => {
           </div>
 
           <div className="hud-border p-6 bg-white/5 backdrop-blur-sm max-w-xl">
-            <p className="text-lg text-slate-400 border-l-2 border-primary pl-4">
+            <p className="text-lg text-slate-400 border-l-2 border-primary pl-4 uppercase">
               Senior Software Engineer with 13+ years of specialized combat in high-load environments.{' '}
               Mastering <span className="text-white font-bold">Distributed Architectures, Secure, High-Performance systems</span>.
             </p>

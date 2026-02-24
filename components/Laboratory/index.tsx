@@ -62,7 +62,7 @@ const Laboratory: React.FC = () => {
               <span className="hazard-stripe h-4 w-12"></span>
               <span className="text-hazard font-bold text-xs tracking-[0.3em] uppercase">Sector 7 / Experimental Prototypes</span>
             </div>
-            <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter">
+            <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter uppercase">
               R&D EXPERIMENTAL <span className="text-primary">LAB</span>
             </h1>
           </div>
