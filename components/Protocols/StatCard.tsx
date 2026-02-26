@@ -1,15 +1,14 @@
-import React from 'react';
+import { memo } from 'react';
 
 interface StatCardProps {
   id: string;
   label: string;
   value: string;
   progress: number;
-  color: string;
   segmented?: boolean;
 }
 
-const StatCard: React.FC<StatCardProps> = ({ id, label, value, progress, segmented }) => (
+const StatCard = ({ id, label, value, progress, segmented }: StatCardProps) => (
   <div className="bg-surface-terminal border border-primary/10 p-6 relative group overflow-hidden hover:border-primary/40 transition-colors">
     <div className="absolute top-0 right-0 p-1 text-[10px] text-primary/30">{id}</div>
     <p className="text-primary/60 text-[10px] uppercase mb-1">{label}</p>
@@ -28,4 +27,4 @@ const StatCard: React.FC<StatCardProps> = ({ id, label, value, progress, segment
   </div>
 );
 
-export default StatCard;
+export default memo(StatCard);

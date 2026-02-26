@@ -8,20 +8,23 @@ const MissionLog: React.FC = () => {
       className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full px-6 py-12 relative overflow-hidden">
       <div className="max-w-[1500px] mx-auto w-full px-6 space-y-12">
         {/* Header */}
-        <div className="mb-16 space-y-4">
-          <div className="flex items-center gap-3">
-            <span className="hazard-stripe h-4 w-12"></span>
-            <span className="text-hazard font-bold text-xs tracking-[0.3em] uppercase">Sector 2 // Deployment Archives</span>
-          </div>
-          <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter uppercase">
-            MISSION LOG <span className="text-primary font-light">//</span> HISTORY
-          </h1>
-          <div className="flex flex-wrap items-center gap-4 text-[10px] text-primary/40 tracking-widest border-t border-primary/10 pt-4">
-            <span>ENTRIES: 04</span>
-            <span>|</span>
-            <span>CLEARANCE: LEVEL_5</span>
-            <span>|</span>
-            <span>STATUS: ARCHIVED_DEEP_DIVE</span>
+
+        <div className="mb-16 relative">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-l-4 border-primary pl-8">
+            <div className="max-w-[1500px]">
+              <p className="text-primary text-xs font-bold mb-2 tracking-[0.4em] uppercase">Deployment Archives</p>
+              <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter uppercase">
+                MISSION LOG <span className="text-primary font-light">//</span> {' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">HISTORY</span>
+              </h1>
+              <div className="flex flex-wrap items-center gap-4 text-[10px] text-primary/40 tracking-widest border-t border-primary/10 pt-4">
+                <span>ENTRIES: 04</span>
+                <span>|</span>
+                <span>CLEARANCE: LEVEL_5</span>
+                <span>|</span>
+                <span>STATUS: ARCHIVED_DEEP_DIVE</span>
+              </div>
+            </div>
           </div>
         </div>
 

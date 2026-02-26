@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 interface CertCardProps {
   id: string;
@@ -7,7 +7,7 @@ interface CertCardProps {
   full?: boolean;
 }
 
-const CertCard: React.FC<CertCardProps> = ({ id, hash, title, full }) => (
+const CertCard = ({ id, hash, title, full }: CertCardProps) => (
   <div className={`p-4 border border-white/10 bg-panel-dark hover:border-primary/50 transition-colors group relative overflow-hidden ${full ? 'col-span-full' : ''}`}>
     <div className="absolute right-0 top-0 text-[40px] opacity-5 text-white pointer-events-none group-hover:opacity-10 transition-opacity">{id}</div>
     <div className="text-primary text-[8px] font-bold tracking-widest mb-1">KEY_HASH: {hash}</div>
@@ -21,4 +21,4 @@ const CertCard: React.FC<CertCardProps> = ({ id, hash, title, full }) => (
   </div>
 );
 
-export default CertCard;
+export default memo(CertCard);

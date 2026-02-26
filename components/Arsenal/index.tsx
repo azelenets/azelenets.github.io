@@ -15,9 +15,11 @@ const Arsenal: React.FC = () => {
           <div className="max-w-[1500px]">
             <p className="text-primary text-xs font-bold mb-2 tracking-[0.4em] uppercase">Tactical Capability Overview</p>
             <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter uppercase">
-              Tech Stack <span className="text-primary">Arsenal</span> Matrix
+              Tech Stack
+              {' '}<span className="text-primary font-light">//</span>{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Arsenal Matrix</span>
             </h1>
-            <p className="text-slate-500 text-sm font-medium leading-relaxed uppercase">
+            <p className="text-slate-500 text-sm font-medium leading-relaxed uppercase pt-2">
               Structural schematic of offensive and defensive engineering assets. High-density deployment capabilities across distributed infrastructure and enterprise-grade environments.
             </p>
           </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 interface SpecCardProps {
   title: string;
@@ -6,7 +6,7 @@ interface SpecCardProps {
   img: string;
 }
 
-const SpecCard: React.FC<SpecCardProps> = ({ title, subtitle, img }) => (
+const SpecCard = ({ title, subtitle, img }: SpecCardProps) => (
   <div className="group relative overflow-hidden bg-surface-terminal border border-primary/10 aspect-video grayscale hover:grayscale-0 transition-all cursor-pointer">
     <div className="absolute inset-0 bg-primary/20 z-10 opacity-40 group-hover:opacity-10 transition-opacity"></div>
     <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url('${img}')` }}></div>
@@ -18,4 +18,4 @@ const SpecCard: React.FC<SpecCardProps> = ({ title, subtitle, img }) => (
   </div>
 );
 
-export default SpecCard;
+export default memo(SpecCard);

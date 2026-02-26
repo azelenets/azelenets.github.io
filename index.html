@@ -4,149 +4,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Andrii Zelenets // TACTICAL SOFTWARE ENGINEERING UNIT</title>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-    <!-- Tailwind -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        darkMode: "class",
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: "#00f3ff",     // Neon Cyan
-              hazard: "#facc15",      // Hazard Yellow
-              alert: "#ff003c",       // Tactical Red
-              "bg-dark": "#050505",   // Deep Black
-              "panel-dark": "#0a0a0a",
-              "border-dark": "#1a1a1a",
-              "surface-terminal": "#0d1117",
-              'experimental': '#ff3e3e',
+              primary: '#00f3ff',
+              hazard: '#facc15',
+              alert: '#ff003c',
+              'bg-dark': '#050505',
+              'panel-dark': '#0a0a0a',
+              'border-dark': '#1a1a1a',
+              'surface-terminal': '#0d1117',
+              experimental: '#ff3e3e',
             },
             fontFamily: {
-              mono: ["JetBrains Mono", "monospace"],
-              display: ["Orbitron", "sans-serif"],
-              grotesk: ["Space Grotesk", "sans-serif"],
+              mono: ['JetBrains Mono', 'monospace'],
+              display: ['Orbitron', 'sans-serif'],
+              grotesk: ['Space Grotesk', 'sans-serif'],
             },
             animation: {
               'spin-slow': 'spin 20s linear infinite',
               'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            }
+            },
           },
         },
-      }
+      };
     </script>
-
-    <style>
-      body {
-        background-color: #050505;
-        color: #cbd5e1;
-        overflow-x: hidden;
-      }
-
-      /* Global Grid Background */
-      .cyber-grid {
-        background-image: 
-            linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-        background-size: 30px 30px;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        z-index: -1;
-        pointer-events: none;
-      }
-
-      /* Scanline Effect */
-      .scanlines {
-        background: linear-gradient(
-            to bottom,
-            rgba(255,255,255,0),
-            rgba(255,255,255,0) 50%,
-            rgba(0,0,0,0.2) 50%,
-            rgba(0,0,0,0.2)
-        );
-        background-size: 100% 4px;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        z-index: 9999;
-        pointer-events: none;
-        opacity: 0.15;
-      }
-
-      /* Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0a0a0a; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #00f3ff; 
-        border-radius: 0px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #00c2cc; 
-      }
-
-      /* Tactical Borders & Shapes */
-      .hud-border {
-        position: relative;
-        border: 1px solid rgba(0, 243, 255, 0.2);
-      }
-      .hud-border::before {
-        content: '';
-        position: absolute;
-        top: -1px; left: -1px;
-        width: 8px; height: 8px;
-        border-top: 2px solid #00f3ff;
-        border-left: 2px solid #00f3ff;
-      }
-      .hud-border::after {
-        content: '';
-        position: absolute;
-        bottom: -1px; right: -1px;
-        width: 8px; height: 8px;
-        border-bottom: 2px solid #00f3ff;
-        border-right: 2px solid #00f3ff;
-      }
-
-      .hazard-stripe {
-        background: repeating-linear-gradient(
-          45deg,
-          #facc15,
-          #facc15 10px,
-          #000 10px,
-          #000 20px
-        );
-      }
-
-      .slanted-clip {
-        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-      }
-
-      .glitch-img {
-        filter: contrast(120%) grayscale(100%) brightness(0.9);
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+  </head>
   <body>
     <div class="cyber-grid"></div>
     <div class="scanlines"></div>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

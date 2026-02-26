@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { View } from '@/types';
 import { navItems } from '@/constants/navigation';
 
@@ -17,12 +17,25 @@ const formatCoord = (val: number, posLabel: string, negLabel: string) => {
   return `${Math.abs(val).toFixed(4)}° ${dir}`;
 };
 
-const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
+const UtcClock = memo(() => {
   const [utcTime, setUtcTime] = useState(() => {
     const now = new Date();
-    return now.toUTCString().split(' ')[4] + ' UTC';
+    return `${now.toUTCString().split(' ')[4]} UTC`;
   });
 
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      const now = new Date();
+      setUtcTime(`${now.toUTCString().split(' ')[4]} UTC`);
+    }, 1000);
+
+    return () => window.clearInterval(id);
+  }, []);
+
+  return <span className="text-primary">{utcTime}</span>;
+});
+
+const Navigation = ({ currentView, setView }: NavigationProps) => {
   const [geo, setGeo] = useState<GeoState>({ status: 'pending' });
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,32 +44,46 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
       setGeo({ status: 'denied' });
       return;
     }
+
     navigator.geolocation.getCurrentPosition(
       (pos) => setGeo({ status: 'granted', lat: pos.coords.latitude, lon: pos.coords.longitude }),
       () => setGeo({ status: 'denied' }),
+      { timeout: 6000 },
     );
   }, []);
 
-  useEffect(() => {
-    const tick = () => {
-      const now = new Date();
-      setUtcTime(now.toUTCString().split(' ')[4] + ' UTC');
-    };
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
+  const handleNavClick = useCallback(
+    (view: View) => {
+      setView(view);
+      setMenuOpen(false);
+    },
+    [setView],
+  );
 
-  const handleNavClick = (view: View) => {
-    setView(view);
-    setMenuOpen(false);
-  };
+  const locationText = useMemo(() => {
+    if (geo.status !== 'granted') {
+      return (
+        <>
+          <span className="material-symbols-outlined text-[10px]">location_off</span>
+          <span>{geo.status === 'pending' ? 'ACQUIRING_LOCATION...' : 'LOC_UNAVAILABLE'}</span>
+        </>
+      );
+    }
+
+    return (
+      <>
+        <span className="material-symbols-outlined text-[10px]">location_on</span>
+        <span>
+          COORDS: <span className="text-white">{formatCoord(geo.lat, 'N', 'S')}, {formatCoord(geo.lon, 'E', 'W')}</span>
+        </span>
+      </>
+    );
+  }, [geo]);
 
   return (
     <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-primary/20">
-      {/* Top Bar */}
       <div className="max-w-[1600px] mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-4 md:gap-8">
-          {/* ACCESS_DOSSIER — mobile only, left side */}
           <button
             onClick={() => handleNavClick(View.CREDENTIALS)}
             className="md:hidden relative px-4 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
@@ -70,9 +97,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
 
           <div id="logo" className="hidden sm:flex items-center gap-4">
             <div className="flex flex-col">
-              <span
-                className="font-display font-black text-2xl tracking-tighter text-white uppercase leading-none">
-                  ANDRII<span className="text-primary">.ZELENETS</span>
+              <span className="font-display font-black text-2xl tracking-tighter text-white uppercase leading-none">
+                ANDRII<span className="text-primary">.ZELENETS</span>
               </span>
               <div className="flex items-center gap-2 mt-1">
                 <span className="text-[8px] text-primary/60 font-bold tracking-[0.3em]">SR_SOFTWARE_ENGINEER</span>
@@ -86,15 +112,17 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => setView(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className={`group relative px-4 py-2 flex flex-col transition-all text-left ${currentView === item.id ? 'border-b-2 border-primary' : 'hover:opacity-80'}`}
               >
                 <span
-                  className={`text-[9px] font-bold tracking-tighter transition-colors ${currentView === item.id ? 'text-primary' : 'text-primary/40 group-hover:text-primary'}`}>
+                  className={`text-[9px] font-bold tracking-tighter transition-colors ${currentView === item.id ? 'text-primary' : 'text-primary/40 group-hover:text-primary'}`}
+                >
                   {item.num}_TERMINAL
                 </span>
                 <span
-                  className={`text-xs font-bold tracking-widest uppercase ${currentView === item.id ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>
+                  className={`text-xs font-bold tracking-widest uppercase ${currentView === item.id ? 'text-white' : 'text-white/60 group-hover:text-white'}`}
+                >
                   {item.label}
                 </span>
               </button>
@@ -104,9 +132,12 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
 
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex xl:hidden items-center gap-4">
-            {navItems.map(item => (
-              <button key={item.id} onClick={() => setView(item.id)}
-                      className={`text-[10px] font-bold tracking-wider ${currentView === item.id ? 'text-primary' : 'text-slate-500'}`}>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className={`text-[10px] font-bold tracking-wider ${currentView === item.id ? 'text-primary' : 'text-slate-500'}`}
+              >
                 {item.label}
               </button>
             ))}
@@ -122,9 +153,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
             </div>
           </div>
 
-          {/* ACCESS_DOSSIER — md+ only */}
           <button
-            onClick={() => setView(View.CREDENTIALS)}
+            onClick={() => handleNavClick(View.CREDENTIALS)}
             className="hidden md:flex relative px-6 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
             <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity"></div>
@@ -134,9 +164,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
             </span>
           </button>
 
-          {/* Hamburger — mobile only */}
           <button
-            onClick={() => setMenuOpen(prev => !prev)}
+            onClick={() => setMenuOpen((prev) => !prev)}
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 group"
             aria-label="Toggle menu"
           >
@@ -147,7 +176,6 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
       <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="border-t border-primary/20 bg-black/95 px-6 py-2">
           {navItems.map((item) => (
@@ -164,15 +192,12 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
                   {item.label}
                 </span>
               </div>
-              {currentView === item.id && (
-                <span className="w-4 h-[2px] bg-primary"></span>
-              )}
+              {currentView === item.id && <span className="w-4 h-[2px] bg-primary"></span>}
             </button>
           ))}
         </div>
       </div>
 
-      {/* Sub Bar */}
       <div className="bg-primary/5 border-t border-b border-primary/10">
         <div className="max-w-[1600px] mx-auto px-6 py-1.5 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-8 text-[9px] font-bold tracking-[0.2em] uppercase">
@@ -181,30 +206,24 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              <div>SYSTEM_STATUS: <span className="text-white">OPERATIONAL</span></div>
+              <div>
+                SYSTEM_STATUS: <span className="text-white">OPERATIONAL</span>
+              </div>
             </div>
-            <div id="userLocation" className="hidden sm:flex items-center gap-2 text-primary/60">
-              {geo.status === 'granted' ? (
-                <>
-                  <span className="material-symbols-outlined text-[10px]">location_on</span>
-                  <span>COORDS: <span className="text-white">{formatCoord(geo.lat, 'N', 'S')}, {formatCoord(geo.lon, 'E', 'W')}</span></span>
-                </>
-              ) : (
-                <>
-                  <span className="material-symbols-outlined text-[10px]">location_off</span>
-                  <span>{geo.status === 'pending' ? 'ACQUIRING_LOCATION...' : 'LOC_UNAVAILABLE'}</span>
-                </>
-              )}
-            </div>
-             <div className="hidden sm:flex items-center gap-2 text-primary/60">
+            <div className="hidden sm:flex items-center gap-2 text-primary/60">{locationText}</div>
+            <div className="hidden sm:flex items-center gap-2 text-primary/60">
               <span className="material-symbols-outlined text-[10px]">public</span>
-              <span>NODE: <span className="text-white">US-EAST-01</span></span>
+              <span>
+                NODE: <span className="text-white">US-EAST-01</span>
+              </span>
             </div>
           </div>
 
           <div className="flex items-center gap-6 text-[9px] font-bold tracking-[0.2em] text-primary/40">
-            <span className="hidden md:inline">ENCRYPT: <span className="text-primary/60">AES-256_ACTIVE</span></span>
-            <span id="localTime" className="text-primary">{utcTime}</span>
+            <span className="hidden md:inline">
+              ENCRYPT: <span className="text-primary/60">AES-256_ACTIVE</span>
+            </span>
+            <UtcClock />
           </div>
         </div>
       </div>
@@ -212,4 +231,4 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
   );
 };
 
-export default Navigation;
+export default memo(Navigation);

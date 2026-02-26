@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import { Suspense, lazy, useCallback, useMemo, useState, useTransition } from 'react';
 import { View } from '@/types';
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/Hero';
-import MissionLog from '@/components/MissionLog';
-import Laboratory from '@/components/Laboratory';
-import Arsenal from '@/components/Arsenal';
-import Protocols from '@/components/Protocols';
-import Credentials from '@/components/Credentials';
 import Footer from '@/components/layout/Footer';
 import PrivacyBanner from '@/components/layout/PrivacyBanner';
 
-const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<View>(View.HOME);
+const MissionLog = lazy(() => import('@/components/MissionLog'));
+const Laboratory = lazy(() => import('@/components/Laboratory'));
+const Arsenal = lazy(() => import('@/components/Arsenal'));
+const Protocols = lazy(() => import('@/components/Protocols'));
+const Credentials = lazy(() => import('@/components/Credentials'));
 
-  const renderView = () => {
+const App = () => {
+  const [currentView, setCurrentView] = useState<View>(View.HOME);
+  const [isPending, startTransition] = useTransition();
+
+  const handleViewChange = useCallback((view: View) => {
+    startTransition(() => {
+      setCurrentView(view);
+    });
+  }, []);
+
+  const content = useMemo(() => {
     switch (currentView) {
       case View.HOME:
-        return <Hero setView={setCurrentView} />;
+        return <Hero setView={handleViewChange} />;
       case View.MISSION:
         return <MissionLog />;
       case View.LAB:
@@ -24,13 +32,13 @@ const App: React.FC = () => {
       case View.ARSENAL:
         return <Arsenal />;
       case View.PROTOCOLS:
-        return <Protocols setView={setCurrentView} />;
+        return <Protocols setView={handleViewChange} />;
       case View.CREDENTIALS:
         return <Credentials />;
       default:
-        return <Hero setView={setCurrentView} />;
+        return <Hero setView={handleViewChange} />;
     }
-  };
+  }, [currentView, handleViewChange]);
 
   return (
     <div className="min-h-screen flex flex-col font-mono selection:bg-primary selection:text-black">
@@ -38,10 +46,13 @@ const App: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(0,243,255,0.05)_0%,_transparent_60%)]"></div>
       </div>
 
-      <Navigation currentView={currentView} setView={setCurrentView} />
+      <Navigation currentView={currentView} setView={handleViewChange} />
 
       <main className="flex-grow relative z-10 w-full">
-        {renderView()}
+        <Suspense fallback={<div className="px-6 py-16 text-primary/70 text-sm uppercase">Loading tactical module...</div>}>
+          {content}
+        </Suspense>
+        {isPending && <div className="fixed bottom-4 right-4 text-[10px] text-primary/60 uppercase">Switching view...</div>}
       </main>
 
       <Footer />

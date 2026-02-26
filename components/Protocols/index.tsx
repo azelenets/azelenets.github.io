@@ -15,8 +15,8 @@ const Protocols: React.FC<ProtocolsProps> = ({ setView }) => {
 
         {/* Top Stats */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-1 font-mono">
-          <StatCard id="STAT_01" label="Combat Experience" value="13+ YEARS" progress={75} color="primary" />
-          <StatCard id="STAT_02" label="Authorization Level" value="MASTER'S [CS]" progress={100} color="primary" segmented />
+          <StatCard id="STAT_01" label="Combat Experience" value="13+ YEARS" progress={75} />
+          <StatCard id="STAT_02" label="Authorization Level" value="MASTER'S [CS]" progress={100} segmented />
           <div className="bg-surface-terminal border border-primary/10 p-6 relative">
             <div className="absolute top-0 right-0 p-1 text-[10px] text-primary/30">STAT_03</div>
             <p className="text-primary/60 text-[10px] uppercase mb-1">Strategic Reach</p>

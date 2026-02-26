@@ -1,14 +1,14 @@
-import React from 'react';
+import { memo, type ReactNode } from 'react';
 
 interface StackColumnProps {
   type: string;
   title: string;
   id: string;
   desc: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const StackColumn: React.FC<StackColumnProps> = ({ type, title, id, desc, children }) => (
+const StackColumn = ({ type, title, id, desc, children }: StackColumnProps) => (
   <div className="hud-border bg-surface-terminal p-6 flex flex-col">
     <div className="flex justify-between items-start mb-6">
       <div>
@@ -17,13 +17,11 @@ const StackColumn: React.FC<StackColumnProps> = ({ type, title, id, desc, childr
       </div>
       <span className="text-[10px] font-mono text-slate-600">ID: {id}</span>
     </div>
-    <div className="space-y-3 flex-1">
-      {children}
-    </div>
+    <div className="space-y-3 flex-1">{children}</div>
     <div className="mt-8 pt-4 border-t border-primary/10">
       <p className="text-[10px] text-primary/40 font-mono italic uppercase tracking-wider leading-relaxed">{desc}</p>
     </div>
   </div>
 );
 
-export default StackColumn;
+export default memo(StackColumn);

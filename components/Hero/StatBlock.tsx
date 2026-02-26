@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 interface StatBlockProps {
   label: string;
@@ -7,7 +7,7 @@ interface StatBlockProps {
   width: string;
 }
 
-const StatBlock: React.FC<StatBlockProps> = ({ label, value, barColor, width }) => (
+const StatBlock = ({ label, value, barColor, width }: StatBlockProps) => (
   <div className="space-y-1">
     <div className="text-[10px] text-primary/60 font-bold tracking-widest uppercase">{label}</div>
     <div className="text-3xl font-display font-black text-white">{value}</div>
@@ -17,4 +17,4 @@ const StatBlock: React.FC<StatBlockProps> = ({ label, value, barColor, width }) 
   </div>
 );
 
-export default StatBlock;
+export default memo(StatBlock);
