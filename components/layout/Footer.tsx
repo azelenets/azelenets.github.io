@@ -20,8 +20,6 @@ const Footer: React.FC = () => {
         <div className="flex items-center gap-6 text-[9px] tracking-[0.2em] text-white/40 font-bold">
           <a className="hover:text-primary transition-colors cursor-pointer">PRIVACY_POLICY</a>
           <span className="text-primary/20">|</span>
-          <a className="hover:text-primary transition-colors cursor-pointer">SYSTEM_LOGS</a>
-          <span className="text-primary/20">|</span>
           <span className="text-hazard">© {(new Date).getFullYear()} ANDRII_ZELENETS_STRATEGIC</span>
         </div>
       </div>

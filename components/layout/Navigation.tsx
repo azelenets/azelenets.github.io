@@ -24,6 +24,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
   });
 
   const [geo, setGeo] = useState<GeoState>({ status: 'pending' });
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -45,12 +46,29 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
     return () => clearInterval(id);
   }, []);
 
+  const handleNavClick = (view: View) => {
+    setView(view);
+    setMenuOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-primary/20">
       {/* Top Bar */}
       <div className="max-w-[1600px] mx-auto flex items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 md:gap-8">
+          {/* ACCESS_DOSSIER — mobile only, left side */}
+          <button
+            onClick={() => handleNavClick(View.CREDENTIALS)}
+            className="md:hidden relative px-4 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
+          >
+            <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <span className="relative z-10 text-black font-black text-xs uppercase tracking-tighter flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-sm">lock_open</span>
+              ACCESS_DOSSIER
+            </span>
+          </button>
+
+          <div id="logo" className="hidden sm:flex items-center gap-4">
             <div className="flex flex-col">
               <span
                 className="font-display font-black text-2xl tracking-tighter text-white uppercase leading-none">
@@ -104,9 +122,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
             </div>
           </div>
 
+          {/* ACCESS_DOSSIER — md+ only */}
           <button
             onClick={() => setView(View.CREDENTIALS)}
-            className="relative px-6 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
+            className="hidden md:flex relative px-6 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
             <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity"></div>
             <span className="relative z-10 text-black font-black text-xs uppercase tracking-tighter flex items-center gap-2">
@@ -114,6 +133,42 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
               ACCESS_DOSSIER
             </span>
           </button>
+
+          {/* Hamburger — mobile only */}
+          <button
+            onClick={() => setMenuOpen(prev => !prev)}
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 group"
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}></span>
+            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Drawer */}
+      <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="border-t border-primary/20 bg-black/95 px-6 py-2">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`w-full flex items-center justify-between py-3 border-b border-primary/10 last:border-0 group transition-all ${currentView === item.id ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+            >
+              <div className="flex items-center gap-3">
+                <span className={`text-[9px] font-bold tracking-[0.2em] ${currentView === item.id ? 'text-primary' : 'text-primary/40 group-hover:text-primary'}`}>
+                  {item.num}
+                </span>
+                <span className={`text-xs font-black tracking-widest uppercase ${currentView === item.id ? 'text-white' : 'text-white/70 group-hover:text-white'}`}>
+                  {item.label}
+                </span>
+              </div>
+              {currentView === item.id && (
+                <span className="w-4 h-[2px] bg-primary"></span>
+              )}
+            </button>
+          ))}
         </div>
       </div>
 
