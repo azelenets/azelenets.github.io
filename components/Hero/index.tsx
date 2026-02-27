@@ -103,7 +103,7 @@ const Hero = ({ setView }: HeroProps) => {
 
       <div className="max-w-[1500px] mx-auto w-full flex-1 flex flex-col lg:flex-row items-center px-6 gap-16 py-24">
         <div className="flex-1 space-y-8 z-10">
-          <div className="space-y-2">
+          <header className="space-y-2">
             <div className="flex items-center gap-3">
               <span className="hazard-stripe h-4 w-12"></span>
               <span className="text-hazard font-bold text-xs tracking-[0.3em] uppercase">Tactical Software Engineering</span>
@@ -112,7 +112,7 @@ const Hero = ({ setView }: HeroProps) => {
               ARCHITECTING <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">DIGITAL DEFENSE</span>
             </h1>
-          </div>
+          </header>
 
           <div className="hud-border p-6 bg-white/5 backdrop-blur-sm max-w-xl">
             <p className="text-lg text-slate-400 border-l-2 border-primary pl-4 uppercase">

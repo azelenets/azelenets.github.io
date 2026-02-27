@@ -1,22 +1,31 @@
 import React from 'react';
 import { certifications, combatLanguages, tacticalFrameworks } from '@/constants/credentials';
 import CertCard from './CertCard';
+import StatCard from '@/components/Protocols/StatCard.tsx';
+import PageHeader from '@/components/layout/PageHeader.tsx';
 
 const Credentials: React.FC = () => {
   return (
-    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 flex-grow">
+    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative flex-grow">
       {/* Header Title */}
-      <div className="mb-12 border-l-4 border-primary pl-8 py-2">
-        <div className="text-primary font-bold text-xs tracking-[0.4em] uppercase mb-1">Personnel Authorization File</div>
-        <h1 className="font-display text-4xl md:text-5xl font-black text-white tracking-tighter uppercase italic">
-          Credentials Clearance Dossier
-        </h1>
-        <div className="mt-2 text-xs text-white/40 flex gap-6">
-          <span>SUBJECT_ID: AZ-9942-X</span>
-          <span>STATUS: VERIFIED</span>
-          <span>AUTH_TOKEN: 8829-PX-001</span>
+      <PageHeader
+        eyebrow="Personnel Authorization File"
+        titleMain="Credentials"
+        titleAccent="Clearance Dossier"
+        description="Secure profile and access summary, consolidating identity credentials, role authorizations, and current clearance status at a glance."
+      />
+
+      {/* Top Stats */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-1 font-mono">
+        <StatCard id="STAT_01" label="Combat Experience" value="13+ YEARS" progress={75} />
+        <StatCard id="STAT_02" label="Authorization Level" value="MASTER'S [CS]" progress={100} segmented />
+        <div className="bg-surface-terminal border border-primary/10 p-6 relative">
+          <div className="absolute top-0 right-0 p-1 text-[10px] text-primary/30">STAT_03</div>
+          <p className="text-primary/60 text-[10px] uppercase mb-1">Strategic Reach</p>
+          <p className="text-3xl font-bold text-white tracking-tighter">50M+ OPS</p>
+          <p className="text-[10px] text-alert mt-4 uppercase animate-pulse">CRITICAL INFRASTRUCTURE REACHED</p>
         </div>
-      </div>
+      </section>
 
       <div className="grid grid-cols-12 gap-8 items-start">
 

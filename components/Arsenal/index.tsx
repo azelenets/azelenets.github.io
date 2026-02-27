@@ -4,27 +4,17 @@ import FilterButton from './FilterButton';
 import TechItem from './TechItem';
 import StackColumn from './StackColumn';
 import SpecCard from './SpecCard';
+import PageHeader from '@/components/layout/PageHeader';
 
 const Arsenal: React.FC = () => {
   return (
     <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
-
-      {/* Header */}
-      <div className="mb-16 relative">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-l-4 border-primary pl-8">
-          <div className="max-w-[1500px]">
-            <p className="text-primary text-xs font-bold mb-2 tracking-[0.4em] uppercase">Tactical Capability Overview</p>
-            <h1 className="font-display text-4xl md:text-6xl font-black text-white leading-none tracking-tighter uppercase">
-              Tech Stack
-              {' '}<span className="text-primary font-light">//</span>{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Arsenal Matrix</span>
-            </h1>
-            <p className="text-slate-500 text-sm font-medium leading-relaxed uppercase pt-2">
-              Structural schematic of offensive and defensive engineering assets. High-density deployment capabilities across distributed infrastructure and enterprise-grade environments.
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHeader
+        eyebrow="Tactical Capability Overview"
+        titleMain="Tech Stack"
+        titleAccent="Arsenal Matrix"
+        description="Structural schematic of offensive and defensive engineering assets. High-density deployment capabilities across distributed infrastructure and enterprise-grade environments."
+      />
 
       {/* CLI Filter */}
       <div className="mb-12">
