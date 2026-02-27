@@ -35,6 +35,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/tw-bsci-01.webp',
   },
   {
+    date: '2022.Q1 — 2024.Q1',
+    title: 'Operation: Seeking Alpha',
+    role: 'Software Engineer, Back-End',
+    scanId: 'SA-OPS-22',
+    objective:
+      'Engineer and optimize server-side systems for a market-leading financial media platform serving millions of active investors. Primary directive: deliver seamless, high-performance access to exclusive research, real-time market data, and advanced analytical tools for a growing paid subscriber base — with zero tolerance for downtime or latency.',
+    tactics: [
+      'Built RESTful Ruby on Rails API for a cross-platform SPA, implementing OAuth authentication and granular role-based access control for tiered subscriber plans.',
+      'Optimized MySQL and ElasticSearch query strategies to achieve low-latency delivery of financial data and editorial content at peak traffic loads.',
+      'Integrated Redis caching layers across hot content endpoints, significantly reducing database pressure under concurrent subscriber sessions.',
+      'Hardened server-side architecture on AWS — applying horizontal scaling patterns and HTTP-level optimizations to sustain reliability at scale.',
+    ],
+    outcome: 'MILLIONS SERVED',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    // isShield: true,
+    imageUrl: 'images/seeking-alpha.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',

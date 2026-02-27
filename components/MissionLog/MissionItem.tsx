@@ -65,29 +65,29 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, s
         </figure>
       </div>
 
-      <div className={`hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6 ${align === 'right' ? '' : 'md:order-1 md:text-right'}`}>
+      <div className={`hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6`}>
         <div className="space-y-2">
-          <div className={`text-hazard text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2 ${align === 'right' ? '' : 'justify-end'}`}>
+          <div className={`text-hazard text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2`}>
             <span className="material-symbols-outlined text-xs">priority_high</span> MISSION_OBJECTIVE
           </div>
           <p className="text-sm text-slate-400 leading-relaxed">{objective}</p>
         </div>
 
         <div className="space-y-2">
-          <div className={`text-primary text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2 ${align === 'right' ? '' : 'justify-end'}`}>
+          <div className={`text-primary text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2`}>
             <span className="material-symbols-outlined text-xs">architecture</span> TACTICAL_IMPLEMENTATION
           </div>
           <ul className="text-xs text-slate-300 space-y-2 list-none font-mono">
             {tactics.map((tactic) => (
-              <li key={tactic} className={`flex gap-2 ${align === 'right' ? '' : 'justify-end'}`}>
-                <span className={`text-primary font-bold ${align === 'right' ? '' : 'order-last'}`}>&gt;&gt;</span>
+              <li key={tactic} className={`flex gap-2`}>
+                <span className={`text-primary font-bold`}>&gt;&gt;</span>
                 <span>{tactic}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className={`pt-4 border-t border-white/5 flex items-end justify-between ${align === 'right' ? '' : 'flex-row-reverse'}`}>
+        <div className={`pt-4 border-t border-white/5 flex items-end justify-between`}>
           <div className="space-y-1">
             <div className="text-[9px] text-white/40 uppercase">Outcome_Impact</div>
             <div className="text-xl font-display font-black text-white tracking-widest">{outcome}</div>
