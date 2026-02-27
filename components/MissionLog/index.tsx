@@ -5,7 +5,7 @@ import PageHeader from '@/components/layout/PageHeader';
 
 const MissionLog: React.FC = () => {
   return (
-    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
+    <section className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
       <PageHeader
         eyebrow="Deployment Archives"
         titleMain="MISSION LOG"
@@ -14,16 +14,20 @@ const MissionLog: React.FC = () => {
       />
 
       {/* Timeline */}
-      <div className="relative space-y-24">
+      <div className="relative">
         <div
           className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-primary/10 -translate-x-1/2 hidden md:block"></div>
-        {missions.map((mission) => (
-          <MissionItem key={mission.title} {...mission} />
-        ))}
+        <ol className="space-y-24 list-none">
+          {missions.map((mission) => (
+            <li key={mission.title}>
+              <MissionItem {...mission} />
+            </li>
+          ))}
+        </ol>
       </div>
 
       {/* CTA */}
-      <div
+      <aside
         className="mt-24 border border-dashed border-primary/20 p-10 text-center bg-primary/5 relative overflow-hidden">
         {/* Corner Markers */}
         <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary"></div>
@@ -48,8 +52,8 @@ const MissionLog: React.FC = () => {
           <span className="flex items-center gap-1"><span
             className="material-symbols-outlined text-xs">check_circle</span> ACCESSIBLE</span>
         </div>
-      </div>
-    </div>
+      </aside>
+    </section>
   );
 };
 

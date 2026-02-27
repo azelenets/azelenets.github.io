@@ -17,7 +17,7 @@ interface MissionItemProps {
 
 const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, status, statusColor, align, isShield, isGhost }: MissionItemProps) => {
   return (
-    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <article className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 z-10">
         <div className="size-4 bg-bg-dark border-2 border-primary rotate-45 flex items-center justify-center shadow-[0_0_15px_rgba(0,243,255,0.6)]">
           <div className="size-1 bg-primary"></div>
@@ -29,7 +29,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, s
         <h2 className="text-2xl font-display font-black text-white uppercase tracking-tight">{title}</h2>
         <div className="text-primary/60 text-xs font-bold tracking-tighter uppercase">ROLE: {role}</div>
 
-        <div className="border border-primary/10 bg-black/20 p-4 mt-4 inline-block group hover:border-primary/40 transition-colors w-full">
+        <figure className="border border-primary/10 bg-black/20 p-4 mt-4 inline-block group hover:border-primary/40 transition-colors w-full">
           {isShield ? (
             <div className="w-full h-40 bg-black/40 flex items-center justify-center border border-primary/10 overflow-hidden relative">
               <div className="absolute inset-0 cyber-grid opacity-30"></div>
@@ -61,7 +61,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, s
               </div>
             </div>
           )}
-        </div>
+        </figure>
       </div>
 
       <div className={`hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6 ${align === 'right' ? '' : 'md:order-1 md:text-right'}`}>
@@ -94,7 +94,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, s
           <div className={`text-[10px] font-bold px-2 py-1 uppercase ${statusColor}`}>SUCCESS: {status}</div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

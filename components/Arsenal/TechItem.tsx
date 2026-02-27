@@ -24,7 +24,7 @@ const TechItem = ({ name, version, status, isCritical, isMaster }: TechItemProps
   );
 
   return (
-    <div className={`border p-3 bg-bg-dark group transition-colors relative ${borderColor}`}>
+    <li className={`border p-3 bg-bg-dark group transition-colors relative ${borderColor}`}>
       <div className="flex justify-between items-center mb-1">
         <span className={`text-sm font-bold uppercase group-hover:text-white ${nameColor}`}>{name}</span>
         {badge}
@@ -33,7 +33,7 @@ const TechItem = ({ name, version, status, isCritical, isMaster }: TechItemProps
         <span>{version}</span>
         <span>{status}</span>
       </div>
-    </div>
+    </li>
   );
 };
 

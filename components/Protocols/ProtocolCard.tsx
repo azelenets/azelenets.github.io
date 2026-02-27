@@ -13,7 +13,7 @@ const ProtocolCard = ({ id, icon, title, status, dots, children }: ProtocolCardP
   const markers = useMemo(() => Array.from({ length: dots }), [dots]);
 
   return (
-    <div className="bg-surface-terminal/90 p-10 flex flex-col gap-8 group hover:bg-primary/5 transition-all relative overflow-hidden">
+    <article className="bg-surface-terminal/90 p-10 flex flex-col gap-8 group hover:bg-primary/5 transition-all relative overflow-hidden">
       <div className="flex justify-between items-start">
         <div className="w-16 h-16 border border-primary/30 flex items-center justify-center text-primary relative">
           <span className="material-symbols-outlined text-4xl">{icon}</span>
@@ -37,7 +37,7 @@ const ProtocolCard = ({ id, icon, title, status, dots, children }: ProtocolCardP
         </div>
         <span className="text-[8px] font-mono text-primary">{status}</span>
       </div>
-    </div>
+    </article>
   );
 };
 

@@ -8,7 +8,7 @@ import PageHeader from '@/components/layout/PageHeader';
 
 const Arsenal: React.FC = () => {
   return (
-    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
+    <section className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
       <PageHeader
         eyebrow="Tactical Capability Overview"
         titleMain="Tech Stack"
@@ -17,7 +17,7 @@ const Arsenal: React.FC = () => {
       />
 
       {/* CLI Filter */}
-      <div className="mb-12">
+      <search className="mb-12">
         <div className="bg-surface-terminal border border-primary/20 p-4 font-mono shadow-2xl relative">
           <div className="flex items-center gap-3">
             <span className="text-primary shrink-0">operator@aegis:~$</span>
@@ -30,7 +30,7 @@ const Arsenal: React.FC = () => {
             <FilterButton key={label} label={label} active={i === 0} />
           ))}
         </div>
-      </div>
+      </search>
 
       {/* Matrix Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -51,7 +51,7 @@ const Arsenal: React.FC = () => {
       </div>
 
       {/* Specializations Footer */}
-      <div className="mt-24">
+      <section className="mt-24">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 border-b border-primary/20 pb-4 gap-4">
           <h2 className="text-2xl font-black uppercase tracking-widest text-white">System_Specializations</h2>
           <a className="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-70 transition-opacity" href="#">
@@ -63,8 +63,8 @@ const Arsenal: React.FC = () => {
             <SpecCard key={card.title} title={card.title} subtitle={card.subtitle} img={card.img} />
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 

@@ -9,7 +9,7 @@ interface StatCardProps {
 }
 
 const StatCard = ({ id, label, value, progress, segmented }: StatCardProps) => (
-  <div className="bg-surface-terminal border border-primary/10 p-6 relative group overflow-hidden hover:border-primary/40 transition-colors">
+  <article className="bg-surface-terminal border border-primary/10 p-6 relative group overflow-hidden hover:border-primary/40 transition-colors">
     <div className="absolute top-0 right-0 p-1 text-[10px] text-primary/30">{id}</div>
     <p className="text-primary/60 text-[10px] uppercase mb-1">{label}</p>
     <p className="text-3xl font-bold text-white tracking-tighter">{value}</p>
@@ -24,7 +24,7 @@ const StatCard = ({ id, label, value, progress, segmented }: StatCardProps) => (
         <div className="h-full bg-primary" style={{ width: `${progress}%` }}></div>
       )}
     </div>
-  </div>
+  </article>
 );
 
 export default memo(StatCard);

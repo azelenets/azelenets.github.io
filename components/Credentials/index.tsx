@@ -6,7 +6,7 @@ import PageHeader from '@/components/layout/PageHeader.tsx';
 
 const Credentials: React.FC = () => {
   return (
-    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative flex-grow">
+    <section className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative flex-grow">
       {/* Header Title */}
       <PageHeader
         eyebrow="Personnel Authorization File"
@@ -19,19 +19,19 @@ const Credentials: React.FC = () => {
       <section className="grid grid-cols-1 md:grid-cols-3 gap-1 font-mono">
         <StatCard id="STAT_01" label="Combat Experience" value="13+ YEARS" progress={75} />
         <StatCard id="STAT_02" label="Authorization Level" value="MASTER'S [CS]" progress={100} segmented />
-        <div className="bg-surface-terminal border border-primary/10 p-6 relative">
+        <article className="bg-surface-terminal border border-primary/10 p-6 relative">
           <div className="absolute top-0 right-0 p-1 text-[10px] text-primary/30">STAT_03</div>
           <p className="text-primary/60 text-[10px] uppercase mb-1">Strategic Reach</p>
           <p className="text-3xl font-bold text-white tracking-tighter">50M+ OPS</p>
           <p className="text-[10px] text-alert mt-4 uppercase animate-pulse">CRITICAL INFRASTRUCTURE REACHED</p>
-        </div>
+        </article>
       </section>
 
       <div className="grid grid-cols-12 gap-8 items-start">
 
         {/* Sidebar Profile */}
-        <div className="col-span-12 md:col-span-4 lg:col-span-4 space-y-6">
-          <div className="hud-border bg-black/40 p-1">
+        <aside className="col-span-12 md:col-span-4 lg:col-span-4 space-y-6">
+          <figure className="hud-border bg-black/40 p-1">
             <div className="relative aspect-square overflow-hidden bg-zinc-900 flex items-center justify-center">
               <img
                 alt="Biometric Scan Avatar"
@@ -45,7 +45,7 @@ const Credentials: React.FC = () => {
                 <div className="absolute bottom-2 right-2 text-[8px] text-primary animate-pulse">MATCH_FOUND_99%</div>
               </div>
             </div>
-          </div>
+          </figure>
 
           <div className="space-y-4">
             <div className="p-3 border border-white/10 bg-white/5">
@@ -69,11 +69,11 @@ const Credentials: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </aside>
 
         {/* Main Details */}
         <div className="col-span-12 md:col-span-8 lg:col-span-8 space-y-8">
-          <div className="hud-border bg-panel-dark/80 p-8 shadow-[0_0_15px_rgba(0,243,255,0.1)]">
+          <article className="hud-border bg-panel-dark/80 p-8 shadow-[0_0_15px_rgba(0,243,255,0.1)]">
             <div className="flex items-start justify-between mb-8 border-b border-primary/20 pb-4">
               <div>
                 <span className="bg-primary text-black text-[9px] px-2 py-0.5 font-black uppercase mb-2 inline-block">Priority Alpha</span>
@@ -85,7 +85,7 @@ const Credentials: React.FC = () => {
 
             <div className="space-y-10">
               {/* Masters */}
-              <div className="relative pl-8 border-l border-primary/30">
+              <article className="relative pl-8 border-l border-primary/30">
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary"></div>
                 <div className="flex justify-between items-start mb-2">
                   <div>
@@ -105,10 +105,10 @@ const Credentials: React.FC = () => {
                     <div className="text-xs text-primary">4.0 / 4.0 (PRIME)</div>
                   </div>
                 </div>
-              </div>
+              </article>
 
               {/* Bachelors */}
-              <div className="relative pl-8 border-l border-primary/30">
+              <article className="relative pl-8 border-l border-primary/30">
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary"></div>
                 <div className="flex justify-between items-start mb-2">
                   <div>
@@ -121,9 +121,9 @@ const Credentials: React.FC = () => {
                 <p className="text-xs text-slate-500 leading-relaxed mt-2 uppercase tracking-wide">
                   Focus on low-level kernel architectures and secure-boot protocols. Awarded the 'Top Gun' accolade for zero-day mitigation simulation.
                 </p>
-              </div>
+              </article>
             </div>
-          </div>
+          </article>
 
           {/* Skills Grid */}
           <div className="grid grid-cols-2 gap-4">
@@ -146,7 +146,7 @@ const Credentials: React.FC = () => {
           </div>
 
           {/* Certs */}
-          <div className="space-y-4">
+          <section className="space-y-4">
             <div className="hazard-stripe h-2 w-full mb-4"></div>
             <div className="text-[10px] font-bold text-white tracking-[0.3em] uppercase mb-4 px-2">Access_Keys_Repository</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -159,10 +159,10 @@ const Credentials: React.FC = () => {
                 [ REQUEST_FURTHER_DECRYPTION ]
               </button>
             </div>
-          </div>
+          </section>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

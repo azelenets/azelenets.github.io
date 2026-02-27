@@ -89,8 +89,8 @@ const Hero = ({ setView }: HeroProps) => {
   }, []);
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full px-6 py-12 relative overflow-hidden">
-      <div className="absolute left-6 bottom-48 hidden xl:block text-[9px] leading-tight text-primary/40 space-y-1 font-mono">
+    <section className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full px-6 py-12 relative overflow-hidden">
+      <aside className="absolute left-6 bottom-48 hidden xl:block text-[9px] leading-tight text-primary/40 space-y-1 font-mono">
         <p>ENCRYPTION: AES-256-GCM</p>
         <p>IP: {localIP ?? 'UNKNOWN'}</p>
         {'platform' in navigator && <p>PLATFORM: {navigator.platform}</p>}
@@ -99,7 +99,7 @@ const Hero = ({ setView }: HeroProps) => {
         <div className="w-32 h-1 bg-white/5 mt-2">
           <div className="w-3/4 h-full bg-primary/50"></div>
         </div>
-      </div>
+      </aside>
 
       <div className="max-w-[1500px] mx-auto w-full flex-1 flex flex-col lg:flex-row items-center px-6 gap-16 py-24">
         <div className="flex-1 space-y-8 z-10">
@@ -138,7 +138,7 @@ const Hero = ({ setView }: HeroProps) => {
           </div>
         </div>
 
-        <div className="relative w-full lg:w-1/2 aspect-square max-w-md">
+        <figure className="relative w-full lg:w-1/2 aspect-square max-w-md">
           <div className="absolute inset-0 border border-primary/10 rounded-full scale-110"></div>
           <div className="absolute inset-0 border border-dashed border-primary/20 rounded-full scale-125 animate-spin-slow"></div>
 
@@ -161,18 +161,18 @@ const Hero = ({ setView }: HeroProps) => {
             <div className="text-[10px] tracking-widest opacity-70">EXP_LEVEL</div>
             <div className="text-2xl font-display">13+ YRS</div>
           </div>
-        </div>
+        </figure>
       </div>
 
-      <div className="flex w-full border-t border-primary/20 bg-black/50 py-6">
+      <footer className="flex w-full border-t border-primary/20 bg-black/50 py-6">
         <div className="max-w-[1600px] w-full mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
           <StatBlock label="Nodes_Managed" value="150+" barColor="bg-primary" width="66%" />
           <StatBlock label="Uptime_Record" value="99.9%" barColor="bg-hazard" width="99%" />
           <StatBlock label="Protocols_Mastered" value="20+" barColor="bg-primary" width="50%" />
           <StatBlock label="System_Threat_Level" value="MINIMAL" barColor="bg-blue-500" width="25%" />
         </div>
-      </div>
-    </div>
+      </footer>
+    </section>
   );
 };
 

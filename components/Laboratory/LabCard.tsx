@@ -36,7 +36,7 @@ const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats,
   const actionClasses = ACTION_CLASS_MAP[color];
 
   return (
-    <div className={`hud-border bg-panel-dark/80 backdrop-blur-sm p-6 group transition-all ${COLOR_CLASS_MAP[color]}`}>
+    <article className={`hud-border bg-panel-dark/80 backdrop-blur-sm p-6 group transition-all ${COLOR_CLASS_MAP[color]}`}>
       <div className="flex justify-between items-start mb-4">
         <span className="text-[10px] font-bold opacity-60">
           {id} // {codename}
@@ -55,7 +55,7 @@ const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats,
           </span>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

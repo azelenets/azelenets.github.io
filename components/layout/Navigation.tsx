@@ -177,7 +177,7 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
       </div>
 
       <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="border-t border-primary/20 bg-black/95 px-6 py-2">
+        <nav className="border-t border-primary/20 bg-black/95 px-6 py-2">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -195,7 +195,7 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
               {currentView === item.id && <span className="w-4 h-[2px] bg-primary"></span>}
             </button>
           ))}
-        </div>
+        </nav>
       </div>
 
       <div className="bg-primary/5 border-t border-b border-primary/10">

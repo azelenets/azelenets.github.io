@@ -52,7 +52,7 @@ const App = () => {
         <Suspense fallback={<div className="px-6 py-16 text-primary/70 text-sm uppercase">Loading tactical module...</div>}>
           {content}
         </Suspense>
-        {isPending && <div className="fixed bottom-4 right-4 text-[10px] text-primary/60 uppercase">Switching view...</div>}
+        {isPending && <output className="fixed bottom-4 right-4 text-[10px] text-primary/60 uppercase">Switching view...</output>}
       </main>
 
       <Footer />

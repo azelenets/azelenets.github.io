@@ -17,7 +17,7 @@ const PrivacyBanner = () => {
   if (!visible) return null;
 
   return (
-    <div
+    <aside
       className="fixed bottom-0 left-0 right-0 z-[100] border-t border-primary/30 bg-black/95 backdrop-blur-md"
       style={{ boxShadow: '0 -4px 40px rgba(0,243,255,0.08)' }}
     >
@@ -66,7 +66,7 @@ const PrivacyBanner = () => {
           </button>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 

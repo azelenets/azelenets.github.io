@@ -61,7 +61,7 @@ const labCardChildren: Record<string, React.ReactNode> = {
 
 const Laboratory: React.FC = () => {
   return (
-    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
+    <section className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
       <PageHeader
         eyebrow="Experimental Prototypes"
         titleMain="R&D"
@@ -88,7 +88,7 @@ const Laboratory: React.FC = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

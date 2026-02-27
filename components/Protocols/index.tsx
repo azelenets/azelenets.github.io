@@ -11,7 +11,7 @@ interface ProtocolsProps {
 
 const Protocols: React.FC<ProtocolsProps> = ({ setView }) => {
   return (
-    <div className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
+    <section className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
       <PageHeader
         eyebrow="Operational Doctrine"
         titleMain="Strategic"
@@ -58,7 +58,7 @@ const Protocols: React.FC<ProtocolsProps> = ({ setView }) => {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 
