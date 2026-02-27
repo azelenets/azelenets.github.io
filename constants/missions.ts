@@ -11,51 +11,60 @@ export interface MissionData {
   align: 'left' | 'right';
   isShield?: boolean;
   isGhost?: boolean;
+  imageUrl?: string;
 }
 
 export const missions: MissionData[] = [
   {
-    date: '2023.Q3 - PRESENT',
-    title: 'Project: Neural Nexus',
-    role: 'Lead Systems Architect',
-    scanId: '99x-A',
-    objective: 'Revolutionize data ingestion for a global satellite array. Current system failing at 2M req/sec. Objective: Implement a resilient, zero-latency pipeline.',
+    date: '2024.Q1 — 2026.Q1',
+    title: 'Operation: TW-BSCI',
+    role: 'Senior Full-Stack Engineer',
+    scanId: 'TW-BSCI-01',
+    objective:
+      'Operate mission-critical 24/7 systems powering a proprietary DNA ordering platform for life science researchers across medicine, drug discovery, genetic engineering, and ultra long-term data storage. Every order is unique — the platform must handle one-of-a-kind production configurations at precision and scale otherwise unavailable in the industry.',
     tactics: [
-      'Deployed Distributed Rust-based edge workers across 14 zones.',
-      'Engineered custom protocol for telemetry packet deduplication.',
+      'Delivered full-stack features on a React/Redux SPA (S3 + CloudFront), extending order configurators for custom genes, oligo pools, and NGS enrichment panels.',
+      'Architected Ruby on Rails API extensions and public endpoints to power a highly customized, per-order production pipeline across 24x7 operations.',
+      'Optimized MongoDB query layers and Sidekiq job orchestration to sustain throughput under variable, high-complexity order loads.',
+      'Partnered with DevOps on K8s deployment hardening and CI/CD pipeline improvements, reducing incident surface and release friction.',
     ],
-    outcome: '+400% THRUPUT',
-    status: 'S+',
-    statusColor: 'text-hazard bg-hazard/10',
+    outcome: '50M+ OPS REACHED',
+    status: 'ARCHIVED',
+    statusColor: 'text-white/40 bg-white/5',
     align: 'right',
+    imageUrl: 'images/tw-bsci-01.webp',
   },
   {
-    date: '2021.Q1 - 2023.Q2',
-    title: 'Project: Iron Wall Shield',
-    role: 'Cyber-Security Engineer',
-    scanId: 'ENCRYPT_LAYER_6',
-    objective: 'Secure a legacy financial infrastructure against emerging quantum-decryption threats. Defenses were failing stress tests.',
+    date: '2020.Q2 — 2022.Q4',
+    title: 'Operation: Data Citadel',
+    role: 'Full-Stack Engineer',
+    scanId: 'DC-OPS-88',
+    objective:
+      'Reconstruct fragmented analytics infrastructure for a high-volume SaaS platform. Analysts across product, sales, and operations lacked reliable data pipelines to drive business decisions. Mandate: design a unified, distributed intelligence layer and expose it through clean, cross-team APIs — without disrupting live production.',
     tactics: [
-      'Lattice-based cryptographic wrappers.',
-      'Heuristic behavioral threat detection.',
+      'Designed distributed event-driven pipelines feeding real-time cross-departmental dashboards, eliminating manual reporting.',
+      'Delivered React-based internal tooling surfaces for order metrics, churn signals, and usage intelligence across four business units.',
+      'Authored RESTful and GraphQL API contracts with clean, versioned schemas — adopted as the standard integration layer company-wide.',
     ],
-    outcome: '0 BREACHES',
-    status: 'ACTIVE',
-    statusColor: 'text-primary bg-primary/10',
+    outcome: '4 UNITS UNIFIED',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
     isShield: true,
   },
   {
-    date: '2018 - 2021',
-    title: 'Project: Ghost Stream',
-    role: 'Full Stack Systems Dev',
-    scanId: 'BW-OPT',
-    objective: 'Minimize bandwidth for HD video feeds across low-orbit satellite links.',
+    date: '2017.Q1 — 2020.Q1',
+    title: 'Operation: Foundation Layer',
+    role: 'Software Engineer, Full Stack',
+    scanId: 'FL-CORE-33',
+    objective:
+      'Rebuild frontend architecture for a growth-stage B2B platform whose jQuery monolith had become a hard blocker on feature velocity. Objective: migrate to a scalable, OOP-aligned component system with maintainable state management — while preserving shipping cadence.',
     tactics: [
-      'Custom C++ encoding for ARM processors.',
-      'Adaptive bitrate logic for orbital velocity.',
+      'Executed full migration from jQuery monolith to React, introducing Redux state management and a reusable component library.',
+      'Implemented a CSS-in-JS (Emotion) design system, eliminating cross-squad style conflicts and accelerating UI delivery.',
+      'Collaborated with the Rails backend team on shared API schema design, SQL/NoSQL query optimization, and integration test coverage.',
     ],
-    outcome: '-65% BW',
+    outcome: '-70% TECH DEBT',
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',

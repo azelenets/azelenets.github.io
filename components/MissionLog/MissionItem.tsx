@@ -13,9 +13,10 @@ interface MissionItemProps {
   align: 'left' | 'right';
   isShield?: boolean;
   isGhost?: boolean;
+  imageUrl?: string;
 }
 
-const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, status, statusColor, align, isShield, isGhost }: MissionItemProps) => {
+const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, status, statusColor, align, isShield, isGhost, imageUrl }: MissionItemProps) => {
   return (
     <article className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 z-10">
@@ -48,10 +49,10 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, s
                 <div className="h-full bg-primary/20 w-full animate-pulse"></div>
               </div>
             </div>
-          ) : (
+          ) : imageUrl ? (
             <div className="relative w-full h-40 bg-black/40 border border-primary/10">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD6PtT9XbGV5DBla2sWVSFGupmogjKkxsrPHoXaddESktS5ZWLKP-Qff8Tjy_wk5EEkTOgKvW9hOCtbxIz-3UrOgrbletwIDaEbP4D4xczV2nuzj3ap23p5Oz_BHH7n4kYpnh9i7Hu5IqhmLxWAdHCV0pxkQ3TdRXLlOzfwqD9DgQo8A1HklqlPwDsmgJNi47CymzZqskzURNFRYKia1ofWwFdRfJHxxPBFuReN8tuDl7ctOAL82rsKrjpE9WAhHeC67Z3G7iDdDrL"
+                src={imageUrl}
                 className="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500"
                 alt="Wireframe"
               />
@@ -60,7 +61,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, s
                 <span>V-Mesh: Active</span>
               </div>
             </div>
-          )}
+          ) : undefined}
         </figure>
       </div>
 
