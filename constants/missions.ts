@@ -18,8 +18,8 @@ export const missions: MissionData[] = [
   {
     date: '2024.Q1 — 2026.Q1',
     title: 'Operation: TW-BSCI',
-    role: 'Senior Full-Stack Engineer',
-    scanId: 'TW-BSCI-01',
+    role: 'Sr. Full-Stack Engineer',
+    scanId: 'TW-BSCI-24',
     objective:
       'Operate mission-critical 24/7 systems powering a proprietary DNA ordering platform for life science researchers across medicine, drug discovery, genetic engineering, and ultra long-term data storage. Every order is unique — the platform must handle one-of-a-kind production configurations at precision and scale otherwise unavailable in the industry.',
     tactics: [
@@ -28,7 +28,7 @@ export const missions: MissionData[] = [
       'Optimized MongoDB query layers and Sidekiq job orchestration to sustain throughput under variable, high-complexity order loads.',
       'Partnered with DevOps on K8s deployment hardening and CI/CD pipeline improvements, reducing incident surface and release friction.',
     ],
-    outcome: '50M+ OPS REACHED',
+    outcome: '-50% TECH DEBT',
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
@@ -37,7 +37,7 @@ export const missions: MissionData[] = [
   {
     date: '2022.Q1 — 2024.Q1',
     title: 'Operation: Seeking Alpha',
-    role: 'Software Engineer, Back-End',
+    role: 'Sr. Software Engineer, Back-End',
     scanId: 'SA-OPS-22',
     objective:
       'Engineer and optimize server-side systems for a market-leading financial media platform serving millions of active investors. Primary directive: deliver seamless, high-performance access to exclusive research, real-time market data, and advanced analytical tools for a growing paid subscriber base — with zero tolerance for downtime or latency.',
@@ -47,12 +47,31 @@ export const missions: MissionData[] = [
       'Integrated Redis caching layers across hot content endpoints, significantly reducing database pressure under concurrent subscriber sessions.',
       'Hardened server-side architecture on AWS — applying horizontal scaling patterns and HTTP-level optimizations to sustain reliability at scale.',
     ],
-    outcome: 'MILLIONS SERVED',
+    outcome: 'MILLIONS UNITS SERVED',
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
     // isShield: true,
     imageUrl: 'images/seeking-alpha.jpg',
+  },
+  {
+    date: '2019.Q1 — 2022.Q1',
+    title: 'Operation: The Skills',
+    role: 'Lead Solution Engineer',
+    scanId: 'SK-OPS-19',
+    objective:
+      'Architect and ship a video-based sports education platform from the ground up — enabling world-class athletes (Phelps, Rapinoe, Sharapova, White and more) to deliver elite coaching at scale to youth and amateur athletes globally. Operating as lead engineer in a fully remote team of four, with end-to-end ownership across API, admin panel, customer SPA, marketing site, and mobile payment flows.',
+    tactics: [
+      'Designed modular system architecture (Rails REST API, ActiveAdmin panel, NextJS marketing site, React customer app) — cutting maintenance time and cost by 27%.',
+      'Built JWT-based auth with OAuth integrations for Google, Facebook, and Apple across web and mobile; integrated Brightcove for scalable video content delivery.',
+      'Integrated Stripe, PayPal, and native Apple/Android In-App purchase pipelines — increasing paid conversion funnel by 7%.',
+      'Delivered Postgres + Redis data storage architecture; achieved 83% test coverage and 100% Swagger API documentation across all endpoints.',
+    ],
+    outcome: '+7% FUNNEL GAIN',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/theskills.webp',
   },
   {
     date: '2020.Q2 — 2022.Q4',
