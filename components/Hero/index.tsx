@@ -151,7 +151,7 @@ const Hero = ({ setView }: HeroProps) => {
               <div className="absolute top-1/2 left-0 w-full h-[1px] bg-primary/20"></div>
               <div className="absolute left-1/2 top-0 h-full w-[1px] bg-primary/20"></div>
 
-              <div className="absolute top-4 left-4 text-[10px] text-primary font-bold">REC [●]</div>
+              <div className="absolute top-4 left-4 text-[10px] text-experimental/80 font-bold">REC [●]</div>
               <div className="absolute top-4 right-4 text-[10px] text-primary/60 font-bold">CAM_01</div>
               <div className="absolute bottom-4 right-4 text-[10px] text-primary/60 font-bold">SIG_STRENGTH: 98%</div>
             </div>
