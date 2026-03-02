@@ -315,7 +315,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/enrg.webp',
+    imageUrl: 'images/nrg.jpg',
   },
   {
     date: '2017.Q3 — 2018.Q2',
@@ -336,6 +336,26 @@ export const missions: MissionData[] = [
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
     imageUrl: 'images/5nG.jpg',
+  },
+  {
+    date: '2016.Q4 — 2017.Q3',
+    title: 'Operation: Half Cost Hotels',
+    role: 'Software Engineer, Back-End',
+    scanId: 'HCH-OPS-16',
+    objective:
+      'Architect and deliver a production-grade REST API backend for a last-minute hotel discount platform — connecting hotel managers and guests through dual-gateway financial operations, database-level dynamic pricing, and automated ACH payout pipelines. Implement three concurrent state machines across bookings, subscriptions, and payouts; encapsulate all business logic across ~111 DCI context classes; serve a dual-namespace versioned API for managers and customers on mobile and web.',
+    tactics: [
+      'Designed a DCI architecture with ~111 single-use Context objects (.perform()) under app/context/ — encapsulating booking holds, payment flows, payout initiation, and subscription billing per use case with fully thin controllers.',
+      'Implemented three concurrent AASM state machines — Booking (on_hold → waiting_for_payment → upcoming → current → past), Subscription (pending → active → past_due → canceled), and Payout (created → processing → done/failed) — with 15-minute hold expiration enforced via Sidekiq-Cron.',
+      'Built dual-gateway payment infrastructure: Braintree for customer subscription billing and saved card management; Dwolla for automated ACH hotel earnings payouts — with hourly Sidekiq-Cron jobs driving payout initiation and subscription state reconciliation.',
+      'Implemented custom PostgreSQL pricing functions (hotel_discount(), discounted_price()) for dynamic first-night and per-night discount computation; delivered a complex hotel search engine (price range, dates, rating, amenities, beds, parking, dining) with cursor-based pagination.',
+      'Delivered a dual-namespace versioned JSON API (/api/v1/managers, /api/v1/customers) with custom TokenAuth + Facebook/Google OAuth social login; wired Firebase Cloud Messaging push, ActionCable WebSocket, and SMTP notifications via a polymorphic Notification model; deployed via Dokku + Puma.',
+    ],
+    outcome: 'DUAL-GATEWAY LIVE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/htl.jpg',
   },
   {
     date: '2020.Q2 — 2022.Q4',
