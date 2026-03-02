@@ -235,6 +235,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/sfts.jpg',
   },
   {
+    date: '2019.Q3 — 2020.Q2',
+    title: 'Operation: Volt',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'VLT-OPS-19',
+    objective:
+      'Deliver features and integrations across a multi-application fintech monorepo — spanning a Rails JSON API backend, Ember.js borrower portal, and React admin dashboard — serving student loan borrowers, employer partners, and platform administrators. Navigate complex financial domain models: loan lifecycle state machines, SOAP payroll integrations, double-entry accounting via a general ledger, and enterprise SAML SSO for institutional partners.',
+    tactics: [
+      'Extended the sl-pay Rails 5.2 backend across dual versioned APIs (/api/v1, /api/v2) — implementing Devise + JWT auth, SAML SSO for enterprise partners (Citizens, John Hancock, Prudential), and AASM state machines for loan and payment lifecycle with Paper Trail audit logging.',
+      'Built SOAP-based payroll system connectors (JH/EPS/iPay) and Finicity financial data aggregation pipelines — bridging employer payroll data into disbursement workflows alongside NSLDS student loan data synchronization.',
+      'Contributed to the Ember.js 3.8 customer portal — implementing loan dashboard features, income-driven repayment flows, PSLF eligibility tools, and document e-signing with partner-specific multi-tenant theming per institutional brand.',
+      'Extended the React 16 + Redux/Redux-Saga admin dashboard — delivering employer/employee management surfaces, invoice generation, and bulk operation interfaces built on Material-UI and DevExtreme data grids.',
+      'Maintained Sidekiq background job pipelines for email, reports, and batch processing; instrumented Sentry and LogRocket across all three applications; shipped via CircleCI with Docker and S3 + CloudFront deployments.',
+    ],
+    outcome: '3-APP FINTECH STACK',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/vlt.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
