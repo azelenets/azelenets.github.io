@@ -16,6 +16,26 @@ export interface MissionData {
 
 export const missions: MissionData[] = [
   {
+    date: '2024.Q3 — 2025.Q1',
+    title: 'Operation: Prague.Wedding',
+    role: 'Software Engineer, Front-End',
+    scanId: 'PW-OPS-24',
+    objective:
+      'Design and deliver a professional marketing and booking website for a Prague-based wedding coordinator — enabling couples across four language markets to discover service packages, explore a gallery, and submit inquiries. Built as a zero-backend React SPA with version-controlled multilingual content, serverless form handling, and a full international SEO layer including hreflang routing and geolocation metadata.',
+    tactics: [
+      'Built a React 19 + TypeScript SPA with React Router 7 and Vite 6 — delivering a rich single-page experience across home, blog listing, and dynamic blog post routes with a sticky collapsing header and mobile hamburger menu with body scroll lock.',
+      'Implemented a four-language i18n system (Ukrainian, English, Czech, Russian) — all content version-controlled in a single translations.ts, language persisted via localStorage and URL query param, with dynamic SEO meta/OG/hreflang tag updates on every language switch.',
+      'Crafted interactive service tier cards with tab-style navigation and scale/translate animations; built a multi-state contact form (idle → submitting → success/error with 5s auto-close) powered by Web3Forms API for serverless submission — zero backend or server infrastructure required.',
+      'Delivered a comprehensive SEO layer: Open Graph, Twitter Card, geolocation tags with Prague coordinates, sitemap, and robots.txt — targeting international couples searching for Prague wedding services in four languages.',
+      'Built a version-controlled blog system with multilingual post content and slug-based routing — no external CMS, no database, no API; bundled GDPR cookie consent modal and Privacy Policy overlay for EU compliance.',
+    ],
+    outcome: '4-LOCALE ZERO-BACKEND',
+    status: 'ONGOING',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/pwc.jpg',
+  },
+  {
     date: '2022.Q2 — 2026.Q1',
     title: 'Operation: TW-BSCI',
     role: 'Software Engineer, Full-Stack',
