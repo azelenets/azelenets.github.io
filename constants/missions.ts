@@ -16,9 +16,9 @@ export interface MissionData {
 
 export const missions: MissionData[] = [
   {
-    date: '2024.Q1 — 2026.Q1',
+    date: '2022.Q2 — 2026.Q1',
     title: 'Operation: TW-BSCI',
-    role: 'Sr. Full-Stack Engineer',
+    role: 'Software Engineer, Full-Stack',
     scanId: 'TW-BSCI-24',
     objective:
       'Operate mission-critical 24/7 systems powering a proprietary DNA ordering platform for life science researchers across medicine, drug discovery, genetic engineering, and ultra long-term data storage. Every order is unique — the platform must handle one-of-a-kind production configurations at precision and scale otherwise unavailable in the industry.',
@@ -35,7 +35,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/tw-bsci-01.webp',
   },
   {
-    date: '2022.Q1 — 2024.Q1',
+    date: '2021.Q3 — 2025.Q1',
     title: 'Operation: Seeking Alpha',
     role: 'Sr. Software Engineer, Back-End',
     scanId: 'SA-OPS-22',
@@ -53,6 +53,27 @@ export const missions: MissionData[] = [
     align: 'left',
     // isShield: true,
     imageUrl: 'images/seeking-alpha.jpg',
+  },
+  {
+    date: '2021.Q1 — 2022.Q3',
+    title: 'Operation: Payment Modals',
+    role: 'Founding Partner, Full-Stack Engineer',
+    scanId: 'PM-OPS-20',
+    objective:
+      'Co-found and architect a self-serve SaaS platform enabling businesses to design fully branded Stripe payment modals and embed them on any website via a single script tag — no backend, no friction. Sole technical architect and engineer, responsible for end-to-end delivery of the product, admin infrastructure, and marketing surface. Go-live target: five minutes from signup to first payment collected.',
+    tactics: [
+      'Engineered an interactive modal designer with live preview — allowing non-technical users to configure branding, copy, colors, and imagery without writing a single line of code.',
+      'Built a visual Stripe checkout form builder with full support for custom images, bespoke copy, and both recurring and one-time payment modes.',
+      'Delivered a zero-friction embed model: businesses inject a single generated script tag to activate a fully hosted, production-ready payment modal on any website in under five minutes.',
+      'Implemented end-to-end encryption of sensitive Stripe credentials and configuration data to meet security compliance requirements across all tenants.',
+      'Architected and shipped the complete product surface — marketing site, admin panel, and REST API — from concept to live product as founding technical partner.',
+      'Integrated GPay, ApplePay and PayPal payment methods — enabling businesses to accept payments through these popular payment methods without requiring additional technical expertise.',
+    ],
+    outcome: '5 MIN TO REVENUE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/pm1.jpg',
   },
   {
     date: '2019.Q1 — 2022.Q1',
