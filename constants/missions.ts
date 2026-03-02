@@ -37,7 +37,7 @@ export const missions: MissionData[] = [
   {
     date: '2021.Q3 — 2025.Q1',
     title: 'Operation: Seeking Alpha',
-    role: 'Sr. Software Engineer, Back-End',
+    role: 'Software Engineer, Back-End',
     scanId: 'SA-OPS-22',
     objective:
       'Engineer and optimize server-side systems for a market-leading financial media platform serving millions of active investors. Primary directive: deliver seamless, high-performance access to exclusive research, real-time market data, and advanced analytical tools for a growing paid subscriber base — with zero tolerance for downtime or latency.',
@@ -97,7 +97,7 @@ export const missions: MissionData[] = [
   {
     date: '2019.Q3 — 2020.Q2',
     title: 'Operation: 123',
-    role: 'Full-Stack Engineer',
+    role: 'Software Engineer, Full-Stack',
     scanId: 'VC-OPS-19',
     objective:
       'Engineer a subscription-driven vanity URL management platform for the Swiss market — enabling businesses and individuals to register memorable keywords that redirect to destination URLs. Own end-to-end technical delivery: keyword lifecycle engine, payment pipeline, Angular SPA, and production infrastructure — with zero tolerance for redirect downtime or stale state.',
@@ -117,7 +117,7 @@ export const missions: MissionData[] = [
   {
     date: '2020.Q1 — 2020.Q3',
     title: 'Operation: BVP',
-    role: 'Full-Stack Engineer',
+    role: 'Software Engineer, Full-Stack',
     scanId: 'BAV-OPS-19',
     objective:
       'Architect and deliver a compliant, multi-portal corporate pension management system connecting three distinct user groups — DUK employees, AUPU employees, and HR managers — each operating on isolated subdomains with purpose-built access patterns. Primary directives: eliminate credential storage through passwordless auth, enforce postal identity verification, and synchronize bulk insurance records from an external Prequity system without disrupting live operations.',
@@ -137,7 +137,7 @@ export const missions: MissionData[] = [
   {
     date: '2020.Q3 — 2021.Q2',
     title: 'Operation: KEFIR',
-    role: 'Full-Stack Engineer',
+    role: 'Software Engineer, Full-Stack',
     scanId: 'KP-OPS-20',
     objective:
       'Design and deliver a field operations management system for — a major construction and insulation contractor — bridging internal staff and Gunvor subcontractors through structured order tracking, measurement recording, and financial reporting. Mandate: replace manual billing workflows with a role-enforced digital pipeline capable of generating audit-grade SAR and GAR financial reports on demand.',
@@ -153,6 +153,26 @@ export const missions: MissionData[] = [
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
     imageUrl: 'images/kfr.jpg',
+  },
+  {
+    date: '2018.Q3 — 2019.Q2',
+    title: 'Operation: M-PWR',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'MP-OPS-18',
+    objective:
+      'Architect and deliver a competition lifecycle management platform for trade chambers — orchestrating browser-based game competitions across a four-tier organizational hierarchy, from chamber setup through live game session tracking to certificate generation. Bridge between hierarchical school and chamber management and an external game client, with cryptographically validated scoring to eliminate result tampering.',
+    tactics: [
+      'Designed a four-tier STI group hierarchy (Admin → Chamber → Institution → Cohort) using Rails Single Table Inheritance — with Pundit policies enforcing role-specific visibility and management rights at every organizational boundary.',
+      'Built a game session API (POST /api/attempts to initialize, PUT /api/attempts/:token to submit) with MD5 checksum validation on every score submission, preventing client-side manipulation across all active contests.',
+      'Implemented team token/password authentication for game client access; integrated Devise Invitable for teacher-to-student invitation flows and cohort self-enrollment via shared registration tokens.',
+      'Delivered PDF certificate generation per team via Prawn and Excel statistics exports via RubyXL, covering leaderboards aggregated by chamber, institution, and level — with teacher test mode enabling out-of-competition trial runs even when a contest is inactive.',
+      'Containerized with Docker + Docker Compose; deployed via Capistrano + Ansible; instrumented with Sentry and AppSignal for production error tracking and APM across the full competition lifecycle.',
+    ],
+    outcome: 'TAMPER-PROOF SCORING',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/mp.jpg',
   },
   {
     date: '2020.Q2 — 2022.Q4',
