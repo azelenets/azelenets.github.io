@@ -318,6 +318,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/enrg.webp',
   },
   {
+    date: '2017.Q3 — 2018.Q2',
+    title: 'Operation: 5NGo',
+    role: 'Software Engineer, Back-End',
+    scanId: 'FNG-OPS-17',
+    objective:
+      'Architect and deliver the JSON API backend for a location-based social gaming platform — pairing strangers in real-world PostGIS game zones to physically meet, scan QR codes, and collaboratively produce geotagged narrative content. Design a Redis-backed matchmaking engine, a six-stage game state machine, and real-time WebSocket delivery for iOS and Android clients — with zero tolerance for stale game state or mismatched pairs.',
+    tactics: [
+      'Built the game state machine (assigned → started → confirmed → created → finished/failed) with PostGIS-backed geographic zone management — enforcing time-window activation, meetup point assignment, QR code confirmation for physical presence validation, and story/scenario prompt sequencing per zone.',
+      'Engineered a Redis-backed real-time matchmaking engine — queuing players per game zone and pairing by experience category (newby/experience/sponsored) with blocked/reported user exclusion; delivered live game state updates via ActionCable WebSockets (NotificationChannel, CommonChannel).',
+      'Implemented DCI (Data, Context, Interaction) architecture via the dci gem — organizing matchmaking, creation upload, and zone lifecycle logic into dedicated app/context/create_mode/ contexts; wired rpush (APNS/FCM) push notification pipelines for all game flow events.',
+      'Delivered a versioned JSON API (versionist, Accept header routing) across create_mode, explore_mode, users, game_zones, likes, reports, and blocks namespaces — with Devise + custom token auth, Facebook Account Kit social login, and Swagger documentation across all endpoints.',
+      'Deployed Sidekiq workers across five dedicated queues (default, mailers, create_mode, game_zone, online_statistics) with Clockwork scheduled tasks; managed CarrierWave + fog-aws S3 uploads for geotagged creations; maintained ActiveAdmin + CanCanCan panel for zone, story, and user moderation.',
+    ],
+    outcome: 'GEOSPATIAL GAME LIVE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/5nG.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
