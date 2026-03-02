@@ -358,6 +358,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/htl.jpg',
   },
   {
+    date: '2015.Q4 — 2016.Q3',
+    title: 'Operation: Inviteez', // TODO: hide project name
+    role: 'Software Engineer, Back-End',
+    scanId: 'INV-OPS-15',
+    objective:
+      'Architect and deliver a REST API backend for a mobile event invitation platform — enabling users to create events, invite contacts via phone, email, or platform account, manage RSVPs, and engage in real-time event chat with push notification delivery across 15+ notification types. Build shadow account infrastructure for non-registered invitees, phone-first SMS authentication, and STI-based notification dispatch for iOS-first mobile clients.',
+    tactics: [
+      'Built a full event management and smart invitation API — supporting registered users, phone/email contacts, and token-based invite links; implemented shadow accounts for non-registered invitees and RSVP status tracking (accepted/declined/no reply) across the invitation lifecycle.',
+      'Architected phone-first authentication via Nexmo SMS verification + Doorkeeper OAuth 2.0 password grant with token/refresh flow; enforced Pundit policy-based authorization across all event, invitation, chat, and album resources.',
+      'Delivered an event chat system with JSON-structured messages, embedded photo support, and per-user read state; built per-event photo albums with MD5 duplicate detection and CarrierWave + MiniMagick image processing via Sidekiq background workers.',
+      'Implemented an STI-based Notification model consolidating 15+ notification types in a single table — backed by Rpush APNS push delivery for iOS; wired Sidekiq + Whenever cron for scheduled RSVP reminder dispatch across active events.',
+      'Shipped a versioned JSON-API (V1 full, V2 limited) via Versionist + ActiveModel Serializers with soft-delete archiving (deleted_at) across all records; instrumented with Rollbar error tracking, New Relic APM, and Mandrill transactional email via MarkerB.',
+    ],
+    outcome: '15+ PUSH TYPES LIVE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/evnt.webp',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
