@@ -175,6 +175,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/mp.jpg',
   },
   {
+    date: '2018.Q1 — 2018.Q4',
+    title: 'Operation: MNDesk',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'MND-OPS-18',
+    objective:
+      'Operate as a contributing engineer on a large-scale, multi-tenant SaaS news distribution platform — serving press offices, journalists, and organizations across 16 language markets and international subdomains. Navigate and extend a battle-hardened Rails monolith (167 models, 53 background workers, 71 service objects) with microservice extensions, high-throughput async pipelines, and integrations spanning social networks, CRMs, analytics platforms, and CDNs.',
+    tactics: [
+      'Delivered features across the publish, network, analyze, and report namespaces of the Rails 5.2 monolith — contributing to press release management, multi-tenant hosted newsrooms, and audience analytics surfaces used by media organizations globally.',
+      'Built and maintained Grape REST API endpoints powering third-party newsroom integrations; extended multi-channel social distribution pipelines across Twitter, Facebook, LinkedIn, Instagram, and YouTube with consistent delivery guarantees.',
+      'Worked within the Sidekiq Pro ecosystem (53 background job types, sidekiq-cron) to sustain async press release distribution, media monitoring ingestion from Twingly and GNIP, and SendGrid email delivery under high-volume publishing loads.',
+      'Drove Elasticsearch 6.5 query improvements as part of the ongoing migration from deprecated Solr 4.10 — optimizing content search across multi-locale newsroom content at scale, with Redis and Memcache as layered caching layers.',
+      'Shipped within a Buildkite CI/CD pipeline with Heroku review apps and an RSpec + VCR + Percy visual regression test suite; integrated across Stripe, Salesforce, HubSpot, Segment, S3, and Cloudinary.',
+    ],
+    outcome: '16 MARKETS SERVED',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/mnd.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
