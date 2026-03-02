@@ -95,6 +95,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/theskills.webp',
   },
   {
+    date: '2019.Q3 — 2020.Q4',
+    title: 'Operation: 123',
+    role: 'Full-Stack Engineer',
+    scanId: 'VC-OPS-18',
+    objective:
+      'Engineer a subscription-driven vanity URL management platform for the Swiss market — enabling businesses and individuals to register memorable keywords that redirect to destination URLs. Own end-to-end technical delivery: keyword lifecycle engine, payment pipeline, Angular SPA, and production infrastructure — with zero tolerance for redirect downtime or stale state.',
+    tactics: [
+      'Architected a hybrid Rails JSON API + Angular 5 SPA — Rails serves the application shell and exposes typed endpoints; Angular handles all modal-driven user flows with real-time keyword availability checking, including pending-payment collision detection.',
+      'Built a full keyword lifecycle engine (inactive → pending → active → expired) across eight subscription tiers from 1-day to 10-year — with Delayed Job handling async expiration and auto-cleanup of stale pending records within 2-minute SLA windows.',
+      'Integrated ThriveCart webhook pipeline to drive atomic payment state transitions — covering approval, refund, cancellation, and renewal events — with a dedicated PaymentProcessor/ThriveProcessor service layer abstracting all gateway logic.',
+      'Implemented Devise + Petergate RBAC for tiered user/admin access; wired Mandrill transactional email across the full subscription lifecycle; instrumented per-keyword click analytics with bot filtering.',
+      'Deployed via Capistrano + Docker to an Apache/Puma stack with SSL termination, Zurich-timezone business logic, and environment-scoped secrets for Mandrill, ThriveCart, and MySQL credentials.',
+    ],
+    outcome: '8 TIERS LIVE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/123.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
