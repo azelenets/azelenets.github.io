@@ -156,7 +156,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q3 — 2019.Q2',
-    title: 'Operation: M-PWR',
+    title: 'Operation: M-Power',
     role: 'Software Engineer, Full-Stack',
     scanId: 'MP-OPS-18',
     objective:
@@ -176,7 +176,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q1 — 2018.Q4',
-    title: 'Operation: MNDesk',
+    title: 'Operation: MN-Desk',
     role: 'Software Engineer, Full-Stack',
     scanId: 'MND-OPS-18',
     objective:
@@ -193,6 +193,26 @@ export const missions: MissionData[] = [
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
     imageUrl: 'images/mnd.jpg',
+  },
+  {
+    date: '2019.Q1 — 2019.Q4',
+    title: 'Operation: NJ-SIGN',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'NS-OPS-19',
+    objective:
+      'Extend and harden a Japanese-market digital signature and contract management platform — delivering secure multi-party document workflows from template creation through blockchain-anchored approval. Scope covers a full document lifecycle state machine, KMS-encrypted S3 storage, polymorphic digital signature placement, and multi-OAuth integrations with Google, Slack, and Auth0.',
+    tactics: [
+      'Engineered a document lifecycle state machine (init → draft → in_progress → approved/rejected → trashed) across multi-user team workspaces — with owner/signer role-based access, subscription plan gating (free/lite/pro) on max contracts and workflow features, and hierarchical folder structures per team.',
+      'Implemented polymorphic digital signature placement on both DocumentItem and TemplateItem models; built guest signer access via time-limited tokens and per-document password protection for secure external signing flows.',
+      'Built a multi-stage PDF processing pipeline — document generation via Prawn, merging via CombinePDF, Word-to-PDF conversion via LibreOffice — and executed live S3 migration from Google Drive with AWS KMS encryption for document-at-rest security.',
+      'Wired Sidekiq + Redis background workers across document mailers (creation, approval, confirmation), blockchain hash recording for finalized contracts, Google Docs processing, and document sharing notifications — sustaining async reliability across all lifecycle events.',
+      'Integrated multi-provider OAuth (Google Drive import/export + native Docs support, Slack channel document sharing, Auth0) via OmniAuth; instrumented the ShareLog audit trail for full document distribution history and Sentry APM for production monitoring.',
+    ],
+    outcome: 'BLOCKCHAIN-ANCHORED',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/njs.png',
   },
   {
     date: '2020.Q2 — 2022.Q4',
