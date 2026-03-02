@@ -378,6 +378,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/evnt.webp',
   },
   {
+    date: '2016.Q3 — 2017.Q2',
+    title: 'Operation: The Walk',
+    role: 'Software Engineer, Back-End',
+    scanId: 'TW-OPS-16',
+    objective:
+      'Architect and deliver a JSON API backend for a mobile and web spiritual content platform — serving personalized teachings, guided prayers, and multi-translation Scripture passages to global audiences. Integrate Contentful CMS for bulk content import, build a four-job async media processing pipeline via FFmpeg and AWS Elastic Transcoder, and model polymorphic engagement (favorites, follows, notes, views) consistently across all six content types.',
+    tactics: [
+      'Designed a versioned Rails 5 JSON API across 21 service classes, 20 serializers, and 19 controllers — with polymorphic Favorites, Follows, Notes, and Views spanning Teachings, Prayers, Bible Passages, Topics, Authors, and Organizations via concern-based Searchable, Viewable, and AttachmentOptimizable mixins.',
+      'Integrated Contentful CMS for bulk content import — syncing video/audio Teachings (with clip segments), multi-step guided Prayers, and multi-translation Bible Passages (NIV/ESV/NLT) into PostgreSQL via Sidekiq background workers.',
+      'Built a four-job async media processing pipeline: FFmpeg server-side transcoding, AWS Elastic Transcoder format conversion, and Tinify image compression — serving processed assets via AWS S3 + CloudFront CDN with scope-aware ActiveModelSerializers JSON delivery.',
+      'Implemented Challah gem authentication with guest user support and four OAuth providers (Facebook, Google, Instagram, Twitter); delivered personalized topic-interest content feeds, per-user Bible translation preferences, and full-text PostgreSQL search.',
+      'Documented all endpoints with Swagger; maintained 40+ API integration test specs via RSpec + FactoryBot + VCR across 92+ PostgreSQL migrations; managed content and platform data through an ActiveAdmin (ArcticAdmin theme) panel backed by Sidekiq + Redis.',
+    ],
+    outcome: 'MULTI-TYPE CONTENT LIVE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/twlk.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
