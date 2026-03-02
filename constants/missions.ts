@@ -192,7 +192,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/mnd.jpg',
+    imageUrl: 'images/mnd.webp',
   },
   {
     date: '2019.Q1 — 2019.Q4',
@@ -213,6 +213,26 @@ export const missions: MissionData[] = [
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
     imageUrl: 'images/njs.png',
+  },
+  {
+    date: '2018.Q4 — 2019.Q2',
+    title: 'Operation: Sophisticate',
+    role: 'Software Engineer, Front-End',
+    scanId: 'SOPH-OPS-19',
+    objective:
+      'Design and deliver a high-performance static marketing and portfolio site for a digital strategy consultancy — showcasing services, team, and client case studies. Built on Gatsby v2 with a file-based content model, animated transitions, and PWA offline support; containerized and deployed to Kubernetes via GitLab CI/CD with zero CMS or database dependency.',
+    tactics: [
+      'Built a Gatsby v2 static site with React 16 — GraphQL data layer querying Markdown/YAML frontmatter for all content, gatsby-image + Sharp for responsive optimized image delivery, and Reactstrap/Bootstrap 4 for UI scaffolding.',
+      'Implemented animated page transitions with direction tracking and keyboard navigation between project pages (← / → arrow keys) — enabling fluid, app-like case study browsing on a static site.',
+      'Authored custom Markdown components (<reco>, <left>/<right>, <process>) allowing editors to compose rich testimonial, two-column, and step-list layouts within flat Markdown files — eliminating any CMS or database dependency.',
+      'Delivered a project theming system with radial gradient color palettes (rot, orange, grün, türkis, markenblau) applied dynamically to case study cards; wired PWA offline caching for instant repeat visits.',
+      'Containerized via multi-stage Docker build (Node 10 build → Nginx Alpine) and deployed to staging and production Kubernetes environments via Helm through GitLab CI/CD.',
+    ],
+    outcome: 'ZERO-CMS DELIVERED',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/sfts.jpg',
   },
   {
     date: '2020.Q2 — 2022.Q4',
