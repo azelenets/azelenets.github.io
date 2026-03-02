@@ -398,6 +398,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/twlk.jpg',
   },
   {
+    date: '2016.Q1 — 2016.Q4',
+    title: 'Operation: Staffing',
+    role: 'Software Engineer, Back-End',
+    scanId: 'SP-OPS-16',
+    objective:
+      'Architect and deliver a recruitment SaaS platform API — connecting job seekers and employers through dual-sided application state machines, intelligent vacancy matching, and a full hiring pipeline. Build STI-based user hierarchy, company verification workflows, video introduction uploads, and DCI-pattern business logic across 38+ context classes, serving stateless mobile and web clients through a versioned JSON API.',
+    tactics: [
+      'Designed DCI architecture with 38+ context classes under app/context/ — controllers delegate all business logic (profile management, application transitions, company verification, vacancy matching) to dedicated context objects, keeping the codebase isolated and testable across 99 RSpec spec files.',
+      'Engineered STI-based user hierarchy (User → Candidate/Manager) with dual state machines tracking both sides of each application simultaneously — candidate-side (matching → applied → declined) and manager-side (pending → shortlisted → rejected) — and a polymorphic feed model serving personalized vacancy + post streams.',
+      'Built candidate profile system covering work history, education, trainings, languages, photos, and video introductions — processing video via FFmpeg, storing assets via CarrierWave + AWS S3, and enabling employer job-history verification workflows.',
+      'Integrated Stripe payment pipeline for premium features; delivered four notification channels — in-app, Rpush iOS/Android push, Mandrill transactional email, and YoChat in-app messaging — across application pipeline, social, and company events.',
+      'Shipped a versioned JSON API (/api/v1/ via Accept header) with stateless bearer token auth (2-day expiry), CanCan authorization, Facebook/Instagram/Twitter OAuth login, and SwaggerEngine OpenAPI 2.0 docs; deployed via Capistrano 3 + Puma + Nginx with GitLab CI/CD and Docker-based test runs across 146 PostgreSQL migrations.',
+    ],
+    outcome: 'DUAL-SIDED PIPELINE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/stf.png',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
