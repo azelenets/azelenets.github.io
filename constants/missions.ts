@@ -255,6 +255,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/vlt.jpg',
   },
   {
+    date: '2019.Q4 — 2020.Q3',
+    title: 'Operation: SecureAuth',
+    role: 'Team Lead | Software Engineer, Full-Stack',
+    scanId: 'SAI-OPS-19',
+    objective:
+      'Operate across a 9-component enterprise Identity and Access Management (IAM) platform — spanning Ruby authentication APIs, React admin portals, Node.js middleware, and a C# .NET Identity Provider core. Deliver features and hardening across authentication, authorization, and federation services with zero tolerance for security regression: adaptive risk policies, multi-factor authentication across seven methods, and federated SSO over SAML, OAuth 2.0, OpenID Connect, CAS, and Kerberos.',
+    tactics: [
+      'Extended the Ruby/Sinatra+Grape authentication service (rupert) and Admin REST API (twilight) — implementing MFA policy endpoints, HMAC-SHA256 request signing with replay-attack prevention via timestamp validation and memory cache, and Argon2 password hashing.',
+      'Maintained adaptive risk-based authentication logic — BehavioSec behavioral biometrics, device fingerprinting, geographic/IP policy enforcement, and threat detection integrations with Exabeam and Cisco pxGrid for configurable conditional auth policies.',
+      'Contributed to three React admin portals (spike, coruscant, dagobah) and Node.js middleware (bespin) — delivering realm, application, and data store management surfaces for enterprise administrators with full RBAC and audit logging.',
+      'Maintained federated SSO flows across SAML 1.1/2.0, OAuth 2.0, OpenID Connect, CAS, and Kerberos/SPNEGO; secured credentials at rest via CyberArk Vault integration, encrypted fields, and RS256/HS256-signed JWTs with rate limiting and account lockout enforced at the request layer.',
+      'Authored Swagger/OpenAPI 3.0 and Protobuf messaging contracts across all nine services; maintained multi-stack CI/CD via Jenkins + Artifactory with Jest/Enzyme, RSpec + Rubocop, and NUnit test coverage across Ruby, React, and C# components.',
+    ],
+    outcome: 'ZERO-TRUST AUTH DELIVERED',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/sat.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
