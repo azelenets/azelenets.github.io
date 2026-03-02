@@ -298,6 +298,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/sat.jpg',
   },
   {
+    date: '2017.Q1 — 2018.Q1',
+    title: 'Operation: Energy_Cloud',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'EC-OPS-17',
+    objective:
+      'Engineer a B2B SaaS platform automating the complete commercial LED lighting retrofit lifecycle — from field audit through algorithm-driven fixture replacement matching, financial analysis, and multi-supplier purchase order generation. Replace manual auditor workflows with a command-pattern engine, PDF reporting pipeline, and subscription-gated role system serving auditors, suppliers, and enterprise customers.',
+    tactics: [
+      'Built the core audit hierarchy (Audits → Areas → Legacy Fixtures) with photo annotation support; engineered a replacement matching algorithm across 17 Mutations gem command classes — automatically pairing legacy fixtures to compatible LED products based on lamp shape, base size, voltage, lumen output, and kelvin temperature.',
+      'Developed a financial analysis engine calculating energy savings, ROI, payback period, and financing options per audit — generating professional PDF quotes and signed audit reports via WickedPDF + wkhtmltopdf for customer-facing deliverables.',
+      'Built a multi-supplier product catalog with bulk Excel/CSV import via Roo gem and real-time import progress feedback via ActionCable WebSockets; managed async Sidekiq jobs for long-running product imports and image processing against PostgreSQL and Paperclip file storage.',
+      'Integrated Zoho Subscriptions webhook pipeline for automated subscription lifecycle management — activations, upgrades, and cancellations automatically toggling user roles and permissions via CanCanCan + RoleModel RBAC across the Auditors, Suppliers, Admins, and Invitors role hierarchy.',
+      'Delivered multi-supplier purchase order generation with EasyPost shipping address validation; maintained an ActiveAdmin panel for platform management; deployed via Capistrano + Passenger on DigitalOcean with Honeybadger error tracking across a 113-migration PostgreSQL schema.',
+    ],
+    outcome: 'AUDIT-TO-ORDER LIVE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/enrg.webp',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
