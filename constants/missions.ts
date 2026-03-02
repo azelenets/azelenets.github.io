@@ -457,6 +457,26 @@ export const missions: MissionData[] = [
     align: 'right',
   },
   {
+    date: '2015.Q2 — 2016.Q2',
+    title: 'Operation: LoopMe',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'LM-OPS-15',
+    objective:
+      'Engineer features and analytics infrastructure on an enterprise-grade digital advertising management platform — serving advertisers, publishers, affiliates, and operations teams through the full campaign lifecycle. Navigate a large-scale Rails 5 monolith backed by Apache Kafka event streaming, AWS Redshift analytics warehousing, and Sidekiq Enterprise reliable scheduler — across 12 RBAC roles, 40+ ad formats, and 18 ad network integrations spanning five production environments.',
+    tactics: [
+      'Extended campaign and line item management across 40+ ad formats (banners, fullscreen, MPU, VAST/VPAID video) — implementing budget controls, frequency capping, A/B testing with control groups, geo/device/carrier/app-category targeting, and creative CRUD for image, HTML, video, and affiliate ad unit types stored via CarrierWave + S3 + CloudFront CDN.',
+      'Maintained 18 ad network API integrations (MoPub, Fyber, and 16 others) and a public REST API (/api/v1/) for external partner access to campaigns, line items, creatives, and reports; supported four pricing models (CPC, CPI, CPM, CPCV) across advertiser and affiliate billing flows.',
+      'Built multi-dimensional reporting dashboards — real-time KPI views (7-day and 2-day aggregations), Elasticsearch-backed large-scale queries, and Highcharts visualizations — with CSV export and scheduled email report delivery; backed by 29 statistics models and Redis caching with Sidekiq cache recalculation workers.',
+      'Operated invoicing, billing log, balance tracking, and monthly reconciliation workflows across event-level cost pipelines driven by Apache Kafka streaming; managed affiliate earnings accounting alongside advertiser CPC/CPI/CPM spend — with Redshift as the analytics data warehouse.',
+      'Enforced acl9 RBAC across 12 user roles (advertiser, publisher, manager, superadmin, sale, adop, affiliate, and more) with admin account impersonation; applied Draper decorator pattern for view logic separation; maintained Datadog StatsD, New Relic, and Sentry observability across Docker + Puma + Consul (service discovery) in five environments.',
+    ],
+    outcome: 'KAFKA-POWERED RTB',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/lpm.webp',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
