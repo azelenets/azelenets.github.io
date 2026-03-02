@@ -135,6 +135,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/bv.jpeg',
   },
   {
+    date: '2020.Q3 — 2021.Q2',
+    title: 'Operation: KEFIR',
+    role: 'Full-Stack Engineer',
+    scanId: 'KP-OPS-20',
+    objective:
+      'Design and deliver a field operations management system for — a major construction and insulation contractor — bridging internal staff and Gunvor subcontractors through structured order tracking, measurement recording, and financial reporting. Mandate: replace manual billing workflows with a role-enforced digital pipeline capable of generating audit-grade SAR and GAR financial reports on demand.',
+    tactics: [
+      'Architected a Rails 5.2 + React 16/Stimulus hybrid — Turbolinks-backed server rendering for core navigation with React components handling flexible measurement forms and part lists backed by PostgreSQL hstore and JSONB for schema-free field data.',
+      'Built a real-time budget utilization engine — orders tracked against defined spend thresholds with 80% warning and 90% critical indicators, giving project managers continuous visibility over active construction budgets.',
+      'Implemented Pundit role-based authorization across four access tiers (admin, staff, gunvor, sophisticates_admin) — enforcing granular resource policies on all order, measurement, collection, and reporting actions.',
+      'Delivered a dual-format export pipeline: SAR and GAR financial reports generated as print-ready PDFs via Prawn/Prawn-Table; Excel exports via rubyXL — covering the full invoicing and audit trail for construction billing cycles.',
+      'Integrated iScala ERP product catalog with JSONB-tracked historical article pricing and measurement-level surcharge calculations; deployed via GitLab CI/CD with parallel RSpec + Capybara test stages and auto-deploy to Kubernetes review environments on feature branches.',
+    ],
+    outcome: 'SAR + GAR AUTOMATED',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/kfr.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
