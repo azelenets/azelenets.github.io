@@ -91,18 +91,22 @@ const Credentials: React.FC = () => {
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: MASTER</div>
                     <h3 className="text-xl font-bold text-white">M.Eng. — Control and Automation</h3>
-                    <div className="text-sm text-slate-400">Dept. of Automation &amp; Computer Systems</div>
+                    <div className="text-sm text-slate-400">Dnipro Polytech | Dept. of Automation &amp; Computer Systems</div>
                   </div>
                   <span className="text-xs font-bold text-white/40">2011 — 2012</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Thesis_Project</div>
-                    <div className="text-xs text-primary">Directed movement of a tunnel boring machine along a laser beam + Photovoltaic matrix development, MatLab/MathCad model</div>
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
+                    <div className="text-xs text-primary">Computerized systems, control and automation</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
-                    <div className="text-xs text-primary">Specialty 8.050201 // Optimal &amp; Adaptive Control Systems</div>
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Qualification</div>
+                    <div className="text-xs text-primary">Computer systems engineer, researcher</div>
+                  </div>
+                  <div className="bg-black/40 border border-white/5 p-3">
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Thesis_Project</div>
+                    <div className="text-xs text-primary">Directed movement of a tunnel boring machine along a laser beam + Photovoltaic matrix development, MatLab/MathCad model</div>
                   </div>
                 </div>
               </article>
@@ -114,18 +118,18 @@ const Credentials: React.FC = () => {
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: BACHELOR</div>
                     <h3 className="text-xl font-bold text-white">B.Sc. Information Technology</h3>
-                    <div className="text-sm text-slate-400">Dept. of Automation &amp; Computer Systems</div>
+                    <div className="text-sm text-slate-400">Dnipro Polytech | Dept. of Automation &amp; Computer Systems</div>
                   </div>
                   <span className="text-xs font-bold text-white/40">2009 — 2011</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Direction</div>
-                    <div className="text-xs text-primary">050201 Systems Engineering // Industry 0502 Automation &amp; Control</div>
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
+                    <div className="text-xs text-primary">Industry Automation &amp; Control Systems Engineering</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Core_Disciplines</div>
-                    <div className="text-xs text-primary">Automatic Control Theory · Real-Time Systems · Computing Networks · DB Architecture</div>
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Qualification</div>
+                    <div className="text-xs text-primary">Specialist in automation and control systems</div>
                   </div>
                 </div>
               </article>
@@ -135,21 +139,24 @@ const Credentials: React.FC = () => {
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary"></div>
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: JR. SPECIALIST</div>
-                    <h3 className="text-xl font-bold text-white">Jr. Specialist</h3>
-                    <div className="text-sm text-slate-400">Automation, Computer-Integrated Technologies &amp; Robotics</div>
+                    <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: SPECIALIST</div>
+                    <h3 className="text-xl font-bold text-white">Automated Control Systems Specialist</h3>
                     <div className="text-sm text-slate-400">Dnipro Polytech College</div>
                   </div>
                   <span className="text-xs font-bold text-white/40">2005 — 2009</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialty</div>
-                    <div className="text-xs text-primary">174/G7 // Computer Science &amp; Programming in ACS</div>
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
+                    <div className="text-xs text-primary">Installation and maintenance of technological production automation equipment and systems</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Core_Disciplines</div>
-                    <div className="text-xs text-primary">Industrial Controllers (PLC/SCADA) · Robotics · IoT · Embedded Systems · Automatic Control Theory</div>
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Qualification</div>
+                    <div className="text-xs text-primary">Electromechanical technician for installation and commissioning of technological production automation equipment and systems</div>
+                  </div>
+                  <div className="bg-black/40 border border-white/5 p-3">
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Thesis_Project</div>
+                    <div className="text-xs text-primary">Automated control system for air heaters in steel production</div>
                   </div>
                 </div>
               </article>
