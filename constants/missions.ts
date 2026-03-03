@@ -557,6 +557,25 @@ export const missions: MissionData[] = [
     imageUrl: 'images/rv.avif',
   },
   {
+    date: '2013.Q2 — 2013.Q4',
+    title: 'Operation: Discount',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'D4Y-OPS-13',
+    objective:
+      'Deliver a Rails 3.2 e-commerce catalog for a furniture and home goods retailer — enabling customers to browse discounted beds, sofas, and related products by category, view detailed specs, and proceed through a shopping flow. Build across 9 domain models with Devise-managed authentication, dual admin interfaces, AJAX-based cart mechanics, and a Capistrano-deployed production stack targeting MySQL on a live VPS.',
+    tactics: [
+      'Modelled 9 core domain entities (Product, Category, User, Comment, Country, Factory, Type, Model, Metum) capturing furniture-specific attributes — sleep places, clothes box, mechanisms, dimensions, materials — with Paperclip image attachments and Kaminari/will_paginate pagination (6 products per page in production.',
+      'Implemented a category-browsable product catalog with detail pages, similar product recommendations, and a CommonDefines shared module for consistent page parameter validation across controllers; integrated GMaps4Rails (Google Maps) for location-aware pages.',
+      'Built AJAX-based shopping cart foundations (BasketController, AjaxController) with Devise user authentication — registration, login, and password recovery flows — and static informational pages (how to buy, warranty, shipping, about, contacts).',
+      'Mounted dual admin interfaces (RailsAdmin + ActiveAdmin) at /admin for content and product data management; deployed via Capistrano + RVM remote-cache strategy with symlinked database.yml, uploads/, and system/ directories on a MySQL-backed production VPS.',
+    ],
+    outcome: 'FURNITURE CATALOG',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/d4u.avif',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
