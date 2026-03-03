@@ -502,7 +502,7 @@ export const missions: MissionData[] = [
     role: 'Software Engineer, Full-Stack',
     scanId: 'NEN-OPS-14',
     objective:
-      'Deliver a Dutch-market crowdfunding and investment management platform — supporting multilingual project listings, a four-step investment wizard with session-based form state, and iDEAL payment processing via a custom Buckaroo gateway integration. Serve both individual and corporate investor flows with conditional Reform validation, bilingual NL/EN routing, and BettyBlocks transactional email triggers across 14 domain models.',
+      'Deliver a crowdfunding and investment management platform — supporting multilingual project listings, a four-step investment wizard with session-based form state, and iDEAL payment processing via a custom Buckaroo gateway integration. Serve both individual and corporate investor flows with conditional Reform validation, bilingual NL/EN routing, and BettyBlocks transactional email triggers across 14 domain models.',
     tactics: [
       'Built a four-step investment wizard (reward selection → personal data → payment → confirmation) using Reform form objects with conditional validation for individual vs. corporate investors — managing session-based wizard state and handling JSONP embeddable widget endpoints for project info on external sites.',
       'Integrated the Buckaroo payment gateway via a custom lib/buckaroo/ library — supporting iDEAL Dutch banking, credit card, and invoice payment methods with signature-based webhook callback validation for tamper-proof payment confirmation.',
@@ -514,6 +514,27 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
+    imageUrl: 'images/nen.jpg',
+  },
+  {
+    date: '2013.Q3 — 2014.Q3',
+    title: 'Operation: NowShop',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'NOW-OPS-13',
+    objective:
+      'Contribute to a multi-tenant B2B2C e-commerce marketplace targeting Scandinavian retail — hosting independent carrier storefronts on isolated subdomains, aggregating products from multiple retailers, and routing commission-based revenue flows. Navigate a complex Rails 4 architecture (58+ models, 11 query objects) with FTP-based bulk product imports, automatic cart order splitting per retailer, GeoIP localization, and a full PayPal integration stack serving carriers like smartguy.dk, boozt.com, and coolshop.com.',
+    tactics: [
+      'Extended subdomain-based multi-tenancy via CarrierDetector middleware — routing carrier shop contexts through namespaced controllers (Admin/Carrier/Retailer/Public/API); maintained 58+ models and 11 query objects across a product master/variant hierarchy with SKU deduplication and FTP bulk import feed processing.',
+      'Built automatic cart order splitting by retailer — decomposing mixed-cart purchases into separate payment flows per vendor — with custom order state machines (pending → processing → shipped → completed) and a per-retailer/per-category commission calculation and reporting engine.',
+      'Integrated PayPal Express Checkout, IPN notifications, Adaptive Accounts, and billing agreements via a dedicated Payment::PayPal service layer; maintained Pensio gateway support; built a REST Order webhook API (v1) for retailer integrations with tokenizable record access.',
+      'Delivered GeoIP detection for geographic localization, multi-currency support, and country-specific shipping logic; managed AlchemyCMS 3.0 for carrier page building and media management; scheduled product feed processing, commission calculations, and exchange rate updates via Whenever cron.',
+      'Built a Backbone.js + jQuery + CoffeeScript frontend on Bootstrap SASS; maintained NewRelic APM and Airbrake error tracking; covered the platform with RSpec + Capybara + Factory Girl across a PostgreSQL schema with hstore and enforced foreign keys.',
+    ],
+    outcome: 'CART-SPLIT MARKETPLACE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/nw.avif',
   },
   {
     date: '2020.Q2 — 2022.Q4',
