@@ -576,6 +576,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/d4u.avif',
   },
   {
+    date: '2014.Q3 — 2016.Q1',
+    title: 'Operation: Kyiv.Guide',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'KGA-OPS-14',
+    objective:
+      'Build and extend a production-grade multilingual city guide platform for Kyiv — aggregating tourism attractions, dining, accommodation, events, and transit across four language markets (EN, UK, RU, DE). Architect a BrowserCMS-backed editorial layer on Rails 3.2, wire a live Feratel XML data sync pipeline for hotel inventory, and deliver full-text search, geolocation maps, and scheduled background workers across a long-running MySQL production deployment.',
+    tactics: [
+      'Implemented Globalize3 DB-backed translations across all content models (tourism places, food venues, events, carriers, news, accommodation) — serving four locales (English, Ukrainian, Russian, German) from a single schema with locale-aware routing and editorial workflows.',
+      'Built a Feratel accommodation sync pipeline using LibXML-Ruby to parse XML feeds from interface.deskline.net — UpdateAccommodationDataWorker and GetKeyValuesWorker scheduled via Sidekiq 2 + sidekiq-cron to keep hotel/hostel data (star ratings, facilities, classifications) continuously reconciled against the upstream API.',
+      'Delivered geolocation-enabled content across tourism places, food venues, events, and carriers — storing GPS coordinates per entity and rendering interactive Google Maps via gmaps4rails; managed Paperclip + FFmpeg media pipelines for image and video asset handling.',
+      'Integrated Thinking Sphinx 3 full-text search across all content types; built BrowserCMS portlet system for modular editorial blocks (carousels, banners, booking widgets, social tabs); implemented fragment caching with a dedicated CacheResetController and Sweepers to manage cache invalidation on editorial updates.',
+      'Maintained 100+ DB migrations tracking schema evolution from initial July 2014 commit; managed editorial content via the BrowserCMS admin interface; deployed via Capistrano 2 + RVM on a MySQL-backed Rails 3.2.14 stack in a stable, long-running production configuration.',
+    ],
+    outcome: '4-LOCALE CITY GUIDE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/ky.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
