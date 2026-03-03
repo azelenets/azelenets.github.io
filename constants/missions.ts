@@ -596,6 +596,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/ky.jpg',
   },
   {
+    date: '2014.Q2 — 2015.Q1',
+    title: 'Operation: NOW',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'NWB-OPS-14',
+    objective:
+      'Architect and deliver the backend platform for a location-based events and places discovery app targeting mobile users across Russian-speaking cities — exposing a REST API for iOS and Android clients alongside a multilingual web catalog and a four-tier admin panel. Operate on a MongoDB/Mongoid stack with 2D geospatial indexing, Redis-cached translations, and device token authentication — surfacing nearby events, venue discovery, and automatic city detection from user coordinates.',
+    tactics: [
+      'Modelled core domain in MongoDB/Mongoid ODM — Event (news, concerts, discounts, other), Place (restaurants, theaters, stores), City, Category, SubCategory, PlaceCategory, Banner, and Translation — with MongoDB 2D geospatial indexes on all location-aware documents for radius-based city auto-detection and proximity filtering.',
+      'Built a mobile REST API (/api/customer/*) with device token authentication via Devise for iOS and Android clients — covering registration, login, city detection from coordinates, event/place listings, category filters, and user settings; serialized all responses via acts_as_api profile definitions with per-format field control.',
+      'Implemented a multilingual content layer (Russian, English, Yakut) using Mongoid localize: true for field-level document translations — backed by MongoDB-stored Translation documents and a Redis cache with 3-min TTL for high-frequency locale lookups across all content types.',
+      'Enforced CanCan role hierarchy (super admin → city admin → controller → manager) with city-scoped ability definitions for multi-tenant admin access; mounted ActiveAdmin for full CRUD across all entities; managed Paperclip + ImageMagick image pipelines with five style variants (gallery, medium, thumb, small, logo).',
+      'Delivered a multilingual web front-end (/:locale/* routing) for event and place catalogs, full-text search, contacts, and partner pages — backed by Redis session caching and a stable Rails 3.2.16 + MongoDB production stack.',
+    ],
+    outcome: 'GEO-AWARE MOBILE API',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/nw.jpg',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
