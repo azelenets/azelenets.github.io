@@ -537,6 +537,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/nw.avif',
   },
   {
+    date: '2014.Q4 — 2015.Q4',
+    title: 'Operation: Revolution',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'R9-OPS-14',
+    objective:
+      'Build and extend a multi-tenant SaaS CMS platform enabling musicians and artists to launch and manage professional websites without writing code — deployed under revolve-music.com. Architect three cooperating sub-applications: a public marketing site, a 27-controller admin panel for content and subscription management, and a Liquid-powered CMS renderer mapping vanity subdomains and custom domains to artist sites. Operate across content publishing, subscription billing, fan engagement, and white-label design tooling.',
+    tactics: [
+      'Engineered multi-domain routing via a Custom Domain constraint class — resolving incoming requests to the correct artist CMS context by subdomain or custom domain; maintained 48 ActiveRecord models across content domains (albums, tracks, tour dates, photo albums, blog posts, news, video pages) with CarrierWave + MiniMagick + Fog cloud media storage.',
+      'Built a Liquid template rendering pipeline for artist public sites — exposing layout, page, menu, resource, and partial template editors alongside a custom CSS/JS editor, Adobe Typekit font integration, and a visual design mode for hero imagery and color themes; backed by a service layer under app/services/ for CMS rendering and design mode logic.',
+      'Integrated Adyen recurring payment processing — handling tiered subscription plans with visitor/feature limits, trial periods, upgrade/downgrade flows, and billing agreement management; automated subscription expiration checks and payment status reconciliation via Delayed Job workers and Whenever cron scheduling.',
+      'Delivered fan engagement infrastructure: Campaign Monitor (CreateSend) integration for email capture and list management, a comment system across blog/news/video content types, visitor tracking, and social media profile link management (Spotify, iTunes, YouTube, and more).',
+      'Maintained a HAML/Slim admin view layer across 27 controllers with Devise authentication; applied Dalli (Memcached) caching for CMS rendering throughput; covered the platform with RSpec + Factory Girl + Capybara; deployed via Capistrano 3 + Monit on a MySQL-backed Rails 4.0 + Ruby 2.1.5 stack.',
+    ],
+    outcome: 'ARTIST CMS PLATFORM',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/rv.avif',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
