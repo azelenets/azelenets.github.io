@@ -87,12 +87,9 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, s
           </ul>
         </div>
 
-        <div className={`pt-4 border-t border-white/5 flex items-end justify-between`}>
-          <div className="space-y-1">
-            <div className="text-[9px] text-white/40 uppercase">Outcome_Impact</div>
-            <div className="text-xl font-display font-black text-white tracking-widest">{outcome}</div>
-          </div>
-          <div className={`text-[10px] font-bold px-2 py-1 uppercase ${statusColor}`}>SUCCESS: {status}</div>
+        <div className={`pt-4 border-t border-white/5 flex items-center justify-between gap-4`}>
+          <div className="text-xl font-display font-black text-white tracking-widest">{outcome}</div>
+          <div className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`}>{status}</div>
         </div>
       </div>
     </article>
