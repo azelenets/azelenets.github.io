@@ -439,7 +439,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q1 — 2015.Q4',
-    title: 'Operation: Yalantis.com',
+    title: 'Operation: Yalta',
     role: 'Software Engineer, Full-Stack',
     scanId: 'YW-OPS-15',
     objective:
@@ -694,6 +694,26 @@ export const missions: MissionData[] = [
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
     imageUrl: 'images/tv.avif',
+  },
+  {
+    date: '2018.Q2 — 2019.Q4',
+    title: 'Operation: Bible',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'WBS-OPS-18',
+    objective:
+      'Build and extend a large-scale, multi-language online and postal Bible education platform connecting students worldwide with volunteer teachers — managing course assignment lifecycles, student-teacher board matching, group congregation billing, and spiritual follow-up workflows. Operate across 70+ models, 37 Pundit policies, 19 Sidekiq workers, and 10 mailer modules on a Rails 5.2 DDD-influenced monolith with React 16 + Redux, JWT-auth REST API, and full four-locale i18n routing.',
+    tactics: [
+      'Modelled the core educational domain — Course → Exam → LessonSegment → Question → Choice — with STI (User → Student | Teacher) and Statesman state machines driving the Assignment lifecycle (pending → started → completed → graded → reviewed → Certificate generation); backed by RailsEventStore event sourcing for a full audit trail of key domain transitions.',
+      'Built a Board marketplace enabling teachers to adopt unassigned students from an open queue; implemented FollowupRequest spiritual workflows (baptism coordination, church introduction); managed campaign subdomain multi-tenancy for student acquisition channels (web, postal, referral) with per-campaign routing and analytics.',
+      'Delivered a REST API at /api/v1/ with JWT authentication and JSON API serializers; maintained localized routes across four languages (English, Portuguese, Spanish, French) with complete i18n coverage across all 70+ models and 10 mailer modules; enforced 37 Pundit RBAC policy files governing fine-grained access across all user roles.',
+      'Integrated Stripe for group congregation billing — invoicing, subscription management, and campaign payment flows; managed AWS S3 + CarrierWave file storage for course materials and certificates; wired Intercom for student support, Slack for internal alerts, New Relic for APM, and Cloudflare for edge performance.',
+      'Delivered React 16 + Redux frontend modules via Webpacker alongside a legacy jQuery/CoffeeScript layer; operated 19 Sidekiq + Redis background workers for grading queues, mailer dispatch, and expiration workflows; deployed to Heroku production with Docker Compose local dev parity.',
+    ],
+    outcome: 'GLOBAL EDUCATION PLATFORM',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/bb.avif',
   },
   {
     date: '2020.Q2 — 2022.Q4',
