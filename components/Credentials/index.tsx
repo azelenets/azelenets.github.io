@@ -129,6 +129,30 @@ const Credentials: React.FC = () => {
                   </div>
                 </div>
               </article>
+
+              {/* Jr. Specialist */}
+              <article className="relative pl-8 border-l border-primary/30">
+                <div className="absolute -left-[5px] top-0 size-2 bg-primary"></div>
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: JR. SPECIALIST</div>
+                    <h3 className="text-xl font-bold text-white">Jr. Specialist</h3>
+                    <div className="text-sm text-slate-400">Automation, Computer-Integrated Technologies &amp; Robotics</div>
+                    <div className="text-sm text-slate-400">Dnipro Polytech College</div>
+                  </div>
+                  <span className="text-xs font-bold text-white/40">2005 — 2009</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  <div className="bg-black/40 border border-white/5 p-3">
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialty</div>
+                    <div className="text-xs text-primary">174/G7 // Computer Science &amp; Programming in ACS</div>
+                  </div>
+                  <div className="bg-black/40 border border-white/5 p-3">
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Core_Disciplines</div>
+                    <div className="text-xs text-primary">Industrial Controllers (PLC/SCADA) · Robotics · IoT · Embedded Systems · Automatic Control Theory</div>
+                  </div>
+                </div>
+              </article>
             </div>
           </article>
 
