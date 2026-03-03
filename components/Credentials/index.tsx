@@ -1,5 +1,5 @@
 import React from 'react';
-import { certifications, combatLanguages, tacticalFrameworks } from '@/constants/credentials';
+import { certifications, combatLanguages, courses, tacticalFrameworks } from '@/constants/credentials';
 import CertCard from './CertCard';
 import StatCard from '@/components/Protocols/StatCard.tsx';
 import PageHeader from '@/components/layout/PageHeader.tsx';
@@ -77,7 +77,7 @@ const Credentials: React.FC = () => {
             <div className="flex items-start justify-between mb-8 border-b border-primary/20 pb-4">
               <div>
                 <span className="bg-primary text-black text-[9px] px-2 py-0.5 font-black uppercase mb-2 inline-block">Priority Alpha</span>
-                <h2 className="text-2xl font-display font-bold text-white uppercase tracking-tighter">High-Level Authorization</h2>
+                <h2 className="text-2xl font-display font-bold text-white uppercase tracking-tighter">Education Authorization</h2>
                 <div className="text-[10px] text-primary/60 mt-1 uppercase">Academic Credentials & Specializations</div>
               </div>
               <span className="material-symbols-outlined text-primary text-4xl opacity-50">verified_user</span>
@@ -175,6 +175,59 @@ const Credentials: React.FC = () => {
             </div>
           </article>
 
+          {/* Courses */}
+          <section className="space-y-4">
+            <div className="hazard-stripe h-2 w-full"></div>
+            <div className="flex items-center justify-between px-2 pt-2">
+              <div className="text-[10px] font-bold text-white tracking-[0.3em] uppercase">Training_Modules_Log</div>
+              <span className="text-[9px] text-primary/50 font-mono">{courses.length}_RECORDS_FOUND</span>
+            </div>
+            <div className="space-y-3">
+              {courses.map((course, i) => (
+                <a
+                  key={course.id}
+                  href={course.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group border border-white/10 bg-panel-dark hover:border-primary/50 transition-colors relative overflow-hidden"
+                >
+                  {/* top accent line */}
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-primary/0 group-hover:bg-primary/60 transition-colors"></div>
+
+                  <div className="p-4">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
+                          <span className="text-[8px] font-black text-black/80 px-1.5 py-0.5 uppercase tracking-widest"
+                                style={{ background: course.platform === 'Coursera' ? '#0056d2' : '#a435f0', color: '#fff' }}>
+                            {course.platform}
+                          </span>
+                          <span className="text-[8px] text-primary/40 font-mono">{course.id.toUpperCase()}</span>
+                        </div>
+                        <h4 className="text-sm font-bold text-white leading-tight group-hover:text-primary transition-colors">{course.title}</h4>
+                        <div className="text-[9px] text-slate-400 mt-0.5">{course.instructor}</div>
+                      </div>
+                      <div className="flex items-center gap-1 shrink-0 mt-1">
+                        <span className="text-[8px] text-white/20 uppercase tracking-widest">#{String(i + 1).padStart(2, '0')}</span>
+                        <span className="material-symbols-outlined text-white/20 text-sm group-hover:text-primary/60 transition-colors">open_in_new</span>
+                      </div>
+                    </div>
+
+                    <p className="text-[10px] text-white/40 mb-3 leading-relaxed">{course.description}</p>
+
+                    <div className="flex flex-wrap gap-1.5">
+                      {course.topics.map(topic => (
+                        <span key={topic} className="text-[8px] text-primary/70 border border-primary/20 bg-primary/5 px-1.5 py-0.5 font-mono uppercase">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+
           {/* Skills Grid */}
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white/5 border border-white/10 p-5">
@@ -196,20 +249,20 @@ const Credentials: React.FC = () => {
           </div>
 
           {/* Certs */}
-          <section className="space-y-4">
-            <div className="hazard-stripe h-2 w-full mb-4"></div>
-            <div className="text-[10px] font-bold text-white tracking-[0.3em] uppercase mb-4 px-2">Access_Keys_Repository</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {certifications.map(cert => (
-                <CertCard key={cert.id} id={cert.id} hash={cert.hash} title={cert.title} full={cert.full} />
-              ))}
-            </div>
-            <div className="p-4 border border-dashed border-white/10 text-center">
-              <button className="text-[10px] text-white/30 uppercase tracking-[0.3em] hover:text-primary transition-colors">
-                [ REQUEST_FURTHER_DECRYPTION ]
-              </button>
-            </div>
-          </section>
+          {/*<section className="space-y-4">*/}
+          {/*  <div className="hazard-stripe h-2 w-full mb-4"></div>*/}
+          {/*  <div className="text-[10px] font-bold text-white tracking-[0.3em] uppercase mb-4 px-2">Access_Keys_Repository</div>*/}
+          {/*  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">*/}
+          {/*    {certifications.map(cert => (*/}
+          {/*      <CertCard key={cert.id} id={cert.id} hash={cert.hash} title={cert.title} full={cert.full} />*/}
+          {/*    ))}*/}
+          {/*  </div>*/}
+          {/*  <div className="p-4 border border-dashed border-white/10 text-center">*/}
+          {/*    <button className="text-[10px] text-white/30 uppercase tracking-[0.3em] hover:text-primary transition-colors">*/}
+          {/*      [ REQUEST_FURTHER_DECRYPTION ]*/}
+          {/*    </button>*/}
+          {/*  </div>*/}
+          {/*</section>*/}
         </div>
       </div>
     </section>
