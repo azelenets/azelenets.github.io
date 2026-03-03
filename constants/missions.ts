@@ -636,6 +636,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/sk.png',
   },
   {
+    date: '2015.Q3 — 2016.Q3',
+    title: 'Operation: Sophite',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'SFTY-OPS-15',
+    objective:
+      'Build a white-label home security and real-time safety coordination platform for IoT — serving mobile clients (iOS/Android) and a web dashboard across 52 models, 40+ REST endpoints, and 13 async Sidekiq workers. Architect alarm management with live location broadcasting, a hierarchical trustee/guardian permission system, IoT device telemetry, multi-unit building management, and a multi-channel notification layer (push, SMS, email, Facebook) on a MySQL + Redis + Faye WebSocket stack deployed to AWS Elastic Beanstalk.',
+    tactics: [
+      'Modelled 52 ActiveRecord entities across safety domains — Alarm (send/cancel with shared location links), FollowMe (live location sharing sessions), Trustee (hierarchical guardian relationships with NONE/VIEWER/MANAGER/MASTER permission tiers), IMP IoT devices (battery, signal, temperature, humidity telemetry), MDU multi-unit buildings (floors, apartments, common areas, fire communities), and Organization for white-label tenant isolation.',
+      'Delivered a 40+ endpoint REST API across 16 controllers — all POST-based with auth_token header authentication — organized into functional groups (auth, user, home, imp, trustee, alarm, follow_me, mdu, notification, system); token strategy layered on Devise for stateless mobile client access.',
+      'Implemented real-time alarm broadcasting and live location sharing via Faye + Redis pub/sub WebSocket channels — enabling instant alarm propagation to trustees and followers without polling; managed 13 Sidekiq workers + Sidekiq-Cron for async notification dispatch, scheduled safety checks, and IoT telemetry ingestion.',
+      'Built a multi-channel notification pipeline routing alerts through APNs (Grocer) for iOS, GCM for Android, SMS, Email, and Facebook — triggered by Sidekiq workers on alarm events, trustee updates, and IoT threshold breaches; maintained Paperclip + AWS S3 for user media and device asset storage.',
+      'Deployed to AWS Elastic Beanstalk via Capistrano 3; maintained ActiveAdmin dashboard for operational oversight; backed by MySQL (primary data) + Redis (caching, sessions, pub/sub) across a HAML/SASS/CoffeeScript + jQuery frontend layer.',
+    ],
+    outcome: 'REALTIME SAFETY NETWORK',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/sft.webp',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
