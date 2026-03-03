@@ -90,7 +90,13 @@ const Credentials: React.FC = () => {
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: MASTER</div>
-                    <h3 className="text-xl font-bold text-white">M.Eng. — Control and Automation</h3>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-xl font-bold text-white">M.Eng. — Control and Automation</h3>
+                      <span className="inline-flex items-center gap-1 border border-yellow-400/60 bg-yellow-400/10 text-yellow-400 text-[8px] font-black uppercase tracking-widest px-2 py-0.5">
+                        <span className="material-symbols-outlined text-[10px]">military_tech</span>
+                        Diploma with Honor
+                      </span>
+                    </div>
                     <div className="text-sm text-slate-400">Dnipro Polytech | Dept. of Automation &amp; Computer Systems</div>
                   </div>
                   <span className="text-xs font-bold text-white/40">2011 — 2012</span>
@@ -140,7 +146,13 @@ const Credentials: React.FC = () => {
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: SPECIALIST</div>
-                    <h3 className="text-xl font-bold text-white">Automated Control Systems Specialist</h3>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-xl font-bold text-white">Automated Control Systems Specialist</h3>
+                      <span className="inline-flex items-center gap-1 border border-yellow-400/60 bg-yellow-400/10 text-yellow-400 text-[8px] font-black uppercase tracking-widest px-2 py-0.5">
+                        <span className="material-symbols-outlined text-[10px]">military_tech</span>
+                        Diploma with Honor
+                      </span>
+                    </div>
                     <div className="text-sm text-slate-400">Dnipro Polytech College</div>
                   </div>
                   <span className="text-xs font-bold text-white/40">2005 — 2009</span>
