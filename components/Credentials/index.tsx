@@ -90,19 +90,19 @@ const Credentials: React.FC = () => {
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: MASTER</div>
-                    <h3 className="text-xl font-bold text-white">M.Sc. Advanced Distributed Systems</h3>
-                    <div className="text-sm text-slate-400">California Institute of Advanced Neural Computation</div>
+                    <h3 className="text-xl font-bold text-white">M.Eng. — Control and Automation</h3>
+                    <div className="text-sm text-slate-400">Dept. of Automation &amp; Computer Systems</div>
                   </div>
-                  <span className="text-xs font-bold text-white/40">2012 — 2014</span>
+                  <span className="text-xs font-bold text-white/40">2011 — 2012</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Thesis_Sector</div>
-                    <div className="text-xs text-primary">Autonomous Edge Node Recovery</div>
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Thesis_Project</div>
+                    <div className="text-xs text-primary">Directed movement of a tunnel boring machine along a laser beam + Photovoltaic matrix development, MatLab/MathCad model</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Grade_Matrix</div>
-                    <div className="text-xs text-primary">4.0 / 4.0 (PRIME)</div>
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
+                    <div className="text-xs text-primary">Specialty 8.050201 // Optimal &amp; Adaptive Control Systems</div>
                   </div>
                 </div>
               </article>
@@ -113,14 +113,21 @@ const Credentials: React.FC = () => {
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: BACHELOR</div>
-                    <h3 className="text-xl font-bold text-white">B.Eng. Cyber-Tactical Engineering</h3>
-                    <div className="text-sm text-slate-400">United Defense Systems Academy</div>
+                    <h3 className="text-xl font-bold text-white">B.Sc. Information Technology</h3>
+                    <div className="text-sm text-slate-400">Dept. of Automation &amp; Computer Systems</div>
                   </div>
-                  <span className="text-xs font-bold text-white/40">2008 — 2012</span>
+                  <span className="text-xs font-bold text-white/40">2009 — 2011</span>
                 </div>
-                <p className="text-xs text-slate-500 leading-relaxed mt-2 uppercase tracking-wide">
-                  Focus on low-level kernel architectures and secure-boot protocols. Awarded the 'Top Gun' accolade for zero-day mitigation simulation.
-                </p>
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  <div className="bg-black/40 border border-white/5 p-3">
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Direction</div>
+                    <div className="text-xs text-primary">050201 Systems Engineering // Industry 0502 Automation &amp; Control</div>
+                  </div>
+                  <div className="bg-black/40 border border-white/5 p-3">
+                    <div className="text-[9px] text-white/40 uppercase mb-1">Core_Disciplines</div>
+                    <div className="text-xs text-primary">Automatic Control Theory · Real-Time Systems · Computing Networks · DB Architecture</div>
+                  </div>
+                </div>
               </article>
             </div>
           </article>
