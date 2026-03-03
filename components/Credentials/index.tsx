@@ -36,7 +36,7 @@ const Credentials: React.FC = () => {
               <img
                 alt="Biometric Scan Avatar"
                 className="w-full h-full object-cover grayscale opacity-50 brightness-125"
-                src="/images/desktop.png"
+                src="/images/desktop.avif"
               />
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 w-full h-0.5 bg-primary/40 animate-[bounce_5s_infinite]"></div>

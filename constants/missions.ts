@@ -33,7 +33,7 @@ export const missions: MissionData[] = [
     status: 'ONGOING',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/pwc.jpg',
+    imageUrl: 'images/pwc.avif',
   },
   {
     date: '2022.Q2 — 2026.Q1',
@@ -75,7 +75,7 @@ export const missions: MissionData[] = [
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
     // isShield: true,
-    imageUrl: 'images/seeking-alpha.jpg',
+    imageUrl: 'images/seeking-alpha.avif',
   },
   {
     date: '2021.Q1 — 2022.Q3',
@@ -96,7 +96,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/pm1.jpg',
+    imageUrl: 'images/pm1.avif',
   },
   {
     date: '2019.Q1 — 2022.Q1',
@@ -135,7 +135,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/123.jpg',
+    imageUrl: 'images/123.avif',
   },
   {
     date: '2020.Q1 — 2020.Q3',
@@ -155,7 +155,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/bv.jpeg',
+    imageUrl: 'images/bv.avif',
   },
   {
     date: '2020.Q3 — 2021.Q2',
@@ -175,7 +175,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/kfr.jpg',
+    imageUrl: 'images/kfr.avif',
   },
   {
     date: '2018.Q3 — 2019.Q2',
@@ -195,7 +195,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/mp.jpg',
+    imageUrl: 'images/mp.avif',
   },
   {
     date: '2018.Q1 — 2018.Q4',
@@ -215,7 +215,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/mnd.webp',
+    imageUrl: 'images/mnd.avif',
   },
   {
     date: '2019.Q1 — 2019.Q4',
@@ -235,7 +235,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/njs.png',
+    imageUrl: 'images/njs.avif',
   },
   {
     date: '2018.Q4 — 2019.Q2',
@@ -255,7 +255,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/sfts.jpg',
+    imageUrl: 'images/sfts.avif',
   },
   {
     date: '2019.Q3 — 2020.Q2',
@@ -275,7 +275,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/vlt.jpg',
+    imageUrl: 'images/vlt.avif',
   },
   {
     date: '2019.Q4 — 2020.Q3',
@@ -295,7 +295,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/sat.jpg',
+    imageUrl: 'images/sat.avif',
   },
   {
     date: '2017.Q1 — 2018.Q1',
@@ -315,7 +315,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/nrg.jpg',
+    imageUrl: 'images/nrg.avif',
   },
   {
     date: '2017.Q3 — 2018.Q2',
@@ -335,7 +335,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/5nG.jpg',
+    imageUrl: 'images/5nG.avif',
   },
   {
     date: '2016.Q4 — 2017.Q3',
@@ -355,7 +355,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/htl.jpg',
+    imageUrl: 'images/htl.avif',
   },
   {
     date: '2015.Q4 — 2016.Q3',
@@ -375,7 +375,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/evnt.webp',
+    imageUrl: 'images/evnt.avif',
   },
   {
     date: '2016.Q3 — 2017.Q2',
@@ -395,7 +395,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/twlk.jpg',
+    imageUrl: 'images/twlk.avif',
   },
   {
     date: '2016.Q1 — 2016.Q4',
@@ -415,7 +415,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/stf.png',
+    imageUrl: 'images/stf.avif',
   },
   {
     date: '2015.Q3 — 2016.Q2',
@@ -435,7 +435,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/vv.jpg',
+    imageUrl: 'images/vv.avif',
   },
   {
     date: '2015.Q1 — 2015.Q4',
@@ -494,7 +494,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/gmb.jpg',
+    imageUrl: 'images/gmb.avif',
   },
   {
     date: '2014.Q2 — 2014.Q4',
@@ -514,7 +514,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/nen.jpg',
+    imageUrl: 'images/nen.avif',
   },
   {
     date: '2013.Q3 — 2014.Q3',
@@ -593,7 +593,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/ky.jpg',
+    imageUrl: 'images/ky.avif',
   },
   {
     date: '2014.Q2 — 2015.Q1',
@@ -613,7 +613,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/nw.jpg',
+    imageUrl: 'images/nwb.avif',
   },
   {
     date: '2013.Q1 — 2013.Q4',
@@ -633,7 +633,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/sk.png',
+    imageUrl: 'images/sk.avif',
   },
   {
     date: '2015.Q3 — 2016.Q3',
@@ -653,7 +653,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/sft.webp',
+    imageUrl: 'images/sft.avif',
   },
   {
     date: '2016.Q2 — 2017.Q1',
@@ -673,7 +673,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/tx.jpeg',
+    imageUrl: 'images/tx.avif',
   },
   {
     date: '2013.Q4 — 2014.Q3',
@@ -693,7 +693,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
-    imageUrl: 'images/tv.jpg',
+    imageUrl: 'images/tv.avif',
   },
   {
     date: '2020.Q2 — 2022.Q4',

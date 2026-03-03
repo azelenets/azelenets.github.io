@@ -144,7 +144,7 @@ const Hero = ({ setView }: HeroProps) => {
 
           <div className="relative w-full h-full hud-border bg-black overflow-hidden z-10">
             <div className="absolute inset-0 bg-primary/5 z-10"></div>
-            <img alt="Tactical Avatar" className="w-full h-full object-cover glitch-img opacity-60 z-30" src="/images/desktop.png" />
+            <img alt="Tactical Avatar" className="w-full h-full object-cover glitch-img opacity-60 z-30" src="/images/desktop.avif" />
 
             <div className="absolute inset-0 z-20 pointer-events-none">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-32 border border-primary/30 rounded-full"></div>
