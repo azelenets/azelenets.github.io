@@ -22,7 +22,7 @@ const Credentials: React.FC = () => {
         <article className="bg-surface-terminal border border-primary/10 p-6 relative">
           <div className="absolute top-0 right-0 p-1 text-[10px] text-primary/30">STAT_03</div>
           <p className="text-primary/60 text-[10px] uppercase mb-1">Strategic Reach</p>
-          <p className="text-3xl font-bold text-white tracking-tighter">50M+ OPS</p>
+          <p className="text-3xl font-bold text-white tracking-tighter">38 PROJECTS</p>
           <p className="text-[10px] text-alert mt-4 uppercase animate-pulse">CRITICAL INFRASTRUCTURE REACHED</p>
         </article>
       </section>
