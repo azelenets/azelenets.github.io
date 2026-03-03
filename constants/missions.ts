@@ -616,6 +616,26 @@ export const missions: MissionData[] = [
     imageUrl: 'images/nw.jpg',
   },
   {
+    date: '2013.Q1 — 2013.Q4',
+    title: 'Operation: Scrij',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'SCR-OPS-13',
+    objective:
+      'Build a geospatially-aware, media-rich task management platform for cross-device synchronization across iOS, Android, and web — enabling users to create todos annotated with GPS-located SuperTags, attach photo/video/audio resources, collaborate within role-based organizations, and receive push notifications. Architect a dual-namespace Rails 3.2 stack: a token-authenticated mobile REST API and a browser-based web interface with maps, calendar, and dashboard views.',
+    tactics: [
+      'Modelled a rich domain hierarchy — User → Organization + Role → Todo (priority, dates, status, type) → SuperTag (lat/long/altitude) → BaseResource STI (photo/video/audio) → Comment — with HABTM todo sharing across team members and Contact linkage (emails, phones); tracked registered mobile clients via Scrijdevices (push token, UDID per user).',
+      'Engineered a two-way sync engine detecting adds, updates, and deletes across iOS, Android, and web clients — reconciling delta state per device session to keep all platforms consistent without full payload re-fetches; implemented /api namespace with Devise token authentication and acts_as_api response profiles for all mobile endpoints.',
+      'Integrated APNS push notifications via Grocer for iOS and GCM for Android — triggering alerts on todo assignment, status changes, and team activity from server-side events; managed Scrijdevices token lifecycle for reliable delivery across client re-registrations.',
+      'Built Paperclip + paperclip-ffmpeg media pipeline with Fog cloud storage for multi-format resource attachments (photo gallery, video transcoding, audio clips) across SuperTag annotations; rendered geo-located SuperTags on interactive Google Maps via gmaps4rails in the /web interface with calendar and dashboard views.',
+      'Enforced CanCan organization-scoped authorization (admin / manager / user roles) with Devise session auth for the web layer; delivered ActiveAdmin panel with Globalize3 multilingual support (EN/RU); deployed via Capistrano + RVM on a MySQL-backed production stack.',
+    ],
+    outcome: 'MULTI-DEVICE TASK SYNC',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/sk.png',
+  },
+  {
     date: '2020.Q2 — 2022.Q4',
     title: 'Operation: Data Citadel',
     role: 'Full-Stack Engineer',
