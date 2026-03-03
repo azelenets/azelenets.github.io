@@ -637,7 +637,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q3 — 2016.Q3',
-    title: 'Operation: Sophite',
+    title: 'Operation: Safety Sophite',
     role: 'Software Engineer, Full-Stack',
     scanId: 'SFTY-OPS-15',
     objective:
@@ -654,6 +654,46 @@ export const missions: MissionData[] = [
     statusColor: 'text-hazard bg-hazard/10',
     align: 'right',
     imageUrl: 'images/sft.webp',
+  },
+  {
+    date: '2016.Q2 — 2017.Q1',
+    title: 'Operation: Taxi',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'STX-OPS-16',
+    objective:
+      'Architect and deliver the backend platform for a Ukrainian ride-sharing service — exposing three distinct mobile API namespaces for riders, drivers, and dispatch operators across 47 Mongoid models and 13 async Sidekiq workers. Implement a full order lifecycle state machine, MongoDB geospatial driver matching, four Ukrainian payment gateway integrations with SHA1 signature verification, and a multi-channel notification layer (push, SMS, email) serving an iOS/Android mobile fleet.',
+    tactics: [
+      'Modelled 47 Mongoid documents covering the ride-hailing domain — Customer, Driver, Order (multi-stop destinations, hot/cold types), Car, DriverLocation, DriverTransaction, Region, Rate, Feedback, PushAlert — with an order lifecycle state machine (open → accepted → in_progress → closed/canceled) and bidirectional rating flows (customers rate drivers, drivers rate customers).',
+      'Designed three dedicated API namespaces: /api/customer/ for rider order placement and tracking, /api/driver/ for order acceptance and live location updates, /api/dispatcher/ for operator-managed manual order placement and phone integration — each with scoped authentication and role-appropriate response contracts.',
+      'Implemented MongoDB geospatial $near queries on DriverLocation documents for real-time proximity-based driver matching; maintained per-region pricing configuration (boarding fee + per-km rate, speed estimates, regional support contacts) to support multi-city deployment.',
+      'Integrated four Ukrainian payment processors — Nonstop24, Citypay, Easysoft, Privat24 — alongside cash flow, all with SHA1 callback signature verification; built phone-based OTP auth (login11 flow) via Devise alongside Facebook and VKontakte (VK.com) social login for the Eastern European market.',
+      'Operated 13 Sidekiq + Sidekiq-Cron background workers handling APNS/GCM push notifications, SMS.ru and email dispatch, fee processing, order timeout auto-cancellation, and DriverLocation document cleanup; backed by Redis for sessions and caching; managed via ActiveAdmin with Russian/Ukrainian i18n.',
+    ],
+    outcome: 'TRI-ROLE RIDE-HAIL API',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'left',
+    imageUrl: 'images/tx.jpeg',
+  },
+  {
+    date: '2013.Q4 — 2014.Q3',
+    title: 'Operation: TravelPlaces',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'TRP-OPS-13',
+    objective:
+      'Build a multi-region, multi-language travel destination discovery platform for Eastern Europe and the Caucasus — serving curated place guides across regional subdomains (Crimea, Donetsk, Batumi, Lviv) to both a public web audience and iOS/Android mobile clients. Architect subdomain-based multi-tenancy, five-locale DB-level translations, a mobile JSON API with incremental version-tracked sync, and a region-scoped admin panel with SEO and sitemap coverage.',
+    tactics: [
+      'Implemented subdomain-based multi-tenancy routing each regional portal (crimea / donetsk / batumi / lviv) to its own scoped layout and content set — built on core models: Place, Category, Region, Image, AdminUser, Language; managed Globalize3 DB-level translations across five locales (Russian, English, Ukrainian, Georgian, Polish) with Russian as default.',
+      'Delivered a dual-access layer: a public HomeController web interface (index, search, category browse, place detail with Kaminari pagination and SEO meta tags + sitemap) and a JSON REST APIController for mobile clients — serving places, categories, and map data with version tracking for incremental sync without full payload re-fetches.',
+      'Stored GPS coordinates on Place records and rendered interactive location maps via gmaps4rails (Google Maps); managed Paperclip image pipelines with mobile-optimized size variants (120×120 through 640×1136) to serve appropriately sized assets to web and native app clients.',
+      'Enforced region-scoped ActiveAdmin access control — restricting non-super-admins to managing only their own region\'s content — with full CRUD for all editorial entities; built full-text search across place names and descriptions across the multilingual corpus.',
+      'Delivered a Bootstrap 3 + jQuery + SASS/CoffeeScript frontend with acts-as-api response serialization for mobile endpoints; deployed via Capistrano + RVM on a MySQL-backed Rails 3.2 production stack.',
+    ],
+    outcome: '5-LOCALE TRAVEL GUIDE',
+    status: 'COMPLETED',
+    statusColor: 'text-hazard bg-hazard/10',
+    align: 'right',
+    imageUrl: 'images/tv.jpg',
   },
   {
     date: '2020.Q2 — 2022.Q4',
