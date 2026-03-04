@@ -101,9 +101,9 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
                 ANDRII<span className="text-primary">.ZELENETS</span>
               </span>
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-[8px] text-hazard/80 font-bold tracking-[0.3em]">SOFTWARE_ENGINEER</span>
-                <span className="h-[1px] w-8 bg-primary/30"></span>
-                <span className="text-[8px] text-primary/60 font-bold animate-pulse">WEB_AUTOMATION</span>
+                <span className="text-[8px] text-hazard/80 font-bold tracking-[0.3em]">AI_POWERED_SOFTWARE_ENGINEER</span>
+                {/*<span className="h-[1px] w-8 bg-primary/30"></span>*/}
+                {/*<span className="text-[8px] text-primary/60 font-bold animate-pulse">WEB_AUTOMATION</span>*/}
               </div>
             </div>
           </div>
