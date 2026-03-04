@@ -7,6 +7,7 @@ interface MissionItemProps {
   scanId: string;
   objective: string;
   tactics: string[];
+  tools?: string[];
   outcome: string;
   status: string;
   statusColor: string;
@@ -16,7 +17,7 @@ interface MissionItemProps {
   imageUrl?: string;
 }
 
-const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, status, statusColor, align, isShield, isGhost, imageUrl }: MissionItemProps) => {
+const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, outcome, status, statusColor, align, isShield, isGhost, imageUrl }: MissionItemProps) => {
   return (
     <article className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 z-10">
@@ -86,6 +87,21 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, outcome, s
             ))}
           </ul>
         </div>
+
+        {tools && tools.length > 0 && (
+          <div className="space-y-2">
+            <div className="text-primary/50 text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2">
+              <span className="material-symbols-outlined text-xs">memory</span> TECH_STACK
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {tools.map((tool) => (
+                <span key={tool} className="px-2 py-0.5 bg-primary/5 border border-primary/15 text-primary/60 text-[9px] font-mono tracking-wider">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className={`pt-4 border-t border-white/5 flex items-center justify-between gap-4`}>
           <div className="text-xl font-display font-black text-white tracking-widest">{outcome}</div>
