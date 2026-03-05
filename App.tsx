@@ -1,15 +1,15 @@
 import { Suspense, lazy, useCallback, useMemo, useState, useTransition } from 'react';
 import { View } from '@/types';
 import Navigation from '@/components/layout/Navigation';
-import Hero from '@/components/Hero';
+import Hero from '@/pages/Hero';
 import Footer from '@/components/layout/Footer';
 import PrivacyBanner from '@/components/layout/PrivacyBanner';
 
-const MissionLog = lazy(() => import('@/components/MissionLog'));
-const Laboratory = lazy(() => import('@/components/Laboratory'));
-const Arsenal = lazy(() => import('@/components/Arsenal'));
-const Protocols = lazy(() => import('@/components/Protocols'));
-const Credentials = lazy(() => import('@/components/Credentials'));
+const MissionLog = lazy(() => import('@/pages/MissionLog'));
+const Laboratory = lazy(() => import('@/pages/Laboratory'));
+const Arsenal = lazy(() => import('@/pages/Arsenal'));
+const Protocols = lazy(() => import('@/pages/Protocols'));
+const Credentials = lazy(() => import('@/pages/Credentials'));
 
 const App = () => {
   const [currentView, setCurrentView] = useState<View>(View.HOME);

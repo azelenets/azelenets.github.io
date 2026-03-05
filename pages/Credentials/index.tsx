@@ -1,7 +1,7 @@
 import React from 'react';
 import { certifications, combatLanguages, courses, tacticalFrameworks } from '@/constants/credentials';
 import CertCard from './CertCard';
-import StatCard from '@/components/Protocols/StatCard.tsx';
+import StatCard from '@/components/StatCard';
 import PageHeader from '@/components/layout/PageHeader.tsx';
 
 const Credentials: React.FC = () => {
