@@ -39,7 +39,7 @@ const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats,
     <article className={`hud-border bg-panel-dark/80 backdrop-blur-sm p-6 group transition-all ${COLOR_CLASS_MAP[color]}`}>
       <div className="flex justify-between items-start mb-4">
         <span className="text-[10px] font-bold opacity-60">
-          {id} // {codename}
+          {id}{' // '}{codename}
         </span>
         <span className={`px-2 py-0.5 text-[9px] font-bold tracking-tighter uppercase ${statusColor}`}>{status}</span>
       </div>

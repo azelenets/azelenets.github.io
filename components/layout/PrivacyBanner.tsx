@@ -36,7 +36,7 @@ const PrivacyBanner = () => {
           <div>
             <div className="flex items-center gap-3 mb-1">
               <span className="text-[8px] font-black tracking-[0.3em] text-hazard uppercase">DATA_COLLECTION_DIRECTIVE</span>
-              <span className="text-[8px] text-primary/30 font-mono">// REF: GDPR_ART.13</span>
+              <span className="text-[8px] text-primary/30 font-mono">&#47;&#47; REF: GDPR_ART.13</span>
             </div>
             <p className="text-[10px] font-mono text-white/60 leading-relaxed max-w-2xl">
               This interface deploys <span className="text-primary">analytical trackers</span> and <span className="text-primary">session cookies</span>{' '}

@@ -1,6 +1,5 @@
 import React from 'react';
-import { certifications, combatLanguages, courses, tacticalFrameworks } from '@/constants/credentials';
-import CertCard from './CertCard';
+import { combatLanguages, courses, tacticalFrameworks } from '@/constants/credentials';
 import StatCard from '@/components/StatCard';
 import PageHeader from '@/components/layout/PageHeader.tsx';
 
@@ -39,8 +38,8 @@ const Credentials: React.FC = () => {
                 src="/images/desktop.avif"
               />
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/4 w-full h-0.5 bg-primary/40 animate-[bounce_5s_infinite]"></div>
-                <div className="absolute inset-0 border-[20px] border-black/60"></div>
+                <div className="absolute top-1/4 w-full h-0.5 bg-primary/40 animate-[bounce_5s_infinite]" />
+                <div className="absolute inset-0 border-[20px] border-black/60" />
                 <div className="absolute top-2 left-2 text-[8px] text-primary">RETINA_SCAN: ACTIVE</div>
                 <div className="absolute bottom-2 right-2 text-[8px] text-primary animate-pulse">MATCH_FOUND_99%</div>
               </div>
@@ -55,10 +54,10 @@ const Credentials: React.FC = () => {
                 <span className="text-[10px] text-primary font-mono">X99-A12-88B</span>
               </div>
               <div className="w-full h-1 bg-white/10 mt-2 flex gap-1">
-                <div className="h-full bg-primary w-1/4"></div>
-                <div className="h-full bg-primary w-1/4"></div>
-                <div className="h-full bg-primary w-1/4"></div>
-                <div className="h-full bg-white/20 w-1/4"></div>
+                <div className="h-full bg-primary w-1/4" />
+                <div className="h-full bg-primary w-1/4" />
+                <div className="h-full bg-primary w-1/4" />
+                <div className="h-full bg-white/20 w-1/4" />
               </div>
             </div>
             <div className="p-3 border border-white/10 bg-white/5">
@@ -86,7 +85,7 @@ const Credentials: React.FC = () => {
             <div className="space-y-10">
               {/* Masters */}
               <article className="relative pl-8 border-l border-primary/30">
-                <div className="absolute -left-[5px] top-0 size-2 bg-primary"></div>
+                <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: MASTER</div>
@@ -119,7 +118,7 @@ const Credentials: React.FC = () => {
 
               {/* Bachelors */}
               <article className="relative pl-8 border-l border-primary/30">
-                <div className="absolute -left-[5px] top-0 size-2 bg-primary"></div>
+                <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: BACHELOR</div>
@@ -142,7 +141,7 @@ const Credentials: React.FC = () => {
 
               {/* Jr. Specialist */}
               <article className="relative pl-8 border-l border-primary/30">
-                <div className="absolute -left-[5px] top-0 size-2 bg-primary"></div>
+                <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: SPECIALIST</div>
@@ -177,7 +176,7 @@ const Credentials: React.FC = () => {
 
           {/* Courses */}
           <section className="space-y-4">
-            <div className="hazard-stripe h-2 w-full"></div>
+            <div className="hazard-stripe h-2 w-full" />
             <div className="flex items-center justify-between px-2 pt-2">
               <div className="text-[10px] font-bold text-white tracking-[0.3em] uppercase">Training_Modules_Log</div>
               <span className="text-[9px] text-primary/50 font-mono">{courses.length}_RECORDS_FOUND</span>
@@ -192,7 +191,7 @@ const Credentials: React.FC = () => {
                   className="block group border border-white/10 bg-panel-dark hover:border-primary/50 transition-colors relative overflow-hidden"
                 >
                   {/* top accent line */}
-                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-primary/0 group-hover:bg-primary/60 transition-colors"></div>
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-primary/0 group-hover:bg-primary/60 transition-colors" />
 
                   <div className="p-4">
                     <div className="flex items-start justify-between gap-4 mb-3">

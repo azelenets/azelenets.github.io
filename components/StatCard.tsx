@@ -16,12 +16,12 @@ const StatCard = ({ id, label, value, progress, segmented }: StatCardProps) => (
     <div className="h-1 w-full bg-primary/10 mt-4 overflow-hidden flex gap-1">
       {segmented ? (
         <>
-          <div className="h-full bg-primary flex-1"></div>
-          <div className="h-full bg-primary flex-1"></div>
-          <div className="h-full bg-primary/20 flex-1"></div>
+          <div className="h-full bg-primary flex-1" />
+          <div className="h-full bg-primary flex-1" />
+          <div className="h-full bg-primary/20 flex-1" />
         </>
       ) : (
-        <div className="h-full bg-primary" style={{ width: `${progress}%` }}></div>
+        <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
       )}
     </div>
   </article>

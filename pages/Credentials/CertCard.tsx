@@ -14,7 +14,7 @@ const CertCard = ({ id, hash, title, full }: CertCardProps) => (
     <div className="text-sm font-bold text-white uppercase">{title}</div>
     <div className="flex items-center gap-2 mt-3">
       <div className="h-1 flex-grow bg-white/5">
-        <div className="h-full bg-primary w-full shadow-[0_0_8px_#00f3ff]"></div>
+        <div className="h-full bg-primary w-full shadow-[0_0_8px_#00f3ff]" />
       </div>
       <span className="text-[8px] text-primary">VAL_OK</span>
     </div>

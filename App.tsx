@@ -14,7 +14,7 @@ const Credentials = lazy(() => import('@/pages/Credentials'));
 const App = () => (
   <div className="min-h-screen flex flex-col font-mono selection:bg-primary selection:text-black">
     <div className="fixed inset-0 pointer-events-none z-0">
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(0,243,255,0.05)_0%,_transparent_60%)]"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(0,243,255,0.05)_0%,_transparent_60%)]" />
     </div>
 
     <Navigation />

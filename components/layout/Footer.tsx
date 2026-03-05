@@ -14,7 +14,7 @@ const Footer = () => {
             <div>
               <div className="text-[8px] text-primary font-bold uppercase mb-2">Data_Encryption</div>
               <div className="flex items-center gap-2">
-                <span className="size-2 bg-primary rounded-full animate-pulse"></span>
+                <span className="size-2 bg-primary rounded-full animate-pulse" />
                 <span className="text-[10px] text-white font-mono">ENCRYPTED_ENDPOINT_33</span>
               </div>
             </div>

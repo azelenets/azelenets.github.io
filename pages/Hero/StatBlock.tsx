@@ -12,7 +12,7 @@ const StatBlock = ({ label, value, barColor, width }: StatBlockProps) => (
     <div className="text-[10px] text-primary/60 font-bold tracking-widest uppercase">{label}</div>
     <div className="text-3xl font-display font-black text-white">{value}</div>
     <div className="h-1 bg-white/5 w-full mt-2">
-      <div className={`h-full ${barColor}`} style={{ width }}></div>
+      <div className={`h-full ${barColor}`} style={{ width }} />
     </div>
   </div>
 );

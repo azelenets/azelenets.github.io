@@ -91,7 +91,7 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
           </Section>
 
           <Section label="Limitation of Liability">
-            This site is provided "as-is" without warranties of any kind. The operator is not liable
+            This site is provided &quot;as-is&quot; without warranties of any kind. The operator is not liable
             for any direct, indirect, or incidental damages arising from your use of this interface or
             reliance on information presented herein.
           </Section>

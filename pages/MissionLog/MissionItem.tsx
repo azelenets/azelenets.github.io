@@ -22,7 +22,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
     <article className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 z-10">
         <div className="size-4 bg-bg-dark border-2 border-primary rotate-45 flex items-center justify-center shadow-[0_0_15px_rgba(0,243,255,0.6)]">
-          <div className="size-1 bg-primary"></div>
+          <div className="size-1 bg-primary" />
         </div>
       </div>
 
@@ -34,20 +34,20 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
         <figure className="border border-primary/10 bg-black/20 p-4 mt-4 inline-block group hover:border-primary/40 transition-colors w-full">
           {isShield ? (
             <div className="w-full h-40 bg-black/40 flex items-center justify-center border border-primary/10 overflow-hidden relative">
-              <div className="absolute inset-0 cyber-grid opacity-30"></div>
+              <div className="absolute inset-0 cyber-grid opacity-30" />
               <span className="material-symbols-outlined text-6xl text-primary/20 scale-150">shield_lock</span>
               <div className="absolute bottom-2 left-2 text-[8px] text-primary/30 uppercase">{scanId}</div>
             </div>
           ) : isGhost ? (
             <div className="h-40 flex flex-col justify-center space-y-2 px-8 w-full bg-black/40 border border-primary/10">
               <div className="h-1 w-full bg-white/5">
-                <div className="h-full bg-primary/40 w-full animate-pulse"></div>
+                <div className="h-full bg-primary/40 w-full animate-pulse" />
               </div>
               <div className="h-1 w-2/3 bg-white/5">
-                <div className="h-full bg-primary/30 w-full"></div>
+                <div className="h-full bg-primary/30 w-full" />
               </div>
               <div className="h-1 w-3/4 bg-white/5">
-                <div className="h-full bg-primary/20 w-full animate-pulse"></div>
+                <div className="h-full bg-primary/20 w-full animate-pulse" />
               </div>
             </div>
           ) : imageUrl ? (
@@ -66,22 +66,22 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
         </figure>
       </div>
 
-      <div className={`hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6`}>
+      <div className="hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6">
         <div className="space-y-2">
-          <div className={`text-hazard text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2`}>
+          <div className="text-hazard text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2">
             <span className="material-symbols-outlined text-xs">priority_high</span> MISSION_OBJECTIVE
           </div>
           <p className="text-sm text-slate-400 leading-relaxed">{objective}</p>
         </div>
 
         <div className="space-y-2">
-          <div className={`text-primary text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2`}>
+          <div className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2">
             <span className="material-symbols-outlined text-xs">architecture</span> TACTICAL_IMPLEMENTATION
           </div>
           <ul className="text-xs text-slate-300 space-y-2 list-none font-mono">
             {tactics.map((tactic) => (
-              <li key={tactic} className={`flex gap-2`}>
-                <span className={`text-primary font-bold`}>&gt;&gt;</span>
+              <li key={tactic} className="flex gap-2">
+                <span className="text-primary font-bold">&gt;&gt;</span>
                 <span>{tactic}</span>
               </li>
             ))}
@@ -103,7 +103,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
           </div>
         )}
 
-        <div className={`pt-4 border-t border-white/5 flex items-center justify-between gap-4`}>
+        <div className="pt-4 border-t border-white/5 flex items-center justify-between gap-4">
           <div className="text-xl font-display font-black text-white tracking-widest">{outcome}</div>
           <div className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`}>{status}</div>
         </div>

@@ -12,7 +12,7 @@ const formatCoord = (val: number, posLabel: string, negLabel: string) => {
   return `${Math.abs(val).toFixed(4)}° ${dir}`;
 };
 
-const UtcClock = memo(() => {
+const UtcClock = memo(function UtcClock() {
   const [utcTime, setUtcTime] = useState(() => {
     const now = new Date();
     return `${now.toUTCString().split(' ')[4]} UTC`;
@@ -86,7 +86,7 @@ const Navigation = () => {
             rel="noopener noreferrer"
             className="md:hidden relative px-4 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
-            <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity" />
             <span className="relative z-10 text-black font-black text-xs uppercase tracking-tighter flex items-center gap-1.5">
               <span className="material-symbols-outlined text-sm">lock_open</span>
               ACCESS_DOSSIER
@@ -150,10 +150,10 @@ const Navigation = () => {
           <div className="hidden lg:flex flex-col text-right">
             <span className="text-[9px] text-primary/40 font-bold uppercase tracking-widest">Signal_Strength</span>
             <div className="flex gap-0.5 mt-0.5 justify-end">
-              <div className="w-3 h-1 bg-primary"></div>
-              <div className="w-3 h-1 bg-primary"></div>
-              <div className="w-3 h-1 bg-primary"></div>
-              <div className="w-3 h-1 bg-primary/20"></div>
+              <div className="w-3 h-1 bg-primary" />
+              <div className="w-3 h-1 bg-primary" />
+              <div className="w-3 h-1 bg-primary" />
+              <div className="w-3 h-1 bg-primary/20" />
             </div>
           </div>
 
@@ -163,7 +163,7 @@ const Navigation = () => {
             rel="noopener noreferrer"
             className="hidden md:flex relative px-6 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
-            <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity" />
             <span className="relative z-10 text-black font-black text-xs uppercase tracking-tighter flex items-center gap-2">
               <span className="material-symbols-outlined text-sm">lock_open</span>
               INITIATE_CONTACT
@@ -175,9 +175,9 @@ const Navigation = () => {
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 group"
             aria-label="Toggle menu"
           >
-            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}></span>
-            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></span>
+            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-6 h-[2px] bg-primary transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
           </button>
         </div>
       </div>
@@ -204,7 +204,7 @@ const Navigation = () => {
                       {item.label}
                     </span>
                   </div>
-                  {isActive && <span className="w-4 h-[2px] bg-primary"></span>}
+                  {isActive && <span className="w-4 h-[2px] bg-primary" />}
                 </>
               )}
             </NavLink>
@@ -217,8 +217,8 @@ const Navigation = () => {
           <div className="flex items-center gap-8 text-[9px] font-bold tracking-[0.2em] uppercase">
             <div className="flex items-center gap-2 text-primary">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
               <div>
                 SYSTEM_STATUS: <span className="text-white">OPERATIONAL</span>

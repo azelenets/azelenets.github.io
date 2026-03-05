@@ -69,12 +69,7 @@ const Hero = () => {
 
     fetch('https://api.ipify.org?format=json', { signal: controller.signal })
       .then((response) => response.json())
-      .then((data: { ip?: string }) => setLocalIP(data.ip))
-      .catch((error: Error) => {
-        if (error.name !== 'AbortError') {
-          console.error('Failed to fetch IP', error);
-        }
-      });
+      .then((data: { ip?: string }) => setLocalIP(data.ip));
 
     return () => controller.abort();
   }, []);
@@ -94,7 +89,7 @@ const Hero = () => {
         {'hardwareConcurrency' in navigator && <p>CPU: {`${navigator.hardwareConcurrency}_CORES`}</p>}
         {'deviceMemory' in navigator && <p>MEMORY: {`${navigator.deviceMemory}_GB`}</p>}
         <div className="w-32 h-1 bg-white/5 mt-2">
-          <div className="w-3/4 h-full bg-primary/50"></div>
+          <div className="w-3/4 h-full bg-primary/50" />
         </div>
       </aside>
 
@@ -102,7 +97,7 @@ const Hero = () => {
         <div className="flex-1 space-y-8 z-10">
           <header className="space-y-2">
             <div className="flex items-center gap-3">
-              <span className="hazard-stripe h-4 w-12"></span>
+              <span className="hazard-stripe h-4 w-12" />
               <span className="text-hazard font-bold text-xs tracking-[0.3em] uppercase">Tactical Software Engineering</span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">
@@ -124,7 +119,7 @@ const Hero = () => {
               className="group relative px-8 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden"
             >
               <span className="relative z-10">Deploy Solution</span>
-              <div className="absolute top-0 right-0 hazard-stripe w-2 h-full opacity-50 group-hover:w-full transition-all duration-300"></div>
+              <div className="absolute top-0 right-0 hazard-stripe w-2 h-full opacity-50 group-hover:w-full transition-all duration-300" />
             </button>
             <button
               onClick={() => navigate('/arsenal')}
@@ -136,17 +131,17 @@ const Hero = () => {
         </div>
 
         <figure className="relative w-full lg:w-1/2 aspect-square max-w-md">
-          <div className="absolute inset-0 border border-primary/10 rounded-full scale-110"></div>
-          <div className="absolute inset-0 border border-dashed border-primary/20 rounded-full scale-125 animate-spin-slow"></div>
+          <div className="absolute inset-0 border border-primary/10 rounded-full scale-110" />
+          <div className="absolute inset-0 border border-dashed border-primary/20 rounded-full scale-125 animate-spin-slow" />
 
           <div className="relative w-full h-full hud-border bg-black overflow-hidden z-10">
-            <div className="absolute inset-0 bg-primary/5 z-10"></div>
+            <div className="absolute inset-0 bg-primary/5 z-10" />
             <img alt="Tactical Avatar" className="w-full h-full object-cover glitch-img opacity-60 z-30" src="/images/desktop.avif" />
 
             <div className="absolute inset-0 z-20 pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-32 border border-primary/30 rounded-full"></div>
-              <div className="absolute top-1/2 left-0 w-full h-[1px] bg-primary/20"></div>
-              <div className="absolute left-1/2 top-0 h-full w-[1px] bg-primary/20"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-32 border border-primary/30 rounded-full" />
+              <div className="absolute top-1/2 left-0 w-full h-[1px] bg-primary/20" />
+              <div className="absolute left-1/2 top-0 h-full w-[1px] bg-primary/20" />
 
               <div className="absolute top-4 left-4 text-[10px] text-experimental/80 font-bold">REC [●]</div>
               <div className="absolute top-4 right-4 text-[10px] text-primary/60 font-bold">CAM_01</div>

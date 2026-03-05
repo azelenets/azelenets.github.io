@@ -38,7 +38,7 @@ const Arsenal: React.FC = () => {
               value={query}
               onChange={e => setQuery(e.target.value)}
             />
-            <div className="w-2 h-5 bg-primary animate-pulse"></div>
+            <div className="w-2 h-5 bg-primary animate-pulse" />
           </div>
         </div>
       </search>

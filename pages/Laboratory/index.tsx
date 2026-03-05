@@ -6,37 +6,37 @@ import PageHeader from '@/components/layout/PageHeader';
 const labCardChildren: Record<string, React.ReactNode> = {
   PRJ_0442: (
     <div className="h-16 w-full bg-black/40 rounded flex items-end gap-1 p-2">
-      <div className="w-full bg-primary/20 h-1/2"></div>
-      <div className="w-full bg-primary/40 h-3/4"></div>
-      <div className="w-full bg-primary/60 h-2/3"></div>
-      <div className="w-full bg-primary/40 h-full"></div>
-      <div className="w-full bg-primary/20 h-1/2"></div>
-      <div className="w-full bg-primary/30 h-1/3"></div>
+      <div className="w-full bg-primary/20 h-1/2" />
+      <div className="w-full bg-primary/40 h-3/4" />
+      <div className="w-full bg-primary/60 h-2/3" />
+      <div className="w-full bg-primary/40 h-full" />
+      <div className="w-full bg-primary/20 h-1/2" />
+      <div className="w-full bg-primary/30 h-1/3" />
     </div>
   ),
   PRJ_0819: (
     <div className="h-16 w-full bg-black/40 rounded flex items-center justify-center p-2">
       <svg className="w-full h-full text-hazard/40" viewBox="0 0 100 20">
         <path d="M0 10 Q 25 0, 50 10 T 100 10" fill="none" stroke="currentColor" strokeDasharray="2,1"
-              strokeWidth="1"></path>
-        <path d="M0 10 Q 25 20, 50 10 T 100 10" fill="none" stroke="currentColor" strokeWidth="0.5"></path>
+              strokeWidth="1" />
+        <path d="M0 10 Q 25 20, 50 10 T 100 10" fill="none" stroke="currentColor" strokeWidth="0.5" />
       </svg>
     </div>
   ),
   PRJ_1105: (
     <div className="h-16 w-full bg-black/40 rounded flex items-center justify-between px-4">
       <div className="size-8 border-2 border-alert/30 rounded-full flex items-center justify-center">
-        <div className="size-4 bg-alert animate-pulse"></div>
+        <div className="size-4 bg-alert animate-pulse" />
       </div>
       <div className="flex flex-col gap-1 w-2/3">
         <div className="h-1 bg-white/5 w-full">
-          <div className="h-full bg-alert w-[15%]"></div>
+          <div className="h-full bg-alert w-[15%]" />
         </div>
         <div className="h-1 bg-white/5 w-full">
-          <div className="h-full bg-alert w-[45%]"></div>
+          <div className="h-full bg-alert w-[45%]" />
         </div>
         <div className="h-1 bg-white/5 w-full">
-          <div className="h-full bg-alert w-[8%]"></div>
+          <div className="h-full bg-alert w-[8%]" />
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ eyebrow, titleMain, titleAccent
             {titleMain}
             {titleAccent && (
               <>
-                {' '}<span className="text-primary font-light">//</span>{' '}
+                {' '}<span className="text-primary font-light">&#47;&#47;</span>{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">{titleAccent}</span>
               </>
             )}
