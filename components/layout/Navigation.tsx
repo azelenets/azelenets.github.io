@@ -84,8 +84,10 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
     <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-primary/20">
       <div className="max-w-[1600px] mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-4 md:gap-8">
-          <button
-            onClick={() => handleNavClick(View.CREDENTIALS)}
+          <a
+            href="https://calendar.app.google/yf8ZWByZWy1bFEY38"
+            target="_blank"
+            rel="noopener noreferrer"
             className="md:hidden relative px-4 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
             <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity"></div>
@@ -93,7 +95,7 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
               <span className="material-symbols-outlined text-sm">lock_open</span>
               ACCESS_DOSSIER
             </span>
-          </button>
+          </a>
 
           <div id="logo" className="hidden sm:flex items-center gap-4">
             <div className="flex flex-col">
@@ -153,16 +155,18 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
             </div>
           </div>
 
-          <button
-            onClick={() => handleNavClick(View.CREDENTIALS)}
+          <a
+            href="https://calendar.app.google/yf8ZWByZWy1bFEY38"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:flex relative px-6 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
             <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity"></div>
             <span className="relative z-10 text-black font-black text-xs uppercase tracking-tighter flex items-center gap-2">
               <span className="material-symbols-outlined text-sm">lock_open</span>
-              ACCESS_DOSSIER
+              INITIATE_CONTACT
             </span>
-          </button>
+          </a>
 
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
