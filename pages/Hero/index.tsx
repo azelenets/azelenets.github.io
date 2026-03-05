@@ -81,7 +81,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full px-6 py-12 relative overflow-hidden">
+    <section className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full pt-12 pb-12 md:py-12 relative overflow-hidden">
       <aside className="absolute left-6 bottom-48 hidden xl:block text-[9px] leading-tight text-primary/40 space-y-1 font-mono">
         <p>ENCRYPTION: AES-256-GCM</p>
         <p>IP: {localIP ?? 'UNKNOWN'}</p>
@@ -93,44 +93,44 @@ const Hero = () => {
         </div>
       </aside>
 
-      <div className="max-w-[1500px] mx-auto w-full flex-1 flex flex-col lg:flex-row items-center px-6 gap-16 py-24">
-        <div className="flex-1 space-y-8 z-10">
+      <div className="max-w-[1500px] mx-auto w-full flex-1 flex flex-col lg:flex-row items-center px-6 gap-16 pt-6 pb-24 md:py-24">
+        <div className="flex-1 w-full space-y-8 z-10">
           <header className="space-y-2">
             <div className="flex items-center gap-3">
               <span className="hazard-stripe h-4 w-12" />
-              <span className="text-hazard font-bold text-xs tracking-[0.3em] uppercase">Tactical Software Engineering</span>
+              <span className="text-hazard font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase">Tactical Software Engineering</span>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">
+            <h1 className="font-display text-4xl md:text-7xl pt-3 font-black text-white leading-none tracking-tighter">
               ARCHITECTING <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">DIGITAL DEFENSE</span>
             </h1>
           </header>
 
           <div className="hud-border p-6 bg-white/5 backdrop-blur-sm max-w-xl">
-            <p className="text-lg text-slate-400 border-l-2 border-primary pl-4 uppercase">
+            <p className="text-2xs md:text-lg text-slate-400 border-l-2 border-primary pl-4 uppercase">
               Senior Software Engineer with 13+ years of specialized combat in high-load environments. Mastering{' '}
               <span className="text-white font-bold">Distributed Architectures, Secure, High-Performance systems</span>.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
             <button
               onClick={() => navigate('/lab')}
               className="group relative px-8 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden"
             >
-              <span className="relative z-10">Deploy Solution</span>
+              <span className="relative z-10">Deploy_Solution</span>
               <div className="absolute top-0 right-0 hazard-stripe w-2 h-full opacity-50 group-hover:w-full transition-all duration-300" />
             </button>
             <button
               onClick={() => navigate('/arsenal')}
-              className="px-8 py-4 border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-all flex items-center gap-2"
+              className="px-8 py-4 border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-all flex items-center gap-2 justify-center"
             >
               <span className="material-symbols-outlined text-sm">terminal</span> View_Stack
             </button>
           </div>
         </div>
 
-        <figure className="relative w-full lg:w-1/2 aspect-square max-w-md">
+        <figure className="relative w-full lg:w-1/2 aspect-square max-w-md hidden xl:block">
           <div className="absolute inset-0 border border-primary/10 rounded-full scale-110" />
           <div className="absolute inset-0 border border-dashed border-primary/20 rounded-full scale-125 animate-spin-slow" />
 

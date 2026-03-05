@@ -89,7 +89,7 @@ const Navigation = () => {
             <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity" />
             <span className="relative z-10 text-black font-black text-xs uppercase tracking-tighter flex items-center gap-1.5">
               <span className="material-symbols-outlined text-sm">lock_open</span>
-              ACCESS_DOSSIER
+              INITIATE_CONTACT
             </span>
           </a>
 

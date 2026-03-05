@@ -10,7 +10,7 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = ({ eyebrow, titleMain, titleAccent, description }) => {
   return (
     <header className="mb-16 relative">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-l-4 border-primary pl-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-l-4 border-primary pl-4 md:pl-8">
         <div>
           {eyebrow && (
             <p className="text-primary text-xs font-bold mb-2 tracking-[0.4em] uppercase">{eyebrow}</p>
