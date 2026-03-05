@@ -1,15 +1,12 @@
 import React from 'react';
-import { View } from '@/types';
+import { useNavigate } from 'react-router-dom';
 import { protocolCards } from '@/constants/protocols';
 import StatCard from '@/components/StatCard';
 import ProtocolCard from './ProtocolCard';
 import PageHeader from '@/components/layout/PageHeader.tsx';
 
-interface ProtocolsProps {
-  setView: (view: View) => void;
-}
-
-const Protocols: React.FC<ProtocolsProps> = ({ setView }) => {
+const Protocols: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
       <PageHeader
@@ -49,10 +46,10 @@ const Protocols: React.FC<ProtocolsProps> = ({ setView }) => {
             Skip the exploratory calls. Tell me what you're building — I'll tell you exactly how I can help ship it.
           </p>
           <div className="flex flex-wrap justify-center gap-6 mt-6">
-            <button onClick={() => setView(View.CREDENTIALS)} className="bg-hazard border-hazard text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary transition-all">
+            <button onClick={() => navigate('/credentials')} className="bg-hazard border-hazard text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary transition-all">
               VIEW_CREDENTIALS
             </button>
-            <button onClick={() => setView(View.ARSENAL)} className="border border-primary/40 text-primary px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary/10 hover:text-primary hover:border-primary transition-all">
+            <button onClick={() => navigate('/arsenal')} className="border border-primary/40 text-primary px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary/10 hover:text-primary hover:border-primary transition-all">
               EXPLORE_ARSENAL
             </button>
           </div>

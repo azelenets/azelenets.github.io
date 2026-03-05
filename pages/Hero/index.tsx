@@ -1,10 +1,6 @@
 import { memo, useEffect, useState } from 'react';
-import { View } from '@/types';
+import { useNavigate } from 'react-router-dom';
 import StatBlock from './StatBlock';
-
-interface HeroProps {
-  setView: (view: View) => void;
-}
 
 const MORSE_PATTERN: number[] = (() => {
   const DOT = 100;
@@ -64,7 +60,8 @@ const MORSE_PATTERN: number[] = (() => {
   return pattern;
 })();
 
-const Hero = ({ setView }: HeroProps) => {
+const Hero = () => {
+  const navigate = useNavigate();
   const [localIP, setLocalIP] = useState<string>();
 
   useEffect(() => {
@@ -123,14 +120,14 @@ const Hero = ({ setView }: HeroProps) => {
 
           <div className="flex flex-wrap gap-4">
             <button
-              onClick={() => setView(View.LAB)}
+              onClick={() => navigate('/lab')}
               className="group relative px-8 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden"
             >
               <span className="relative z-10">Deploy Solution</span>
               <div className="absolute top-0 right-0 hazard-stripe w-2 h-full opacity-50 group-hover:w-full transition-all duration-300"></div>
             </button>
             <button
-              onClick={() => setView(View.ARSENAL)}
+              onClick={() => navigate('/arsenal')}
               className="px-8 py-4 border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-all flex items-center gap-2"
             >
               <span className="material-symbols-outlined text-sm">terminal</span> View_Stack

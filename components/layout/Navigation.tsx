@@ -1,11 +1,6 @@
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
-import { View } from '@/types';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { navItems } from '@/constants/navigation';
-
-interface NavigationProps {
-  currentView: View;
-  setView: (view: View) => void;
-}
 
 type GeoState =
   | { status: 'pending' }
@@ -35,7 +30,8 @@ const UtcClock = memo(() => {
   return <span className="text-primary">{utcTime}</span>;
 });
 
-const Navigation = ({ currentView, setView }: NavigationProps) => {
+const Navigation = () => {
+  const navigate = useNavigate();
   const [geo, setGeo] = useState<GeoState>({ status: 'pending' });
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -53,11 +49,11 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
   }, []);
 
   const handleNavClick = useCallback(
-    (view: View) => {
-      setView(view);
+    (path: string) => {
+      navigate(path);
       setMenuOpen(false);
     },
-    [setView],
+    [navigate],
   );
 
   const locationText = useMemo(() => {
@@ -112,22 +108,25 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
 
           <nav className="hidden xl:flex items-center gap-1 ml-4">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`group relative px-4 py-2 flex flex-col transition-all text-left ${currentView === item.id ? 'border-b-2 border-primary' : 'hover:opacity-80'}`}
+              <NavLink
+                key={item.path}
+                to={item.path}
+                end={item.path === '/'}
+                className={({ isActive }) =>
+                  `group relative px-4 py-2 flex flex-col transition-all text-left ${isActive ? 'border-b-2 border-primary' : 'hover:opacity-80'}`
+                }
               >
-                <span
-                  className={`text-[9px] font-bold tracking-tighter transition-colors ${currentView === item.id ? 'text-primary' : 'text-primary/40 group-hover:text-primary'}`}
-                >
-                  {item.num}_TERMINAL
-                </span>
-                <span
-                  className={`text-xs font-bold tracking-widest uppercase ${currentView === item.id ? 'text-white' : 'text-white/60 group-hover:text-white'}`}
-                >
-                  {item.label}
-                </span>
-              </button>
+                {({ isActive }) => (
+                  <>
+                    <span className={`text-[9px] font-bold tracking-tighter transition-colors ${isActive ? 'text-primary' : 'text-primary/40 group-hover:text-primary'}`}>
+                      {item.num}_TERMINAL
+                    </span>
+                    <span className={`text-xs font-bold tracking-widest uppercase ${isActive ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>
+                      {item.label}
+                    </span>
+                  </>
+                )}
+              </NavLink>
             ))}
           </nav>
         </div>
@@ -135,13 +134,16 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex xl:hidden items-center gap-4">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`text-[10px] font-bold tracking-wider ${currentView === item.id ? 'text-primary' : 'text-slate-500'}`}
+              <NavLink
+                key={item.path}
+                to={item.path}
+                end={item.path === '/'}
+                className={({ isActive }) =>
+                  `text-[10px] font-bold tracking-wider ${isActive ? 'text-primary' : 'text-slate-500'}`
+                }
               >
                 {item.label}
-              </button>
+              </NavLink>
             ))}
           </nav>
 
@@ -183,21 +185,29 @@ const Navigation = ({ currentView, setView }: NavigationProps) => {
       <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <nav className="border-t border-primary/20 bg-black/95 px-6 py-2">
           {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              className={`w-full flex items-center justify-between py-3 border-b border-primary/10 last:border-0 group transition-all ${currentView === item.id ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+            <NavLink
+              key={item.path}
+              to={item.path}
+              end={item.path === '/'}
+              onClick={() => handleNavClick(item.path)}
+              className={({ isActive }) =>
+                `w-full flex items-center justify-between py-3 border-b border-primary/10 last:border-0 group transition-all ${isActive ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`
+              }
             >
-              <div className="flex items-center gap-3">
-                <span className={`text-[9px] font-bold tracking-[0.2em] ${currentView === item.id ? 'text-primary' : 'text-primary/40 group-hover:text-primary'}`}>
-                  {item.num}
-                </span>
-                <span className={`text-xs font-black tracking-widest uppercase ${currentView === item.id ? 'text-white' : 'text-white/70 group-hover:text-white'}`}>
-                  {item.label}
-                </span>
-              </div>
-              {currentView === item.id && <span className="w-4 h-[2px] bg-primary"></span>}
-            </button>
+              {({ isActive }) => (
+                <>
+                  <div className="flex items-center gap-3">
+                    <span className={`text-[9px] font-bold tracking-[0.2em] ${isActive ? 'text-primary' : 'text-primary/40 group-hover:text-primary'}`}>
+                      {item.num}
+                    </span>
+                    <span className={`text-xs font-black tracking-widest uppercase ${isActive ? 'text-white' : 'text-white/70 group-hover:text-white'}`}>
+                      {item.label}
+                    </span>
+                  </div>
+                  {isActive && <span className="w-4 h-[2px] bg-primary"></span>}
+                </>
+              )}
+            </NavLink>
           ))}
         </nav>
       </div>
