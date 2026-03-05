@@ -20,31 +20,6 @@ export interface SpecCardData {
   img: string;
 }
 
-export const filterLabels: string[] = [
-  'ALL_ASSETS',
-  'LANGUAGES_SRC',
-  'BACKEND_FRAMEWORKS',
-  'UI_FRAMEWORKS',
-  'DB_CLUSTERS',
-  'ORM_LAYER',
-  'BACKGROUND_OPS',
-  'MESSAGE_BROKERS',
-  'AUTH_PROTOCOLS',
-  'PAYMENTS_STACK',
-  'INFRA_ORCHESTRATION',
-  'CI_CD',
-  'TEST_OPS',
-  'CODE_QUALITY',
-  'OBSERVABILITY',
-  'DOCUMENTATION',
-  'AI_TOOLS',
-  'SEARCH',
-  'FILE_STORAGE',
-  'EMAIL_NOTIFICATIONS',
-  'REAL_TIME',
-  'STATE_MANAGEMENT',
-];
-
 export const stackColumns: StackColumnData[] = [
   {
     type: '01_LANG',
@@ -75,7 +50,7 @@ export const stackColumns: StackColumnData[] = [
   },
   {
     type: '03_UI',
-    title: 'UI_Frameworks',
+    title: 'Frontend/UI_Frameworks',
     id: 'UI-44',
     desc: 'Reactive UI construction and design system command.',
     items: [
@@ -87,6 +62,8 @@ export const stackColumns: StackColumnData[] = [
       { name: 'Chakra_UI', version: 'v3.x', status: 'COMPONENT_GRID' },
       { name: 'Vite', version: 'v6.x', status: 'BUILD_ENGINE' },
       { name: 'Webpack', version: 'v5.x', status: 'BUILD_ENGINE' },
+      { name: 'HighchartsJS', version: 'v12.x', status: 'DATA_VIZ' },
+      { name: 'D3.js', version: 'v7.x', status: 'DATA_VIZ' },
     ],
   },
   {
