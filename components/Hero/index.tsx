@@ -166,10 +166,10 @@ const Hero = ({ setView }: HeroProps) => {
 
       <footer className="flex w-full border-t border-primary/20 bg-black/50 py-6">
         <div className="max-w-[1600px] w-full mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <StatBlock label="Nodes_Managed" value="150+" barColor="bg-primary" width="66%" />
-          <StatBlock label="Uptime_Record" value="99.9%" barColor="bg-hazard" width="99%" />
-          <StatBlock label="Protocols_Mastered" value="20+" barColor="bg-primary" width="50%" />
-          <StatBlock label="System_Threat_Level" value="MINIMAL" barColor="bg-blue-500" width="25%" />
+          <StatBlock label="Nodes_Managed" value="90+" barColor="bg-primary" width="66%" />
+          <StatBlock label="Uptime_Record" value="99.9%" barColor="bg-primary" width="99%" />
+          <StatBlock label="Projects_Mastered" value="30+" barColor="bg-primary" width="50%" />
+          <StatBlock label="System_Threat_Level" value="MINIMAL" barColor="bg-hazard" width="5%" />
         </div>
       </footer>
     </section>

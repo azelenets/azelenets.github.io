@@ -50,7 +50,7 @@ const MissionLog: React.FC = () => {
           <span className="flex items-center gap-1"><span
             className="material-symbols-outlined text-xs">check_circle</span> VERIFIED</span>
           <span className="flex items-center gap-1"><span
-            className="material-symbols-outlined text-xs">check_circle</span> ACCESSIBLE</span>
+            className="material-symbols-outlined text-xs">check_circle</span> PROTECTED</span>
         </div>
       </aside>
     </section>
