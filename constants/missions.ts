@@ -17,14 +17,14 @@ export interface MissionData {
 
 export const missions: MissionData[] = [
   {
-    date: '2024.Q1 — 2024.Q4',
+    date: '2025.Q3 — 2026.Q1',
     title: 'Operation: WONDER LAKE',
     role: 'Software Engineer, Full-Stack',
     scanId: 'BWF-OPS-24',
     objective:
       'Radio warfare units in the field don\'t get a second chance — missed detections, delayed commands, and stale firmware are mission failures. Built a TypeScript monorepo IoT platform where NestJS CQRS ingests device telemetry over dual Socket.IO gateways, NATS JetStream distributes events without loss, BullMQ processes detection groups and signal tracks in the background, and a React 18 operator dashboard streams real-time updates the moment they happen — with a device emulator workspace for testing before hardware arrives.',
     tactics: [
-      'A domain built for electronic warfare at scale — modelled 14 TypeORM entities (Device, Detection, DetectionGroup, SignalTrack, Suppression, Command, Firmware, FrequencyWhitelist, FrequencyTable, Tag, User, and more) across a NestJS CQRS architecture where Commands and Queries decouple module boundaries; managed with Docker Compose across PostgreSQL 16, Redis, and NATS JetStream.',
+      'A domain built for electronic warfare at scale — modelled 14 TypeORM entities across a NestJS CQRS architecture where Commands and Queries decouple module boundaries; managed with Docker Compose across PostgreSQL 16, Redis, and NATS JetStream.',
       'Two WebSocket gateways, one real-time pipeline — engineered dual Socket.IO namespaces: /devices for device-to-server telemetry ingestion and command delivery, /frontend for server-to-dashboard live streaming; backed by BullMQ queues for detection group lifecycle management and signal track processing under sustained IoT event throughput.',
       'Command, suppress, update — without leaving the dashboard — delivered full operator workflows: detection group management, auto/manual suppression events, firmware OTA distribution, frequency whitelist enforcement, and per-device settings and command dispatch, all surfaced through TanStack Query server state and Zustand client state on a React 18 + Vite frontend.',
       'Maps, charts, and real-time signal data — rendered device positions and detection zones on Leaflet maps with live Socket.IO updates; visualized telemetry trends and analytics via Recharts/D3.js; supported multi-language operator interfaces via React Intl i18n.',
@@ -38,7 +38,7 @@ export const missions: MissionData[] = [
     align: 'right',
   },
   {
-    date: '2024.Q3 — 2025.Q1',
+    date: '2025.Q4 — 2025.Q4',
     title: 'Operation: Metropolitan Bride',
     role: 'Software Engineer, Front-End',
     scanId: 'PW-OPS-24',
@@ -97,12 +97,12 @@ export const missions: MissionData[] = [
     outcome: 'MILLIONS SERVED. ZERO REGRESSIONS.',
     tools: ['Rails 7', 'Ruby 3.3', 'MariaDB', 'PostgreSQL', 'Elasticsearch', 'Sphinx', 'Redis', 'Resque', 'Unicorn', 'Stripe', 'Braintree', 'Zuora', 'Plaid', 'Pundit', 'JWT', 'OmniAuth', 'Fastly', 'Datadog', 'Rollbar', 'AWS', 'RSpec', 'Capistrano', 'GitHub Actions', 'Docker', 'HubSpot'],
     status: 'COMPLETED',
-    statusColor: 'text-hazard bg-hazard/10',
+    statusColor: 'text-white/40 bg-white/5',
     align: 'left',
     imageUrl: 'images/seeking-alpha.avif',
   },
   {
-    date: '2021.Q1 — 2022.Q3',
+    date: '2021.Q2 — 2021.Q4',
     title: 'Operation: Iron Ledger',
     role: 'Founding Partner, Full-Stack Engineer',
     scanId: 'PM-OPS-20',
@@ -124,7 +124,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/pm1.avif',
   },
   {
-    date: '2019.Q1 — 2022.Q1',
+    date: '2020.Q2 — 2021.Q4',
     title: 'Operation: Skills Factory',
     role: 'Lead Solution Engineer',
     scanId: 'SK-OPS-19',
@@ -144,7 +144,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/theskills.webp',
   },
   {
-    date: '2019.Q3 — 2020.Q2',
+    date: '2020.Q3 — 2020.Q4',
     title: 'Operation: Unpaid Loans',
     role: 'Software Engineer, Full-Stack',
     scanId: 'VLT-OPS-19',
@@ -165,7 +165,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/vlt.avif',
   },
   {
-    date: '2019.Q3 — 2020.Q2',
+    date: '2020.Q2 — 2020.Q4',
     title: 'Operation: 1-2-3-4',
     role: 'Software Engineer, Full-Stack',
     scanId: 'VC-OPS-19',
@@ -186,7 +186,49 @@ export const missions: MissionData[] = [
     imageUrl: 'images/123.avif',
   },
   {
-    date: '2020.Q1 — 2020.Q3',
+    date: '2020.Q2 — 2020.Q3',
+    title: 'Operation: News Desk',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'MND-OPS-18',
+    objective:
+      '167 models. 53 background workers. 71 service objects. 16 language markets. This is the scale of the press release platform where features were delivered, Grape REST endpoints maintained for third-party newsroom integrations, and social distribution kept live across Twitter, Facebook, LinkedIn, Instagram, and YouTube — while driving an Elasticsearch 6.5 migration from deprecated Solr under sustained publishing loads.',
+    tactics: [
+      'Publishing features at global scale — delivered across publish, network, analyze, and report namespaces of the Rails 5.2 monolith, contributing to press release management, multi-tenant hosted newsrooms, and audience analytics surfaces used by media organizations worldwide.',
+      'Third-party integrations that just work — built and maintained Grape REST API endpoints powering newsroom integrations; extended multi-channel social distribution pipelines across Twitter, Facebook, LinkedIn, Instagram, and YouTube with consistent delivery guarantees.',
+      'Async reliability under high-volume load — operated within the Sidekiq Pro ecosystem (53 background job types, sidekiq-cron) sustaining press release distribution, media monitoring ingestion from Twingly and GNIP, and SendGrid email delivery under sustained publishing pressure.',
+      'Search modernization without disruption — drove Elasticsearch 6.5 query improvements as part of the migration from deprecated Solr 4.10, optimizing multi-locale content search across newsrooms at scale, with Redis and Memcache as layered caching.',
+      'Shipped with confidence across a complex integration surface — operated within Buildkite CI/CD with Heroku review apps and an RSpec + VCR + Percy visual regression suite; integrated across Stripe, Salesforce, HubSpot, Segment, S3, and Cloudinary.',
+    ],
+    outcome: '16 MARKETS DISCOVERED.',
+    tools: ['Rails 5.2', 'Ruby 2.6', 'React 16', 'Redux', 'Grape', 'Webpack', 'PostgreSQL', 'Redis', 'Memcached', 'Solr', 'Elasticsearch', 'Sidekiq Pro', 'Unicorn', 'OmniAuth', 'Cloudinary', 'AWS S3', 'Stripe', 'SendGrid', 'Twitter API', 'YouTube API', 'Salesforce', 'Segment.io', 'NewRelic', 'Honeybadger', 'Flipper', 'Globalize', 'RSpec', 'Capybara', 'Selenium', 'Buildkite', 'Heroku'],
+    status: 'ARCHIVED',
+    statusColor: 'text-white/40 bg-white/5',
+    align: 'right',
+    imageUrl: 'images/mnd.avif',
+  },
+  {
+    date: '2020.Q3 — 2020.Q3',
+    title: 'Operation: NJ-SIGN',
+    role: 'Software Engineer, Full-Stack',
+    scanId: 'NS-OPS-19',
+    objective:
+      'Legal contracts in the Japanese market require airtight security from template to finalized approval. Extended a digital signature platform with KMS-encrypted S3 document storage, blockchain hash recording on every approved contract, a multi-stage PDF pipeline (Prawn + CombinePDF + LibreOffice), and multi-provider OAuth for Google Drive, Slack, and Auth0 — every document action captured in a ShareLog audit trail.',
+    tactics: [
+      'Document security through every stage — engineered a document lifecycle state machine (init → draft → in_progress → approved/rejected → trashed) with owner/signer RBAC, subscription plan gating on contract limits, and hierarchical folder structures per team workspace.',
+      'External signers without accounts — implemented polymorphic digital signature placement on both DocumentItem and TemplateItem models; built guest signer access via time-limited tokens and per-document password protection for secure external signing flows.',
+      'Enterprise-grade document processing — built a multi-stage PDF pipeline (Prawn generation, CombinePDF merging, LibreOffice Word-to-PDF conversion) and executed a live S3 migration from Google Drive with AWS KMS encryption for document-at-rest security.',
+      'Async reliability across every lifecycle event — wired Sidekiq + Redis workers across document mailers, blockchain hash recording for finalized contracts, Google Docs processing, and document sharing notifications.',
+      'Connected to the tools teams already use — integrated multi-provider OAuth (Google Drive import/export, Slack channel sharing, Auth0) via OmniAuth; instrumented the ShareLog audit trail for full document distribution history and Sentry APM for production monitoring.',
+    ],
+    outcome: 'KMS-SEALED. CHAIN-ANCHORED.',
+    tools: ['Rails 5.2', 'Ruby 2.6', 'React 16', 'PostgreSQL', 'Redis', 'Puma', 'Sidekiq', 'Devise', 'OmniAuth', 'JWT', 'Auth0', 'Prawn', 'CombinePDF', 'LibreOffice', 'RMagick', 'AWS S3', 'AWS KMS', 'AWS SES', 'SendGrid', 'Google Drive API', 'Slack', 'Intercom', 'Sentry', 'CircleCI', 'Docker', 'RSpec', 'Capybara'],
+    status: 'ARCHIVED',
+    statusColor: 'text-white/40 bg-white/5',
+    align: 'left',
+    imageUrl: 'images/njs.avif',
+  },
+  {
+    date: '2020.Q3 — 2020.Q4',
     title: 'Operation: BVP',
     role: 'Software Engineer, Full-Stack',
     scanId: 'BAV-OPS-19',
@@ -207,7 +249,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/bv.avif',
   },
   {
-    date: '2020.Q3 — 2021.Q2',
+    date: '2020.Q2 — 2020.Q3',
     title: 'Operation: KEFIR',
     role: 'Software Engineer, Full-Stack',
     scanId: 'KP-OPS-20',
@@ -228,7 +270,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/kfr.avif',
   },
   {
-    date: '2018.Q3 — 2019.Q2',
+    date: '2020.Q1 — 2020.Q2',
     title: 'Operation: Study Power',
     role: 'Software Engineer, Full-Stack',
     scanId: 'MP-OPS-18',
@@ -249,49 +291,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/mp.avif',
   },
   {
-    date: '2018.Q1 — 2018.Q4',
-    title: 'Operation: News Desk',
-    role: 'Software Engineer, Full-Stack',
-    scanId: 'MND-OPS-18',
-    objective:
-      '167 models. 53 background workers. 71 service objects. 16 language markets. This is the scale of the press release platform where features were delivered, Grape REST endpoints maintained for third-party newsroom integrations, and social distribution kept live across Twitter, Facebook, LinkedIn, Instagram, and YouTube — while driving an Elasticsearch 6.5 migration from deprecated Solr under sustained publishing loads.',
-    tactics: [
-      'Publishing features at global scale — delivered across publish, network, analyze, and report namespaces of the Rails 5.2 monolith, contributing to press release management, multi-tenant hosted newsrooms, and audience analytics surfaces used by media organizations worldwide.',
-      'Third-party integrations that just work — built and maintained Grape REST API endpoints powering newsroom integrations; extended multi-channel social distribution pipelines across Twitter, Facebook, LinkedIn, Instagram, and YouTube with consistent delivery guarantees.',
-      'Async reliability under high-volume load — operated within the Sidekiq Pro ecosystem (53 background job types, sidekiq-cron) sustaining press release distribution, media monitoring ingestion from Twingly and GNIP, and SendGrid email delivery under sustained publishing pressure.',
-      'Search modernization without disruption — drove Elasticsearch 6.5 query improvements as part of the migration from deprecated Solr 4.10, optimizing multi-locale content search across newsrooms at scale, with Redis and Memcache as layered caching.',
-      'Shipped with confidence across a complex integration surface — operated within Buildkite CI/CD with Heroku review apps and an RSpec + VCR + Percy visual regression suite; integrated across Stripe, Salesforce, HubSpot, Segment, S3, and Cloudinary.',
-    ],
-    outcome: '16 MARKETS DISCOVERED.',
-    tools: ['Rails 5.2', 'Ruby 2.6', 'React 16', 'Redux', 'Grape', 'Webpack', 'PostgreSQL', 'Redis', 'Memcached', 'Solr', 'Elasticsearch', 'Sidekiq Pro', 'Unicorn', 'OmniAuth', 'Cloudinary', 'AWS S3', 'Stripe', 'SendGrid', 'Twitter API', 'YouTube API', 'Salesforce', 'Segment.io', 'NewRelic', 'Honeybadger', 'Flipper', 'Globalize', 'RSpec', 'Capybara', 'Selenium', 'Buildkite', 'Heroku'],
-    status: 'ARCHIVED',
-    statusColor: 'text-white/40 bg-white/5',
-    align: 'left',
-    imageUrl: 'images/mnd.avif',
-  },
-  {
-    date: '2019.Q1 — 2019.Q4',
-    title: 'Operation: NJ-SIGN',
-    role: 'Software Engineer, Full-Stack',
-    scanId: 'NS-OPS-19',
-    objective:
-      'Legal contracts in the Japanese market require airtight security from template to finalized approval. Extended a digital signature platform with KMS-encrypted S3 document storage, blockchain hash recording on every approved contract, a multi-stage PDF pipeline (Prawn + CombinePDF + LibreOffice), and multi-provider OAuth for Google Drive, Slack, and Auth0 — every document action captured in a ShareLog audit trail.',
-    tactics: [
-      'Document security through every stage — engineered a document lifecycle state machine (init → draft → in_progress → approved/rejected → trashed) with owner/signer RBAC, subscription plan gating on contract limits, and hierarchical folder structures per team workspace.',
-      'External signers without accounts — implemented polymorphic digital signature placement on both DocumentItem and TemplateItem models; built guest signer access via time-limited tokens and per-document password protection for secure external signing flows.',
-      'Enterprise-grade document processing — built a multi-stage PDF pipeline (Prawn generation, CombinePDF merging, LibreOffice Word-to-PDF conversion) and executed a live S3 migration from Google Drive with AWS KMS encryption for document-at-rest security.',
-      'Async reliability across every lifecycle event — wired Sidekiq + Redis workers across document mailers, blockchain hash recording for finalized contracts, Google Docs processing, and document sharing notifications.',
-      'Connected to the tools teams already use — integrated multi-provider OAuth (Google Drive import/export, Slack channel sharing, Auth0) via OmniAuth; instrumented the ShareLog audit trail for full document distribution history and Sentry APM for production monitoring.',
-    ],
-    outcome: 'KMS-SEALED. CHAIN-ANCHORED.',
-    tools: ['Rails 5.2', 'Ruby 2.6', 'React 16', 'PostgreSQL', 'Redis', 'Puma', 'Sidekiq', 'Devise', 'OmniAuth', 'JWT', 'Auth0', 'Prawn', 'CombinePDF', 'LibreOffice', 'RMagick', 'AWS S3', 'AWS KMS', 'AWS SES', 'SendGrid', 'Google Drive API', 'Slack', 'Intercom', 'Sentry', 'CircleCI', 'Docker', 'RSpec', 'Capybara'],
-    status: 'ARCHIVED',
-    statusColor: 'text-white/40 bg-white/5',
-    align: 'right',
-    imageUrl: 'images/njs.avif',
-  },
-  {
-    date: '2018.Q4 — 2019.Q2',
+    date: '2019.Q3 — 2020.Q1',
     title: 'Operation: Sophisticate',
     role: 'Software Engineer, Front-End',
     scanId: 'SOPH-OPS-19',
@@ -312,7 +312,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/sfts.avif',
   },
   {
-    date: '2019.Q4 — 2020.Q3',
+    date: '2019.Q1 — 2019.Q3',
     title: 'Operation: Cipher Gate',
     role: 'Team Lead | Software Engineer, Full-Stack',
     scanId: 'SAI-OPS-19',
@@ -333,7 +333,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/sat.avif',
   },
   {
-    date: '2018.Q2 — 2019.Q4',
+    date: '2018.Q2 — 2018.Q4',
     title: 'Operation: Holy Book',
     role: 'Software Engineer, Full-Stack',
     scanId: 'WBS-OPS-18',
@@ -354,7 +354,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/bb.avif',
   },
   {
-    date: '2016.Q3 — 2017.Q2',
+    date: '2018.Q2 — 2018.Q4',
     title: 'Operation: The Walk',
     role: 'Software Engineer, Back-End',
     scanId: 'TW-OPS-16',
@@ -375,7 +375,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/twlk.avif',
   },
   {
-    date: '2015.Q3 — 2016.Q2',
+    date: '2018.Q2 — 2018.Q3',
     title: 'Operation: VoVi',
     role: 'Software Engineer, Back-End',
     scanId: 'VV-OPS-15',
@@ -396,7 +396,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/vv.avif',
   },
   {
-    date: '2015.Q1 — 2015.Q4',
+    date: '2018.Q3 — 2020.Q3',
     title: 'Operation: Yalta',
     role: 'Software Engineer, Full-Stack',
     scanId: 'YW-OPS-15',
@@ -417,7 +417,7 @@ export const missions: MissionData[] = [
     align: 'right',
   },
   {
-    date: '2015.Q4 — 2016.Q3',
+    date: '2018.Q2 — 2018.Q3',
     title: 'Operation: Shadow Invitation',
     role: 'Software Engineer, Back-End',
     scanId: 'INV-OPS-15',
@@ -438,7 +438,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/evnt.avif',
   },
   {
-    date: '2017.Q1 — 2018.Q1',
+    date: '2017.Q4 — 2018.Q2',
     title: 'Operation: Supremacy Energy',
     role: 'Software Engineer, Full-Stack',
     scanId: 'EC-OPS-17',
@@ -459,7 +459,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/nrg.avif',
   },
   {
-    date: '2017.Q3 — 2018.Q2',
+    date: '2017.Q3 — 2017.Q4',
     title: 'Operation: Hit & Run',
     role: 'Software Engineer, Back-End',
     scanId: 'FNG-OPS-17',
@@ -480,7 +480,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/5nG.avif',
   },
   {
-    date: '2016.Q4 — 2017.Q3',
+    date: '2017.Q2 — 2017.Q3',
     title: 'Operation: Budget Barracks',
     role: 'Software Engineer, Back-End',
     scanId: 'HCH-OPS-16',
@@ -501,7 +501,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/htl.avif',
   },
   {
-    date: '2016.Q1 — 2016.Q4',
+    date: '2016.Q4 — 2017.Q2',
     title: 'Operation: Reinforced Staffing',
     role: 'Software Engineer, Back-End',
     scanId: 'SP-OPS-16',
@@ -522,7 +522,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/stf.avif',
   },
   {
-    date: '2015.Q2 — 2016.Q2',
+    date: '2015.Q3 — 2016.Q4',
     title: 'Operation: LoopMe',
     role: 'Software Engineer, Full-Stack',
     scanId: 'LM-OPS-15',
@@ -543,7 +543,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/lpm.webp',
   },
   {
-    date: '2014.Q4 — 2015.Q4',
+    date: '2015.Q3 — 2015.Q4',
     title: 'Operation: Revolution',
     role: 'Software Engineer, Full-Stack',
     scanId: 'R9-OPS-14',
@@ -564,7 +564,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/rv.avif',
   },
   {
-    date: '2014.Q2 — 2014.Q4',
+    date: '2015.Q3 — 2015.Q4',
     title: 'Operation: Capital Swarm',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NEN-OPS-14',
@@ -585,7 +585,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/nen.avif',
   },
   {
-    date: '2014.Q3 — 2015.Q2',
+    date: '2015.Q2 — 2015.Q3',
     title: 'Operation: Night Gambit',
     role: 'Software Engineer, Full-Stack',
     scanId: 'GMB-OPS-14',
@@ -606,7 +606,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/gmb.avif',
   },
   {
-    date: '2013.Q3 — 2014.Q3',
+    date: '2015.Q1 — 2015.Q3',
     title: 'Operation: NowShop',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NOW-OPS-13',
@@ -627,7 +627,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/nw.avif',
   },
   {
-    date: '2015.Q3 — 2016.Q3',
+    date: '2014.Q2 — 2015.Q1',
     title: 'Operation: Safety Sophite',
     role: 'Software Engineer, Full-Stack',
     scanId: 'SFTY-OPS-15',
@@ -648,7 +648,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/sft.avif',
   },
   {
-    date: '2016.Q2 — 2017.Q1',
+    date: '2014.Q2 — 2015.Q1',
     title: 'Operation: Urban Taxi',
     role: 'Software Engineer, Full-Stack',
     scanId: 'STX-OPS-16',
@@ -669,7 +669,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/tx.avif',
   },
   {
-    date: '2013.Q4 — 2014.Q3',
+    date: '2014.Q2 — 2014.Q4',
     title: 'Operation: TravelPlaces',
     role: 'Software Engineer, Full-Stack',
     scanId: 'TRP-OPS-13',
@@ -690,7 +690,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/tv.avif',
   },
   {
-    date: '2013.Q2 — 2013.Q4',
+    date: '2013.Q2 — 2014.Q3',
     title: 'Operation: Rapid Discount',
     role: 'Software Engineer, Full-Stack',
     scanId: 'D4Y-OPS-13',
@@ -710,7 +710,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/df.webp',
   },
   {
-    date: '2014.Q2 — 2015.Q1',
+    date: '2013.Q3 — 2013.Q4',
     title: 'Operation: NOW',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NWB-OPS-14',
@@ -731,7 +731,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/nwb.avif',
   },
   {
-    date: '2014.Q3 — 2016.Q1',
+    date: '2013.Q3 — 2014.Q2',
     title: 'Operation: Kyiv',
     role: 'Software Engineer, Full-Stack',
     scanId: 'KGA-OPS-14',
@@ -752,7 +752,7 @@ export const missions: MissionData[] = [
     imageUrl: 'images/ky.avif',
   },
   {
-    date: '2013.Q1 — 2013.Q4',
+    date: '2013.Q2 — 2013.Q4',
     title: 'Operation: Scrij',
     role: 'Software Engineer, Full-Stack',
     scanId: 'SCR-OPS-13',
