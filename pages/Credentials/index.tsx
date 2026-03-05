@@ -15,7 +15,7 @@ const Credentials: React.FC = () => {
       />
 
       {/* Top Stats */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-1 font-mono">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono">
         <StatCard id="STAT_01" label="Combat Experience" value="13+ YEARS" progress={75} />
         <StatCard id="STAT_02" label="Authorization Level" value="MASTER'S [CS]" progress={100} segmented />
         <article className="bg-surface-terminal border border-primary/10 p-6 relative">
@@ -26,10 +26,9 @@ const Credentials: React.FC = () => {
         </article>
       </section>
 
-      <div className="grid grid-cols-12 gap-8 items-start">
-
+      <div className="flex flex-col md:grid md:grid-cols-12 gap-8 items-start">
         {/* Sidebar Profile */}
-        <aside className="col-span-12 md:col-span-4 lg:col-span-4 space-y-6">
+        <aside className="w-full md:col-span-4 space-y-6">
           <figure className="hud-border bg-black/40 p-1">
             <div className="relative aspect-square overflow-hidden bg-zinc-900 flex items-center justify-center">
               <img
@@ -71,8 +70,8 @@ const Credentials: React.FC = () => {
         </aside>
 
         {/* Main Details */}
-        <div className="col-span-12 md:col-span-8 lg:col-span-8 space-y-8">
-          <article className="hud-border bg-panel-dark/80 p-8 shadow-[0_0_15px_rgba(0,243,255,0.1)]">
+        <div className="w-full md:col-span-8 space-y-8">
+          <article className="hud-border bg-panel-dark/80 p-4 md:p-8 shadow-[0_0_15px_rgba(0,243,255,0.1)]">
             <div className="flex items-start justify-between mb-8 border-b border-primary/20 pb-4">
               <div>
                 <span className="bg-primary text-black text-[9px] px-2 py-0.5 font-black uppercase mb-2 inline-block">Priority Alpha</span>
@@ -86,7 +85,7 @@ const Credentials: React.FC = () => {
               {/* Masters */}
               <article className="relative pl-8 border-l border-primary/30">
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: MASTER</div>
                     <div className="flex items-center gap-2 flex-wrap">
@@ -100,7 +99,7 @@ const Credentials: React.FC = () => {
                   </div>
                   <span className="text-xs font-bold text-white/40">2011 — 2012</span>
                 </div>
-                <div className="grid grid-cols-2 gap-4 mt-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
                     <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
                     <div className="text-xs text-primary">Computerized systems, control and automation</div>
@@ -119,7 +118,7 @@ const Credentials: React.FC = () => {
               {/* Bachelors */}
               <article className="relative pl-8 border-l border-primary/30">
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: BACHELOR</div>
                     <h3 className="text-xl font-bold text-white">B.Sc. Information Technology</h3>
@@ -127,7 +126,7 @@ const Credentials: React.FC = () => {
                   </div>
                   <span className="text-xs font-bold text-white/40">2009 — 2011</span>
                 </div>
-                <div className="grid grid-cols-2 gap-4 mt-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
                     <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
                     <div className="text-xs text-primary">Industry Automation &amp; Control Systems Engineering</div>
@@ -142,7 +141,7 @@ const Credentials: React.FC = () => {
               {/* Jr. Specialist */}
               <article className="relative pl-8 border-l border-primary/30">
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
                   <div>
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: SPECIALIST</div>
                     <div className="flex items-center gap-2 flex-wrap">
@@ -156,7 +155,7 @@ const Credentials: React.FC = () => {
                   </div>
                   <span className="text-xs font-bold text-white/40">2005 — 2009</span>
                 </div>
-                <div className="grid grid-cols-2 gap-4 mt-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
                     <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
                     <div className="text-xs text-primary">Installation and maintenance of technological production automation equipment and systems</div>
@@ -228,7 +227,7 @@ const Credentials: React.FC = () => {
           </section>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-white/5 border border-white/10 p-5">
               <div className="text-[10px] text-primary/70 font-bold mb-4 uppercase">Combat_Languages</div>
               <div className="flex flex-wrap gap-2">
