@@ -28,7 +28,7 @@ const Footer = () => {
               PRIVACY_POLICY
             </button>
             <span className="text-primary/20">|</span>
-            <span className="text-hazard uppercase">© {new Date().getFullYear()} All Rights Reserved</span>
+            <span className="text-hazard uppercase">© {new Date().getFullYear()} Andrii Zelenets, All Rights Reserved</span>
           </div>
         </div>
       </footer>

@@ -1,8 +1,14 @@
-import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Suspense, lazy, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import PrivacyBanner from '@/components/layout/PrivacyBanner';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+};
 
 const Hero = lazy(() => import('@/pages/Hero'));
 const MissionLog = lazy(() => import('@/pages/MissionLog'));
@@ -17,6 +23,7 @@ const App = () => (
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(0,243,255,0.05)_0%,_transparent_60%)]" />
     </div>
 
+    <ScrollToTop />
     <Navigation />
 
     <main className="flex-grow relative z-10 w-full">
