@@ -9,15 +9,21 @@ import PageHeader from '@/components/layout/PageHeader';
 const FILTER_MAP: Record<string, string[]> = {
   ALL_ASSETS:          [],
   LANGUAGES_SRC:       ['LANG-99'],
-  INFRA_ORCHESTRATION: ['CLOUD-88'],
-  DB_CLUSTERS:         ['SERV-77'],
-  AI_TOOLS:            ['AI-66'],
-  TEST_OPS:            ['TEST-55'],
-  UI_RECON:            ['UI-44'],
-  UI_FRAMEWORKS:       ['UI-44'],
   BACKEND_FRAMEWORKS:  ['BKN-33'],
+  UI_FRAMEWORKS:       ['UI-44'],
+  DB_CLUSTERS:         ['DB-77'],
+  ORM_LAYER:           ['ORM-09'],
+  BACKGROUND_OPS:      ['BG-76'],
+  MESSAGE_BROKERS:     ['MSG-08'],
+  AUTH_PROTOCOLS:      ['AUTH-11'],
+  PAYMENTS_STACK:      ['PAY-00'],
+  INFRA_ORCHESTRATION: ['CLOUD-88'],
+  CI_CD:               ['CICD-87'],
+  TEST_OPS:            ['TEST-55'],
+  CODE_QUALITY:        ['QA-07'],
+  OBSERVABILITY:       ['OBS-10'],
   DOCUMENTATION:       ['DOCS-22'],
-  SEC_PROTOCOLS:       [],
+  AI_TOOLS:            ['AI-66'],
 };
 
 const Arsenal: React.FC = () => {
