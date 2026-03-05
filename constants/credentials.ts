@@ -68,6 +68,15 @@ export const courses: CourseData[] = [
     url: 'https://www.udemy.com/course/become-a-product-manager-learn-the-skills-get-a-job/',
   },
   {
+    id: 'ms-007',
+    title: 'Microservices with Node JS and React',
+    platform: 'Udemy',
+    instructor: 'Stephen Grider',
+    description: 'Build a large-scale microservices application with Node, React, Docker, and Kubernetes from scratch.',
+    topics: ['Microservices architecture & design', 'Docker & Kubernetes orchestration', 'Event-driven communication with NATS Streaming', 'Authentication & authorization across services', 'CI/CD with GitHub Actions & DigitalOcean'],
+    url: 'https://www.udemy.com/course/microservices-with-node-js-and-react/',
+  },
+  {
     id: 'ml-006',
     title: 'Machine Learning Specialization',
     platform: 'Coursera',
