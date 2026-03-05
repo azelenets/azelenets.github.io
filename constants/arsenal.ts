@@ -38,6 +38,11 @@ export const filterLabels: string[] = [
   'OBSERVABILITY',
   'DOCUMENTATION',
   'AI_TOOLS',
+  'SEARCH',
+  'FILE_STORAGE',
+  'EMAIL_NOTIFICATIONS',
+  'REAL_TIME',
+  'STATE_MANAGEMENT',
 ];
 
 export const stackColumns: StackColumnData[] = [
@@ -65,6 +70,7 @@ export const stackColumns: StackColumnData[] = [
       { name: 'Sinatra', version: 'v4.2.1', status: 'LIGHTWEIGHT' },
       { name: 'ExpressJS', version: 'v5.x', status: 'LIGHTWEIGHT' },
       { name: 'NextJS', version: 'v15.x', status: 'FULLSTACK_PRIME' },
+      { name: 'GraphQL / Apollo', version: 'v4.x', status: 'QUERY_LAYER' },
     ],
   },
   {
@@ -79,6 +85,8 @@ export const stackColumns: StackColumnData[] = [
       { name: 'Material_UI', version: 'v6.x', status: 'COMPONENT_GRID' },
       { name: 'Ant_Design', version: 'v5.x', status: 'COMPONENT_GRID' },
       { name: 'Chakra_UI', version: 'v3.x', status: 'COMPONENT_GRID' },
+      { name: 'Vite', version: 'v6.x', status: 'BUILD_ENGINE' },
+      { name: 'Webpack', version: 'v5.x', status: 'BUILD_ENGINE' },
     ],
   },
   {
@@ -175,6 +183,9 @@ export const stackColumns: StackColumnData[] = [
       { name: 'DigitalOcean', version: 'v2.x', status: 'PROD_SCALE' },
       { name: 'Vercel', version: 'v40.x', status: 'EDGE_DEPLOY' },
       { name: 'Netlify', version: 'v19.x', status: 'EDGE_DEPLOY' },
+      { name: 'Kubernetes', version: 'v1.30', status: 'ORCHESTRATION' },
+      { name: 'Terraform', version: 'v1.9', status: 'INFRA_AS_CODE' },
+      { name: 'Nginx', version: 'v1.27', status: 'REVERSE_PROXY' },
     ],
   },
   {
@@ -256,7 +267,69 @@ export const stackColumns: StackColumnData[] = [
     ],
   },
   {
-    type: '16_AI',
+    type: '16_SEARCH',
+    title: 'Search',
+    id: 'SRCH-05',
+    desc: 'Full-text and vector search infrastructure for fast, relevant data retrieval.',
+    items: [
+      { name: 'Elasticsearch', version: 'v8.x', status: 'SEARCH_CORE', isMaster: true },
+      { name: 'OpenSearch', version: 'v2.x', status: 'SEARCH_CORE' },
+      { name: 'Typesense', version: 'v27.x', status: 'SEARCH_CORE' },
+      { name: 'Searchkick', version: 'v5.x', status: 'SEARCH_ADAPTER' },
+      { name: 'pg_search', version: 'v2.x', status: 'SEARCH_ADAPTER' },
+    ],
+  },
+  {
+    type: '17_STOR',
+    title: 'File_Storage',
+    id: 'STOR-04',
+    desc: 'Scalable asset storage, CDN delivery, and file processing pipelines.',
+    items: [
+      { name: 'AWS_S3', version: 'REST_v4', status: 'OBJECT_STORE', isCritical: true },
+      { name: 'Cloudinary', version: 'v2.x', status: 'MEDIA_CDN' },
+      { name: 'ActiveStorage', version: 'v8.0', status: 'UPLOAD_LAYER' },
+      { name: 'Shrine', version: 'v3.x', status: 'UPLOAD_LAYER' },
+      { name: 'CarrierWave', version: 'v3.x', status: 'UPLOAD_LAYER' },
+    ],
+  },
+  {
+    type: '18_EMAIL',
+    title: 'Email_Notifications',
+    id: 'EMAIL-03',
+    desc: 'Transactional email delivery, SMS, and multi-channel notification dispatch.',
+    items: [
+      { name: 'SendGrid', version: 'v8.x', status: 'MAIL_GATEWAY', isCritical: true },
+      { name: 'Postmark', version: 'v5.x', status: 'MAIL_GATEWAY' },
+      { name: 'Mailgun', version: 'v1.x', status: 'MAIL_GATEWAY' },
+      { name: 'Action_Mailer', version: 'v8.0', status: 'MAIL_COMPOSER' },
+      { name: 'Twilio', version: 'v7.x', status: 'SMS_DISPATCH' },
+    ],
+  },
+  {
+    type: '19_RT',
+    title: 'Real_Time',
+    id: 'RT-02',
+    desc: 'WebSocket and event-driven real-time communication layers.',
+    items: [
+      { name: 'Action_Cable', version: 'v8.0', status: 'WS_CORE', isCritical: true },
+      { name: 'AnyCable', version: 'v1.x', status: 'WS_CORE' },
+      { name: 'Socket.io', version: 'v4.x', status: 'WS_CORE' },
+      { name: 'Ably', version: 'v2.x', status: 'WS_MANAGED' },
+    ],
+  },
+  {
+    type: '20_STATE',
+    title: 'State_Management',
+    id: 'STATE-01',
+    desc: 'Client-side state orchestration for reactive and scalable UI architectures.',
+    items: [
+      { name: 'Redux', version: 'v5.x', status: 'STATE_CORE', isCritical: true },
+      { name: 'Zustand', version: 'v5.x', status: 'STATE_CORE' },
+      { name: 'MobX', version: 'v6.x', status: 'REACTIVE_STATE' },
+    ],
+  },
+  {
+    type: '21_AI',
     title: 'AI_Tools',
     id: 'AI-66',
     desc: 'Autonomous intelligence augmentation and LLM integration.',

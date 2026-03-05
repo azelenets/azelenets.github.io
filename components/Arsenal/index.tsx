@@ -24,6 +24,11 @@ const FILTER_MAP: Record<string, string[]> = {
   OBSERVABILITY:       ['OBS-10'],
   DOCUMENTATION:       ['DOCS-22'],
   AI_TOOLS:            ['AI-66'],
+  SEARCH:              ['SRCH-05'],
+  FILE_STORAGE:        ['STOR-04'],
+  EMAIL_NOTIFICATIONS: ['EMAIL-03'],
+  REAL_TIME:           ['RT-02'],
+  STATE_MANAGEMENT:    ['STATE-01'],
 };
 
 const Arsenal: React.FC = () => {
