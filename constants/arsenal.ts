@@ -24,6 +24,7 @@ export const filterLabels: string[] = [
   'ALL_ASSETS',
   'LANGUAGES_SRC',
   'INFRA_ORCHESTRATION',
+  'BACKGROUND_OPS',
   'UI_RECON',
   'DB_CLUSTERS',
   'SEC_PROTOCOLS',
@@ -32,6 +33,9 @@ export const filterLabels: string[] = [
   'UI_FRAMEWORKS',
   'BACKEND_FRAMEWORKS',
   'DOCUMENTATION',
+  'AUTH_PROTOCOLS',
+  'PAYMENTS_STACK',
+  'OBSERVABILITY',
 ];
 
 export const stackColumns: StackColumnData[] = [
@@ -52,10 +56,9 @@ export const stackColumns: StackColumnData[] = [
     id: 'CLOUD-88',
     desc: 'Orchestrating large-scale autonomous deployments.',
     items: [
-      { name: 'Kubernetes', version: 'K8s_v1.29', status: 'GRID_CONTROL', isMaster: true },
-      { name: 'Docker', version: 'K8s_v1.29', status: 'GRID_CONTROL', isMaster: true },
+      { name: 'Docker', version: 'v27.0', status: 'CONTAINER_OPS', isMaster: true },
       { name: 'AWS_Solutions', version: 'GLOBAL_EXP', status: 'PROD_SCALE' },
-      { name: 'Terraform', version: 'v1.7.0', status: 'I_A_C_PROTOCOL' },
+      { name: 'GitHub_Actions', version: 'v3.x', status: 'CI_CD_PIPELINE' },
     ],
   },
   {
@@ -64,9 +67,21 @@ export const stackColumns: StackColumnData[] = [
     id: 'SERV-77',
     desc: 'Distributed microservice architecture specialists.',
     items: [
+      { name: 'MySQL', version: 'v8.4.8', status: 'PERSISTENCE_LAYER' },
       { name: 'PostgreSQL', version: 'v16.2', status: 'PERSISTENCE_LAYER' },
+      { name: 'MongoDB', version: 'v8.0', status: 'PERSISTENCE_LAYER' },
       { name: 'Redis_Cache', version: 'v7.0', status: 'MEMORY_BUFFER' },
-      { name: 'gRPC / Protobuf', version: 'PROTO_v3', status: 'RPC_TRANSPORT' },
+    ],
+  },
+  {
+    type: '04_BACKGROUND',
+    title: 'BACKGROUND_OPS',
+    id: 'SERV-77',
+    desc: 'Async job execution and queue management for workloads.',
+    items: [
+      { name: 'Sidekiq', version: 'v7.0', status: 'JOB_PROCESSOR' },
+      { name: 'Resque', version: 'v3.0.0', status: 'JOB_PROCESSOR' },
+      { name: 'BullMQ', version: 'v5.70.1', status: 'JOB_PROCESSOR' },
     ],
   },
   {
@@ -88,7 +103,8 @@ export const stackColumns: StackColumnData[] = [
     items: [
       { name: 'Ruby_on_Rails', version: 'v8.0', status: 'CORE_COMMAND', isCritical: true },
       { name: 'NestJS', version: 'v10.0', status: 'API_FORTRESS' },
-      { name: 'GraphQL', version: 'v16.0', status: 'QUERY_LAYER' },
+      { name: 'Grape', version: 'v3.1.0', status: 'API_FORTRESS' },
+      { name: 'Sinatra', version: 'v4.2.1', status: 'LIGHTWEIGHT' },
     ],
   },
   {
@@ -109,8 +125,8 @@ export const stackColumns: StackColumnData[] = [
     desc: 'Precision strike validation across unit, integration, and E2E layers.',
     items: [
       { name: 'RSpec', version: 'v3.13', status: 'UNIT_STRIKE', isCritical: true },
-      { name: 'Cypress', version: 'v13.0', status: 'E2E_SWEEP' },
-      { name: 'Vitest', version: 'v1.6', status: 'COMPONENT_SCAN' },
+      { name: 'Playwright', version: 'v1.48', status: 'E2E_SWEEP' },
+      { name: 'Vitest', version: 'v2.0', status: 'COMPONENT_SCAN' },
     ],
   },
   {
@@ -121,7 +137,41 @@ export const stackColumns: StackColumnData[] = [
     items: [
       { name: 'Swagger / OpenAPI', version: 'v3.1', status: 'API_MANIFEST', isCritical: true },
       { name: 'Storybook', version: 'v8.0', status: 'COMPONENT_LOG' },
-      { name: 'Confluence', version: 'CLOUD', status: 'INTEL_ARCHIVE' },
+      { name: 'Sentry', version: 'v24.x', status: 'ERROR_TRACKING' },
+    ],
+  },
+  {
+    type: '09_AUTH',
+    title: 'Auth_Protocols',
+    id: 'AUTH-11',
+    desc: 'Identity verification and access control across every surface.',
+    items: [
+      { name: 'Devise', version: 'v4.9', status: 'IDENTITY_CORE', isCritical: true },
+      { name: 'JWT', version: 'RFC_7519', status: 'TOKEN_FORGE' },
+      { name: 'OAuth_2.0', version: 'RFC_6749', status: 'DELEGATED_ACCESS' },
+      { name: 'Pundit', version: 'v2.3', status: 'POLICY_GATE' },
+    ],
+  },
+  {
+    type: '10_PAY',
+    title: 'Payments_Stack',
+    id: 'PAY-00',
+    desc: 'Multi-gateway transaction infrastructure with global payment reach.',
+    items: [
+      { name: 'Stripe', version: 'v13.x', status: 'PRIME_GATEWAY', isCritical: true },
+      { name: 'Braintree', version: 'v6.x', status: 'VAULT_LAYER' },
+      { name: 'PayPal', version: 'REST_v2', status: 'GLOBAL_REACH' },
+    ],
+  },
+  {
+    type: '11_OBS',
+    title: 'Observability',
+    id: 'OBS-10',
+    desc: 'Full-stack telemetry — traces, metrics, and error intelligence at scale.',
+    items: [
+      { name: 'Datadog', version: 'APM_v2', status: 'TELEMETRY_HUB', isMaster: true },
+      { name: 'New_Relic', version: 'v10.x', status: 'PERF_SENTINEL' },
+      { name: 'OpenTelemetry', version: 'v1.x', status: 'TRACE_PROTOCOL' },
     ],
   },
 ];
