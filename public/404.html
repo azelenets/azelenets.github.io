@@ -4,6 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 // SIGNAL LOST — AEGIS TACTICAL INTERFACE</title>
+    <script>
+      // SPA routing redirect for GitHub Pages:
+      // Encode the current path into ?p= and send to index.html, which
+      // restores it via history.replaceState before React boots.
+      (function () {
+        var l = window.location;
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/?p=' + encodeURIComponent(l.pathname) +
+          (l.search ? '&q=' + encodeURIComponent(l.search.slice(1)) : '') +
+          l.hash
+        );
+      })();
+    </script>
 
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
