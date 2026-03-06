@@ -88,3 +88,8 @@ body {
 .glitch-img {
   filter: contrast(120%) grayscale(100%) brightness(0.9);
 }
+
+@keyframes scan-line {
+  0%   { top: 0%; }
+  100% { top: 100%; }
+}

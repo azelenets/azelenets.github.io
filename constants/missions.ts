@@ -355,7 +355,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q2 — 2018.Q4',
-    title: 'Operation: The Walk',
+    title: 'Operation: Iron March',
     role: 'Software Engineer, Back-End',
     scanId: 'TW-OPS-16',
     objective:
@@ -376,7 +376,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q2 — 2018.Q3',
-    title: 'Operation: VoVi',
+    title: 'Operation: Phantom Echo',
     role: 'Software Engineer, Back-End',
     scanId: 'VV-OPS-15',
     objective:
@@ -460,7 +460,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2017.Q3 — 2017.Q4',
-    title: 'Operation: Hit & Run',
+    title: 'Operation: Thunder Strike',
     role: 'Software Engineer, Back-End',
     scanId: 'FNG-OPS-17',
     objective:
@@ -544,7 +544,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q3 — 2015.Q4',
-    title: 'Operation: Revolution',
+    title: 'Operation: Steel Vanguard',
     role: 'Software Engineer, Full-Stack',
     scanId: 'R9-OPS-14',
     objective:
@@ -607,7 +607,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q1 — 2015.Q3',
-    title: 'Operation: NowShop',
+    title: 'Operation: Flash Market',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NOW-OPS-13',
     objective:
@@ -670,7 +670,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2014.Q2 — 2014.Q4',
-    title: 'Operation: TravelPlaces',
+    title: 'Operation: Waypoint Omega',
     role: 'Software Engineer, Full-Stack',
     scanId: 'TRP-OPS-13',
     objective:
@@ -711,7 +711,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2013.Q3 — 2013.Q4',
-    title: 'Operation: NOW',
+    title: 'Operation: Zero Hour',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NWB-OPS-14',
     objective:
@@ -753,7 +753,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2013.Q2 — 2013.Q4',
-    title: 'Operation: Scrij',
+    title: 'Operation: Dark Script',
     role: 'Software Engineer, Full-Stack',
     scanId: 'SCR-OPS-13',
     objective:

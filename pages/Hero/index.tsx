@@ -118,7 +118,7 @@ const Hero = () => {
               href="https://calendar.app.google/yf8ZWByZWy1bFEY38"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden"
+              className="group relative px-8 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden flex items-center justify-center"
             >
               <span className="relative z-10">Deploy_Solution</span>
               <div className="absolute top-0 right-0 hazard-stripe w-2 h-full opacity-50 group-hover:w-full transition-all duration-300" />
