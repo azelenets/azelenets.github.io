@@ -39,13 +39,25 @@ const Credentials: React.FC = () => {
                 src="/images/desktop.avif"
               />
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/4 w-full h-0.5 bg-primary/40 animate-[bounce_5s_infinite]" />
+                <div className="absolute w-full h-0.5 bg-primary/20" style={{ animation: 'scan-line 3s linear infinite alternate' }} />
                 <div className="absolute inset-0 border-[20px] border-black/60" />
                 <div className="absolute top-2 left-2 text-[8px] text-primary">RETINA_SCAN: ACTIVE</div>
                 <div className="absolute bottom-2 right-2 text-[8px] text-primary animate-pulse">MATCH_FOUND_99%</div>
               </div>
             </div>
           </figure>
+
+          <a
+            href="https://www.linkedin.com/in/andriizelenets/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between w-full border border-white/10 bg-white/5 hover:border-primary/50 transition-colors group p-4"
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] font-black text-white/60 uppercase tracking-widest group-hover:text-primary transition-colors">LinkedIn_Profile</span>
+            </div>
+            <span className="material-symbols-outlined text-white/20 text-sm group-hover:text-primary/60 transition-colors">open_in_new</span>
+          </a>
 
           {/*<div className="space-y-4">*/}
           {/*  <div className="p-3 border border-white/10 bg-white/5">*/}
