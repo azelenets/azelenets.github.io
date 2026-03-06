@@ -13,17 +13,17 @@ const ProtocolCard = ({ id, icon, title, status, dots, children }: ProtocolCardP
   const markers = useMemo(() => Array.from({ length: dots }), [dots]);
 
   return (
-    <article className="bg-surface-terminal/90 p-10 flex flex-col gap-8 group hover:bg-primary/5 transition-all relative overflow-hidden">
+    <article className="bg-surface-terminal/90 p-8 md:p-10 flex flex-col gap-8 group hover:bg-primary/5 transition-all relative overflow-hidden">
       <div className="flex justify-between items-start">
-        <div className="w-16 h-16 border border-primary/30 flex items-center justify-center text-primary relative">
-          <span className="material-symbols-outlined text-4xl">{icon}</span>
+        <div className="w-12 h-12 md:w-16 md:h-16 border border-primary/30 flex items-center justify-center text-primary relative">
+          <span className="material-symbols-outlined text-2xl md:text-4xl">{icon}</span>
           <div className="absolute -top-1 -left-1 w-2 h-2 bg-primary" />
           <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-primary" />
         </div>
-        <span className="font-mono text-primary/40 text-xs">{'// '}{id}</span>
+        <span className="font-mono text-primary/40 text-[10px] md:text-xs">{'// '}{id}</span>
       </div>
       <div className="flex flex-col gap-4">
-        <h3 className="text-white text-2xl font-bold font-mono tracking-tight uppercase group-hover:text-primary transition-colors">{title}</h3>
+        <h3 className="text-white text-xl md:text-2xl font-bold font-mono tracking-tight uppercase group-hover:text-primary transition-colors">{title}</h3>
         <div className="h-px w-12 bg-alert" />
         <p className="text-slate-400 text-sm leading-relaxed font-mono">
           <span className="text-primary">[OBJECTIVE]</span> {children}
