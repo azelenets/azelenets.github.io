@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { stackColumns, specCards } from '@/constants/arsenal';
 import StackColumn from './StackColumn';
 import SpecCard from './SpecCard';
+import CliFilter from './CliFilter';
 import PageHeader from '@/components/layout/PageHeader';
 
 const Arsenal: React.FC = () => {
@@ -18,7 +19,7 @@ const Arsenal: React.FC = () => {
   }, [query]);
 
   return (
-    <section className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
+    <section className="max-w-[1500px] mx-auto w-full space-y-8 px-6 py-16 relative">
       <PageHeader
         eyebrow="Tactical Capability Overview"
         titleMain="Tech Stack"
@@ -27,22 +28,7 @@ const Arsenal: React.FC = () => {
       />
 
       {/* CLI Filter */}
-      <search className="mb-12">
-        <div className="bg-surface-terminal border border-primary/20 p-4 font-mono shadow-2xl relative">
-          <div className="flex items-center gap-3">
-            <span className="text-primary shrink-0 hidden sm:inline">visitor@andrew.zelenets:~$</span>
-            <span className="text-primary shrink-0 sm:hidden">$</span>
-            <input
-              className="flex-1 min-w-0 bg-transparent border-none focus:ring-0 text-primary placeholder:text-primary/30 text-lg p-0 uppercase focus:outline-none"
-              placeholder="SEARCH..."
-              type="text"
-              value={query}
-              onChange={e => setQuery(e.target.value)}
-            />
-            <div className="w-2 h-5 bg-primary animate-pulse shrink-0" />
-          </div>
-        </div>
-      </search>
+      <CliFilter value={query} onChange={setQuery} />
 
       {/* Matrix Grid */}
       {filteredColumns.length > 0 ? (
@@ -55,7 +41,7 @@ const Arsenal: React.FC = () => {
         <div className="border border-dashed border-primary/20 p-16 text-center">
           <div className="text-primary/30 text-xs font-bold tracking-[0.4em] uppercase mb-2">NO_ASSETS_FOUND</div>
           <p className="text-slate-600 text-xs font-mono uppercase">
-            QUERY: <span className="text-primary/40">{query}</span> — returned 0 results
+            SEARCH: <span className="text-primary/40">{query}</span> — returned 0 results
           </p>
         </div>
       )}

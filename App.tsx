@@ -27,7 +27,7 @@ const App = () => (
     <Navigation />
 
     <main className="flex-grow relative z-10 w-full">
-      <Suspense fallback={<div className="px-6 py-16 text-primary/70 text-sm uppercase">Loading tactical module...</div>}>
+      <Suspense fallback={<div className="px-6 py-16 text-primary/70 text-sm uppercase text-center">Loading tactical module...</div>}>
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/mission" element={<MissionLog />} />

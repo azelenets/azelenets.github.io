@@ -5,7 +5,7 @@ import PageHeader from '@/components/layout/PageHeader';
 
 const MissionLog: React.FC = () => {
   return (
-    <section className="max-w-[1500px] mx-auto w-full space-y-12 px-6 py-16 relative">
+    <section className="max-w-[1500px] mx-auto w-full space-y-8 px-6 py-16 relative">
       <PageHeader
         eyebrow="Deployment Archives"
         titleMain="MISSION LOG"
@@ -17,7 +17,7 @@ const MissionLog: React.FC = () => {
       <div className="relative">
         <div
           className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-primary/10 -translate-x-1/2 hidden md:block" />
-        <ol className="space-y-24 list-none">
+        <ol className="space-y-12 list-none">
           {missions.map((mission) => (
             <li key={mission.title}>
               <MissionItem {...mission} />
