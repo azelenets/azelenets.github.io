@@ -83,10 +83,10 @@ const Credentials: React.FC = () => {
 
             <div className="space-y-10">
               {/* Masters */}
-              <article className="relative pl-8 border-l border-primary/30">
+              <article className="relative pl-6 border-l border-primary/30">
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
                 <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                  <div>
+                  <div className="flex flex-col gap-2">
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: MASTER</div>
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="text-xl font-bold text-white">M.Eng. — Control and Automation</h3>
@@ -101,25 +101,25 @@ const Credentials: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
-                    <div className="text-xs text-primary">Computerized systems, control and automation</div>
+                    <div className="text-[9px] text-primary uppercase mb-1">Specialization</div>
+                    <div className="text-xs text-white/40">Computerized systems, control and automation</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Qualification</div>
-                    <div className="text-xs text-primary">Computer systems engineer, researcher</div>
+                    <div className="text-[9px] text-primary uppercase mb-1">Qualification</div>
+                    <div className="text-xs text-white/40">Computer systems engineer, researcher</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Thesis_Project</div>
-                    <div className="text-xs text-primary">Directed movement of a tunnel boring machine along a laser beam + Photovoltaic matrix development, MatLab/MathCad model</div>
+                    <div className="text-[9px] text-primary uppercase mb-1">Thesis_Project</div>
+                    <div className="text-xs text-white/40 text-primary">Directed movement of a tunnel boring machine along a laser beam + Photovoltaic matrix development, MatLab/MathCad model</div>
                   </div>
                 </div>
               </article>
 
               {/* Bachelors */}
-              <article className="relative pl-8 border-l border-primary/30">
+              <article className="relative pl-6 border-l border-primary/30">
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
                 <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                  <div>
+                  <div className="flex flex-col gap-2">
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: BACHELOR</div>
                     <h3 className="text-xl font-bold text-white">B.Sc. Information Technology</h3>
                     <div className="text-sm text-slate-400">Dnipro Polytech | Dept. of Automation &amp; Computer Systems</div>
@@ -128,21 +128,21 @@ const Credentials: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
-                    <div className="text-xs text-primary">Industry Automation &amp; Control Systems Engineering</div>
+                    <div className="text-[9px] text-primary uppercase mb-1">Specialization</div>
+                    <div className="text-xs text-white/40">Industry Automation &amp; Control Systems Engineering</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Qualification</div>
-                    <div className="text-xs text-primary">Specialist in automation and control systems</div>
+                    <div className="text-[9px] text-primary uppercase mb-1">Qualification</div>
+                    <div className="text-xs text-white/40">Specialist in automation and control systems</div>
                   </div>
                 </div>
               </article>
 
               {/* Jr. Specialist */}
-              <article className="relative pl-8 border-l border-primary/30">
+              <article className="relative pl-6 border-l border-primary/30">
                 <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
                 <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                  <div>
+                  <div className="flex flex-col gap-2">
                     <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: SPECIALIST</div>
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="text-xl font-bold text-white">Automated Control Systems Specialist</h3>
@@ -157,16 +157,16 @@ const Credentials: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Specialization</div>
-                    <div className="text-xs text-primary">Installation and maintenance of technological production automation equipment and systems</div>
+                    <div className="text-[9px] text-primary uppercase mb-1">Specialization</div>
+                    <div className="text-xs text-white/40">Installation and maintenance of technological production automation equipment and systems</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Qualification</div>
-                    <div className="text-xs text-primary">Electromechanical technician for installation and commissioning of technological production automation equipment and systems</div>
+                    <div className="text-[9px] text-primary uppercase mb-1">Qualification</div>
+                    <div className="text-xs text-white/40">Electromechanical technician for installation and commissioning of technological production automation equipment and systems</div>
                   </div>
                   <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-white/40 uppercase mb-1">Thesis_Project</div>
-                    <div className="text-xs text-primary">Automated control system for air heaters in steel production</div>
+                    <div className="text-[9px] text-primary uppercase mb-1">Thesis_Project</div>
+                    <div className="text-xs text-white/40">Automated control system for air heaters in steel production</div>
                   </div>
                 </div>
               </article>
