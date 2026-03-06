@@ -1,8 +1,0 @@
-export enum View {
-  HOME = 'HOME',
-  MISSION = 'MISSION',
-  LAB = 'LAB',
-  ARSENAL = 'ARSENAL',
-  PROTOCOLS = 'PROTOCOLS',
-  CREDENTIALS = 'CREDENTIALS'
-}

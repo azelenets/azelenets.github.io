@@ -44,7 +44,7 @@ const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats,
         <span className={`px-2 py-0.5 text-[9px] font-bold tracking-tighter uppercase ${statusColor}`}>{status}</span>
       </div>
       <h3 className={`text-xl font-display font-bold text-white mb-2 transition-colors ${TITLE_HOVER_CLASS_MAP[color]}`}>{title}</h3>
-      <p className="text-sm text-slate-400 mb-6 h-12 overflow-hidden">{desc}</p>
+      <p className="text-sm text-slate-400 mb-6 h-24 overflow-hidden">{desc}</p>
 
       <div className="space-y-4">
         {children}

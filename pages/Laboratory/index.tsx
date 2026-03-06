@@ -4,57 +4,42 @@ import LabCard from './LabCard';
 import PageHeader from '@/components/layout/PageHeader';
 
 const labCardChildren: Record<string, React.ReactNode> = {
-  PRJ_0442: (
-    <div className="h-16 w-full bg-black/40 rounded flex items-end gap-1 p-2">
-      <div className="w-full bg-primary/20 h-1/2" />
-      <div className="w-full bg-primary/40 h-3/4" />
-      <div className="w-full bg-primary/60 h-2/3" />
-      <div className="w-full bg-primary/40 h-full" />
-      <div className="w-full bg-primary/20 h-1/2" />
-      <div className="w-full bg-primary/30 h-1/3" />
+  PRJ_0001: (
+    <div className="h-16 w-full bg-black/40 rounded relative overflow-hidden flex items-center justify-center">
+      <div className="absolute size-12 border border-primary/20 rounded-full" />
+      <div className="absolute size-7 border border-primary/30 rounded-full" />
+      <div className="absolute w-full h-[1px] bg-primary/10" />
+      <div className="absolute h-full w-[1px] bg-primary/10" />
+      <div className="size-1.5 bg-primary rounded-full animate-ping" />
     </div>
   ),
-  PRJ_0819: (
-    <div className="h-16 w-full bg-black/40 rounded flex items-center justify-center p-2">
-      <svg className="w-full h-full text-hazard/40" viewBox="0 0 100 20">
-        <path d="M0 10 Q 25 0, 50 10 T 100 10" fill="none" stroke="currentColor" strokeDasharray="2,1"
-              strokeWidth="1" />
-        <path d="M0 10 Q 25 20, 50 10 T 100 10" fill="none" stroke="currentColor" strokeWidth="0.5" />
+  PRJ_0174: (
+    <div className="h-16 w-full bg-black/40 rounded flex items-center justify-between px-3 gap-1.5">
+      {(['CMD', 'QRY', 'EVT', 'HDL'] as const).map((label) => (
+        <div key={label} className="flex-1 border border-primary/20 bg-primary/5 flex items-center justify-center text-[7px] text-primary/50 font-bold py-2">
+          {label}
+        </div>
+      ))}
+    </div>
+  ),
+  PRJ_0287: (
+    <div className="h-16 w-full bg-black/40 rounded flex items-center px-2 overflow-hidden">
+      <svg className="w-full h-10 text-hazard/50" viewBox="0 0 200 30" preserveAspectRatio="none">
+        <polyline
+          points="0,15 18,5 36,25 54,10 72,20 90,6 108,22 126,11 144,19 162,4 180,16 200,15"
+          fill="none" stroke="currentColor" strokeWidth="1.5"
+        />
+        <circle cx="162" cy="4" r="2.5" fill="currentColor" opacity="0.8" />
       </svg>
     </div>
   ),
-  PRJ_1105: (
-    <div className="h-16 w-full bg-black/40 rounded flex items-center justify-between px-4">
-      <div className="size-8 border-2 border-alert/30 rounded-full flex items-center justify-center">
-        <div className="size-4 bg-alert animate-pulse" />
-      </div>
-      <div className="flex flex-col gap-1 w-2/3">
-        <div className="h-1 bg-white/5 w-full">
-          <div className="h-full bg-alert w-[15%]" />
-        </div>
-        <div className="h-1 bg-white/5 w-full">
-          <div className="h-full bg-alert w-[45%]" />
-        </div>
-        <div className="h-1 bg-white/5 w-full">
-          <div className="h-full bg-alert w-[8%]" />
-        </div>
-      </div>
-    </div>
-  ),
-  PRJ_0291: (
-    <div className="grid grid-cols-4 gap-2 h-16">
-      <div
-        className="bg-primary/10 border border-primary/20 flex items-center justify-center text-[8px] text-primary">82%
-      </div>
-      <div
-        className="bg-primary/20 border border-primary/30 flex items-center justify-center text-[8px] text-primary">94%
-      </div>
-      <div
-        className="bg-primary/5 border border-primary/10 flex items-center justify-center text-[8px] text-primary">44%
-      </div>
-      <div
-        className="bg-primary/40 border border-primary/50 flex items-center justify-center text-[8px] text-primary">99%
-      </div>
+  PRJ_0330: (
+    <div className="h-16 w-full bg-black/40 rounded flex items-center justify-around px-4">
+      <div className="text-[8px] text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">FORM</div>
+      <div className="text-[8px] text-hazard/30">→</div>
+      <div className="text-[8px] text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">EDGE</div>
+      <div className="text-[8px] text-hazard/30">→</div>
+      <div className="text-[8px] text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">INBOX</div>
     </div>
   ),
 };
