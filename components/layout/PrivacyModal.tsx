@@ -6,7 +6,7 @@ interface PrivacyModalProps {
 
 const Section = ({ label, children }: { label: string; children: React.ReactNode }) => (
   <div className="space-y-2">
-    <div className="text-primary text-[9px] font-black tracking-[0.3em] uppercase flex items-center gap-2">
+    <div className="text-primary/50 text-[9px] font-black tracking-[0.3em] uppercase flex items-center gap-2">
       <span className="material-symbols-outlined text-xs">chevron_right</span>
       {label}
     </div>
@@ -69,7 +69,7 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
         <div className="overflow-y-auto px-6 py-5 space-y-6 flex-1">
 
           {/* ── TERMS OF USE ── */}
-          <div className="text-[8px] text-primary/30 font-mono tracking-[0.3em] uppercase border-b border-primary/10 pb-1">
+          <div className="text-[8px] text-primary font-mono tracking-[0.3em] uppercase border-b border-primary/40 pb-1">
             SECTION_01 — TERMS_OF_USE
           </div>
 
@@ -102,7 +102,7 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
           </Section>
 
           {/* ── PRIVACY POLICY ── */}
-          <div className="text-[8px] text-primary/30 font-mono tracking-[0.3em] uppercase border-b border-primary/10 pb-1 pt-2">
+          <div className="text-[8px] text-primary font-mono tracking-[0.3em] uppercase border-b border-primary/40 pb-1 pt-2">
             SECTION_02 — PRIVACY_POLICY
           </div>
 
