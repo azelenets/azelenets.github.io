@@ -13,6 +13,7 @@ import aprioritExperience from 'json/experience/06-apriorit.json';
 import slobodaStudioExperience from 'json/experience/07-sloboda-studio.json';
 import theSkillsExperience from 'json/experience/08-the-skills.json';
 import seekingAlphaExperience from 'json/experience/09-seekingalpha.json';
+import svitlaExperience from 'json/experience/10-svitla.json';
 
 const preprocessExperience = (experience = {}) => {
   const {
@@ -39,6 +40,7 @@ const preprocessExperience = (experience = {}) => {
 
 function Experiences() {
   const experienceData = [
+    svitlaExperience,
     seekingAlphaExperience,
     theSkillsExperience,
     slobodaStudioExperience,

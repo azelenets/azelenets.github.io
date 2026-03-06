@@ -1,0 +1,57 @@
+{
+  "id": "svitla",
+  "position": "Senior Full-stack Web Engineer",
+  "companyName": "Svitla",
+  "companyWebsite": "https://svitla.com",
+  "years": "06/2022 - Present",
+  "contentParagraphs": [
+    "Worked in a fully remote distributed team (17+ developers) to develop and maintain large-scale e-commerce web system for publishers using Ruby on Rails and ReactJS."
+  ],
+  "responsibilities": [
+    "Participate in on-call rotations",
+    "Present on and write about work",
+    "Participate in planning sessions, build of major architectures and design patterns"
+  ],
+  "achievements": [
+    ""
+  ],
+  "technologies": [
+    "amazon_ec2",
+    "amazons3",
+    "storybook",
+    "brakeman",
+    "confluence",
+    "dotenv",
+    "elasticsearch",
+    "faker",
+    "figma",
+    "git",
+    "github",
+    "googletagmanager",
+    "html5",
+    "javascript",
+    "drone",
+    "jira",
+    "jwt",
+    "kibana",
+    "logz_io",
+    "opsgenie",
+    "mongodb",
+    "pronto",
+    "reactjs",
+    "redis",
+    "redux",
+    "sidekiq",
+    "rspec",
+    "rubocop",
+    "ruby",
+    "ruby_on_rails",
+    "salesforce",
+    "sass",
+    "sentry",
+    "shoulda_matchers",
+    "simplecov",
+    "slack",
+    "stripe"
+  ]
+}
