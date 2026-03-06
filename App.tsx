@@ -69,6 +69,7 @@ const Arsenal = lazy(() => import('@/pages/Arsenal'));
 const Laboratory = lazy(() => import('@/pages/Laboratory'));
 const Protocols = lazy(() => import('@/pages/Protocols'));
 const Credentials = lazy(() => import('@/pages/Credentials'));
+const NotFound = lazy(() => import('@/pages/NotFound'));
 
 const App = () => (
   <div className="min-h-screen flex flex-col font-mono selection:bg-primary selection:text-black">
@@ -88,6 +89,7 @@ const App = () => (
           <Route path="/lab" element={<Laboratory />} />
           <Route path="/protocols" element={<Protocols />} />
           <Route path="/credentials" element={<Credentials />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </main>
