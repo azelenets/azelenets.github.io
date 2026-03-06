@@ -7,7 +7,7 @@ import Service from 'components/elements/Service';
 import { COLOR_WHITE } from 'constants';
 
 import BackEndServiceImage from 'images/services/backend.svg';
-import FrontEndServiceImage from 'images/services/frontend.svg';
+import FrontEndServiceImage from 'images/services/responsive-web-design-logo.png';
 import InfrastructureDevelopmentServiceImage from 'images/services/server.svg';
 import DatabaseDevelopmentServiceImage from 'images/services/database.svg';
 import TestingServiceImage from 'images/services/testing.svg';

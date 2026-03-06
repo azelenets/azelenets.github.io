@@ -13,6 +13,7 @@ import Services from 'components/sections/Services';
 import Testimonials from 'components/sections/Testimonials';
 import Works from 'components/sections/Works';
 import Education from 'components/sections/Education';
+// import Brandlogos from '../components/sections/Brandlogos';
 
 function Homepage() {
   useEffect(() => {
@@ -41,6 +42,9 @@ function Homepage() {
             <Herosection light />
           </ReactCursorPosition>
         </Element>
+        {/* <Element name="section-brandlogos"> */}
+        {/* <Brandlogos /> */}
+        {/* </Element> */}
         <Element name="section-about">
           <About />
         </Element>
@@ -59,9 +63,6 @@ function Homepage() {
         <Element name="section-testimoninal">
           <Testimonials />
         </Element>
-        {/* <Element name="section-brandlogos"> */}
-        {/*  <Brandlogos /> */}
-        {/* </Element> */}
         <Element name="section-contact">
           <Contact />
         </Element>

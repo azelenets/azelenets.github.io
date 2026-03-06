@@ -3,6 +3,9 @@ import Typed from 'react-typed';
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
 
+import avatarImage from 'images/avatar-without-bg.png';
+import Aurora from 'components/elements/aurora-tile';
+
 function Herosection({ position, elementDimensions }) {
   const { x, y } = position;
   const { height, width } = elementDimensions;
@@ -18,17 +21,17 @@ function Herosection({ position, elementDimensions }) {
     <section id="home" className="home d-flex align-items-center">
       <div className="container">
         <div className="intro">
-          <img src="images/avatar-1.svg" alt="Bolby" className="mb-4" />
+          <img src={avatarImage} alt="Andrew Zelenets" className="mb-4 avatar-main" />
 
-          <h1 className="mb-2 mt-0">Bolby Doe</h1>
-          <p>
-            I&#39;m a
+          <h1 className="mb-2 mt-0">Andrew Zelenets</h1>
+          <p className="dynamic-text">
+            I&#39;m Expert
             {' '}
             <Typed
               strings={[
-                'UI/UX designer ',
-                'Front-End developer',
-                'Photography lover',
+                'Full-stack engineer',
+                'Front-End engineer',
+                'Back-End engineer',
               ]}
               typeSpeed={80}
               backSpeed={40}

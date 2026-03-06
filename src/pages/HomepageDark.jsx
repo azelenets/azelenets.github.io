@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import Header from 'components/layouts/Header';
 import About from 'components/sections/About';
-// import Brandlogos from 'components/sections/Brandlogos';
+import Brandlogos from 'components/sections/BrandlogosDark';
 import Contact from 'components/sections/Contact';
 import Experiences from 'components/sections/Experiences';
 import Herosection from 'components/sections/Herosection';
@@ -41,6 +41,9 @@ function HomepageDark() {
             <Herosection />
           </ReactCursorPosition>
         </Element>
+        <Element name="section-brandlogos">
+          <Brandlogos />
+        </Element>
         <Element name="section-about">
           <About />
         </Element>
@@ -59,9 +62,6 @@ function HomepageDark() {
         <Element name="section-testimoninal">
           <Testimonials />
         </Element>
-        {/* <Element name="section-brandlogos"> */}
-        {/*   <Brandlogos /> */}
-        {/* </Element> */}
         <Element name="section-contact">
           <Contact />
         </Element>
