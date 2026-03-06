@@ -10,6 +10,7 @@ vi.mock('@/pages/Arsenal', () => ({ default: () => <div>ARSENAL_PAGE</div> }));
 vi.mock('@/pages/Laboratory', () => ({ default: () => <div>LAB_PAGE</div> }));
 vi.mock('@/pages/Protocols', () => ({ default: () => <div>PROTOCOLS_PAGE</div> }));
 vi.mock('@/pages/Credentials', () => ({ default: () => <div>CREDENTIALS_PAGE</div> }));
+vi.mock('@/pages/NotFound', () => ({ default: () => <div>NOT_FOUND_PAGE</div> }));
 
 // Stub geolocation to avoid pending side-effects
 beforeEach(() => {
@@ -57,6 +58,11 @@ describe('App routing', () => {
   it('renders Credentials at /credentials', async () => {
     renderAt('/credentials');
     await waitFor(() => expect(screen.getByText('CREDENTIALS_PAGE')).toBeInTheDocument());
+  });
+
+  it('renders NotFound for an unknown route', async () => {
+    renderAt('/this-route-does-not-exist');
+    await waitFor(() => expect(screen.getByText('NOT_FOUND_PAGE')).toBeInTheDocument());
   });
 });
 
