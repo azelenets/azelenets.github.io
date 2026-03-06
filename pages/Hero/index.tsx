@@ -114,13 +114,15 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-            <button
-              onClick={() => navigate('/lab')}
+            <a
+              href="https://calendar.app.google/yf8ZWByZWy1bFEY38"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative px-8 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden"
             >
               <span className="relative z-10">Deploy_Solution</span>
               <div className="absolute top-0 right-0 hazard-stripe w-2 h-full opacity-50 group-hover:w-full transition-all duration-300" />
-            </button>
+            </a>
             <button
               onClick={() => navigate('/arsenal')}
               className="px-8 py-4 border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-all flex items-center gap-2 justify-center"
