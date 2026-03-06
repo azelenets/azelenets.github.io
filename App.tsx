@@ -4,9 +4,21 @@ import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import PrivacyBanner from '@/components/layout/PrivacyBanner';
 
+const PAGE_TITLES: Record<string, string> = {
+  '/':            'Andrii Zelenets // Tactical Software Engineering Unit',
+  '/mission':     'Mission Log // Andrii Zelenets',
+  '/arsenal':     'Tech Stack Arsenal // Andrii Zelenets',
+  '/lab':         'R&D Lab // Andrii Zelenets',
+  '/protocols':   'Protocols // Andrii Zelenets',
+  '/credentials': 'Credentials // Andrii Zelenets',
+};
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = PAGE_TITLES[pathname] ?? 'Andrii Zelenets // Tactical Software Engineering Unit';
+  }, [pathname]);
   return null;
 };
 

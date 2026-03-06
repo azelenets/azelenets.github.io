@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#050505"/>
+
+  <!-- corner brackets -->
+  <polyline points="2,8 2,2 8,2"   fill="none" stroke="#00f3ff" stroke-width="2" stroke-linecap="square"/>
+  <polyline points="24,2 30,2 30,8" fill="none" stroke="#00f3ff" stroke-width="2" stroke-linecap="square"/>
+  <polyline points="2,24 2,30 8,30" fill="none" stroke="#00f3ff" stroke-width="2" stroke-linecap="square"/>
+  <polyline points="30,24 30,30 24,30" fill="none" stroke="#00f3ff" stroke-width="2" stroke-linecap="square"/>
+
+  <!-- initials -->
+  <text x="16" y="21" text-anchor="middle" fill="#00f3ff"
+        font-family="monospace" font-size="13" font-weight="700" letter-spacing="-1">AZ</text>
+</svg>

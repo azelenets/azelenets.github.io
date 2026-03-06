@@ -60,6 +60,38 @@ describe('App routing', () => {
   });
 });
 
+describe('App page titles', () => {
+  it('sets the correct title at /', async () => {
+    renderAt('/');
+    await waitFor(() => expect(document.title).toBe('Andrii Zelenets // Tactical Software Engineering Unit'));
+  });
+
+  it('sets the correct title at /mission', async () => {
+    renderAt('/mission');
+    await waitFor(() => expect(document.title).toBe('Mission Log // Andrii Zelenets'));
+  });
+
+  it('sets the correct title at /arsenal', async () => {
+    renderAt('/arsenal');
+    await waitFor(() => expect(document.title).toBe('Tech Stack Arsenal // Andrii Zelenets'));
+  });
+
+  it('sets the correct title at /lab', async () => {
+    renderAt('/lab');
+    await waitFor(() => expect(document.title).toBe('R&D Lab // Andrii Zelenets'));
+  });
+
+  it('sets the correct title at /protocols', async () => {
+    renderAt('/protocols');
+    await waitFor(() => expect(document.title).toBe('Protocols // Andrii Zelenets'));
+  });
+
+  it('sets the correct title at /credentials', async () => {
+    renderAt('/credentials');
+    await waitFor(() => expect(document.title).toBe('Credentials // Andrii Zelenets'));
+  });
+});
+
 describe('App layout', () => {
   it('renders Navigation', async () => {
     renderAt('/');
