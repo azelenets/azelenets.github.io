@@ -39,7 +39,7 @@ const MORSE_PATTERN: number[] = (() => {
   };
 
   const pattern: number[] = [];
-  const words = 'CONTACT ME'.split(' ');
+  const words = 'HELLO WORLD'.split(' ');
 
   words.forEach((word, wordIndex) => {
     word.split('').forEach((char, charIndex) => {
