@@ -43,6 +43,15 @@
         },
       };
     </script>
+    <script>
+      // SPA routing restore for GitHub Pages 404 redirect
+      (function () {
+        var p = new URLSearchParams(window.location.search).get('p');
+        if (p) {
+          window.history.replaceState(null, null, p);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div class="cyber-grid"></div>

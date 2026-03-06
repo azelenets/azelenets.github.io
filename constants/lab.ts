@@ -9,6 +9,7 @@ export interface LabCardData {
   stats: string;
   action: string;
   icon: string;
+  link?: string;
 }
 
 export const labCards: LabCardData[] = [
@@ -23,6 +24,7 @@ export const labCards: LabCardData[] = [
     stats: 'STACK: REACT + VITE',
     action: 'VIEW_SOURCE',
     icon: 'terminal',
+    link: 'https://github.com/azelenets/azelenets.github.io',
   },
   {
     id: 'PRJ_0174',
@@ -35,6 +37,7 @@ export const labCards: LabCardData[] = [
     stats: 'MODULES: 12 PLANNED',
     action: 'INIT_DRAFT',
     icon: 'schema',
+    link: 'https://github.com/azelenets/nexus-forge',
   },
   {
     id: 'PRJ_0287',

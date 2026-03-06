@@ -11,6 +11,7 @@ interface LabCardProps {
   stats: string;
   action: string;
   icon: string;
+  link?: string;
   children: ReactNode;
 }
 
@@ -32,7 +33,7 @@ const TITLE_HOVER_CLASS_MAP: Record<LabCardProps['color'], string> = {
   alert: 'group-hover:text-alert',
 };
 
-const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats, action, icon, children }: LabCardProps) => {
+const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats, action, icon, link, children }: LabCardProps) => {
   const actionClasses = ACTION_CLASS_MAP[color];
 
   return (
@@ -50,9 +51,20 @@ const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats,
         {children}
         <div className={`flex justify-between items-center text-[10px] ${actionClasses.text}`}>
           <span>{stats}</span>
-          <span className={`flex items-center gap-1 cursor-pointer uppercase ${actionClasses.hover}`}>
-            <span className="material-symbols-outlined text-xs">{icon}</span> {action}
-          </span>
+          {link ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-1 uppercase ${actionClasses.hover}`}
+            >
+              <span className="material-symbols-outlined text-xs">{icon}</span> {action}
+            </a>
+          ) : (
+            <span className={`flex items-center gap-1 cursor-pointer uppercase ${actionClasses.hover}`}>
+              <span className="material-symbols-outlined text-xs">{icon}</span> {action}
+            </span>
+          )}
         </div>
       </div>
     </article>
