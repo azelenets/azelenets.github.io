@@ -1,4 +1,4 @@
-![LinkedIn Banners — Andrii Zelenets](images/repo-banner.avif)
+![LinkedIn Banners — Andrii Zelenets](public/images/repo-banner.avif)
 
 # Andrii Zelenets - Aegis Tactical Interface
 
