@@ -56,7 +56,7 @@ export const missions: MissionData[] = [
     status: 'ONGOING',
     statusColor: 'text-hazard bg-hazard/10',
     align: 'left',
-    imageUrl: 'images/pwc.avif',
+    imageUrl: '/images/pwc.avif',
   },
   {
     date: '2022.Q2 — 2026.Q1',
@@ -78,7 +78,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/tw-bsci-01.webp',
+    imageUrl: '/images/tw-bsci-01.webp',
   },
   {
     date: '2021.Q3 — 2025.Q1',
@@ -99,7 +99,7 @@ export const missions: MissionData[] = [
     status: 'COMPLETED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/seeking-alpha.avif',
+    imageUrl: '/images/seeking-alpha.avif',
   },
   {
     date: '2021.Q2 — 2021.Q4',
@@ -121,7 +121,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/pm1.avif',
+    imageUrl: '/images/pm1.avif',
   },
   {
     date: '2020.Q2 — 2021.Q4',
@@ -141,7 +141,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/theskills.webp',
+    imageUrl: '/images/theskills.webp',
   },
   {
     date: '2020.Q3 — 2020.Q4',
@@ -162,7 +162,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/vlt.avif',
+    imageUrl: '/images/vlt.avif',
   },
   {
     date: '2020.Q2 — 2020.Q4',
@@ -183,7 +183,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/123.avif',
+    imageUrl: '/images/123.avif',
   },
   {
     date: '2020.Q2 — 2020.Q3',
@@ -204,7 +204,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/mnd.avif',
+    imageUrl: '/images/mnd.avif',
   },
   {
     date: '2020.Q3 — 2020.Q3',
@@ -225,7 +225,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/njs.avif',
+    imageUrl: '/images/njs.avif',
   },
   {
     date: '2020.Q3 — 2020.Q4',
@@ -246,7 +246,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/bv.avif',
+    imageUrl: '/images/bv.avif',
   },
   {
     date: '2020.Q2 — 2020.Q3',
@@ -267,7 +267,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/kfr.avif',
+    imageUrl: '/images/kfr.avif',
   },
   {
     date: '2020.Q1 — 2020.Q2',
@@ -288,7 +288,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/mp.avif',
+    imageUrl: '/images/mp.avif',
   },
   {
     date: '2019.Q3 — 2020.Q1',
@@ -309,7 +309,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/sfts.avif',
+    imageUrl: '/images/sfts.avif',
   },
   {
     date: '2019.Q1 — 2019.Q3',
@@ -330,7 +330,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/sat.avif',
+    imageUrl: '/images/sat.avif',
   },
   {
     date: '2018.Q2 — 2018.Q4',
@@ -351,7 +351,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/bb.avif',
+    imageUrl: '/images/bb.avif',
   },
   {
     date: '2018.Q2 — 2018.Q4',
@@ -372,7 +372,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/twlk.avif',
+    imageUrl: '/images/twlk.avif',
   },
   {
     date: '2018.Q2 — 2018.Q3',
@@ -393,7 +393,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/vv.avif',
+    imageUrl: '/images/vv.avif',
   },
   {
     date: '2018.Q3 — 2020.Q3',
@@ -435,7 +435,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/evnt.avif',
+    imageUrl: '/images/evnt.avif',
   },
   {
     date: '2017.Q4 — 2018.Q2',
@@ -456,7 +456,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/nrg.avif',
+    imageUrl: '/images/nrg.avif',
   },
   {
     date: '2017.Q3 — 2017.Q4',
@@ -477,7 +477,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/5nG.avif',
+    imageUrl: '/images/5nG.avif',
   },
   {
     date: '2017.Q2 — 2017.Q3',
@@ -498,7 +498,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/htl.avif',
+    imageUrl: '/images/htl.avif',
   },
   {
     date: '2016.Q4 — 2017.Q2',
@@ -519,7 +519,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/stf.avif',
+    imageUrl: '/images/stf.avif',
   },
   {
     date: '2015.Q3 — 2016.Q4',
@@ -540,7 +540,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/lpm.webp',
+    imageUrl: '/images/lpm.webp',
   },
   {
     date: '2015.Q3 — 2015.Q4',
@@ -561,7 +561,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/rv.avif',
+    imageUrl: '/images/rv.avif',
   },
   {
     date: '2015.Q3 — 2015.Q4',
@@ -582,7 +582,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/nen.avif',
+    imageUrl: '/images/nen.avif',
   },
   {
     date: '2015.Q2 — 2015.Q3',
@@ -603,7 +603,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/gmb.avif',
+    imageUrl: '/images/gmb.avif',
   },
   {
     date: '2015.Q1 — 2015.Q3',
@@ -624,7 +624,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/nw.avif',
+    imageUrl: '/images/nw.avif',
   },
   {
     date: '2014.Q2 — 2015.Q1',
@@ -645,7 +645,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/sft.avif',
+    imageUrl: '/images/sft.avif',
   },
   {
     date: '2014.Q2 — 2015.Q1',
@@ -666,7 +666,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/tx.avif',
+    imageUrl: '/images/tx.avif',
   },
   {
     date: '2014.Q2 — 2014.Q4',
@@ -687,7 +687,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/tv.avif',
+    imageUrl: '/images/tv.avif',
   },
   {
     date: '2013.Q2 — 2014.Q3',
@@ -707,7 +707,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/df.webp',
+    imageUrl: '/images/df.webp',
   },
   {
     date: '2013.Q3 — 2013.Q4',
@@ -728,7 +728,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/nwb.avif',
+    imageUrl: '/images/nwb.avif',
   },
   {
     date: '2013.Q3 — 2014.Q2',
@@ -749,7 +749,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'right',
-    imageUrl: 'images/ky.avif',
+    imageUrl: '/images/ky.avif',
   },
   {
     date: '2013.Q2 — 2013.Q4',
@@ -770,7 +770,7 @@ export const missions: MissionData[] = [
     status: 'ARCHIVED',
     statusColor: 'text-white/40 bg-white/5',
     align: 'left',
-    imageUrl: 'images/sk.avif',
+    imageUrl: '/images/sk.avif',
   },
   // {
   //   date: '2020.Q2 — 2022.Q4',
