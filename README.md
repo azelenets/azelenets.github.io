@@ -53,11 +53,43 @@ The dev server runs on `http://localhost:3000` by default.
 ## Available scripts
 
 ```bash
-npm run dev       # Start Vite dev server
-npm run build     # Production build to ./dist
-npm run preview   # Preview production build locally
-npm run lint      # Run ESLint
-npm run lint:fix  # Run ESLint with auto-fixes
+npm run dev        # Start Vite dev server
+npm run build      # Production build to ./dist
+npm run preview    # Preview production build locally
+npm run test       # Run unit tests (single pass)
+npm run test:watch # Run unit tests in watch mode
+npm run lint       # Run ESLint
+npm run lint:fix   # Run ESLint with auto-fixes
+```
+
+## Testing
+
+Unit tests are written with [Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+
+**Stack:** Vitest + `@testing-library/react` + `@testing-library/user-event` + `jsdom`
+
+Test files live under `test/`, mirroring the source structure:
+
+```
+test/
+├── setup.ts                          # jest-dom matchers setup
+├── App.test.tsx                      # Routing and layout integration
+├── constants/
+│   ├── navigation.test.ts            # navItems shape and integrity
+│   ├── lab.test.ts                   # labCards shape, links
+│   └── arsenal.test.ts               # stackColumns and specCards shape
+├── components/
+│   ├── StatCard.test.tsx             # Progress bar vs. segmented render
+│   └── layout/
+│       ├── PageHeader.test.tsx       # Optional props rendering
+│       ├── PrivacyBanner.test.tsx    # localStorage logic, dismiss/acknowledge
+│       └── Navigation.test.tsx       # formatCoord, geo states, mobile menu
+└── pages/
+    ├── Arsenal/
+    │   ├── CliFilter.test.tsx        # Controlled input, onChange behaviour
+    │   └── Arsenal.test.tsx          # Filter by title/item, empty state
+    └── Laboratory/
+        └── LabCard.test.tsx          # Link vs. span action, color variants
 ```
 
 ## Deployment
