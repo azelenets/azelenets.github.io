@@ -90,3 +90,54 @@ export const courses: CourseData[] = [
 export const combatLanguages: string[] = ['RUBY', 'TYPESCRIPT', 'JAVASCRIPT'];
 
 export const tacticalFrameworks: string[] = ['RAILS', 'NESTJS', 'GRAPE', 'SINATRA'];
+
+export interface DetailField {
+  label: string;
+  value: string;
+}
+
+export interface EducationData {
+  level: string;
+  title: string;
+  institution: string;
+  years: string;
+  withHonor?: boolean;
+  fields: DetailField[];
+}
+
+export const education: EducationData[] = [
+  {
+    level: 'MASTER',
+    title: 'M.Eng. — Control and Automation',
+    institution: 'Dnipro Polytech | Dept. of Automation & Computer Systems',
+    years: '2011 — 2012',
+    withHonor: true,
+    fields: [
+      { label: 'Specialization', value: 'Computerized systems, control and automation' },
+      { label: 'Qualification', value: 'Computer systems engineer, researcher' },
+      { label: 'Thesis_Project', value: 'Directed movement of a tunnel boring machine along a laser beam + Photovoltaic matrix development, MatLab/MathCad model' },
+    ],
+  },
+  {
+    level: 'BACHELOR',
+    title: 'B.Sc. Information Technology',
+    institution: 'Dnipro Polytech | Dept. of Automation & Computer Systems',
+    years: '2009 — 2011',
+    fields: [
+      { label: 'Specialization', value: 'Industry Automation & Control Systems Engineering' },
+      { label: 'Qualification', value: 'Specialist in automation and control systems' },
+    ],
+  },
+  {
+    level: 'SPECIALIST',
+    title: 'Automated Control Systems Specialist',
+    institution: 'Dnipro Polytech College',
+    years: '2005 — 2009',
+    withHonor: true,
+    fields: [
+      { label: 'Specialization', value: 'Installation and maintenance of technological production automation equipment and systems' },
+      { label: 'Qualification', value: 'Electromechanical technician for installation and commissioning of technological production automation equipment and systems' },
+      { label: 'Thesis_Project', value: 'Automated control system for air heaters in steel production' },
+    ],
+  },
+];

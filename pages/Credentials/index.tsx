@@ -1,7 +1,9 @@
 import React from 'react';
-import { combatLanguages, courses, tacticalFrameworks } from '@/constants/credentials';
+import { combatLanguages, courses, education, tacticalFrameworks } from '@/constants/credentials';
 import StatCard from '@/components/StatCard';
 import PageHeader from '@/components/layout/PageHeader.tsx';
+import EducationEntry from './EducationEntry';
+import SkillGroup from './SkillGroup';
 
 const Credentials: React.FC = () => {
   return (
@@ -45,28 +47,28 @@ const Credentials: React.FC = () => {
             </div>
           </figure>
 
-          <div className="space-y-4">
-            <div className="p-3 border border-white/10 bg-white/5">
-              <div className="text-[9px] text-primary/60 font-bold uppercase">Biometric_Auth_Status</div>
-              <div className="flex items-center justify-between mt-1">
-                <span className="text-xs text-white">GENETIC_HASH</span>
-                <span className="text-[10px] text-primary font-mono">X99-A12-88B</span>
-              </div>
-              <div className="w-full h-1 bg-white/10 mt-2 flex gap-1">
-                <div className="h-full bg-primary w-1/4" />
-                <div className="h-full bg-primary w-1/4" />
-                <div className="h-full bg-primary w-1/4" />
-                <div className="h-full bg-white/20 w-1/4" />
-              </div>
-            </div>
-            <div className="p-3 border border-white/10 bg-white/5">
-              <div className="text-[9px] text-primary/60 font-bold uppercase">Network_Integrity</div>
-              <div className="flex items-center justify-between mt-1">
-                <span className="text-xs text-white">VPN_TUNNEL</span>
-                <span className="text-[10px] text-hazard">SECURED</span>
-              </div>
-            </div>
-          </div>
+          {/*<div className="space-y-4">*/}
+          {/*  <div className="p-3 border border-white/10 bg-white/5">*/}
+          {/*    <div className="text-[9px] text-primary/60 font-bold uppercase">Biometric_Auth_Status</div>*/}
+          {/*    <div className="flex items-center justify-between mt-1">*/}
+          {/*      <span className="text-xs text-white">GENETIC_HASH</span>*/}
+          {/*      <span className="text-[10px] text-primary font-mono">X99-A12-88B</span>*/}
+          {/*    </div>*/}
+          {/*    <div className="w-full h-1 bg-white/10 mt-2 flex gap-1">*/}
+          {/*      <div className="h-full bg-primary w-1/4" />*/}
+          {/*      <div className="h-full bg-primary w-1/4" />*/}
+          {/*      <div className="h-full bg-primary w-1/4" />*/}
+          {/*      <div className="h-full bg-white/20 w-1/4" />*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*  <div className="p-3 border border-white/10 bg-white/5">*/}
+          {/*    <div className="text-[9px] text-primary/60 font-bold uppercase">Network_Integrity</div>*/}
+          {/*    <div className="flex items-center justify-between mt-1">*/}
+          {/*      <span className="text-xs text-white">VPN_TUNNEL</span>*/}
+          {/*      <span className="text-[10px] text-hazard">SECURED</span>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </aside>
 
         {/* Main Details */}
@@ -82,94 +84,9 @@ const Credentials: React.FC = () => {
             </div>
 
             <div className="space-y-10">
-              {/* Masters */}
-              <article className="relative pl-6 border-l border-primary/30">
-                <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
-                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: MASTER</div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="text-xl font-bold text-white">M.Eng. — Control and Automation</h3>
-                      <span className="inline-flex items-center gap-1 border border-yellow-400/60 bg-yellow-400/10 text-yellow-400 text-[8px] font-black uppercase tracking-widest px-2 py-0.5">
-                        <span className="material-symbols-outlined text-[10px]">military_tech</span>
-                        Diploma with Honor
-                      </span>
-                    </div>
-                    <div className="text-sm text-slate-400">Dnipro Polytech | Dept. of Automation &amp; Computer Systems</div>
-                  </div>
-                  <span className="text-xs font-bold text-white/40">2011 — 2012</span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-primary uppercase mb-1">Specialization</div>
-                    <div className="text-xs text-white/40">Computerized systems, control and automation</div>
-                  </div>
-                  <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-primary uppercase mb-1">Qualification</div>
-                    <div className="text-xs text-white/40">Computer systems engineer, researcher</div>
-                  </div>
-                  <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-primary uppercase mb-1">Thesis_Project</div>
-                    <div className="text-xs text-white/40 text-primary">Directed movement of a tunnel boring machine along a laser beam + Photovoltaic matrix development, MatLab/MathCad model</div>
-                  </div>
-                </div>
-              </article>
-
-              {/* Bachelors */}
-              <article className="relative pl-6 border-l border-primary/30">
-                <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
-                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: BACHELOR</div>
-                    <h3 className="text-xl font-bold text-white">B.Sc. Information Technology</h3>
-                    <div className="text-sm text-slate-400">Dnipro Polytech | Dept. of Automation &amp; Computer Systems</div>
-                  </div>
-                  <span className="text-xs font-bold text-white/40">2009 — 2011</span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-primary uppercase mb-1">Specialization</div>
-                    <div className="text-xs text-white/40">Industry Automation &amp; Control Systems Engineering</div>
-                  </div>
-                  <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-primary uppercase mb-1">Qualification</div>
-                    <div className="text-xs text-white/40">Specialist in automation and control systems</div>
-                  </div>
-                </div>
-              </article>
-
-              {/* Jr. Specialist */}
-              <article className="relative pl-6 border-l border-primary/30">
-                <div className="absolute -left-[5px] top-0 size-2 bg-primary" />
-                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-1">Authorization_Level: SPECIALIST</div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="text-xl font-bold text-white">Automated Control Systems Specialist</h3>
-                      <span className="inline-flex items-center gap-1 border border-yellow-400/60 bg-yellow-400/10 text-yellow-400 text-[8px] font-black uppercase tracking-widest px-2 py-0.5">
-                        <span className="material-symbols-outlined text-[10px]">military_tech</span>
-                        Diploma with Honor
-                      </span>
-                    </div>
-                    <div className="text-sm text-slate-400">Dnipro Polytech College</div>
-                  </div>
-                  <span className="text-xs font-bold text-white/40">2005 — 2009</span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-primary uppercase mb-1">Specialization</div>
-                    <div className="text-xs text-white/40">Installation and maintenance of technological production automation equipment and systems</div>
-                  </div>
-                  <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-primary uppercase mb-1">Qualification</div>
-                    <div className="text-xs text-white/40">Electromechanical technician for installation and commissioning of technological production automation equipment and systems</div>
-                  </div>
-                  <div className="bg-black/40 border border-white/5 p-3">
-                    <div className="text-[9px] text-primary uppercase mb-1">Thesis_Project</div>
-                    <div className="text-xs text-white/40">Automated control system for air heaters in steel production</div>
-                  </div>
-                </div>
-              </article>
+              {education.map(entry => (
+                <EducationEntry key={entry.level} {...entry} />
+              ))}
             </div>
           </article>
 
@@ -189,9 +106,7 @@ const Credentials: React.FC = () => {
                   rel="noopener noreferrer"
                   className="block group border border-white/10 bg-panel-dark hover:border-primary/50 transition-colors relative overflow-hidden"
                 >
-                  {/* top accent line */}
                   <div className="absolute top-0 left-0 right-0 h-[1px] bg-primary/0 group-hover:bg-primary/60 transition-colors" />
-
                   <div className="p-4">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <div className="flex-1 min-w-0">
@@ -210,9 +125,7 @@ const Credentials: React.FC = () => {
                         <span className="material-symbols-outlined text-white/20 text-sm group-hover:text-primary/60 transition-colors">open_in_new</span>
                       </div>
                     </div>
-
                     <p className="text-[10px] text-white/40 mb-3 leading-relaxed">{course.description}</p>
-
                     <div className="flex flex-wrap gap-1.5">
                       {course.topics.map(topic => (
                         <span key={topic} className="text-[8px] text-primary/70 border border-primary/20 bg-primary/5 px-1.5 py-0.5 font-mono uppercase">
@@ -228,22 +141,8 @@ const Credentials: React.FC = () => {
 
           {/* Skills Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="bg-white/5 border border-white/10 p-5">
-              <div className="text-[10px] text-primary/70 font-bold mb-4 uppercase">Combat_Languages</div>
-              <div className="flex flex-wrap gap-2">
-                {combatLanguages.map(l => (
-                  <span key={l} className="bg-black border border-primary/20 text-[10px] px-2 py-1 text-white">{l}</span>
-                ))}
-              </div>
-            </div>
-            <div className="bg-white/5 border border-white/10 p-5">
-              <div className="text-[10px] text-primary/70 font-bold mb-4 uppercase">Tactical_Frameworks</div>
-              <div className="flex flex-wrap gap-2">
-                {tacticalFrameworks.map(l => (
-                  <span key={l} className="bg-black border border-primary/20 text-[10px] px-2 py-1 text-white">{l}</span>
-                ))}
-              </div>
-            </div>
+            <SkillGroup title="Combat_Languages" items={combatLanguages} />
+            <SkillGroup title="Tactical_Frameworks" items={tacticalFrameworks} />
           </div>
 
           {/* Certs */}
