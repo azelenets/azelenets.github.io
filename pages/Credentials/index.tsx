@@ -42,7 +42,7 @@ const Credentials: React.FC = () => {
                 <div className="absolute w-full h-0.5 bg-primary/20" style={{ animation: 'scan-line 3s linear infinite alternate' }} />
                 <div className="absolute inset-0 border-[20px] border-black/60" />
                 <div className="absolute top-2 left-2 text-[8px] text-primary">RETINA_SCAN: ACTIVE</div>
-                <div className="absolute bottom-2 right-2 text-[8px] text-primary animate-pulse">MATCH_FOUND_99%</div>
+                <div className="absolute bottom-2 right-2 text-[8px] text-alert/60 animate-pulse">MATCH_FOUND_99%</div>
               </div>
             </div>
           </figure>
