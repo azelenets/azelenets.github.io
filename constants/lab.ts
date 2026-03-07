@@ -50,6 +50,7 @@ export const labCards: LabCardData[] = [
     stats: 'LATENCY: <2ms',
     action: 'OPEN_TRACE',
     icon: 'ssid_chart',
+    link: 'https://github.com/azelenets/signal-trace',
   },
   {
     id: 'PRJ_0330',
