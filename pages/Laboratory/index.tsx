@@ -5,7 +5,7 @@ import PageHeader from '@/components/layout/PageHeader';
 
 const labCardChildren: Record<string, React.ReactNode> = {
   PRJ_0001: (
-    <div className="h-16 w-full bg-black/40 rounded relative overflow-hidden flex items-center justify-center">
+    <div className="h-24 w-full bg-black/40 rounded relative overflow-hidden flex items-center justify-center">
       <div className="absolute size-12 border border-primary/20 rounded-full" />
       <div className="absolute size-7 border border-primary/30 rounded-full" />
       <div className="absolute w-full h-[1px] bg-primary/10" />
@@ -14,16 +14,16 @@ const labCardChildren: Record<string, React.ReactNode> = {
     </div>
   ),
   PRJ_0174: (
-    <div className="h-16 w-full bg-black/40 rounded flex items-center justify-between px-3 gap-1.5">
-      {(['CMD', 'QRY', 'EVT', 'HDL'] as const).map((label) => (
-        <div key={label} className="flex-1 border border-primary/20 bg-primary/5 flex items-center justify-center text-[7px] text-primary/50 font-bold py-2">
+    <div className="h-24 w-full bg-black/40 rounded flex items-center justify-between px-3 gap-1.5">
+      {(['COMMAND', 'QUERY', 'EVENT', 'HANDLER'] as const).map((label) => (
+        <div key={label} className="flex-1 border border-primary/20 bg-primary/5 flex items-center justify-center text-xs text-primary/50 font-bold py-2">
           {label}
         </div>
       ))}
     </div>
   ),
   PRJ_0287: (
-    <div className="h-16 w-full bg-black/40 rounded flex items-center px-2 overflow-hidden">
+    <div className="h-24 w-full bg-black/40 rounded flex items-center px-2 overflow-hidden">
       <svg className="w-full h-10 text-hazard/50" viewBox="0 0 200 30" preserveAspectRatio="none">
         <polyline
           points="0,15 18,5 36,25 54,10 72,20 90,6 108,22 126,11 144,19 162,4 180,16 200,15"
@@ -34,12 +34,12 @@ const labCardChildren: Record<string, React.ReactNode> = {
     </div>
   ),
   PRJ_0330: (
-    <div className="h-16 w-full bg-black/40 rounded flex items-center justify-around px-4">
-      <div className="text-[8px] text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">FORM</div>
-      <div className="text-[8px] text-hazard/30">→</div>
-      <div className="text-[8px] text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">EDGE</div>
-      <div className="text-[8px] text-hazard/30">→</div>
-      <div className="text-[8px] text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">INBOX</div>
+    <div className="h-24 w-full bg-black/40 rounded flex items-center justify-around px-4">
+      <div className="text-xs text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">FORM</div>
+      <div className="text-xs text-hazard/30">→</div>
+      <div className="text-xs text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">EDGE</div>
+      <div className="text-xs text-hazard/30">→</div>
+      <div className="text-xs text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">INBOX</div>
     </div>
   ),
 };
