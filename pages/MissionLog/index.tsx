@@ -39,6 +39,9 @@ const MissionLog: React.FC = () => {
           Full Tactical Briefing?
         </div>
         <button
+          data-cta-id="mission_download_cv"
+          data-cta-section="mission_log"
+          data-cta-label="Download CV"
           className="group relative px-10 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden">
           <span className="relative z-10">DOWNLOAD_CV.PDF</span>
           <div

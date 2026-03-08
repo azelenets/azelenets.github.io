@@ -2,11 +2,11 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import PrivacyBanner from '@/components/layout/PrivacyBanner';
-
-const STORAGE_KEY = 'aegis_privacy_acknowledged';
+import { CONSENT_STORAGE_KEY } from '@/lib/analytics';
 
 beforeEach(() => {
   window.localStorage.clear();
+  window.dataLayer = [];
 });
 
 describe('PrivacyBanner', () => {
@@ -15,26 +15,26 @@ describe('PrivacyBanner', () => {
     expect(screen.getByRole('complementary')).toBeInTheDocument();
   });
 
-  it('is hidden when localStorage key is already set', () => {
-    window.localStorage.setItem(STORAGE_KEY, '1');
+  it('is hidden when consent choice is already set', () => {
+    window.localStorage.setItem(CONSENT_STORAGE_KEY, 'accepted');
     render(<PrivacyBanner />);
     expect(screen.queryByRole('complementary')).toBeNull();
   });
 
-  it('hides the banner and sets localStorage after clicking ACKNOWLEDGE', async () => {
+  it('accepts analytics, hides banner, and stores consent choice', async () => {
     render(<PrivacyBanner />);
-    const button = screen.getByRole('button', { name: /acknowledge/i });
+    const button = screen.getByRole('button', { name: /accept analytics/i });
     await userEvent.click(button);
     expect(screen.queryByRole('complementary')).toBeNull();
-    expect(window.localStorage.getItem(STORAGE_KEY)).toBe('1');
+    expect(window.localStorage.getItem(CONSENT_STORAGE_KEY)).toBe('accepted');
   });
 
-  it('hides the banner after clicking Dismiss', async () => {
+  it('rejects analytics and stores consent choice', async () => {
     render(<PrivacyBanner />);
-    const dismiss = screen.getByRole('button', { name: /dismiss/i });
-    await userEvent.click(dismiss);
+    const reject = screen.getByRole('button', { name: /reject non-essential/i });
+    await userEvent.click(reject);
     expect(screen.queryByRole('complementary')).toBeNull();
-    expect(window.localStorage.getItem(STORAGE_KEY)).toBe('1');
+    expect(window.localStorage.getItem(CONSENT_STORAGE_KEY)).toBe('rejected');
   });
 
   it('shows the DATA_COLLECTION_DIRECTIVE label', () => {
