@@ -118,12 +118,18 @@ const Hero = () => {
               href="https://calendar.app.google/yf8ZWByZWy1bFEY38"
               target="_blank"
               rel="noopener noreferrer"
+              data-cta-id="hero_deploy_solution"
+              data-cta-section="hero"
+              data-cta-label="Deploy Solution"
               className="group relative px-8 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden flex items-center justify-center"
             >
               <span className="relative z-10">Deploy_Solution</span>
               <div className="absolute top-0 right-0 hazard-stripe w-2 h-full opacity-50 group-hover:w-full transition-all duration-300" />
             </a>
             <button
+              data-cta-id="hero_view_stack"
+              data-cta-section="hero"
+              data-cta-label="View Stack"
               onClick={() => navigate('/arsenal')}
               className="px-8 py-4 border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-all flex items-center gap-2 justify-center"
             >

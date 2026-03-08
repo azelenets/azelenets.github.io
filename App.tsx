@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import PrivacyBanner from '@/components/layout/PrivacyBanner';
+import { setupClickTracking, trackVirtualPageView } from '@/lib/analytics';
 
 const SITE_URL = 'https://azelenets.github.io';
 
@@ -59,7 +60,16 @@ const ScrollToTop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setMeta(pathname);
+    trackVirtualPageView(pathname);
   }, [pathname]);
+  return null;
+};
+
+const AnalyticsBindings = () => {
+  useEffect(() => {
+    return setupClickTracking();
+  }, []);
+
   return null;
 };
 
@@ -78,6 +88,7 @@ const App = () => (
     </div>
 
     <ScrollToTop />
+    <AnalyticsBindings />
     <Navigation />
 
     <main className="flex-grow relative z-10 w-full">

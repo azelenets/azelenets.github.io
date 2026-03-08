@@ -14,10 +14,16 @@ const ProtocolsCta = () => {
           Skip the exploratory calls. Tell me what you&apos;re building — I&apos;ll tell you exactly how I can help ship it.
         </p>
         <div className="flex flex-wrap justify-center gap-6 mt-6">
-          <button onClick={() => navigate('/credentials')} className="bg-hazard border-hazard text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary transition-all">
+          <button data-cta-id="protocols_view_credentials" data-cta-section="protocols" data-cta-label="View Credentials" onClick={() => navigate('/credentials')} className="bg-hazard border-hazard text-black px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary transition-all">
             VIEW_CREDENTIALS
           </button>
-          <button onClick={() => navigate('/arsenal')} className="border border-primary/40 text-primary px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary/10 hover:text-primary hover:border-primary transition-all">
+          <button
+            data-cta-id="protocols_explore_arsenal"
+            data-cta-section="protocols"
+            data-cta-label="Explore Arsenal"
+            onClick={() => navigate('/arsenal')}
+            className="border border-primary/40 text-primary px-8 py-4 font-bold text-sm tracking-widest uppercase hover:bg-primary/10 hover:text-primary hover:border-primary transition-all"
+          >
             EXPLORE_ARSENAL
           </button>
         </div>

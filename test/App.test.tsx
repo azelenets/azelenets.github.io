@@ -110,7 +110,7 @@ describe('App layout', () => {
   });
 
   it('does not render PrivacyBanner when already acknowledged', async () => {
-    window.localStorage.setItem('aegis_privacy_acknowledged', '1');
+    window.localStorage.setItem('aegis_consent_choice', 'accepted');
     renderAt('/');
     await waitFor(() => {
       expect(screen.queryByRole('complementary')).toBeNull();

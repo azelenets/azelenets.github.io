@@ -120,8 +120,8 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
           </Section>
 
           <Section label="Legal Basis (GDPR Art. 6)">
-            Processing is based on legitimate interest (analytics to improve site performance) and, where
-            applicable, your consent indicated by continued use following this disclosure.
+            Processing for strictly necessary cookies is based on legitimate interest. Processing for
+            analytics is based on your explicit consent preference selected in the privacy banner.
           </Section>
 
           <Section label="Data Retention">

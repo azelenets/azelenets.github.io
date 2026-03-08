@@ -84,6 +84,9 @@ const Navigation = () => {
             href="https://calendar.app.google/yf8ZWByZWy1bFEY38"
             target="_blank"
             rel="noopener noreferrer"
+            data-cta-id="nav_contact_mobile"
+            data-cta-section="navigation"
+            data-cta-label="Initiate Contact"
             className="md:hidden relative px-4 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
             <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity" />
@@ -161,6 +164,9 @@ const Navigation = () => {
             href="https://calendar.app.google/yf8ZWByZWy1bFEY38"
             target="_blank"
             rel="noopener noreferrer"
+            data-cta-id="nav_contact_desktop"
+            data-cta-section="navigation"
+            data-cta-label="Initiate Contact"
             className="hidden md:flex relative px-6 py-2 bg-hazard group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
             <div className="absolute inset-0 hazard-stripe opacity-10 group-hover:opacity-20 transition-opacity" />

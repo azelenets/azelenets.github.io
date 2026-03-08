@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex items-center gap-6 text-[9px] tracking-[0.2em] text-white/40 font-bold">
-            <button type="button" onClick={openModal} className="hover:text-primary transition-colors">
+            <button type="button" data-cta-id="footer_privacy_policy" data-cta-section="footer" data-cta-label="Privacy Policy" onClick={openModal} className="hover:text-primary transition-colors">
               PRIVACY_POLICY
             </button>
             <span className="text-primary/20">|</span>

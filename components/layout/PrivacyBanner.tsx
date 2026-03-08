@@ -1,16 +1,23 @@
 import { memo, useCallback, useEffect, useState } from 'react';
-
-const STORAGE_KEY = 'aegis_privacy_acknowledged';
+import { applyConsentChoice, persistConsentChoice, readConsentChoice } from '@/lib/analytics';
 
 const PrivacyBanner = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(!window.localStorage.getItem(STORAGE_KEY));
+    const storedChoice = readConsentChoice();
+    if (!storedChoice) {
+      setVisible(true);
+      return;
+    }
+
+    applyConsentChoice(storedChoice);
+    setVisible(false);
   }, []);
 
-  const acknowledge = useCallback(() => {
-    window.localStorage.setItem(STORAGE_KEY, '1');
+  const selectConsent = useCallback((choice: 'accepted' | 'rejected') => {
+    persistConsentChoice(choice);
+    applyConsentChoice(choice);
     setVisible(false);
   }, []);
 
@@ -41,28 +48,28 @@ const PrivacyBanner = () => {
             <p className="text-[10px] font-mono text-white/60 leading-relaxed max-w-2xl">
               This interface deploys <span className="text-primary">analytical trackers</span> and <span className="text-primary">session cookies</span>{' '}
               to monitor operational metrics and optimise system performance. Interaction data is processed in accordance with applicable data-protection
-              protocols. Continued access constitutes acknowledgment of these terms.
+              protocols. Select your analytics preference to continue.
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-3 flex-shrink-0 ml-6 md:ml-0">
           <button
-            onClick={acknowledge}
+            onClick={() => selectConsent('accepted')}
             className="relative px-6 py-2.5 bg-primary group hover:brightness-110 transition-all overflow-hidden slanted-clip"
           >
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity" />
             <span className="relative z-10 text-black font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-2">
               <span className="material-symbols-outlined text-sm">verified_user</span>
-              ACKNOWLEDGE &amp; PROCEED
+              ACCEPT ANALYTICS
             </span>
           </button>
 
           <button
-            onClick={acknowledge}
+            onClick={() => selectConsent('rejected')}
             className="text-[9px] font-bold tracking-[0.15em] text-white/30 hover:text-white/60 transition-colors uppercase"
           >
-            Dismiss
+            Reject Non-Essential
           </button>
         </div>
       </div>
