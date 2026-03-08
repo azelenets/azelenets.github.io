@@ -133,8 +133,9 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
           <Section label="Third-Party Processors">
             This site uses Google Tag Manager (container ID: GTM-KFBC3XH2) to manage and deploy
             analytics and tracking scripts, which may include Google Analytics. These processors
-            operate under Google's Privacy Policy (policies.google.com/privacy) and are bound by
+            operate under Google&apos;s Privacy Policy (policies.google.com/privacy) and are bound by
             data processing agreements compliant with applicable law.
+
           </Section>
 
           <Section label="Your Rights">
