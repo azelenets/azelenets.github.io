@@ -30,6 +30,7 @@ The interface presents professional experience and capabilities as a mission con
 - TypeScript
 - Vite 6
 - React Router 7
+- Storybook 10 (`@storybook/react-vite`)
 - ESLint 9 + TypeScript/React plugins
 - Tailwind CSS (via CDN config in `index.html`)
 - Google Fonts + Material Symbols
@@ -53,14 +54,56 @@ The dev server runs on `http://localhost:3000` by default.
 ## Available scripts
 
 ```bash
-npm run dev        # Start Vite dev server
-npm run build      # Production build to ./dist
-npm run preview    # Preview production build locally
-npm run test       # Run unit tests (single pass)
-npm run test:watch # Run unit tests in watch mode
-npm run lint       # Run ESLint
-npm run lint:fix   # Run ESLint with auto-fixes
+npm run dev              # Start Vite dev server
+npm run build            # Production build to ./dist
+npm run preview          # Preview production build locally
+npm run storybook        # Start Storybook dev server on :6006
+npm run build-storybook  # Static Storybook build to ./storybook-static
+npm run test             # Run unit tests (single pass)
+npm run test:watch       # Run unit tests in watch mode
+npm run lint             # Run ESLint
+npm run lint:fix         # Run ESLint with auto-fixes
 ```
+
+## Storybook
+
+Components are documented and developed in isolation with [Storybook 10](https://storybook.js.org/).
+
+```bash
+npm run storybook   # http://localhost:6006
+```
+
+Stories live alongside their components and cover all major props and visual states:
+
+```
+components/
+├── StatCard.stories.tsx
+└── layout/
+    └── PageHeader.stories.tsx
+pages/
+├── Arsenal/
+│   ├── FilterButton.stories.tsx
+│   ├── TechItem.stories.tsx
+│   └── SpecCard.stories.tsx
+├── Hero/
+│   └── StatBlock.stories.tsx
+├── Laboratory/
+│   └── LabCard.stories.tsx
+├── MissionLog/
+│   └── MissionItem.stories.tsx
+├── Credentials/
+│   ├── CertCard.stories.tsx
+│   ├── SkillGroup.stories.tsx
+│   └── EducationEntry.stories.tsx
+└── Protocols/
+    └── ProtocolCard.stories.tsx
+```
+
+Storybook is configured in `.storybook/`:
+
+- `main.ts` — framework (`@storybook/react-vite`), story globs, `@` path alias
+- `preview.ts` — global parameters: dark background, padded layout, shared CSS
+- `preview-head.html` — injects the CDN Tailwind script and custom theme config so all stories render with the correct design tokens
 
 ## Testing
 
