@@ -53,7 +53,7 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
               Terms of Use &amp; Privacy Policy
             </h2>
             <div className="text-[9px] text-primary/40 font-mono mt-0.5">
-              Effective date: 2025.01.01 — Last revised: 2026.03.08
+              Effective date: 2025.01.01 — Last revised: 2026.03.09
             </div>
           </div>
           <button
@@ -113,10 +113,10 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
 
           <Section label="Data Collected">
             This site deploys anonymised analytical trackers and session cookies via Google Tag
-            Manager (GTM-KFBC3XH2) to measure page engagement, referral sources, and navigation
-            patterns. No personally identifiable information (PII) is collected without explicit
-            submission. If you contact the operator directly, only the information you voluntarily
-            provide is retained.
+            Manager (GTM-KFBC3XH2) and Google Analytics 4 (G-ELC1DH043N) to measure page
+            engagement, referral sources, and navigation patterns. No personally identifiable
+            information (PII) is collected without explicit submission. If you contact the operator
+            directly, only the information you voluntarily provide is retained.
           </Section>
 
           <Section label="Legal Basis (GDPR Art. 6)">
@@ -131,11 +131,11 @@ const PrivacyModal = ({ onClose }: PrivacyModalProps) => {
           </Section>
 
           <Section label="Third-Party Processors">
-            This site uses Google Tag Manager (container ID: GTM-KFBC3XH2) to manage and deploy
-            analytics and tracking scripts, which may include Google Analytics. These processors
-            operate under Google&apos;s Privacy Policy (policies.google.com/privacy) and are bound by
-            data processing agreements compliant with applicable law.
-
+            This site uses Google Tag Manager (GTM-KFBC3XH2) and Google Analytics 4
+            (G-ELC1DH043N). Google Analytics collects anonymised usage data including pages visited,
+            session duration, and referral sources. All processors operate under Google&apos;s Privacy
+            Policy (policies.google.com/privacy) and are bound by data processing agreements
+            compliant with applicable law. Analytics data is only collected after consent is granted.
           </Section>
 
           <Section label="Your Rights">
