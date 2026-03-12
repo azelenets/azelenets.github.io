@@ -49,7 +49,7 @@ body {
 
 .hud-border {
   position: relative;
-  border: 1px solid rgba(0, 243, 255, 0.2);
+  border: 1px solid var(--hud-border-color, rgba(0, 243, 255, 0.2));
 }
 
 .hud-border::before {
@@ -59,8 +59,8 @@ body {
   left: -1px;
   width: 8px;
   height: 8px;
-  border-top: 2px solid #00f3ff;
-  border-left: 2px solid #00f3ff;
+  border-top: 2px solid var(--hud-accent-color, #00f3ff);
+  border-left: 2px solid var(--hud-accent-color, #00f3ff);
 }
 
 .hud-border::after {
@@ -70,8 +70,8 @@ body {
   right: -1px;
   width: 8px;
   height: 8px;
-  border-bottom: 2px solid #00f3ff;
-  border-right: 2px solid #00f3ff;
+  border-bottom: 2px solid var(--hud-accent-color, #00f3ff);
+  border-right: 2px solid var(--hud-accent-color, #00f3ff);
 }
 
 .hazard-stripe {
