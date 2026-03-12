@@ -38,15 +38,18 @@ const MissionLog: React.FC = () => {
         <div className="font-display text-xl md:text-2xl font-black text-white mb-6 uppercase tracking-widest">Request
           Full Tactical Briefing?
         </div>
-        <button
+        <a
           data-cta-id="mission_download_cv"
           data-cta-section="mission_log"
           data-cta-label="Download CV"
-          className="group relative px-10 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden">
+          href="https://www.papermark.com/view/cmmn7ad370003jl04z65lbvi4"
+          target="_blank"
+          rel="noreferrer"
+          className="group relative inline-block px-10 py-4 bg-primary text-black font-black uppercase tracking-widest text-sm overflow-hidden">
           <span className="relative z-10">DOWNLOAD_CV.PDF</span>
           <div
             className="absolute top-0 right-0 hazard-stripe w-2 h-full opacity-50 group-hover:w-full transition-all duration-300" />
-        </button>
+        </a>
         <div className="mt-8 flex flex-wrap justify-center gap-4 md:gap-8 text-[9px] text-primary font-bold">
           <span className="flex items-center gap-1"><span
             className="material-symbols-outlined text-xs">check_circle</span> ENCRYPTED</span>
