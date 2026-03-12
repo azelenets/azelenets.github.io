@@ -16,9 +16,9 @@ interface LabCardProps {
 }
 
 const COLOR_CLASS_MAP: Record<LabCardProps['color'], string> = {
-  primary: 'text-primary group-hover:bg-primary/5 group-hover:text-primary',
-  hazard: 'text-hazard group-hover:bg-hazard/5 group-hover:text-hazard',
-  alert: 'text-alert group-hover:bg-alert/5 group-hover:text-alert',
+  primary: '[--hud-border-color:rgba(0,243,255,0.2)] [--hud-accent-color:#00f3ff] text-primary hover:[--hud-border-color:rgba(0,243,255,0.5)] hover:bg-primary/5 hover:text-primary hover:shadow-[0_0_24px_rgba(0,243,255,0.12)]',
+  hazard: '[--hud-border-color:rgba(250,204,21,0.2)] [--hud-accent-color:#facc15] text-hazard hover:[--hud-border-color:rgba(250,204,21,0.5)] hover:bg-hazard/5 hover:text-hazard hover:shadow-[0_0_24px_rgba(250,204,21,0.12)]',
+  alert: '[--hud-border-color:rgba(255,0,60,0.2)] [--hud-accent-color:#ff003c] text-alert hover:[--hud-border-color:rgba(255,0,60,0.5)] hover:bg-alert/5 hover:text-alert hover:shadow-[0_0_24px_rgba(255,0,60,0.12)]',
 };
 
 const ACTION_CLASS_MAP: Record<LabCardProps['color'], { text: string; hover: string }> = {
@@ -33,11 +33,18 @@ const TITLE_HOVER_CLASS_MAP: Record<LabCardProps['color'], string> = {
   alert: 'group-hover:text-alert',
 };
 
+const DESCRIPTION_HOVER_CLASS_MAP: Record<LabCardProps['color'], string> = {
+  primary: 'group-hover:text-primary/80',
+  hazard: 'group-hover:text-hazard/80',
+  alert: 'group-hover:text-alert/80',
+};
+
 const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats, action, icon, link, children }: LabCardProps) => {
   const actionClasses = ACTION_CLASS_MAP[color];
+  const descriptionHoverClass = DESCRIPTION_HOVER_CLASS_MAP[color];
 
   return (
-    <article className={`hud-border bg-panel-dark/80 backdrop-blur-sm p-6 group transition-all ${COLOR_CLASS_MAP[color]}`}>
+    <article className={`hud-border bg-panel-dark/80 backdrop-blur-sm p-6 group transition-all duration-300 ${COLOR_CLASS_MAP[color]}`}>
       <div className="flex justify-between items-start mb-4">
         <span className="text-[10px] font-bold opacity-60">
           {id}{' // '}{codename}
@@ -45,7 +52,7 @@ const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats,
         <span className={`px-2 py-0.5 text-[9px] font-bold tracking-tighter uppercase ${statusColor}`}>{status}</span>
       </div>
       <h3 className={`text-xl font-display font-bold text-white mb-2 transition-colors ${TITLE_HOVER_CLASS_MAP[color]}`}>{title}</h3>
-      <p className="text-sm text-slate-400 mb-6 h-22 overflow-hidden">{desc}</p>
+      <p className={`text-sm text-slate-400 mb-6 h-22 overflow-hidden transition-colors ${descriptionHoverClass}`}>{desc}</p>
 
       <div className="space-y-4">
         {children}

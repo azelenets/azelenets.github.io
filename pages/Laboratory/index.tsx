@@ -24,7 +24,7 @@ const labCardChildren: Record<string, React.ReactNode> = {
   ),
   PRJ_0287: (
     <div className="h-24 w-full bg-black/40 rounded flex items-center px-2 overflow-hidden">
-      <svg className="w-full h-10 text-hazard/50" viewBox="0 0 200 30" preserveAspectRatio="none">
+      <svg className="w-full h-10 text-primary/50" viewBox="0 0 200 30" preserveAspectRatio="none">
         <polyline
           points="0,15 18,5 36,25 54,10 72,20 90,6 108,22 126,11 144,19 162,4 180,16 200,15"
           fill="none" stroke="currentColor" strokeWidth="1.5"
@@ -35,11 +35,28 @@ const labCardChildren: Record<string, React.ReactNode> = {
   ),
   PRJ_0330: (
     <div className="h-24 w-full bg-black/40 rounded flex items-center justify-around px-4">
-      <div className="text-xs text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">FORM</div>
-      <div className="text-xs text-hazard/30">→</div>
-      <div className="text-xs text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">EDGE</div>
-      <div className="text-xs text-hazard/30">→</div>
-      <div className="text-xs text-hazard/50 border border-hazard/20 px-2 py-1.5 font-bold">INBOX</div>
+      <div className="text-xs text-alert/50 border border-alert/20 px-2 py-1.5 font-bold">FORM</div>
+      <div className="text-xs text-alert/30">→</div>
+      <div className="text-xs text-alert/50 border border-alert/20 px-2 py-1.5 font-bold">EDGE</div>
+      <div className="text-xs text-alert/30">→</div>
+      <div className="text-xs text-alert/50 border border-alert/20 px-2 py-1.5 font-bold">INBOX</div>
+    </div>
+  ),
+  PRJ_0412: (
+    <div className="h-24 w-full rounded relative overflow-hidden border border-alert/20 bg-[radial-gradient(circle_at_top_left,_rgba(251,191,36,0.16),_transparent_35%),linear-gradient(135deg,rgba(15,23,42,0.96),rgba(2,6,23,0.92))]">
+      <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(251,191,36,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(251,191,36,0.12)_1px,transparent_1px)] [background-size:16px_16px]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-alert/40" />
+      <div className="absolute inset-y-0 left-0 w-px bg-alert/20" />
+      <div className="relative h-full px-4 py-3 flex flex-col justify-between">
+        <div className="flex items-start justify-between text-[9px] font-bold tracking-[0.25em] text-alert/70">
+          <span>AEGIS</span>
+          <span>HUD // UI</span>
+        </div>
+        <div>
+          <div className="font-display text-lg font-black leading-none text-white uppercase">Design System</div>
+          <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-alert/70">React 19 Tactical Components</div>
+        </div>
+      </div>
     </div>
   ),
 };
