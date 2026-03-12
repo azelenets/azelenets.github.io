@@ -29,13 +29,13 @@ describe('labCards', () => {
   it('NEXUS-FORGE card has a link', () => {
     const nexus = labCards.find((c) => c.title === 'NEXUS-FORGE');
     expect(nexus).toBeDefined();
-    expect(nexus!.link).toBeTruthy();
+    expect(nexus?.link).toBeTruthy();
   });
 
   it('link field is a valid URL when present', () => {
     for (const card of labCards) {
       if (card.link !== undefined) {
-        expect(() => new URL(card.link!)).not.toThrow();
+        expect(() => new URL(card.link)).not.toThrow();
       }
     }
   });
