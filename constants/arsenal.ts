@@ -331,7 +331,8 @@ export const specCards: SpecCardData[] = [
   {
     title: 'CLOUD_NATIVE',
     subtitle: 'K8S_SERVERLESS_INFRA',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcu6sG4lqDoN5K-XB_f4gepep4NKPA8CibC4qdyJYuSRm29fBuuv7Mkbvr71SjGy5peaFvpBKRVE89E7gubxlcV2ioLzz8Z9xsqqWLptawt6MpIBrwrwzX533d2EIXN3f65XGtwe6RZSHtH71J2T0J0p-HGZe9vtSz8MNWYTqKH2GEmr8oFdlHr2fUEBOeUUu5gG7XClZ18LOE9H6rwv7qsaw54mD6EgZKQmqQqcvO5qhkRqBr5O4BY-BoupwYx7-DPFzbLBizUP1p',
+    img: './images/articles/cloud-native-web.png',
+    link: '/cloud-native',
   },
   {
     title: 'DATA_FORGE',

@@ -38,6 +38,10 @@ const PAGE_META: Record<string, PageMeta> = {
     title: 'Distributed Nodes // Andrii Zelenets',
     description: 'Best practices and battle-tested patterns for designing high-availability distributed systems.',
   },
+  '/cloud-native': {
+    title: 'Cloud Native // Andrii Zelenets',
+    description: 'Production-grade principles and patterns for building cloud-native web applications with Kubernetes, containers, and GitOps.',
+  },
 };
 
 const DEFAULT_META = PAGE_META['/'];
@@ -84,6 +88,7 @@ const Laboratory = lazy(() => import('@/pages/Laboratory'));
 const Protocols = lazy(() => import('@/pages/Protocols'));
 const Credentials = lazy(() => import('@/pages/Credentials'));
 const DistributedNodes = lazy(() => import('@/pages/DistributedNodes'));
+const CloudNative = lazy(() => import('@/pages/CloudNative'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 const App = () => (
@@ -106,6 +111,7 @@ const App = () => (
           <Route path="/protocols" element={<Protocols />} />
           <Route path="/credentials" element={<Credentials />} />
           <Route path="/distributed-nodes" element={<DistributedNodes />} />
+          <Route path="/cloud-native" element={<CloudNative />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
