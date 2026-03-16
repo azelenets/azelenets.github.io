@@ -35,16 +35,20 @@ const PAGE_META: Record<string, PageMeta> = {
     description: 'Education, certifications, courses, and skill dossier of Andrii Zelenets.',
   },
   '/distributed-nodes': {
-    title: 'Distributed Nodes // Andrii Zelenets',
+    title: 'Distributed Systems // Andrii Zelenets',
     description: 'Best practices and battle-tested patterns for designing high-availability distributed systems.',
   },
   '/cloud-native': {
-    title: 'Cloud Native // Andrii Zelenets',
+    title: 'Cloud Native Web App // Andrii Zelenets',
     description: 'Production-grade principles and patterns for building cloud-native web applications with Kubernetes, containers, and GitOps.',
   },
   '/tactical-ui': {
-    title: 'Tactical UI/UX // Andrii Zelenets',
+    title: 'UI/UX Development // Andrii Zelenets',
     description: 'Best practices for building accessible, performant, and maintainable web interfaces with solid design systems.',
+  },
+  '/data-forge': {
+    title: 'Realtime Streaming // Andrii Zelenets',
+    description: 'Best practices for building low-latency, high-throughput realtime data pipelines and streaming applications.',
   },
 };
 
@@ -94,6 +98,7 @@ const Credentials = lazy(() => import('@/pages/Credentials'));
 const DistributedNodes = lazy(() => import('@/pages/DistributedNodes'));
 const CloudNative = lazy(() => import('@/pages/CloudNative'));
 const TacticalUI = lazy(() => import('@/pages/TacticalUI'));
+const DataForge = lazy(() => import('@/pages/DataForge'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 const App = () => (
@@ -118,6 +123,7 @@ const App = () => (
           <Route path="/distributed-nodes" element={<DistributedNodes />} />
           <Route path="/cloud-native" element={<CloudNative />} />
           <Route path="/tactical-ui" element={<TacticalUI />} />
+          <Route path="/data-forge" element={<DataForge />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

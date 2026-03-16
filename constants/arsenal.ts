@@ -337,12 +337,13 @@ export const specCards: SpecCardData[] = [
   {
     title: 'DATA_FORGE',
     subtitle: 'ETL_REALTIME_STREAMING',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB5nKuDAa92MBL8Y5QfmwF3C6IaFY4EvV4GbxmnrEJpPOczD_RtMZyfd77PRdnNy8vDm8O4h6BhEPUSeEyGfeWzcWC1w4PErsrkMlJwx8zD2Meacaj3_sbpjE3xdp-sK8w5Mqpq3nTXG67iPkK5eDe-uKGSWOrN6mg27CbMo80ICnn9jdMBO_39-suuiJ-NzyMy2Dud8OTnibeVtFljegTr2P5jOSl851xWECdtQSe7qstBMn4FxqPo0UZHwMLDjt9Dmy_rlMUAQXXi',
+    img: './images/articles/realtime.jpg',
+    link: '/data-forge',
   },
   {
     title: 'TACTICAL_UI',
     subtitle: 'DESIGN_SYSTEMS_VX',
+    img: './images/articles/uiux.png',
     link: '/tactical-ui',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfoajEXS99U8OHQb8MvVT6vkyaAoe53Fk8dpsgARIpYc2RnXukmMtMTPJCmmb4ZZC3WhtUVbmSJvwv7FcYEkqVoR6idQFn-S26_-tqBytFVZoH5rJLsWrUwu8UEpJ6eAcPLCmDonkwXKJXLFxeuu-Zi9-xcnUYxx7vKl9T607bz9p8LqjI8m5QEDtlcKO67_DaYcH0MAKn7rS_wT3niuXp3OhNXjacr8oUy5WcDZz5mcmRf1sQhYvnz_oDO2PqHYnC2WwcRjfzyrDC',
   },
 ];
