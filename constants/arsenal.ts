@@ -18,6 +18,7 @@ export interface SpecCardData {
   title: string;
   subtitle: string;
   img: string;
+  link?: string;
 }
 
 export const stackColumns: StackColumnData[] = [
@@ -324,7 +325,8 @@ export const specCards: SpecCardData[] = [
   {
     title: 'DISTRIBUTED_NODES',
     subtitle: 'HIGH_AVAILABILITY_PROTOCOLS',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuADWsrwF3hQSZhLi7wNLzFnpifp3LTJKXIrQapqu-2aWRwFuC6RY4WVbAjaml_3puTMZaO2rSoI5cA8pSZw4X8aQxB5HHduXPL0OP50GBIyLbYHEoe2yvTMJ8r8BhwcFM15pznCAF_Vy663jfkf3FcYFxAj3Ya2ymXd6-2i_7yzqIJSXnF6RaIhaALuWDV4LwGqSSApcZISY-J1ddX44kX57uQ-FDfG8V6F3HI3zZFPJibyPCed23KGPMZ9P82ldYPV_oyU83DgPpWq',
+    img: './images/articles/distributed-nodes.webp',
+    link: '/distributed-nodes',
   },
   {
     title: 'CLOUD_NATIVE',

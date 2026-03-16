@@ -56,7 +56,7 @@ const Arsenal: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
           {specCards.map(card => (
-            <SpecCard key={card.title} title={card.title} subtitle={card.subtitle} img={card.img} />
+            <SpecCard key={card.title} title={card.title} subtitle={card.subtitle} img={card.img} link={card.link} />
           ))}
         </div>
       </section>

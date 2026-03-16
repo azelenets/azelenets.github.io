@@ -34,6 +34,10 @@ const PAGE_META: Record<string, PageMeta> = {
     title: 'Credentials // Andrii Zelenets',
     description: 'Education, certifications, courses, and skill dossier of Andrii Zelenets.',
   },
+  '/distributed-nodes': {
+    title: 'Distributed Nodes // Andrii Zelenets',
+    description: 'Best practices and battle-tested patterns for designing high-availability distributed systems.',
+  },
 };
 
 const DEFAULT_META = PAGE_META['/'];
@@ -79,6 +83,7 @@ const Arsenal = lazy(() => import('@/pages/Arsenal'));
 const Laboratory = lazy(() => import('@/pages/Laboratory'));
 const Protocols = lazy(() => import('@/pages/Protocols'));
 const Credentials = lazy(() => import('@/pages/Credentials'));
+const DistributedNodes = lazy(() => import('@/pages/DistributedNodes'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 const App = () => (
@@ -100,6 +105,7 @@ const App = () => (
           <Route path="/lab" element={<Laboratory />} />
           <Route path="/protocols" element={<Protocols />} />
           <Route path="/credentials" element={<Credentials />} />
+          <Route path="/distributed-nodes" element={<DistributedNodes />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
