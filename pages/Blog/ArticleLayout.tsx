@@ -34,7 +34,7 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ id, title, category, date
         Intel_Briefings
       </Link>
 
-      <div className="max-w-3xl">
+      <div className="max-w-full">
         {/* Article header */}
         <header className="mb-12 border-l-4 border-primary pl-6 md:pl-8">
           <div className="flex flex-wrap items-center gap-3 mb-4">
