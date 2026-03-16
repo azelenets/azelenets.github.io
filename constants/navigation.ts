@@ -11,4 +11,5 @@ export const navItems: NavItem[] = [
   { label: 'R&D_LAB',     num: '04', path: '/lab' },
   { label: 'PROTOCOLS',   num: '05', path: '/protocols' },
   { label: 'DOSSIER',     num: '06', path: '/credentials' },
+  { label: 'INTEL_BRIEF', num: '07', path: '/blog' },
 ];
