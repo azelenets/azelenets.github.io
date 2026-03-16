@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Andrii Zelenets — Tactical AI-Powered Software Engineering">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
+    </style>
+
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="45%" stop-color="#07121a"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+
+    <radialGradient id="glowCenter" cx="50%" cy="42%" r="52%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowRight" cx="88%" cy="25%" r="38%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="rgba(0,243,255,0.07)" stroke-width="1"/>
+    </pattern>
+
+    <pattern id="scan" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="6" x2="6" y2="0" stroke="rgba(0,0,0,0.18)" stroke-width="1"/>
+    </pattern>
+
+    <pattern id="hazardStripe" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#0a0a0a"/>
+      <line x1="-5" y1="25" x2="25" y2="-5" stroke="#facc15" stroke-width="9"/>
+    </pattern>
+
+    <linearGradient id="nameGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="60%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#00f3ff" stop-opacity="0.6"/>
+      <stop offset="80%" stop-color="#00f3ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="leftDecorMask">
+      <rect x="0" y="0" width="120" height="630"/>
+    </clipPath>
+
+    <clipPath id="rightDecorMask">
+      <rect x="1080" y="0" width="120" height="630"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background layers -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#scan)"/>
+  <rect width="1200" height="630" fill="url(#glowCenter)"/>
+  <rect width="1200" height="630" fill="url(#glowRight)"/>
+
+  <!-- Hazard stripe — top border -->
+  <rect x="0" y="0" width="1200" height="10" fill="url(#hazardStripe)" opacity="0.70"/>
+
+  <!-- Hazard stripe — bottom border -->
+  <rect x="0" y="620" width="1200" height="10" fill="url(#hazardStripe)" opacity="0.70"/>
+
+  <!-- Left decorative radar rings -->
+  <g clip-path="url(#leftDecorMask)">
+    <circle cx="60" cy="315" r="220" fill="none" stroke="#00f3ff" stroke-width="0.8" opacity="0.18"/>
+    <circle cx="60" cy="315" r="160" fill="none" stroke="#00f3ff" stroke-width="0.7" opacity="0.14"/>
+    <circle cx="60" cy="315" r="100" fill="none" stroke="#00f3ff" stroke-width="1" opacity="0.18"/>
+    <line x1="0" y1="315" x2="120" y2="315" stroke="#00f3ff" stroke-width="0.8" opacity="0.14"/>
+    <line x1="60" y1="0" x2="60" y2="630" stroke="#00f3ff" stroke-width="0.8" opacity="0.14"/>
+  </g>
+
+  <!-- Right decorative radar rings -->
+  <g clip-path="url(#rightDecorMask)">
+    <circle cx="1140" cy="315" r="220" fill="none" stroke="#00f3ff" stroke-width="0.8" opacity="0.18"/>
+    <circle cx="1140" cy="315" r="160" fill="none" stroke="#00f3ff" stroke-width="0.7" opacity="0.14"/>
+    <circle cx="1140" cy="315" r="100" fill="none" stroke="#00f3ff" stroke-width="1" opacity="0.18"/>
+    <line x1="1080" y1="315" x2="1200" y2="315" stroke="#00f3ff" stroke-width="0.8" opacity="0.14"/>
+    <line x1="1140" y1="0" x2="1140" y2="630" stroke="#00f3ff" stroke-width="0.8" opacity="0.14"/>
+  </g>
+
+  <!-- === CONTENT SAFE ZONE (140px–1060px horizontal) === -->
+
+  <!-- Top tag line -->
+  <rect x="140" y="52" width="44" height="14" fill="url(#hazardStripe)"/>
+  <rect x="188" y="49" width="4" height="22" fill="#facc15"/>
+  <text x="202" y="67" font-family="'JetBrains Mono', monospace" font-size="17" fill="#facc15" font-weight="700" letter-spacing="2.8">TACTICAL AI-POWERED SOFTWARE ENGINEERING</text>
+
+  <!-- Main name -->
+  <text x="140" y="195" font-family="'Orbitron', sans-serif" font-size="86" fill="url(#nameGradient)" font-weight="900" letter-spacing="1">ANDRII ZELENETS</text>
+
+  <!-- Subtitle -->
+  <text x="142" y="275" font-family="'JetBrains Mono', monospace" font-size="30" fill="rgba(255,255,255,0.78)" font-weight="700" letter-spacing="0.4">Full-Stack Engineer · SaaS · Distributed Systems</text>
+  <text x="142" y="325" font-family="'JetBrains Mono', monospace" font-size="24" fill="rgba(255,255,255,0.78)" font-weight="700" letter-spacing="0.4">Ruby on Rails · Node.js · NestJS · TypeScript · React.js</text>
+
+  <!-- Services row -->
+  <text x="142" y="378" font-family="'JetBrains Mono', monospace" font-size="19" fill="rgba(255,255,255,0.50)" font-weight="500" letter-spacing="0.3">MVP LAUNCH · PLATFORM MODERNIZATION · SYSTEM RELIABILITY · DEV AUTOMATION</text>
+  <text x="142" y="418" font-family="'JetBrains Mono', monospace" font-size="19" fill="rgba(255,255,255,0.50)" font-weight="500" letter-spacing="0.3">LEGACY RESCUE · TEAM ACCELERATION · DELIVERY OWNERSHIP · PLATFORM HARDENING</text>
+
+  <!-- Accent divider -->
+  <rect x="140" y="448" width="920" height="1" fill="url(#accentLine)"/>
+
+  <!-- Bottom URL -->
+  <text x="142" y="568" font-family="'JetBrains Mono', monospace" font-size="16" fill="rgba(0,243,255,0.55)" font-weight="400" letter-spacing="1.2">https://azelenets.github.io</text>
+
+  <!-- Corner bracket — top-right decorative -->
+  <polyline points="1040,30 1060,30 1060,50" fill="none" stroke="#00f3ff" stroke-width="1.5" opacity="0.35"/>
+  <!-- Corner bracket — bottom-left decorative -->
+  <polyline points="160,600 140,600 140,580" fill="none" stroke="#00f3ff" stroke-width="1.5" opacity="0.35"/>
+</svg>
