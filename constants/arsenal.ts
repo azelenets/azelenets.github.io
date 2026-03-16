@@ -342,6 +342,7 @@ export const specCards: SpecCardData[] = [
   {
     title: 'TACTICAL_UI',
     subtitle: 'DESIGN_SYSTEMS_VX',
+    link: '/tactical-ui',
     img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfoajEXS99U8OHQb8MvVT6vkyaAoe53Fk8dpsgARIpYc2RnXukmMtMTPJCmmb4ZZC3WhtUVbmSJvwv7FcYEkqVoR6idQFn-S26_-tqBytFVZoH5rJLsWrUwu8UEpJ6eAcPLCmDonkwXKJXLFxeuu-Zi9-xcnUYxx7vKl9T607bz9p8LqjI8m5QEDtlcKO67_DaYcH0MAKn7rS_wT3niuXp3OhNXjacr8oUy5WcDZz5mcmRf1sQhYvnz_oDO2PqHYnC2WwcRjfzyrDC',
   },
 ];

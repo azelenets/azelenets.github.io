@@ -42,6 +42,10 @@ const PAGE_META: Record<string, PageMeta> = {
     title: 'Cloud Native // Andrii Zelenets',
     description: 'Production-grade principles and patterns for building cloud-native web applications with Kubernetes, containers, and GitOps.',
   },
+  '/tactical-ui': {
+    title: 'Tactical UI/UX // Andrii Zelenets',
+    description: 'Best practices for building accessible, performant, and maintainable web interfaces with solid design systems.',
+  },
 };
 
 const DEFAULT_META = PAGE_META['/'];
@@ -89,6 +93,7 @@ const Protocols = lazy(() => import('@/pages/Protocols'));
 const Credentials = lazy(() => import('@/pages/Credentials'));
 const DistributedNodes = lazy(() => import('@/pages/DistributedNodes'));
 const CloudNative = lazy(() => import('@/pages/CloudNative'));
+const TacticalUI = lazy(() => import('@/pages/TacticalUI'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 const App = () => (
@@ -112,6 +117,7 @@ const App = () => (
           <Route path="/credentials" element={<Credentials />} />
           <Route path="/distributed-nodes" element={<DistributedNodes />} />
           <Route path="/cloud-native" element={<CloudNative />} />
+          <Route path="/tactical-ui" element={<TacticalUI />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

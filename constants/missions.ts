@@ -34,7 +34,7 @@ export const missions: MissionData[] = [
     tools: ['TypeScript', 'NestJS', 'CQRS', 'Socket.IO', 'NATS JetStream', 'BullMQ', 'TypeORM', 'PostgreSQL 16', 'Redis 7', 'React 18', 'Vite', 'TanStack Query', 'Zustand', 'Radix UI', 'Tailwind CSS', 'React Intl', 'Leaflet', 'D3.js', 'Axios', 'Passport.js', 'Zod', 'Sentry', 'Docker', 'GitHub Actions', 'Dokku', 'Jest', 'Vitest', 'Playwright'],
     status: 'ONGOING',
     statusColor: 'text-hazard bg-hazard/10',
-    isShield: true,
+    imageUrl: '/images/operations/wl.webp',
     align: 'right',
   },
   {
