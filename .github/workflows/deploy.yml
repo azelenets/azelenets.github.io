@@ -39,6 +39,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/deploy-pages@v4.0.6
+      - uses: actions/deploy-pages@v4
         id: deployment
