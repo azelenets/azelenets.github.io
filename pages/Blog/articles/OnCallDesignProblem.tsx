@@ -39,7 +39,7 @@ const OnCallDesignProblem: React.FC = () => (
     id="POST_009"
     title="On-Call Rota Is a Design Problem, Not a People Problem"
     category="ENGINEERING_CULTURE"
-    date="2025-05-08"
+    date="2026-03-17"
     readTime={8}
     tags={['ONCALL', 'SRE', 'OBSERVABILITY', 'CULTURE']}
   >

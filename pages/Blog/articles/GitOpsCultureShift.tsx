@@ -35,7 +35,7 @@ const GitOpsCultureShift: React.FC = () => (
     id="POST_003"
     title="GitOps Is Not Just Argo — It Is a Culture Shift"
     category="CLOUD_NATIVE"
-    date="2025-09-18"
+    date="2026-03-17"
     readTime={7}
     tags={['GITOPS', 'ARGOCD', 'KUBERNETES', 'DEVOPS']}
   >

@@ -35,7 +35,7 @@ const OutboxPattern: React.FC = () => (
     id="POST_002"
     title="The Outbox Pattern: Guaranteed Event Publishing Without Two-Phase Commit"
     category="DISTRIBUTED_SYSTEMS"
-    date="2025-10-03"
+    date="2026-03-17"
     readTime={11}
     tags={['KAFKA', 'CDC', 'POSTGRES', 'RELIABILITY']}
   >

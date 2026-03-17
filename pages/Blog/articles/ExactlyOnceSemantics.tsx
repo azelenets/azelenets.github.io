@@ -38,7 +38,7 @@ const ExactlyOnceSemantics: React.FC = () => (
     id="POST_008"
     title="Exactly-Once Semantics: What It Actually Means and When You Need It"
     category="DATA_ENGINEERING"
-    date="2025-05-30"
+    date="2026-03-17"
     readTime={13}
     tags={['KAFKA', 'STREAMING', 'RELIABILITY', 'TRANSACTIONS']}
   >

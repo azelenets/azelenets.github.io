@@ -64,7 +64,7 @@ const DbPerformanceKillers: React.FC = () => (
     id="POST_011"
     title="Top Database Performance Killers and How to Fix Them"
     category="DISTRIBUTED_SYSTEMS"
-    date="2025-12-10"
+    date="2026-03-17"
     readTime={14}
     tags={['POSTGRES', 'PERFORMANCE', 'SQL', 'INDEXING', 'RELIABILITY']}
   >

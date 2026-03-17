@@ -28,7 +28,7 @@ const K8sResourceLimits: React.FC = () => (
     id="POST_004"
     title="Kubernetes Resource Requests vs Limits: The Misunderstood Contract"
     category="CLOUD_NATIVE"
-    date="2025-08-29"
+    date="2026-03-17"
     readTime={9}
     tags={['KUBERNETES', 'PERFORMANCE', 'FINOPS']}
   >

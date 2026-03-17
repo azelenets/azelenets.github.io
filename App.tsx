@@ -7,7 +7,7 @@ import { setupClickTracking, trackVirtualPageView } from '@/lib/analytics';
 
 const SITE_URL = 'https://azelenets.github.io';
 
-interface PageMeta { title: string; description: string; }
+interface PageMeta { title: string; description: string; date?: string; tags?: string[]; }
 
 const PAGE_META: Record<string, PageMeta> = {
   '/': {
@@ -57,46 +57,68 @@ const PAGE_META: Record<string, PageMeta> = {
   '/blog/why-microservices-are-still-a-monolith': {
     title: 'Why Your Microservices Are Still a Monolith in Disguise // Andrii Zelenets',
     description: 'Shared databases, synchronous call chains, and implicit coupling keep teams locked in a monolith mindset — even when running on Kubernetes.',
+    date: '2025-11-12',
+    tags: ['MICROSERVICES', 'DDD', 'ARCHITECTURE'],
   },
   '/blog/the-senior-engineers-guide-to-saying-no': {
     title: "The Senior Engineer's Guide to Saying No // Andrii Zelenets",
     description: 'The most valuable engineering skill is knowing which work not to do. Scope creep and gold-plating are symptoms of teams that lack the vocabulary and safety to push back constructively.',
+    date: '2026-03-17',
+    tags: ['LEADERSHIP', 'SOFT_SKILLS', 'CULTURE'],
   },
   '/blog/top-database-performance-killers': {
     title: 'Top Database Performance Killers and How to Fix Them // Andrii Zelenets',
     description: 'N+1 queries, missing indexes, unbounded result sets, lock contention, and connection pool exhaustion — the six most common database performance killers and how to diagnose and fix each one.',
+    date: '2026-03-17',
+    tags: ['POSTGRES', 'PERFORMANCE', 'SQL', 'INDEXING', 'RELIABILITY'],
   },
   '/blog/on-call-rota-is-a-design-problem-not-a-people-problem': {
     title: 'On-Call Rota Is a Design Problem, Not a People Problem // Andrii Zelenets',
     description: 'High alert volume and 3am pages are symptoms of systems not designed for operability. Fixing on-call requires SLO-driven alerting, runbooks, and automation — not more headcount.',
+    date: '2026-03-17',
+    tags: ['ONCALL', 'SRE', 'OBSERVABILITY', 'CULTURE'],
   },
   '/blog/exactly-once-semantics-what-it-actually-means': {
     title: 'Exactly-Once Semantics: What It Actually Means and When You Need It // Andrii Zelenets',
     description: 'Exactly-once is not a flag you flip — it is a composite of three guarantees at three layers. Here is what each means, how Kafka implements it, and what remains your responsibility.',
+    date: '2026-03-17',
+    tags: ['KAFKA', 'STREAMING', 'RELIABILITY', 'TRANSACTIONS'],
   },
   '/blog/kafka-consumer-lag-is-a-symptom-not-the-disease': {
     title: 'Kafka Consumer Lag Is a Symptom, Not the Disease // Andrii Zelenets',
     description: 'Lag is downstream of throughput, partition count, serialisation overhead, and processing logic — treating the symptom without the diagnosis compounds the issue.',
+    date: '2026-03-17',
+    tags: ['KAFKA', 'STREAMING', 'OBSERVABILITY'],
   },
   '/blog/core-web-vitals-inp-is-the-new-lcp': {
     title: 'Core Web Vitals in the Real World: INP Is the New LCP // Andrii Zelenets',
     description: 'Interaction to Next Paint replaced FID and is far harder to optimise. Long tasks, scheduler pressure, and third-party scripts are the main culprits — here is how to find and fix them systematically.',
+    date: '2026-03-17',
+    tags: ['PERFORMANCE', 'WEB_VITALS', 'INP', 'CHROME'],
   },
   '/blog/rethinking-component-state-finite-state-machines-react': {
     title: 'Rethinking Component State: Finite State Machines in React // Andrii Zelenets',
     description: 'Loading, error, success, empty — most UI bugs live in the transitions between states. XState and explicit state machines eliminate entire categories of impossible-to-reproduce bugs.',
+    date: '2026-03-17',
+    tags: ['REACT', 'STATE_MACHINES', 'UX', 'XSTATE'],
   },
   '/blog/kubernetes-resource-requests-vs-limits': {
     title: 'Kubernetes Resource Requests vs Limits: The Misunderstood Contract // Andrii Zelenets',
     description: 'Understanding the actual scheduling and throttling behaviour of Kubernetes resource requests and limits to eliminate OOMKills, CPU throttling, and stranded cluster capacity.',
+    date: '2026-03-17',
+    tags: ['KUBERNETES', 'PERFORMANCE', 'FINOPS'],
   },
   '/blog/gitops-is-not-just-argo-it-is-a-culture-shift': {
     title: 'GitOps Is Not Just Argo — It Is a Culture Shift // Andrii Zelenets',
     description: 'Real GitOps means reconciliation loops, drift detection, and treating Git as the only source of truth — even during incidents when engineers want to kubectl apply.',
+    date: '2026-03-17',
+    tags: ['GITOPS', 'ARGOCD', 'KUBERNETES', 'DEVOPS'],
   },
   '/blog/outbox-pattern-guaranteed-event-publishing': {
     title: 'The Outbox Pattern: Guaranteed Event Publishing Without Two-Phase Commit // Andrii Zelenets',
     description: 'Atomic writes and reliable event publishing using only your existing relational database and a CDC pipeline — no distributed transaction coordinator needed.',
+    date: '2026-03-17',
+    tags: ['KAFKA', 'CDC', 'POSTGRES', 'RELIABILITY'],
   },
 };
 
@@ -104,6 +126,7 @@ const DEFAULT_META = PAGE_META['/'];
 
 function setMeta(pathname: string) {
   const meta = PAGE_META[pathname] ?? DEFAULT_META;
+  const isArticle = pathname.startsWith('/blog/') && meta.date !== undefined;
 
   document.title = meta.title;
 
@@ -112,11 +135,17 @@ function setMeta(pathname: string) {
     if (el) el.setAttribute(attr, val);
   };
 
-  setTag('meta[name="description"]',    'content', meta.description);
-  setTag('meta[property="og:title"]',   'content', meta.title);
+  setTag('meta[name="description"]',        'content', meta.description);
+  setTag('meta[property="og:type"]',        'content', isArticle ? 'article' : 'website');
+  setTag('meta[property="og:title"]',       'content', meta.title);
   setTag('meta[property="og:description"]', 'content', meta.description);
-  setTag('meta[property="og:url"]',     'content', `${SITE_URL}${pathname}`);
-  setTag('link[rel="canonical"]',       'href',    `${SITE_URL}${pathname}`);
+  setTag('meta[property="og:url"]',         'content', `${SITE_URL}${pathname}`);
+  setTag('meta[name="twitter:title"]',      'content', meta.title);
+  setTag('meta[name="twitter:description"]','content', meta.description);
+  setTag('link[rel="canonical"]',           'href',    `${SITE_URL}${pathname}`);
+
+  setTag('meta[property="article:published_time"]', 'content', isArticle ? `${meta.date}T00:00:00Z` : '');
+  setTag('meta[property="article:tag"]',            'content', isArticle && meta.tags ? meta.tags.join(', ') : '');
 }
 
 const ScrollToTop = () => {

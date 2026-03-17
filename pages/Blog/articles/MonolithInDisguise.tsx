@@ -20,7 +20,7 @@ const MonolithInDisguise: React.FC = () => (
     id="POST_001"
     title="Why Your Microservices Are Still a Monolith in Disguise"
     category="DISTRIBUTED_SYSTEMS"
-    date="2025-11-12"
+    date="2026-03-17"
     readTime={8}
     tags={['MICROSERVICES', 'DDD', 'ARCHITECTURE']}
   >
