@@ -1,6 +1,6 @@
 import React from 'react';
 import ArticleLayout from '../ArticleLayout';
-import { P, H2, H3, Callout, Code } from '../ArticlePrimitives';
+import { P, H2, H3, Callout } from '../ArticlePrimitives';
 
 /* ─── Prose primitives ────────────────────────────────────────────────────── */
 

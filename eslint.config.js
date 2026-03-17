@@ -35,6 +35,7 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       'react-hooks/set-state-in-effect': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react/no-unescaped-entities': 'off',
       'react/prop-types': 'off',
       'react/jsx-no-target-blank': 'error',
       'react/self-closing-comp': 'warn',

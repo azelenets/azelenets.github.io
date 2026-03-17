@@ -373,7 +373,7 @@ kafka-log-dirs.sh \
   --bootstrap-server kafka:9092 \
   --topic orders \
   --describe \
-  | grep -oP '"partition":\d+,"size":\d+' \
+  | grep -oP '"partition":\\d+,"size":\\d+' \
   | sort -t: -k2 -n -r
 
 # Example output revealing severe skew:
