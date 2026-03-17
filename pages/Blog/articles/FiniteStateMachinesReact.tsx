@@ -47,7 +47,7 @@ const FiniteStateMachinesReact: React.FC = () => (
     id="POST_005"
     title="Rethinking Component State: Finite State Machines in React"
     category="FRONTEND"
-    date="2025-08-05"
+    date="2026-03-17"
     readTime={10}
     tags={['REACT', 'STATE_MACHINES', 'UX', 'XSTATE']}
   >

@@ -50,7 +50,7 @@ const CoreWebVitalsINP: React.FC = () => (
     id="POST_006"
     title="Core Web Vitals in the Real World: INP Is the New LCP"
     category="FRONTEND"
-    date="2025-07-14"
+    date="2026-03-17"
     readTime={12}
     tags={['PERFORMANCE', 'WEB_VITALS', 'INP', 'CHROME']}
   >

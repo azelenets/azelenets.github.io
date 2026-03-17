@@ -57,7 +57,7 @@ const SeniorEngineerSayingNo: React.FC = () => (
     id="POST_010"
     title="The Senior Engineer's Guide to Saying No"
     category="ENGINEERING_CULTURE"
-    date="2025-04-17"
+    date="2026-03-17"
     readTime={6}
     tags={['LEADERSHIP', 'SOFT_SKILLS', 'CULTURE']}
   >

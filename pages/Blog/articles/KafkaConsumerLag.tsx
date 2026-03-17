@@ -45,7 +45,7 @@ const KafkaConsumerLag: React.FC = () => (
     id="POST_007"
     title="Kafka Consumer Lag Is a Symptom, Not the Disease"
     category="DATA_ENGINEERING"
-    date="2025-06-22"
+    date="2026-03-17"
     readTime={9}
     tags={['KAFKA', 'STREAMING', 'OBSERVABILITY']}
   >
