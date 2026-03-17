@@ -122,6 +122,17 @@ export const blogPosts: BlogPost[] = [
     slug: 'on-call-rota-is-a-design-problem-not-a-people-problem',
   },
   {
+    id: 'POST_011',
+    title: 'Top Database Performance Killers and How to Fix Them',
+    excerpt:
+      'N+1 queries, missing indexes, unbounded result sets, lock contention, connection pool exhaustion — the same six killers appear in every stack. Here is how to diagnose each one and fix it without a rewrite.',
+    category: 'DISTRIBUTED_SYSTEMS',
+    date: '2025-12-10',
+    readTime: 14,
+    tags: ['POSTGRES', 'PERFORMANCE', 'SQL', 'INDEXING', 'RELIABILITY'],
+    slug: 'top-database-performance-killers',
+  },
+  {
     id: 'POST_010',
     title: "The Senior Engineer's Guide to Saying No",
     excerpt:

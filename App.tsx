@@ -62,6 +62,10 @@ const PAGE_META: Record<string, PageMeta> = {
     title: "The Senior Engineer's Guide to Saying No // Andrii Zelenets",
     description: 'The most valuable engineering skill is knowing which work not to do. Scope creep and gold-plating are symptoms of teams that lack the vocabulary and safety to push back constructively.',
   },
+  '/blog/top-database-performance-killers': {
+    title: 'Top Database Performance Killers and How to Fix Them // Andrii Zelenets',
+    description: 'N+1 queries, missing indexes, unbounded result sets, lock contention, and connection pool exhaustion — the six most common database performance killers and how to diagnose and fix each one.',
+  },
   '/blog/on-call-rota-is-a-design-problem-not-a-people-problem': {
     title: 'On-Call Rota Is a Design Problem, Not a People Problem // Andrii Zelenets',
     description: 'High alert volume and 3am pages are symptoms of systems not designed for operability. Fixing on-call requires SLO-driven alerting, runbooks, and automation — not more headcount.',
@@ -154,6 +158,7 @@ const KafkaConsumerLag = lazy(() => import('@/pages/Blog/articles/KafkaConsumerL
 const ExactlyOnceSemantics = lazy(() => import('@/pages/Blog/articles/ExactlyOnceSemantics'));
 const OnCallDesignProblem = lazy(() => import('@/pages/Blog/articles/OnCallDesignProblem'));
 const SeniorEngineerSayingNo = lazy(() => import('@/pages/Blog/articles/SeniorEngineerSayingNo'));
+const DbPerformanceKillers = lazy(() => import('@/pages/Blog/articles/DbPerformanceKillers'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 const App = () => (
@@ -190,6 +195,7 @@ const App = () => (
           <Route path="/blog/exactly-once-semantics-what-it-actually-means" element={<ExactlyOnceSemantics />} />
           <Route path="/blog/on-call-rota-is-a-design-problem-not-a-people-problem" element={<OnCallDesignProblem />} />
           <Route path="/blog/the-senior-engineers-guide-to-saying-no" element={<SeniorEngineerSayingNo />} />
+          <Route path="/blog/top-database-performance-killers" element={<DbPerformanceKillers />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

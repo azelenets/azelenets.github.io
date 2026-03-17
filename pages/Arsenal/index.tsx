@@ -27,6 +27,21 @@ const Arsenal: React.FC = () => {
         description="Structural schematic of offensive and defensive engineering assets. High-density deployment capabilities across distributed infrastructure and enterprise-grade environments."
       />
 
+      {/* Specializations Footer */}
+      <section className="mt-24">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 border-b border-primary/20 pb-4 gap-4">
+          <h2 className="text-2xl font-black uppercase tracking-widest text-white">System_Specializations</h2>
+          <a className="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-70 transition-opacity" href="#">
+            Download_Full_Schematics <span className="material-symbols-outlined text-sm">arrow_outward</span>
+          </a>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
+          {specCards.map(card => (
+            <SpecCard key={card.title} title={card.title} subtitle={card.subtitle} img={card.img} link={card.link} />
+          ))}
+        </div>
+      </section>
+
       {/* CLI Filter */}
       <CliFilter value={query} onChange={setQuery} />
 
@@ -45,21 +60,6 @@ const Arsenal: React.FC = () => {
           </p>
         </div>
       )}
-
-      {/* Specializations Footer */}
-      <section className="mt-24">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 border-b border-primary/20 pb-4 gap-4">
-          <h2 className="text-2xl font-black uppercase tracking-widest text-white">System_Specializations</h2>
-          <a className="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-70 transition-opacity" href="#">
-            Download_Full_Schematics <span className="material-symbols-outlined text-sm">arrow_outward</span>
-          </a>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
-          {specCards.map(card => (
-            <SpecCard key={card.title} title={card.title} subtitle={card.subtitle} img={card.img} link={card.link} />
-          ))}
-        </div>
-      </section>
     </section>
   );
 };

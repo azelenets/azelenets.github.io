@@ -122,7 +122,7 @@ const Navigation = () => {
                 {({ isActive }) => (
                   <>
                     <span className={`text-[9px] font-bold tracking-tighter transition-colors ${isActive ? 'text-primary' : 'text-primary/40 group-hover:text-primary'}`}>
-                      {item.num}_TERMINAL
+                      {item.num}_{item.hint}
                     </span>
                     <span className={`text-xs font-bold tracking-widest uppercase ${isActive ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>
                       {item.label}
