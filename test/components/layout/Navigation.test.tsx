@@ -124,9 +124,9 @@ describe('Navigation mobile menu', () => {
 describe('Navigation renders nav links', () => {
   it('renders all nav item labels', () => {
     renderNav();
-    expect(screen.getAllByText('OVERVIEW').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('MISSION_LOG').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('TECH_STACK').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('MAIN').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('HISTORY').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('SKILLS').length).toBeGreaterThan(0);
   });
 
   it('renders SYSTEM_STATUS: OPERATIONAL', () => {

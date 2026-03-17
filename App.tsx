@@ -34,6 +34,70 @@ const PAGE_META: Record<string, PageMeta> = {
     title: 'Credentials // Andrii Zelenets',
     description: 'Education, certifications, courses, and skill dossier of Andrii Zelenets.',
   },
+  '/distributed-nodes': {
+    title: 'Distributed Systems // Andrii Zelenets',
+    description: 'Best practices and battle-tested patterns for designing high-availability distributed systems.',
+  },
+  '/cloud-native': {
+    title: 'Cloud Native Web App // Andrii Zelenets',
+    description: 'Production-grade principles and patterns for building cloud-native web applications with Kubernetes, containers, and GitOps.',
+  },
+  '/tactical-ui': {
+    title: 'UI/UX Development // Andrii Zelenets',
+    description: 'Best practices for building accessible, performant, and maintainable web interfaces with solid design systems.',
+  },
+  '/data-forge': {
+    title: 'Realtime Streaming // Andrii Zelenets',
+    description: 'Best practices for building low-latency, high-throughput realtime data pipelines and streaming applications.',
+  },
+  '/blog': {
+    title: 'Intel Briefings // Andrii Zelenets',
+    description: 'Long-form engineering articles on distributed systems, cloud-native architecture, frontend craft, and team culture.',
+  },
+  '/blog/why-microservices-are-still-a-monolith': {
+    title: 'Why Your Microservices Are Still a Monolith in Disguise // Andrii Zelenets',
+    description: 'Shared databases, synchronous call chains, and implicit coupling keep teams locked in a monolith mindset — even when running on Kubernetes.',
+  },
+  '/blog/the-senior-engineers-guide-to-saying-no': {
+    title: "The Senior Engineer's Guide to Saying No // Andrii Zelenets",
+    description: 'The most valuable engineering skill is knowing which work not to do. Scope creep and gold-plating are symptoms of teams that lack the vocabulary and safety to push back constructively.',
+  },
+  '/blog/top-database-performance-killers': {
+    title: 'Top Database Performance Killers and How to Fix Them // Andrii Zelenets',
+    description: 'N+1 queries, missing indexes, unbounded result sets, lock contention, and connection pool exhaustion — the six most common database performance killers and how to diagnose and fix each one.',
+  },
+  '/blog/on-call-rota-is-a-design-problem-not-a-people-problem': {
+    title: 'On-Call Rota Is a Design Problem, Not a People Problem // Andrii Zelenets',
+    description: 'High alert volume and 3am pages are symptoms of systems not designed for operability. Fixing on-call requires SLO-driven alerting, runbooks, and automation — not more headcount.',
+  },
+  '/blog/exactly-once-semantics-what-it-actually-means': {
+    title: 'Exactly-Once Semantics: What It Actually Means and When You Need It // Andrii Zelenets',
+    description: 'Exactly-once is not a flag you flip — it is a composite of three guarantees at three layers. Here is what each means, how Kafka implements it, and what remains your responsibility.',
+  },
+  '/blog/kafka-consumer-lag-is-a-symptom-not-the-disease': {
+    title: 'Kafka Consumer Lag Is a Symptom, Not the Disease // Andrii Zelenets',
+    description: 'Lag is downstream of throughput, partition count, serialisation overhead, and processing logic — treating the symptom without the diagnosis compounds the issue.',
+  },
+  '/blog/core-web-vitals-inp-is-the-new-lcp': {
+    title: 'Core Web Vitals in the Real World: INP Is the New LCP // Andrii Zelenets',
+    description: 'Interaction to Next Paint replaced FID and is far harder to optimise. Long tasks, scheduler pressure, and third-party scripts are the main culprits — here is how to find and fix them systematically.',
+  },
+  '/blog/rethinking-component-state-finite-state-machines-react': {
+    title: 'Rethinking Component State: Finite State Machines in React // Andrii Zelenets',
+    description: 'Loading, error, success, empty — most UI bugs live in the transitions between states. XState and explicit state machines eliminate entire categories of impossible-to-reproduce bugs.',
+  },
+  '/blog/kubernetes-resource-requests-vs-limits': {
+    title: 'Kubernetes Resource Requests vs Limits: The Misunderstood Contract // Andrii Zelenets',
+    description: 'Understanding the actual scheduling and throttling behaviour of Kubernetes resource requests and limits to eliminate OOMKills, CPU throttling, and stranded cluster capacity.',
+  },
+  '/blog/gitops-is-not-just-argo-it-is-a-culture-shift': {
+    title: 'GitOps Is Not Just Argo — It Is a Culture Shift // Andrii Zelenets',
+    description: 'Real GitOps means reconciliation loops, drift detection, and treating Git as the only source of truth — even during incidents when engineers want to kubectl apply.',
+  },
+  '/blog/outbox-pattern-guaranteed-event-publishing': {
+    title: 'The Outbox Pattern: Guaranteed Event Publishing Without Two-Phase Commit // Andrii Zelenets',
+    description: 'Atomic writes and reliable event publishing using only your existing relational database and a CDC pipeline — no distributed transaction coordinator needed.',
+  },
 };
 
 const DEFAULT_META = PAGE_META['/'];
@@ -79,6 +143,22 @@ const Arsenal = lazy(() => import('@/pages/Arsenal'));
 const Laboratory = lazy(() => import('@/pages/Laboratory'));
 const Protocols = lazy(() => import('@/pages/Protocols'));
 const Credentials = lazy(() => import('@/pages/Credentials'));
+const DistributedNodes = lazy(() => import('@/pages/DistributedNodes'));
+const CloudNative = lazy(() => import('@/pages/CloudNative'));
+const TacticalUI = lazy(() => import('@/pages/TacticalUI'));
+const DataForge = lazy(() => import('@/pages/DataForge'));
+const Blog = lazy(() => import('@/pages/Blog'));
+const MonolithInDisguise = lazy(() => import('@/pages/Blog/articles/MonolithInDisguise'));
+const OutboxPattern = lazy(() => import('@/pages/Blog/articles/OutboxPattern'));
+const GitOpsCultureShift = lazy(() => import('@/pages/Blog/articles/GitOpsCultureShift'));
+const K8sResourceLimits = lazy(() => import('@/pages/Blog/articles/K8sResourceLimits'));
+const FiniteStateMachinesReact = lazy(() => import('@/pages/Blog/articles/FiniteStateMachinesReact'));
+const CoreWebVitalsINP = lazy(() => import('@/pages/Blog/articles/CoreWebVitalsINP'));
+const KafkaConsumerLag = lazy(() => import('@/pages/Blog/articles/KafkaConsumerLag'));
+const ExactlyOnceSemantics = lazy(() => import('@/pages/Blog/articles/ExactlyOnceSemantics'));
+const OnCallDesignProblem = lazy(() => import('@/pages/Blog/articles/OnCallDesignProblem'));
+const SeniorEngineerSayingNo = lazy(() => import('@/pages/Blog/articles/SeniorEngineerSayingNo'));
+const DbPerformanceKillers = lazy(() => import('@/pages/Blog/articles/DbPerformanceKillers'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 const App = () => (
@@ -100,6 +180,22 @@ const App = () => (
           <Route path="/lab" element={<Laboratory />} />
           <Route path="/protocols" element={<Protocols />} />
           <Route path="/credentials" element={<Credentials />} />
+          <Route path="/distributed-nodes" element={<DistributedNodes />} />
+          <Route path="/cloud-native" element={<CloudNative />} />
+          <Route path="/tactical-ui" element={<TacticalUI />} />
+          <Route path="/data-forge" element={<DataForge />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/why-microservices-are-still-a-monolith" element={<MonolithInDisguise />} />
+          <Route path="/blog/outbox-pattern-guaranteed-event-publishing" element={<OutboxPattern />} />
+          <Route path="/blog/gitops-is-not-just-argo-it-is-a-culture-shift" element={<GitOpsCultureShift />} />
+          <Route path="/blog/kubernetes-resource-requests-vs-limits" element={<K8sResourceLimits />} />
+          <Route path="/blog/rethinking-component-state-finite-state-machines-react" element={<FiniteStateMachinesReact />} />
+          <Route path="/blog/core-web-vitals-inp-is-the-new-lcp" element={<CoreWebVitalsINP />} />
+          <Route path="/blog/kafka-consumer-lag-is-a-symptom-not-the-disease" element={<KafkaConsumerLag />} />
+          <Route path="/blog/exactly-once-semantics-what-it-actually-means" element={<ExactlyOnceSemantics />} />
+          <Route path="/blog/on-call-rota-is-a-design-problem-not-a-people-problem" element={<OnCallDesignProblem />} />
+          <Route path="/blog/the-senior-engineers-guide-to-saying-no" element={<SeniorEngineerSayingNo />} />
+          <Route path="/blog/top-database-performance-killers" element={<DbPerformanceKillers />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

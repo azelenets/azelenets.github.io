@@ -12,7 +12,7 @@ describe('CliFilter', () => {
 
   it('renders placeholder text', () => {
     render(<CliFilter value="" onChange={() => {}} />);
-    expect(screen.getByPlaceholderText('SEARCH...')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('SEARCH SKILL...')).toBeInTheDocument();
   });
 
   it('calls onChange on every keystroke', async () => {

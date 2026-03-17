@@ -2,8 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { navItems } from '@/constants/navigation';
 
 describe('navItems', () => {
-  it('has 6 items', () => {
-    expect(navItems).toHaveLength(6);
+  it('has 7 items', () => {
+    expect(navItems).toHaveLength(7);
   });
 
   it('every item has label, num, and path', () => {
@@ -26,7 +26,7 @@ describe('navItems', () => {
 
   it('nums are zero-padded two-digit strings in order', () => {
     const nums = navItems.map((i) => i.num);
-    expect(nums).toEqual(['01', '02', '03', '04', '05', '06']);
+    expect(nums).toEqual(['01', '02', '03', '04', '05', '06', '07']);
   });
 
   it('paths are unique', () => {
