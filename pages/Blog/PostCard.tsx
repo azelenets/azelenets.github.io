@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { type BlogPost } from '@/constants/blog';
+import Tag from '@/components/Tag';
 
 const CATEGORY_COLORS: Record<string, string> = {
   DISTRIBUTED_SYSTEMS: 'text-primary border-primary/30 bg-primary/5',
@@ -23,9 +24,7 @@ const PostCard = ({ id, title, excerpt, category, date, readTime, tags, slug, li
       {/* Top bar */}
       <div className="flex items-center justify-between px-5 py-3 border-b border-primary/10">
         <span className="text-slate-600 text-[9px] font-bold font-mono tracking-widest">{id}</span>
-        <span className={`text-[9px] font-bold font-mono px-2 py-0.5 border tracking-widest ${categoryColor}`}>
-          {category.replace(/_/g, '\u00a0')}
-        </span>
+        <Tag label={category.replace(/_/g, '\u00a0')} colorClass={categoryColor} />
       </div>
 
       {/* Body */}

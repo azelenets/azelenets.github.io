@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '@/components/layout/PageHeader';
+import Tag from '@/components/Tag';
 
 interface Practice {
   id: string;
@@ -137,9 +138,7 @@ const PracticeCard: React.FC<Practice> = ({ id, icon, title, tag, points }) => (
         <span className="material-symbols-outlined text-primary text-xl">{icon}</span>
         <h3 className="text-white font-bold text-xs tracking-widest uppercase">{title}</h3>
       </div>
-      <span className={`text-[9px] font-bold font-mono px-2 py-0.5 border tracking-widest shrink-0 ${tagColors[tag] ?? 'text-primary/60 border-primary/20 bg-primary/5'}`}>
-        {tag}
-      </span>
+      <Tag label={tag} colorClass={tagColors[tag]} />
     </header>
     <ul className="flex flex-col gap-2">
       {points.map((p, i) => (
@@ -157,7 +156,7 @@ const DistributedNodes: React.FC = () => (
     <PageHeader
       eyebrow="High Availability Protocols"
       titleMain="Distributed"
-      titleAccent="Nodes"
+      titleAccent="SYSTEMS"
       description="Battle-tested principles and patterns for designing, building, and operating distributed systems at scale."
     />
 
