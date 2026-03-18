@@ -39,7 +39,7 @@ export const Callout: React.FC<{ type?: 'info' | 'warn' | 'danger'; children: Re
 export const Code: React.FC<{ label?: string; children: React.ReactNode }> = ({ label, children }) => (
   <figure className="my-7 border border-primary/10 bg-black/50">
     {label && (
-      <figcaption className="px-4 py-2 border-b border-primary/10 text-[9px] font-bold font-mono text-slate-600 tracking-widest uppercase">
+      <figcaption className="px-4 py-2 border-b border-primary/10 text-[9px] font-bold font-mono text-slate-400 tracking-widest uppercase">
         {label}
       </figcaption>
     )}

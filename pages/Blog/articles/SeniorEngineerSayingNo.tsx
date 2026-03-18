@@ -36,8 +36,8 @@ const ScenarioBlock: React.FC<{
       </div>
     </div>
     <div className="px-5 py-3 border-t border-primary/10 bg-bg-dark">
-      <p className="text-[9px] font-bold font-mono text-slate-600 tracking-widest mb-1">WHY IT WORKS</p>
-      <p className="text-xs font-mono text-slate-600 leading-5">{why}</p>
+      <p className="text-[9px] font-bold font-mono text-slate-400 tracking-widest mb-1">WHY IT WORKS</p>
+      <p className="text-xs font-mono text-slate-400 leading-5">{why}</p>
     </div>
   </div>
 );
@@ -46,7 +46,7 @@ const CostRow: React.FC<{ type: string; cost: string; example: string; color: st
   <div className="grid grid-cols-3 gap-px bg-primary/10 text-xs font-mono border-t border-primary/5 first:border-t-0">
     <div className={`px-4 py-3 font-bold ${color}`}>{type}</div>
     <div className="bg-bg-dark px-4 py-3 text-slate-500">{cost}</div>
-    <div className="bg-bg-dark px-4 py-3 text-slate-600">{example}</div>
+    <div className="bg-bg-dark px-4 py-3 text-slate-400">{example}</div>
   </div>
 );
 

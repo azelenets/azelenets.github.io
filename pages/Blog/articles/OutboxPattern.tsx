@@ -22,7 +22,7 @@ const DiagramBox: React.FC<{ label: string; color?: 'primary' | 'warn' | 'danger
 };
 
 const Arrow: React.FC<{ label?: string }> = ({ label }) => (
-  <div className="flex flex-col items-center justify-center text-slate-600 shrink-0">
+  <div className="flex flex-col items-center justify-center text-slate-400 shrink-0">
     <span className="text-xs font-mono">→</span>
     {label && <span className="text-[8px] font-mono text-slate-700 mt-0.5 whitespace-nowrap">{label}</span>}
   </div>

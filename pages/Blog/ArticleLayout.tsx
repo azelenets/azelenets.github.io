@@ -38,7 +38,7 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ id, title, category, date
         {/* Article header */}
         <header className="mb-12 border-l-4 border-primary pl-6 md:pl-8">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="text-slate-600 text-[9px] font-bold font-mono tracking-widest">{id}</span>
+            <span className="text-slate-400 text-[9px] font-bold font-mono tracking-widest">{id}</span>
             <span className={`text-[9px] font-bold font-mono px-2 py-0.5 border tracking-widest ${categoryColor}`}>
               {category.replace(/_/g, '\u00a0')}
             </span>
@@ -68,7 +68,7 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ id, title, category, date
 
         {/* Tags footer */}
         <footer className="mt-16 pt-8 border-t border-primary/10">
-          <p className="text-[9px] font-bold text-slate-600 tracking-widest uppercase mb-3">Filed under</p>
+          <p className="text-[9px] font-bold text-slate-400 tracking-widest uppercase mb-3">Filed under</p>
           <div className="flex flex-wrap gap-2">
             {tags.map(tag => (
               <span key={tag} className="text-[9px] font-bold text-slate-500 border border-slate-700/50 px-2 py-1 font-mono tracking-wider">

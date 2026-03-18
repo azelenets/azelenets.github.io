@@ -23,7 +23,7 @@ const PostCard = ({ id, title, excerpt, category, date, readTime, tags, slug, li
     <article className="group bg-surface-terminal border border-primary/10 hover:border-primary/30 transition-all duration-300 flex flex-col h-full hover:shadow-[0_0_24px_rgba(0,243,255,0.06)]">
       {/* Top bar */}
       <div className="flex items-center justify-between px-5 py-3 border-b border-primary/10">
-        <span className="text-slate-600 text-[9px] font-bold font-mono tracking-widest">{id}</span>
+        <span className="text-slate-400 text-[9px] font-bold font-mono tracking-widest">{id}</span>
         <Tag label={category.replace(/_/g, '\u00a0')} colorClass={categoryColor} />
       </div>
 
@@ -43,7 +43,7 @@ const PostCard = ({ id, title, excerpt, category, date, readTime, tags, slug, li
         {/* Tags */}
         <div className="flex flex-wrap gap-1.5 pt-1">
           {tags.map(tag => (
-            <span key={tag} className="text-[9px] font-bold text-slate-600 border border-slate-700/50 px-1.5 py-0.5 font-mono tracking-wider">
+            <span key={tag} className="text-[9px] font-bold text-slate-400 border border-slate-700/50 px-1.5 py-0.5 font-mono tracking-wider">
               #{tag}
             </span>
           ))}
@@ -52,7 +52,7 @@ const PostCard = ({ id, title, excerpt, category, date, readTime, tags, slug, li
 
       {/* Footer */}
       <div className="flex items-center justify-between px-5 py-3 border-t border-primary/10">
-        <div className="flex items-center gap-3 text-[9px] font-mono text-slate-600">
+        <div className="flex items-center gap-3 text-[9px] font-mono text-slate-400">
           <span className="flex items-center gap-1">
             <span className="material-symbols-outlined text-[11px]">calendar_today</span>
             {formattedDate}

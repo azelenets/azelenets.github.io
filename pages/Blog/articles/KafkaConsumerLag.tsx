@@ -24,7 +24,7 @@ const LagBar: React.FC<{ partition: string; lag: number; max: number; hot?: bool
   const pct = Math.round((lag / max) * 100);
   return (
     <div className="mb-2">
-      <div className="flex justify-between text-[9px] font-mono text-slate-600 mb-1">
+      <div className="flex justify-between text-[9px] font-mono text-slate-400 mb-1">
         <span>{partition}</span>
         <span className={hot ? 'text-red-400' : 'text-slate-500'}>{lag.toLocaleString()} msgs {hot ? '⚠ HOTSPOT' : ''}</span>
       </div>

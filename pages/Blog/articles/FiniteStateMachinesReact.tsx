@@ -15,7 +15,7 @@ const StateNode: React.FC<{ label: string; active?: boolean }> = ({ label, activ
 );
 
 const TransitionArrow: React.FC<{ label: string; dir?: 'right' | 'down' }> = ({ label, dir = 'right' }) => (
-  <div className={`flex ${dir === 'down' ? 'flex-col' : 'flex-row'} items-center text-slate-600 gap-1`}>
+  <div className={`flex ${dir === 'down' ? 'flex-col' : 'flex-row'} items-center text-slate-400 gap-1`}>
     {dir === 'right' ? (
       <>
         <div className="flex-1 h-px bg-primary/20 min-w-[24px]" />
@@ -175,7 +175,7 @@ async function fetchData() {
       <TransitionArrow label="SUCCESS" />
       <StateNode label="SUCCESS" />
       <div className="w-full sm:hidden" />
-      <div className="hidden sm:flex items-center gap-2 ml-4 text-slate-600">
+      <div className="hidden sm:flex items-center gap-2 ml-4 text-slate-400">
         <span className="text-[9px] font-mono">LOADING</span>
         <TransitionArrow label="FAILURE" />
         <StateNode label="ERROR" />

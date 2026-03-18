@@ -170,7 +170,7 @@ const TacticalUI: React.FC = () => (
       ].map(stat => (
         <div key={stat.label} className="bg-bg-dark px-6 py-4 flex flex-col gap-1">
           <span className="text-primary text-2xl font-black font-display">{stat.value}</span>
-          <span className="text-slate-600 text-[9px] font-bold tracking-[0.3em] uppercase">{stat.label}</span>
+          <span className="text-slate-400 text-[9px] font-bold tracking-[0.3em] uppercase">{stat.label}</span>
         </div>
       ))}
     </div>

@@ -6,11 +6,11 @@ interface PrivacyModalProps {
 
 const Section = ({ label, children }: { label: string; children: React.ReactNode }) => (
   <div className="space-y-2">
-    <div className="text-primary/50 text-[9px] font-black tracking-[0.3em] uppercase flex items-center gap-2">
+    <div className="text-primary/70 text-[9px] font-black tracking-[0.3em] uppercase flex items-center gap-2">
       <span className="material-symbols-outlined text-xs">chevron_right</span>
       {label}
     </div>
-    <div className="text-[11px] font-mono text-white/55 leading-relaxed pl-5">{children}</div>
+    <div className="text-[11px] font-mono text-slate-400 leading-relaxed pl-5">{children}</div>
   </div>
 );
 
