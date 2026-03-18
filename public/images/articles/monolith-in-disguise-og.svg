@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="'JetBrains Mono',monospace">
+  <defs>
+    <filter id="glow-c" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-r" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-g" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="bg-main" cx="38%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#0d0505"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <radialGradient id="bg-right" cx="80%" cy="55%" r="40%">
+      <stop offset="0%" stop-color="#001a0a"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <marker id="arr-r" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,9 3.5,0 7" fill="#ff003c" opacity="0.8"/>
+    </marker>
+    <marker id="arr-c" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,9 3.5,0 7" fill="#00f3ff" opacity="0.85"/>
+    </marker>
+    <marker id="arr-g" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,9 3.5,0 7" fill="#4ade80" opacity="0.85"/>
+    </marker>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0L0 0 0 40" fill="none" stroke="rgba(0,243,255,0.025)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background layers -->
+  <rect width="1200" height="630" fill="url(#bg-main)"/>
+  <rect width="1200" height="630" fill="url(#bg-right)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="160" cy="200" rx="300" ry="200" fill="rgba(255,0,60,0.05)"/>
+  <ellipse cx="980" cy="400" rx="260" ry="180" fill="rgba(74,222,128,0.04)"/>
+
+  <!-- ── Top label bar ── -->
+  <rect width="1200" height="42" fill="rgba(255,0,60,0.04)"/>
+  <line x1="0" y1="42" x2="1200" y2="42" stroke="rgba(255,0,60,0.1)" stroke-width="1"/>
+  <text x="24" y="26" fill="rgba(255,60,60,1)" font-size="10" font-weight="700" letter-spacing="4">DISTRIBUTED_SYSTEMS  ·  ARCHITECTURE</text>
+  <text x="1176" y="26" fill="rgba(0,243,255,1)" font-size="10" font-weight="700" letter-spacing="3" text-anchor="end">MICROSERVICES  ·  DDD  ·  ARCHITECTURE</text>
+
+  <!-- ── Left: Title block ── -->
+  <text x="58" y="108" fill="white" font-size="11" font-weight="700" letter-spacing="4">WHY YOUR MICROSERVICES ARE</text>
+
+  <text x="54" y="172" fill="white" font-size="58" font-weight="900" letter-spacing="-2" font-family="'Orbitron','JetBrains Mono',monospace">STILL A</text>
+  <text x="54" y="240" fill="white" font-size="58" font-weight="900" letter-spacing="-2" font-family="'Orbitron','JetBrains Mono',monospace">MONOLITH</text>
+  <text x="54" y="308" fill="#ff003c" font-size="42" font-weight="900" letter-spacing="-1" font-family="'Orbitron','JetBrains Mono',monospace" filter="url(#glow-r)">IN DISGUISE</text>
+
+  <!-- Accent line -->
+  <rect x="54" y="326" width="500" height="2" fill="rgba(255,0,60,0.25)"/>
+  <rect x="54" y="326" width="90" height="2" fill="#ff003c" filter="url(#glow-r)"/>
+
+  <!-- Author / meta -->
+  <text x="54" y="364" fill="rgba(255,60,60,0.4)" font-size="11" font-weight="700" letter-spacing="3">ANDRII ZELENETS  ·  8 MIN READ</text>
+
+  <!-- Tags -->
+  <rect x="54" y="384" width="120" height="22" fill="rgba(255,0,60,0.07)" stroke="rgba(255,0,60,0.2)" stroke-width="1"/>
+  <text x="114" y="399" fill="rgba(255,80,80,0.65)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">MICROSERVICES</text>
+
+  <rect x="184" y="384" width="56" height="22" fill="rgba(255,0,60,0.07)" stroke="rgba(255,0,60,0.2)" stroke-width="1"/>
+  <text x="212" y="399" fill="rgba(255,80,80,0.65)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">DDD</text>
+
+  <rect x="250" y="384" width="118" height="22" fill="rgba(255,0,60,0.07)" stroke="rgba(255,0,60,0.2)" stroke-width="1"/>
+  <text x="309" y="399" fill="rgba(255,80,80,0.65)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">ARCHITECTURE</text>
+
+  <!-- 4 signs list -->
+  <text x="54" y="446" fill="rgba(255,255,255,0.2)" font-size="9" font-weight="700" letter-spacing="3">FOUR SIGNS YOUR SYSTEM IS STILL COUPLED:</text>
+
+  <text x="54" y="470" fill="rgba(255,80,80,0.45)" font-size="10" font-weight="700">▸</text>
+  <text x="72" y="470" fill="rgba(255,255,255,0.35)" font-size="10" font-mono="true">Shared Database</text>
+
+  <text x="54" y="490" fill="rgba(255,80,80,0.45)" font-size="10" font-weight="700">▸</text>
+  <text x="72" y="490" fill="rgba(255,255,255,0.35)" font-size="10">Synchronous Call Chains</text>
+
+  <text x="54" y="510" fill="rgba(255,80,80,0.45)" font-size="10" font-weight="700">▸</text>
+  <text x="72" y="510" fill="rgba(255,255,255,0.35)" font-size="10">Shared Library Trap</text>
+
+  <text x="54" y="530" fill="rgba(255,80,80,0.45)" font-size="10" font-weight="700">▸</text>
+  <text x="72" y="530" fill="rgba(255,255,255,0.35)" font-size="10">Big-Bang Deploy</text>
+
+  <!-- ── Vertical divider ── -->
+  <line x1="594" y1="58" x2="594" y2="598" stroke="rgba(255,60,60,0.08)" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════
+       RIGHT: Architecture contrast diagram
+  ══════════════════════════════════════════ -->
+
+  <rect x="608" y="58" width="568" height="540" fill="rgba(0,0,0,0.15)" stroke="rgba(255,60,60,0.06)" stroke-width="1"/>
+
+  <!-- ── LEFT COLUMN: Distributed Monolith ── -->
+  <text x="638" y="84" fill="rgba(255,0,60,0.5)" font-size="8" font-weight="700" letter-spacing="3">✗  DISTRIBUTED_MONOLITH</text>
+
+  <!-- Services (left col) -->
+  <rect x="628" y="94" width="88" height="38" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="672" y="109" fill="rgba(0,243,255,0.35)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">SVC</text>
+  <text x="672" y="123" fill="white" font-size="9" font-weight="700" text-anchor="middle">ORDER</text>
+
+  <rect x="628" y="144" width="88" height="38" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="672" y="159" fill="rgba(0,243,255,0.35)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">SVC</text>
+  <text x="672" y="173" fill="white" font-size="9" font-weight="700" text-anchor="middle">USER</text>
+
+  <rect x="628" y="194" width="88" height="38" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="672" y="209" fill="rgba(0,243,255,0.35)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">SVC</text>
+  <text x="672" y="223" fill="white" font-size="9" font-weight="700" text-anchor="middle">PAYMENT</text>
+
+  <rect x="628" y="244" width="88" height="38" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="672" y="259" fill="rgba(0,243,255,0.35)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">SVC</text>
+  <text x="672" y="273" fill="white" font-size="9" font-weight="700" text-anchor="middle">CATALOG</text>
+
+  <!-- Shared DB (center) -->
+  <rect x="754" y="154" width="108" height="68" fill="rgba(255,0,60,0.07)" stroke="rgba(255,0,60,0.4)" stroke-width="1.5" filter="url(#glow-r)"/>
+  <text x="808" y="178" fill="rgba(255,60,60,0.6)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="2">SHARED</text>
+  <text x="808" y="194" fill="#ff003c" font-size="11" font-weight="700" text-anchor="middle">DATABASE</text>
+  <text x="808" y="211" fill="rgba(255,60,60,0.3)" font-size="7" text-anchor="middle">all services read/write</text>
+
+  <!-- Coupling arrows: services → shared DB -->
+  <line x1="716" y1="113" x2="760" y2="168" stroke="rgba(255,0,60,0.4)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-r)"/>
+  <line x1="716" y1="163" x2="754" y2="175" stroke="rgba(255,0,60,0.4)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-r)"/>
+  <line x1="716" y1="213" x2="754" y2="196" stroke="rgba(255,0,60,0.4)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-r)"/>
+  <line x1="716" y1="263" x2="762" y2="212" stroke="rgba(255,0,60,0.4)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-r)"/>
+
+  <!-- Sync chain arrow between services -->
+  <path d="M716 125 Q750 130 716 153" fill="none" stroke="rgba(255,0,60,0.25)" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arr-r)"/>
+  <text x="742" y="139" fill="rgba(255,0,60,0.3)" font-size="7" font-weight="700">HTTP</text>
+
+  <!-- ── HORIZONTAL SEPARATOR ── -->
+  <line x1="618" y1="310" x2="1168" y2="310" stroke="rgba(0,243,255,0.07)" stroke-width="1" stroke-dasharray="6,4"/>
+  <rect x="758" y="297" width="100" height="26" fill="#050505" stroke="rgba(0,243,255,0.1)" stroke-width="1"/>
+  <text x="808" y="314" fill="rgba(0,243,255,0.35)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">VS</text>
+
+  <!-- ── RIGHT: True Microservices ── -->
+  <text x="638" y="342" fill="rgba(74,222,128,0.5)" font-size="8" font-weight="700" letter-spacing="3">✓  TRUE_MICROSERVICES</text>
+
+  <!-- Services with own DBs -->
+  <!-- Svc 1 -->
+  <rect x="628" y="352" width="88" height="36" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.18)" stroke-width="1"/>
+  <text x="672" y="366" fill="rgba(0,243,255,0.35)" font-size="7" text-anchor="middle" letter-spacing="1">SVC</text>
+  <text x="672" y="380" fill="white" font-size="9" font-weight="700" text-anchor="middle">ORDER</text>
+  <rect x="634" y="392" width="76" height="18" fill="rgba(0,243,255,0.03)" stroke="rgba(0,243,255,0.12)" stroke-width="1"/>
+  <text x="672" y="404" fill="rgba(0,243,255,0.3)" font-size="7" text-anchor="middle">own_db</text>
+
+  <!-- Svc 2 -->
+  <rect x="628" y="420" width="88" height="36" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.18)" stroke-width="1"/>
+  <text x="672" y="434" fill="rgba(0,243,255,0.35)" font-size="7" text-anchor="middle" letter-spacing="1">SVC</text>
+  <text x="672" y="448" fill="white" font-size="9" font-weight="700" text-anchor="middle">USER</text>
+  <rect x="634" y="460" width="76" height="18" fill="rgba(0,243,255,0.03)" stroke="rgba(0,243,255,0.12)" stroke-width="1"/>
+  <text x="672" y="472" fill="rgba(0,243,255,0.3)" font-size="7" text-anchor="middle">own_db</text>
+
+  <!-- Svc 3 -->
+  <rect x="628" y="490" width="88" height="36" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.18)" stroke-width="1"/>
+  <text x="672" y="504" fill="rgba(0,243,255,0.35)" font-size="7" text-anchor="middle" letter-spacing="1">SVC</text>
+  <text x="672" y="518" fill="white" font-size="9" font-weight="700" text-anchor="middle">PAYMENT</text>
+  <rect x="634" y="530" width="76" height="18" fill="rgba(0,243,255,0.03)" stroke="rgba(0,243,255,0.12)" stroke-width="1"/>
+  <text x="672" y="542" fill="rgba(0,243,255,0.3)" font-size="7" text-anchor="middle">own_db</text>
+
+  <!-- Event Bus -->
+  <rect x="758" y="390" width="120" height="58" fill="rgba(74,222,128,0.05)" stroke="rgba(74,222,128,0.28)" stroke-width="1.5" filter="url(#glow-g)"/>
+  <text x="818" y="412" fill="rgba(74,222,128,0.55)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="3">EVENT BUS</text>
+  <text x="818" y="428" fill="white" font-size="11" font-weight="700" text-anchor="middle">Kafka</text>
+  <text x="818" y="442" fill="rgba(74,222,128,0.3)" font-size="7" text-anchor="middle">async · decoupled</text>
+
+  <!-- Arrows: services → event bus (async) -->
+  <line x1="716" y1="370" x2="762" y2="406" stroke="rgba(74,222,128,0.45)" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <line x1="716" y1="438" x2="758" y2="420" stroke="rgba(74,222,128,0.45)" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <line x1="716" y1="508" x2="762" y2="442" stroke="rgba(74,222,128,0.45)" stroke-width="1.5" marker-end="url(#arr-g)"/>
+
+  <!-- Consumers -->
+  <rect x="924" y="368" width="100" height="34" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.18)" stroke-width="1"/>
+  <text x="974" y="382" fill="rgba(74,222,128,0.45)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">ANALYTICS</text>
+  <text x="974" y="394" fill="rgba(74,222,128,0.25)" font-size="7" text-anchor="middle">reacts async</text>
+
+  <rect x="924" y="412" width="100" height="34" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.18)" stroke-width="1"/>
+  <text x="974" y="426" fill="rgba(74,222,128,0.45)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">NOTIF_SVC</text>
+  <text x="974" y="438" fill="rgba(74,222,128,0.25)" font-size="7" text-anchor="middle">reacts async</text>
+
+  <!-- Arrows: bus → consumers -->
+  <line x1="878" y1="408" x2="922" y2="388" stroke="rgba(74,222,128,0.35)" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <line x1="878" y1="428" x2="922" y2="428" stroke="rgba(74,222,128,0.35)" stroke-width="1.5" marker-end="url(#arr-g)"/>
+
+  <!-- Key insight pill -->
+  <rect x="618" y="556" width="550" height="32" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.12)" stroke-width="1"/>
+  <text x="893" y="576" fill="rgba(74,222,128,0.45)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">INDEPENDENCE = CHANGE · FAILURE · DEPLOYMENT</text>
+
+  <!-- ── Bottom bar ── -->
+  <line x1="0" y1="598" x2="1200" y2="598" stroke="rgba(255,60,60,0.06)" stroke-width="1"/>
+  <rect x="0" y="598" width="1200" height="32" fill="rgba(0,0,0,0.45)"/>
+  <text x="24" y="618" fill="rgba(255,60,60,0.2)" font-size="9" letter-spacing="3">azelenets.github.io/blog/why-microservices-are-still-a-monolith</text>
+  <text x="1176" y="618" fill="rgba(0,243,255,0.18)" font-size="9" letter-spacing="2" text-anchor="end">BOUNDED_CONTEXT · STRANGLER_FIG · EVENT_DRIVEN</text>
+</svg>

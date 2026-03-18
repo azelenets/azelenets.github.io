@@ -1,6 +1,6 @@
 import React from 'react';
 import ArticleLayout from '../ArticleLayout';
-import { P, H2, H3, Callout, Code } from '../ArticlePrimitives';
+import { P, H2, H3, Callout, Code, ArticleImage } from '../ArticlePrimitives';
 
 /* ─── Prose primitives ────────────────────────────────────────────────────── */
 
@@ -33,7 +33,7 @@ const PrincipleCard: React.FC<{ num: string; title: string; children: React.Reac
 const GitOpsCultureShift: React.FC = () => (
   <ArticleLayout
     id="POST_003"
-    title="GitOps Is Not Just Argo — It Is a Culture Shift"
+    title="GitOps Is Not Just Argo - It Is a Culture Shift"
     category="CLOUD_NATIVE"
     date="2026-03-17"
     readTime={7}
@@ -53,10 +53,16 @@ const GitOpsCultureShift: React.FC = () => (
     </P>
 
     <Callout type="warn">
-      GitOps is not a tool. ArgoCD and Flux are implementations of GitOps — they are not GitOps itself. GitOps is a
+      GitOps is not a tool. ArgoCD and Flux are implementations of GitOps - they are not GitOps itself. GitOps is a
       set of operating principles that change how teams think about infrastructure, deployment, and incident response.
       The tool without the principles is just a fancier CI/CD pipeline.
     </Callout>
+
+    <ArticleImage
+      src="/images/articles/gitops-culture-shift.svg"
+      alt="GitOps reconciliation loop - developer to CI to Git to ArgoCD to Kubernetes cluster with drift detection"
+      caption="The GitOps reconciliation loop: code changes flow through CI into Git, ArgoCD pulls and applies desired state to the cluster, and any manual drift is automatically detected and reverted."
+    />
 
     {/* ── Section 1 ── */}
     <H2 num="01">What GitOps Actually Is</H2>
@@ -68,7 +74,7 @@ const GitOpsCultureShift: React.FC = () => (
 
     <PrincipleCard num="01" title="Declarative">
       The entire desired state of a system must be expressed declaratively. Not scripts, not runbooks, not
-      imperative API calls — YAML, JSON, or any format that describes what the system should look like, not how
+      imperative API calls - YAML, JSON, or any format that describes what the system should look like, not how
       to get there.
     </PrincipleCard>
 
@@ -78,7 +84,7 @@ const GitOpsCultureShift: React.FC = () => (
     </PrincipleCard>
 
     <PrincipleCard num="03" title="Pulled Automatically">
-      Software agents — not CI pipelines — continuously pull the desired state and apply it to the system. The
+      Software agents - not CI pipelines - continuously pull the desired state and apply it to the system. The
       cluster reconciles itself toward the declared state. Nothing is pushed from outside.
     </PrincipleCard>
 
@@ -89,7 +95,7 @@ const GitOpsCultureShift: React.FC = () => (
 
     <P>
       Notice that none of these four principles mention ArgoCD, Flux, Helm, or Kubernetes. The principles describe
-      a <strong className="text-white">way of working</strong> — a relationship between a team, a version control
+      a <strong className="text-white">way of working</strong> - a relationship between a team, a version control
       system, and a runtime environment. The tooling is an implementation detail.
     </P>
 
@@ -103,11 +109,11 @@ const GitOpsCultureShift: React.FC = () => (
 
     <MythCard
       myth="GitOps is for Kubernetes. We use a different platform."
-      reality="The principles apply to any system that can be declared and continuously reconciled — VMs via Terraform + Atlantis, serverless via Pulumi, database schemas via SchemaHero. Kubernetes is the most common target, not the only one."
+      reality="The principles apply to any system that can be declared and continuously reconciled - VMs via Terraform + Atlantis, serverless via Pulumi, database schemas via SchemaHero. Kubernetes is the most common target, not the only one."
     />
 
     <MythCard
-      myth="GitOps slows us down during incidents — we need to bypass it."
+      myth="GitOps slows us down during incidents - we need to bypass it."
       reality="Bypassing Git during incidents is the symptom of a GitOps implementation that has not been hardened for operational reality. The fix is better tooling (break-glass procedures, fast PR automation), not abandoning the model when it is most needed."
     />
 
@@ -117,15 +123,15 @@ const GitOpsCultureShift: React.FC = () => (
     />
 
     {/* ── Section 3 ── */}
-    <H2 num="03">The Reconciliation Loop — The Heart of GitOps</H2>
+    <H2 num="03">The Reconciliation Loop - The Heart of GitOps</H2>
 
     <P>
       The continuous reconciliation loop is what separates GitOps from a deploy-on-merge CI pipeline. A CI pipeline
-      applies state once, at deploy time, then forgets. A GitOps operator applies state continuously — every few
-      seconds — and corrects any deviation it finds.
+      applies state once, at deploy time, then forgets. A GitOps operator applies state continuously - every few
+      seconds - and corrects any deviation it finds.
     </P>
 
-    <Code label="ArgoCD Application — declarative sync policy with self-healing enabled">
+    <Code label="ArgoCD Application - declarative sync policy with self-healing enabled">
 {`apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -162,7 +168,7 @@ spec:
       With <code className="text-primary text-xs">selfHeal: true</code>, any manual{' '}
       <code className="text-primary text-xs">kubectl edit</code> or <code className="text-primary text-xs">kubectl apply</code>{' '}
       directly on the cluster will be reverted within the sync interval (default: 3 minutes in ArgoCD, every 30
-      seconds in Flux). This is not a restriction — it is the enforcement mechanism that makes Git the single
+      seconds in Flux). This is not a restriction - it is the enforcement mechanism that makes Git the single
       source of truth.
     </P>
 
@@ -173,7 +179,7 @@ spec:
     </Callout>
 
     {/* ── Section 4 ── */}
-    <H2 num="04">Repository Structure — The Decisions That Matter</H2>
+    <H2 num="04">Repository Structure - The Decisions That Matter</H2>
 
     <P>
       How you structure your Git repositories has a direct impact on team autonomy, blast radius, and how clearly
@@ -185,7 +191,7 @@ spec:
     <P>
       A single config repository for all services gives you a unified change history and makes cross-service
       dependency changes atomic. It works well for small-to-medium organisations. At scale, it creates contention
-      — every team's deploy touches the same repository, merge queues slow down, and a mis-merge in one service's
+      - every team's deploy touches the same repository, merge queues slow down, and a mis-merge in one service's
       config can block another team's release.
     </P>
 
@@ -195,7 +201,7 @@ spec:
       repository per team, with a separate root infrastructure repository for cluster-level concerns.
     </P>
 
-    <Code label="Recommended GitOps repository layout — team-scoped config repos">
+    <Code label="Recommended GitOps repository layout - team-scoped config repos">
 {`# Root infrastructure repo (platform team owns this)
 k8s-platform/
   clusters/
@@ -229,11 +235,11 @@ k8s-config-orders/
 
     <P>
       At scale, managing individual ArgoCD Applications becomes unwieldy. The App of Apps pattern uses a root
-      ArgoCD Application that manages other Applications declaratively — giving you a single entry point for
+      ArgoCD Application that manages other Applications declaratively - giving you a single entry point for
       bootstrapping an entire cluster from Git.
     </P>
 
-    <Code label="App of Apps — root application that manages team application sets">
+    <Code label="App of Apps - root application that manages team application sets">
 {`# k8s-platform/clusters/production/root-app.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -268,7 +274,7 @@ spec:
     </Code>
 
     {/* ── Section 5 ── */}
-    <H2 num="05">The Incident Problem — Break-Glass Without Breaking the Model</H2>
+    <H2 num="05">The Incident Problem - Break-Glass Without Breaking the Model</H2>
 
     <P>
       The most common objection to GitOps is the incident scenario. A production service is down. The fix is a
@@ -277,7 +283,7 @@ spec:
     </P>
 
     <P>
-      This is a solved problem — but the solution requires intentional design before the incident, not improvisation
+      This is a solved problem - but the solution requires intentional design before the incident, not improvisation
       during it.
     </P>
 
@@ -291,7 +297,7 @@ spec:
 
     <H3>The right answer: make Git changes fast, not bypassed</H3>
 
-    <Code label="GitHub Actions — auto-approve and merge GitOps PRs tagged as emergency hotfixes">
+    <Code label="GitHub Actions - auto-approve and merge GitOps PRs tagged as emergency hotfixes">
 {`# .github/workflows/gitops-hotfix.yaml
 name: GitOps Emergency Merge
 
@@ -318,16 +324,16 @@ jobs:
     <P>
       With an auto-merge workflow on a <code className="text-primary text-xs">gitops-hotfix</code> label, an
       engineer can open a PR, apply the label, and have the change merged and synced to the cluster in under 90
-      seconds — without bypassing Git, without manual cluster access, and with a full audit trail.
+      seconds - without bypassing Git, without manual cluster access, and with a full audit trail.
     </P>
 
     <Callout type="info">
-      The goal is not to make Git changes slow — it is to make all cluster changes go through Git. Invest in
+      The goal is not to make Git changes slow - it is to make all cluster changes go through Git. Invest in
       tooling that makes the GitOps path fast enough that bypassing it is never tempting.
     </Callout>
 
     {/* ── Section 6 ── */}
-    <H2 num="06">Drift Detection — Knowing Before It Matters</H2>
+    <H2 num="06">Drift Detection - Knowing Before It Matters</H2>
 
     <P>
       Even with self-healing enabled, drift can accumulate in resources that ArgoCD does not manage, in annotation
@@ -335,7 +341,7 @@ jobs:
       discrepancies before they cause an incident.
     </P>
 
-    <Code label="ArgoCD CLI — check for out-of-sync applications across all clusters">
+    <Code label="ArgoCD CLI - check for out-of-sync applications across all clusters">
 {`# List all applications that are out of sync
 argocd app list --output wide | grep -v Synced
 
@@ -356,11 +362,11 @@ argocd app sync payments-service --prune --force`}
     <P>
       Automated drift detection should be part of your monitoring stack. Expose ArgoCD's sync status as a metric,
       alert when any application has been out of sync for more than N minutes, and route that alert to the
-      owning team — not just the platform team.
+      owning team - not just the platform team.
     </P>
 
     {/* ── Section 7 ── */}
-    <H2 num="07">The Culture Shift — What Actually Changes</H2>
+    <H2 num="07">The Culture Shift - What Actually Changes</H2>
 
     <P>
       Tooling adoption is the easy part. The hard part is changing the habits and reflexes that engineers built
@@ -379,7 +385,7 @@ argocd app sync payments-service --prune --force`}
     <P>
       Production deployments happen via pull requests. Full stop. Not via <code className="text-primary text-xs">helm upgrade</code>{' '}
       run locally. Not via a script that calls the Kubernetes API directly. If it is not in Git, it does not exist.
-      This is the discipline that makes rollback instantaneous — revert the commit, the cluster follows.
+      This is the discipline that makes rollback instantaneous - revert the commit, the cluster follows.
     </P>
 
     <H3>The Git history is your deployment log</H3>
@@ -392,7 +398,7 @@ argocd app sync payments-service --prune --force`}
 
     <Callout type="warn">
       The teams that fail at GitOps do not fail because of the tooling. They fail because they implement the
-      tool but keep the old habits — direct cluster access for "just this once", Helm releases triggered from
+      tool but keep the old habits - direct cluster access for "just this once", Helm releases triggered from
       engineer laptops, config changes made via the Kubernetes dashboard. Every exception to the model is a
       crack in the foundation.
     </Callout>
@@ -402,7 +408,7 @@ argocd app sync payments-service --prune --force`}
 
     <P>
       ArgoCD and Flux are excellent tools. They make the GitOps operating model practical and observable. But
-      installing them is not the finish line — it is the starting line. The finish line is the moment an engineer's
+      installing them is not the finish line - it is the starting line. The finish line is the moment an engineer's
       first instinct during an incident is to open a PR, not to open a terminal.
     </P>
 
@@ -410,7 +416,7 @@ argocd app sync payments-service --prune --force`}
       That instinct takes time to build. It takes tooling investments to make Git changes fast enough that
       bypassing the model is never the path of least resistance. It takes leadership that holds the line on
       break-glass discipline even when the post-mortem conversation is uncomfortable. And it takes a shared
-      understanding that the constraints of GitOps are not bureaucratic obstacles — they are what make the
+      understanding that the constraints of GitOps are not bureaucratic obstacles - they are what make the
       system auditable, reversible, and trustworthy.
     </P>
 

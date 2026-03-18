@@ -7,7 +7,7 @@ import { setupClickTracking, trackVirtualPageView } from '@/lib/analytics';
 
 const SITE_URL = 'https://azelenets.github.io';
 
-interface PageMeta { title: string; description: string; date?: string; tags?: string[]; }
+interface PageMeta { title: string; description: string; date?: string; tags?: string[]; image?: string; }
 
 const PAGE_META: Record<string, PageMeta> = {
   '/': {
@@ -59,6 +59,7 @@ const PAGE_META: Record<string, PageMeta> = {
     description: 'Shared databases, synchronous call chains, and implicit coupling keep teams locked in a monolith mindset — even when running on Kubernetes.',
     date: '2025-11-12',
     tags: ['MICROSERVICES', 'DDD', 'ARCHITECTURE'],
+    image: '/images/articles/monolith-in-disguise-og.png',
   },
   '/blog/the-senior-engineers-guide-to-saying-no': {
     title: "The Senior Engineer's Guide to Saying No // Andrii Zelenets",
@@ -113,20 +114,25 @@ const PAGE_META: Record<string, PageMeta> = {
     description: 'Real GitOps means reconciliation loops, drift detection, and treating Git as the only source of truth — even during incidents when engineers want to kubectl apply.',
     date: '2026-03-17',
     tags: ['GITOPS', 'ARGOCD', 'KUBERNETES', 'DEVOPS'],
+    image: '/images/articles/gitops-culture-shift-og.png',
   },
   '/blog/outbox-pattern-guaranteed-event-publishing': {
     title: 'The Outbox Pattern: Guaranteed Event Publishing Without Two-Phase Commit // Andrii Zelenets',
     description: 'Atomic writes and reliable event publishing using only your existing relational database and a CDC pipeline — no distributed transaction coordinator needed.',
     date: '2026-03-17',
     tags: ['KAFKA', 'CDC', 'POSTGRES', 'RELIABILITY'],
+    image: '/images/articles/outbox-pattern-og.png',
   },
 };
 
 const DEFAULT_META = PAGE_META['/'];
 
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/og-image.png`;
+
 function setMeta(pathname: string) {
   const meta = PAGE_META[pathname] ?? DEFAULT_META;
   const isArticle = pathname.startsWith('/blog/') && meta.date !== undefined;
+  const ogImage = meta.image ? `${SITE_URL}${meta.image}` : DEFAULT_OG_IMAGE;
 
   document.title = meta.title;
 
@@ -140,8 +146,12 @@ function setMeta(pathname: string) {
   setTag('meta[property="og:title"]',       'content', meta.title);
   setTag('meta[property="og:description"]', 'content', meta.description);
   setTag('meta[property="og:url"]',         'content', `${SITE_URL}${pathname}`);
+  setTag('meta[property="og:image"]',       'content', ogImage);
+  setTag('meta[property="og:image:secure_url"]', 'content', ogImage);
+  setTag('meta[property="og:image:alt"]',   'content', meta.title);
   setTag('meta[name="twitter:title"]',      'content', meta.title);
   setTag('meta[name="twitter:description"]','content', meta.description);
+  setTag('meta[name="twitter:image"]',      'content', ogImage);
   setTag('link[rel="canonical"]',           'href',    `${SITE_URL}${pathname}`);
 
   setTag('meta[property="article:published_time"]', 'content', isArticle ? `${meta.date}T00:00:00Z` : '');

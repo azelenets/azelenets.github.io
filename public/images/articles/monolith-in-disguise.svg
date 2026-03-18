@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" font-family="'JetBrains Mono',monospace">
+  <defs>
+    <filter id="glow-cyan">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-red">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ff003c" opacity="0.7"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#00f3ff" opacity="0.8"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4ade80" opacity="0.8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="560" fill="#050505"/>
+
+  <!-- Subtle grid -->
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(0,243,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="560" fill="url(#grid)"/>
+
+  <!-- Top label bar -->
+  <rect width="1200" height="36" fill="rgba(0,243,255,0.04)" />
+  <line x1="0" y1="36" x2="1200" y2="36" stroke="rgba(0,243,255,0.12)" stroke-width="1"/>
+  <text x="20" y="22" fill="rgba(0,243,255,0.4)" font-size="9" font-weight="700" letter-spacing="3">ARCHITECTURE_ANALYSIS</text>
+  <text x="1180" y="22" fill="rgba(0,243,255,0.25)" font-size="9" font-weight="700" letter-spacing="2" text-anchor="end">SYS_COUPLING_DIAGNOSTIC</text>
+
+  <!-- ═══════════════════════════════════════════════════════ LEFT PANEL -->
+
+  <!-- Left panel bg -->
+  <rect x="20" y="52" width="545" height="490" fill="rgba(255,0,60,0.02)" stroke="rgba(255,0,60,0.12)" stroke-width="1"/>
+
+  <!-- Left title -->
+  <rect x="20" y="52" width="545" height="32" fill="rgba(255,0,60,0.06)"/>
+  <text x="38" y="73" fill="#ff003c" font-size="10" font-weight="700" letter-spacing="3" opacity="0.85">✗  DISTRIBUTED_MONOLITH</text>
+  <text x="540" y="73" fill="rgba(255,0,60,0.4)" font-size="9" letter-spacing="1" text-anchor="end">HIGH_COUPLING</text>
+
+  <!-- ── Shared Database (center-left) ── -->
+  <rect x="195" y="340" width="180" height="72" fill="rgba(255,0,60,0.06)" stroke="rgba(255,0,60,0.35)" stroke-width="1.5"/>
+  <!-- DB cylinder top ellipse hint -->
+  <ellipse cx="285" cy="346" rx="88" ry="10" fill="none" stroke="rgba(255,0,60,0.3)" stroke-width="1"/>
+  <text x="285" y="390" fill="#ff003c" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2" opacity="0.9">SHARED</text>
+  <text x="285" y="403" fill="#ff003c" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2" opacity="0.9">DATABASE</text>
+  <!-- Warning corner -->
+  <polygon points="355,340 375,340 375,360" fill="rgba(255,0,60,0.2)"/>
+  <text x="368" y="354" fill="#ff003c" font-size="9" font-weight="900" text-anchor="middle">!</text>
+
+  <!-- ── Service A ── -->
+  <rect x="48" y="108" width="130" height="54" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+  <text x="113" y="130" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="113" y="148" fill="white" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">ORDER_SVC</text>
+
+  <!-- ── Service B ── -->
+  <rect x="48" y="218" width="130" height="54" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+  <text x="113" y="240" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="113" y="258" fill="white" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">USER_SVC</text>
+
+  <!-- ── Service C ── -->
+  <rect x="48" y="328" width="130" height="54" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+  <text x="113" y="350" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="113" y="368" fill="white" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">PAYMENT_SVC</text>
+
+  <!-- ── Service D (right side) ── -->
+  <rect x="390" y="108" width="130" height="54" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+  <text x="455" y="130" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="455" y="148" fill="white" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">CATALOG_SVC</text>
+
+  <!-- ── Service E (right side) ── -->
+  <rect x="390" y="218" width="130" height="54" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+  <text x="455" y="240" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="455" y="258" fill="white" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">NOTIF_SVC</text>
+
+  <!-- ── Coupling arrows: all services → shared DB ── -->
+  <!-- ORDER_SVC → DB -->
+  <line x1="113" y1="162" x2="235" y2="356" stroke="rgba(255,0,60,0.55)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-red)"/>
+  <!-- USER_SVC → DB -->
+  <line x1="178" y1="265" x2="218" y2="348" stroke="rgba(255,0,60,0.55)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-red)"/>
+  <!-- PAYMENT_SVC → DB -->
+  <line x1="178" y1="355" x2="207" y2="370" stroke="rgba(255,0,60,0.55)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-red)"/>
+  <!-- CATALOG_SVC → DB -->
+  <line x1="455" y1="162" x2="352" y2="352" stroke="rgba(255,0,60,0.55)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-red)"/>
+  <!-- NOTIF_SVC → DB -->
+  <line x1="390" y1="265" x2="358" y2="352" stroke="rgba(255,0,60,0.55)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-red)"/>
+
+  <!-- ── Sync call chain arrows between services ── -->
+  <!-- ORDER → USER sync call -->
+  <line x1="178" y1="130" x2="390" y2="135" stroke="rgba(255,0,60,0.35)" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-red)"/>
+  <text x="284" y="126" fill="rgba(255,0,60,0.5)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">HTTP SYNC</text>
+  <!-- ORDER → CATALOG sync call -->
+  <line x1="178" y1="148" x2="390" y2="230" stroke="rgba(255,0,60,0.3)" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-red)"/>
+  <!-- USER → NOTIF sync call -->
+  <line x1="178" y1="250" x2="390" y2="255" stroke="rgba(255,0,60,0.35)" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-red)"/>
+  <text x="284" y="247" fill="rgba(255,0,60,0.5)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">HTTP SYNC</text>
+
+  <!-- ── "Shared Library" bus indicator ── -->
+  <rect x="68" y="456" width="430" height="26" fill="rgba(255,200,0,0.05)" stroke="rgba(255,200,0,0.2)" stroke-width="1" stroke-dasharray="6,3"/>
+  <text x="283" y="474" fill="rgba(255,200,0,0.6)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SHARED_LIBRARY  ·  SHARED_SCHEMA  ·  COORDINATED_DEPLOY</text>
+
+  <!-- ── Left legend ── -->
+  <line x1="50" y1="502" x2="70" y2="502" stroke="rgba(255,0,60,0.6)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="76" y="506" fill="rgba(255,0,60,0.6)" font-size="8" letter-spacing="1">TIGHT_COUPLING</text>
+
+
+  <!-- ═══════════════════════════════════════════════════════ DIVIDER -->
+  <line x1="600" y1="52" x2="600" y2="542" stroke="rgba(0,243,255,0.08)" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <rect x="579" y="268" width="42" height="24" fill="#050505" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="600" y="284" fill="rgba(0,243,255,0.4)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">VS</text>
+
+
+  <!-- ═══════════════════════════════════════════════════════ RIGHT PANEL -->
+
+  <!-- Right panel bg -->
+  <rect x="635" y="52" width="545" height="490" fill="rgba(74,222,128,0.02)" stroke="rgba(74,222,128,0.12)" stroke-width="1"/>
+
+  <!-- Right title -->
+  <rect x="635" y="52" width="545" height="32" fill="rgba(74,222,128,0.05)"/>
+  <text x="653" y="73" fill="#4ade80" font-size="10" font-weight="700" letter-spacing="3" opacity="0.85">✓  TRUE_MICROSERVICES</text>
+  <text x="1158" y="73" fill="rgba(74,222,128,0.4)" font-size="9" letter-spacing="1" text-anchor="end">LOW_COUPLING</text>
+
+  <!-- ── Event Bus ── -->
+  <rect x="795" y="278" width="220" height="44" fill="rgba(0,243,255,0.05)" stroke="rgba(0,243,255,0.3)" stroke-width="1.5" filter="url(#glow-cyan)"/>
+  <text x="905" y="295" fill="rgba(0,243,255,0.6)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="3">EVENT_BUS</text>
+  <text x="905" y="312" fill="white" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="1">KAFKA / MESSAGE_QUEUE</text>
+  <!-- Pulse dots on event bus -->
+  <circle cx="808" cy="300" r="3" fill="#00f3ff" opacity="0.6"/>
+  <circle cx="822" cy="300" r="3" fill="#00f3ff" opacity="0.4"/>
+  <circle cx="836" cy="300" r="3" fill="#00f3ff" opacity="0.2"/>
+  <circle cx="990" cy="300" r="3" fill="#00f3ff" opacity="0.2"/>
+  <circle cx="1004" cy="300" r="3" fill="#00f3ff" opacity="0.4"/>
+
+  <!-- ── Svc A with own DB ── -->
+  <rect x="660" y="100" width="118" height="50" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="719" y="121" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="719" y="138" fill="white" font-size="10" font-weight="700" text-anchor="middle">ORDER_SVC</text>
+  <!-- Own DB -->
+  <rect x="667" y="168" width="104" height="30" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <ellipse cx="719" cy="170" rx="50" ry="6" fill="none" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="719" y="190" fill="rgba(0,243,255,0.4)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="2">OWN_DB</text>
+  <!-- connector svc→db -->
+  <line x1="719" y1="150" x2="719" y2="168" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+
+  <!-- ── Svc B with own DB ── -->
+  <rect x="660" y="330" width="118" height="50" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="719" y="351" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="719" y="368" fill="white" font-size="10" font-weight="700" text-anchor="middle">USER_SVC</text>
+  <!-- Own DB -->
+  <rect x="667" y="396" width="104" height="30" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <ellipse cx="719" cy="398" rx="50" ry="6" fill="none" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="719" y="418" fill="rgba(0,243,255,0.4)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="2">OWN_DB</text>
+  <line x1="719" y1="380" x2="719" y2="396" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+
+  <!-- ── Svc C with own DB ── -->
+  <rect x="1022" y="100" width="118" height="50" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="1081" y="121" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="1081" y="138" fill="white" font-size="10" font-weight="700" text-anchor="middle">CATALOG_SVC</text>
+  <!-- Own DB -->
+  <rect x="1029" y="168" width="104" height="30" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <ellipse cx="1081" cy="170" rx="50" ry="6" fill="none" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="1081" y="190" fill="rgba(0,243,255,0.4)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="2">OWN_DB</text>
+  <line x1="1081" y1="150" x2="1081" y2="168" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+
+  <!-- ── Svc D with own DB ── -->
+  <rect x="1022" y="330" width="118" height="50" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="1081" y="351" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="1081" y="368" fill="white" font-size="10" font-weight="700" text-anchor="middle">PAYMENT_SVC</text>
+  <!-- Own DB -->
+  <rect x="1029" y="396" width="104" height="30" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <ellipse cx="1081" cy="398" rx="50" ry="6" fill="none" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="1081" y="418" fill="rgba(0,243,255,0.4)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="2">OWN_DB</text>
+  <line x1="1081" y1="380" x2="1081" y2="396" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+
+  <!-- ── Event arrows: services ↔ event bus (async) ── -->
+  <!-- ORDER → bus -->
+  <line x1="778" y1="125" x2="820" y2="285" stroke="rgba(74,222,128,0.5)" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <!-- bus → ORDER -->
+  <line x1="815" y1="285" x2="773" y2="155" stroke="rgba(74,222,128,0.3)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-green)"/>
+
+  <!-- USER → bus -->
+  <line x1="778" y1="355" x2="808" y2="322" stroke="rgba(74,222,128,0.5)" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <!-- bus → USER -->
+  <line x1="805" y1="318" x2="773" y2="348" stroke="rgba(74,222,128,0.3)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-green)"/>
+
+  <!-- CATALOG → bus -->
+  <line x1="1022" y1="125" x2="990" y2="285" stroke="rgba(74,222,128,0.5)" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <!-- bus → CATALOG -->
+  <line x1="995" y1="285" x2="1027" y2="153" stroke="rgba(74,222,128,0.3)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-green)"/>
+
+  <!-- PAYMENT → bus -->
+  <line x1="1022" y1="355" x2="1001" y2="322" stroke="rgba(74,222,128,0.5)" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Event labels -->
+  <text x="877" y="246" fill="rgba(74,222,128,0.55)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1" transform="rotate(-55, 877, 246)">OrderPlaced</text>
+  <text x="950" y="250" fill="rgba(74,222,128,0.55)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1" transform="rotate(55, 950, 250)">StockUpdated</text>
+
+  <!-- ── Right legend ── -->
+  <line x1="660" y1="502" x2="680" y2="502" stroke="rgba(74,222,128,0.6)" stroke-width="1.5"/>
+  <text x="686" y="506" fill="rgba(74,222,128,0.6)" font-size="8" letter-spacing="1">ASYNC_EVENTS</text>
+  <line x1="800" y1="502" x2="820" y2="502" stroke="rgba(74,222,128,0.4)" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="826" y="506" fill="rgba(74,222,128,0.4)" font-size="8" letter-spacing="1">REACTIVE_CONSUMER</text>
+
+  <!-- ── Bottom scan line accent ── -->
+  <line x1="0" y1="542" x2="1200" y2="542" stroke="rgba(0,243,255,0.08)" stroke-width="1"/>
+  <text x="20" y="555" fill="rgba(0,243,255,0.2)" font-size="8" letter-spacing="2">COUPLING_ANALYSIS.SVG</text>
+  <text x="1180" y="555" fill="rgba(0,243,255,0.2)" font-size="8" letter-spacing="2" text-anchor="end">REF: DDD_BOUNDED_CONTEXT</text>
+</svg>

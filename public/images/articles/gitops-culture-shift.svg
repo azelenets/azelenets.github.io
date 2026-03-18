@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="1200" height="580" font-family="'JetBrains Mono',monospace">
+  <defs>
+    <filter id="glow-c" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-b" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-g" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arr-c" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#00f3ff"/>
+    </marker>
+    <marker id="arr-b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#60a5fa"/>
+    </marker>
+    <marker id="arr-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#4ade80"/>
+    </marker>
+    <marker id="arr-r" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#ff003c"/>
+    </marker>
+    <marker id="arr-y" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#facc15"/>
+    </marker>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0L0 0 0 30" fill="none" stroke="rgba(0,243,255,0.025)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="580" fill="#050505"/>
+  <rect width="1200" height="580" fill="url(#grid)"/>
+  <ellipse cx="600" cy="300" rx="500" ry="300" fill="rgba(96,165,250,0.025)"/>
+
+  <!-- ── Header bar ── -->
+  <rect width="1200" height="36" fill="rgba(96,165,250,0.06)"/>
+  <line x1="0" y1="36" x2="1200" y2="36" stroke="rgba(96,165,250,0.2)" stroke-width="1"/>
+  <text x="20" y="22" fill="#7dc4e8" font-size="9" font-weight="700" letter-spacing="3">GITOPS_RECONCILIATION_LOOP  ·  ARCHITECTURE_OVERVIEW</text>
+  <text x="1180" y="22" fill="rgba(0,243,255,0.5)" font-size="9" font-weight="700" text-anchor="end" letter-spacing="2">DECLARATIVE · VERSIONED · PULLED · RECONCILED</text>
+
+  <!-- ════════════════════════════════════════════════════
+       COLUMN 1 — DEVELOPER + CI PIPELINE
+  ════════════════════════════════════════════════════ -->
+
+  <!-- Developer -->
+  <rect x="28" y="92" width="120" height="68" fill="rgba(96,165,250,0.08)" stroke="rgba(96,165,250,0.45)" stroke-width="1.5"/>
+  <text x="88" y="116" fill="#93c5fd" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">ENGINEER</text>
+  <text x="88" y="133" fill="white" font-size="11" font-weight="700" text-anchor="middle">git push</text>
+  <text x="88" y="150" fill="#93c5fd" font-size="7" text-anchor="middle">feature branch → PR</text>
+
+  <!-- Arrow: Dev → CI -->
+  <line x1="88" y1="160" x2="88" y2="208" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr-b)"/>
+  <text x="100" y="190" fill="#93c5fd" font-size="7" letter-spacing="1">merge</text>
+
+  <!-- CI Pipeline -->
+  <rect x="28" y="210" width="120" height="110" fill="rgba(96,165,250,0.06)" stroke="rgba(96,165,250,0.35)" stroke-width="1"/>
+  <text x="88" y="230" fill="#93c5fd" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">CI PIPELINE</text>
+  <line x1="42" y1="238" x2="134" y2="238" stroke="rgba(96,165,250,0.2)" stroke-width="1"/>
+  <text x="88" y="254" fill="#7dd3fc" font-size="7" text-anchor="middle">① build &amp; test</text>
+  <text x="88" y="270" fill="#7dd3fc" font-size="7" text-anchor="middle">② push image</text>
+  <text x="88" y="286" fill="#7dd3fc" font-size="7" text-anchor="middle">③ update image tag</text>
+  <text x="88" y="306" fill="#00f3ff" font-size="8" font-weight="700" text-anchor="middle">→ commits to Git</text>
+
+  <!-- Arrow: CI → Git repo (image tag update) -->
+  <line x1="148" y1="265" x2="228" y2="265" stroke="#00f3ff" stroke-width="1.5" marker-end="url(#arr-c)"/>
+  <text x="188" y="255" fill="#00f3ff" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">WRITE</text>
+  <text x="188" y="277" fill="#7dd3fc" font-size="7" text-anchor="middle">image tag</text>
+
+  <!-- ── KUBECTL APPLY warning box ── -->
+  <rect x="28" y="360" width="120" height="60" fill="rgba(255,0,60,0.08)" stroke="rgba(255,0,60,0.5)" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="88" y="379" fill="#ff6b8a" font-size="8" font-weight="700" text-anchor="middle">kubectl apply</text>
+  <text x="88" y="394" fill="#fca5a5" font-size="7" text-anchor="middle">direct cluster edit</text>
+  <text x="88" y="407" fill="#fca5a5" font-size="7" text-anchor="middle">helm upgrade --local</text>
+
+  <!-- Arrow: kubectl → cluster (reverted) -->
+  <line x1="148" y1="385" x2="648" y2="385" stroke="rgba(255,0,60,0.55)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-r)"/>
+  <!-- REVERTED label -->
+  <rect x="340" y="370" width="90" height="18" fill="#050505" stroke="rgba(255,0,60,0.5)" stroke-width="1"/>
+  <text x="385" y="382" fill="#ff6b8a" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">✕ REVERTED</text>
+
+  <!-- ════════════════════════════════════════════════════
+       COLUMN 2 — GIT REPOSITORY (centre)
+  ════════════════════════════════════════════════════ -->
+
+  <!-- Git repo box -->
+  <rect x="230" y="80" width="200" height="260" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.45)" stroke-width="2" filter="url(#glow-c)"/>
+
+  <!-- Git icon / title -->
+  <text x="330" y="104" fill="#00f3ff" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="3">GIT REPOSITORY</text>
+  <text x="330" y="118" fill="#67e8f9" font-size="7" text-anchor="middle">single source of truth</text>
+  <line x1="244" y1="126" x2="416" y2="126" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+
+  <!-- File tree -->
+  <text x="252" y="145" fill="#00f3ff" font-size="8" font-weight="700" letter-spacing="1">k8s-config/</text>
+  <text x="264" y="162" fill="#7dd3fc" font-size="8">├── apps/</text>
+  <text x="276" y="178" fill="#93c5fd" font-size="8">│   ├── payments/</text>
+  <text x="288" y="194" fill="#93c5fd" font-size="8">│   │   ├── base/</text>
+  <text x="288" y="210" fill="#93c5fd" font-size="8">│   │   └── overlays/</text>
+  <text x="276" y="226" fill="#93c5fd" font-size="8">│   └── orders/</text>
+  <text x="264" y="242" fill="#7dd3fc" font-size="8">└── clusters/</text>
+  <text x="276" y="258" fill="#93c5fd" font-size="8">    ├── production/</text>
+  <text x="276" y="274" fill="#93c5fd" font-size="8">    └── staging/</text>
+
+  <!-- Commit hash -->
+  <line x1="244" y1="284" x2="416" y2="284" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <text x="330" y="300" fill="#67e8f9" font-size="7" text-anchor="middle">HEAD: a3f91c2 · main</text>
+  <text x="330" y="314" fill="#67e8f9" font-size="7" text-anchor="middle">immutable audit trail</text>
+  <text x="330" y="328" fill="#67e8f9" font-size="7" text-anchor="middle">every change attributed</text>
+
+  <!-- Arrow: Git → ArgoCD (pull, not push) -->
+  <line x1="430" y1="200" x2="505" y2="200" stroke="#4ade80" stroke-width="2" marker-end="url(#arr-g)"/>
+  <text x="467" y="190" fill="#4ade80" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">PULL</text>
+  <text x="467" y="213" fill="#86efac" font-size="7" text-anchor="middle">every 30s</text>
+
+  <!-- ════════════════════════════════════════════════════
+       COLUMN 3 — ARGOCD OPERATOR + K8S CLUSTER
+  ════════════════════════════════════════════════════ -->
+
+  <!-- ArgoCD box -->
+  <rect x="507" y="120" width="178" height="116" fill="rgba(74,222,128,0.06)" stroke="rgba(74,222,128,0.5)" stroke-width="1.5"/>
+  <text x="596" y="143" fill="#4ade80" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">OPERATOR</text>
+  <text x="596" y="160" fill="white" font-size="12" font-weight="700" text-anchor="middle">ArgoCD / Flux</text>
+  <line x1="521" y1="170" x2="671" y2="170" stroke="rgba(74,222,128,0.2)" stroke-width="1"/>
+  <text x="596" y="186" fill="#86efac" font-size="7" text-anchor="middle">desired state ← Git</text>
+  <text x="596" y="200" fill="#86efac" font-size="7" text-anchor="middle">actual state ← cluster</text>
+  <text x="596" y="216" fill="#4ade80" font-size="8" font-weight="700" text-anchor="middle">diff → apply delta</text>
+  <text x="596" y="229" fill="#86efac" font-size="7" text-anchor="middle">selfHeal: true · prune: true</text>
+
+  <!-- Arrow: ArgoCD → K8s cluster -->
+  <line x1="596" y1="236" x2="596" y2="304" stroke="#4ade80" stroke-width="2" marker-end="url(#arr-g)"/>
+  <text x="614" y="276" fill="#4ade80" font-size="7" font-weight="700" letter-spacing="1">APPLY</text>
+  <text x="614" y="288" fill="#86efac" font-size="7">reconcile</text>
+
+  <!-- K8s Cluster box -->
+  <rect x="507" y="306" width="178" height="130" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.4)" stroke-width="1.5"/>
+  <text x="596" y="326" fill="#00f3ff" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">K8S CLUSTER</text>
+  <line x1="521" y1="334" x2="671" y2="334" stroke="rgba(0,243,255,0.15)" stroke-width="1"/>
+  <!-- Pods -->
+  <rect x="524" y="344" width="66" height="28" fill="rgba(0,243,255,0.07)" stroke="rgba(0,243,255,0.35)" stroke-width="1"/>
+  <text x="557" y="361" fill="#67e8f9" font-size="7" text-anchor="middle">payments ×3</text>
+  <rect x="598" y="344" width="66" height="28" fill="rgba(0,243,255,0.07)" stroke="rgba(0,243,255,0.35)" stroke-width="1"/>
+  <text x="631" y="361" fill="#67e8f9" font-size="7" text-anchor="middle">orders ×2</text>
+  <rect x="524" y="380" width="66" height="28" fill="rgba(0,243,255,0.07)" stroke="rgba(0,243,255,0.35)" stroke-width="1"/>
+  <text x="557" y="397" fill="#67e8f9" font-size="7" text-anchor="middle">catalog ×2</text>
+  <rect x="598" y="380" width="66" height="28" fill="rgba(0,243,255,0.07)" stroke="rgba(0,243,255,0.35)" stroke-width="1"/>
+  <text x="631" y="397" fill="#67e8f9" font-size="7" text-anchor="middle">notif ×1</text>
+  <text x="596" y="425" fill="#7dd3fc" font-size="7" text-anchor="middle">actual state (live)</text>
+
+  <!-- Drift detection loop: cluster → ArgoCD (compare) -->
+  <path d="M685 370 Q740 295 685 240" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-g)"/>
+  <text x="756" y="308" fill="#4ade80" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">WATCH</text>
+  <text x="756" y="320" fill="#86efac" font-size="7" text-anchor="middle">actual state</text>
+  <text x="756" y="333" fill="#86efac" font-size="7" text-anchor="middle">drift detected</text>
+
+  <!-- ════════════════════════════════════════════════════
+       COLUMN 4 — FOUR PRINCIPLES + OUTCOMES
+  ════════════════════════════════════════════════════ -->
+
+  <text x="810" y="72" fill="#7dd3fc" font-size="8" font-weight="700" letter-spacing="3">4 PRINCIPLES</text>
+
+  <rect x="808" y="80" width="368" height="46" fill="rgba(0,243,255,0.05)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="824" y="98" fill="#00f3ff" font-size="8" font-weight="700" letter-spacing="2">P_01  DECLARATIVE</text>
+  <text x="824" y="114" fill="#93c5fd" font-size="7">describe what, not how — YAML over scripts</text>
+
+  <rect x="808" y="130" width="368" height="46" fill="rgba(96,165,250,0.05)" stroke="rgba(96,165,250,0.25)" stroke-width="1"/>
+  <text x="824" y="148" fill="#60a5fa" font-size="8" font-weight="700" letter-spacing="2">P_02  VERSIONED &amp; IMMUTABLE</text>
+  <text x="824" y="164" fill="#93c5fd" font-size="7">Git as authoritative store — full audit trail</text>
+
+  <rect x="808" y="180" width="368" height="46" fill="rgba(74,222,128,0.05)" stroke="rgba(74,222,128,0.25)" stroke-width="1"/>
+  <text x="824" y="198" fill="#4ade80" font-size="8" font-weight="700" letter-spacing="2">P_03  PULLED AUTOMATICALLY</text>
+  <text x="824" y="214" fill="#86efac" font-size="7">operator pulls from Git — nothing pushed in</text>
+
+  <rect x="808" y="230" width="368" height="46" fill="rgba(250,204,21,0.05)" stroke="rgba(250,204,21,0.25)" stroke-width="1"/>
+  <text x="824" y="248" fill="#facc15" font-size="8" font-weight="700" letter-spacing="2">P_04  CONTINUOUSLY RECONCILED</text>
+  <text x="824" y="264" fill="#fde68a" font-size="7">drift reverted automatically — Git always wins</text>
+
+  <!-- Outcomes -->
+  <text x="810" y="302" fill="#7dd3fc" font-size="8" font-weight="700" letter-spacing="3">OUTCOMES</text>
+
+  <rect x="808" y="310" width="112" height="60" fill="rgba(0,243,255,0.05)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="864" y="332" fill="#00f3ff" font-size="9" font-weight="700" text-anchor="middle">ROLLBACK</text>
+  <text x="864" y="348" fill="#7dd3fc" font-size="7" text-anchor="middle">git revert</text>
+  <text x="864" y="362" fill="#7dd3fc" font-size="7" text-anchor="middle">cluster follows</text>
+
+  <rect x="928" y="310" width="112" height="60" fill="rgba(74,222,128,0.05)" stroke="rgba(74,222,128,0.25)" stroke-width="1"/>
+  <text x="984" y="332" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">AUDIT</text>
+  <text x="984" y="348" fill="#86efac" font-size="7" text-anchor="middle">git log</text>
+  <text x="984" y="362" fill="#86efac" font-size="7" text-anchor="middle">every change</text>
+
+  <rect x="1048" y="310" width="128" height="60" fill="rgba(96,165,250,0.05)" stroke="rgba(96,165,250,0.25)" stroke-width="1"/>
+  <text x="1112" y="332" fill="#60a5fa" font-size="9" font-weight="700" text-anchor="middle">RECOVERY</text>
+  <text x="1112" y="348" fill="#93c5fd" font-size="7" text-anchor="middle">bootstrap cluster</text>
+  <text x="1112" y="362" fill="#93c5fd" font-size="7" text-anchor="middle">from Git only</text>
+
+  <!-- Culture note -->
+  <rect x="808" y="382" width="368" height="56" fill="rgba(250,204,21,0.05)" stroke="rgba(250,204,21,0.3)" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="992" y="402" fill="#facc15" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">THE CULTURE SHIFT</text>
+  <text x="992" y="419" fill="#fde68a" font-size="8" text-anchor="middle">The cluster is read-only to humans.</text>
+  <text x="992" y="433" fill="#fde68a" font-size="8" text-anchor="middle">Deployments happen via pull requests — always.</text>
+
+  <!-- ── Bottom labels ── -->
+  <rect x="28" y="450" width="120" height="40" fill="rgba(96,165,250,0.04)" stroke="rgba(96,165,250,0.2)" stroke-width="1"/>
+  <text x="88" y="468" fill="#93c5fd" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">CI writes</text>
+  <text x="88" y="482" fill="#7dd3fc" font-size="7" text-anchor="middle">image tags to Git</text>
+
+  <rect x="230" y="450" width="200" height="40" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+  <text x="330" y="468" fill="#00f3ff" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">Git is the only deploy mechanism</text>
+  <text x="330" y="482" fill="#7dd3fc" font-size="7" text-anchor="middle">not Helm CLI, not kubectl, not dashboard</text>
+
+  <rect x="507" y="450" width="178" height="40" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.2)" stroke-width="1"/>
+  <text x="596" y="468" fill="#4ade80" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="1">GitOps pulls</text>
+  <text x="596" y="482" fill="#86efac" font-size="7" text-anchor="middle">operator applies continuously</text>
+
+  <!-- Footer -->
+  <line x1="0" y1="510" x2="1200" y2="510" stroke="rgba(96,165,250,0.12)" stroke-width="1"/>
+  <text x="20" y="525" fill="rgba(96,165,250,0.4)" font-size="8" letter-spacing="2">GITOPS_ARCHITECTURE.SVG</text>
+  <text x="1180" y="525" fill="rgba(0,243,255,0.35)" font-size="8" text-anchor="end" letter-spacing="2">ArgoCD · Flux · Kustomize · Helm</text>
+</svg>

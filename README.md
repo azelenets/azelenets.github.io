@@ -100,8 +100,3 @@ Deployment is automated through GitHub Actions:
 - Trigger: push to `main`
 - Build output: `dist/`
 - Target: GitHub Pages (`actions/deploy-pages`)
-
-## Notes
-
-- The current app does not require API keys to run.
-- `vite.config.ts` still defines `GEMINI_API_KEY` env mappings, but no runtime feature currently depends on them.

@@ -36,6 +36,17 @@ export const Callout: React.FC<{ type?: 'info' | 'warn' | 'danger'; children: Re
   );
 };
 
+export const ArticleImage: React.FC<{ src: string; alt: string; caption?: string }> = ({ src, alt, caption }) => (
+  <figure className="my-8 border border-primary/10 bg-black/30 overflow-hidden">
+    <img src={src} alt={alt} className="w-full h-auto block" loading="lazy" />
+    {caption && (
+      <figcaption className="px-4 py-2.5 border-t border-primary/10 text-[9px] font-mono text-slate-500 tracking-widest uppercase">
+        {caption}
+      </figcaption>
+    )}
+  </figure>
+);
+
 export const Code: React.FC<{ label?: string; children: React.ReactNode }> = ({ label, children }) => (
   <figure className="my-7 border border-primary/10 bg-black/50">
     {label && (
