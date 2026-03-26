@@ -1,5 +1,6 @@
-import { memo, useState, useCallback } from 'react';
-import PrivacyModal from './PrivacyModal';
+import { Suspense, lazy, memo, useCallback, useState } from 'react';
+
+const PrivacyModal = lazy(() => import('./PrivacyModal'));
 
 const Footer = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -33,7 +34,11 @@ const Footer = () => {
         </div>
       </footer>
 
-      {modalOpen && <PrivacyModal onClose={closeModal} />}
+      {modalOpen && (
+        <Suspense fallback={null}>
+          <PrivacyModal onClose={closeModal} />
+        </Suspense>
+      )}
     </>
   );
 };

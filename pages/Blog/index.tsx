@@ -21,11 +21,41 @@ const ACTIVE_COLORS: Record<BlogCategory, string> = {
   ENGINEERING_CULTURE: 'border-green-400/50 text-green-400 bg-green-400/10',
 };
 
+const postsByCategory = blogPosts.reduce<Record<BlogCategory, typeof blogPosts>>(
+  (acc, post) => {
+    acc[post.category as Exclude<BlogCategory, 'ALL'>].push(post);
+    return acc;
+  },
+  {
+    ALL: blogPosts,
+    DISTRIBUTED_SYSTEMS: [],
+    CLOUD_NATIVE: [],
+    FRONTEND: [],
+    DATA_ENGINEERING: [],
+    ENGINEERING_CULTURE: [],
+  },
+);
+
+const categoryCounts = Object.freeze({
+  DISTRIBUTED_SYSTEMS: postsByCategory.DISTRIBUTED_SYSTEMS.length,
+  CLOUD_NATIVE: postsByCategory.CLOUD_NATIVE.length,
+  FRONTEND: postsByCategory.FRONTEND.length,
+  DATA_ENGINEERING: postsByCategory.DATA_ENGINEERING.length,
+  ENGINEERING_CULTURE: postsByCategory.ENGINEERING_CULTURE.length,
+});
+
+const blogStats = Object.freeze([
+  { label: 'ARTICLES', value: String(blogPosts.length) },
+  { label: 'CATEGORIES', value: String(blogCategories.length - 1) },
+  { label: 'AVG_READ', value: `${Math.round(blogPosts.reduce((sum, post) => sum + post.readTime, 0) / blogPosts.length)} MIN` },
+  { label: 'STATUS', value: 'ACTIVE' },
+]);
+
 const Blog: React.FC = () => {
   const [active, setActive] = useState<BlogCategory>('ALL');
 
   const filtered = useMemo(
-    () => (active === 'ALL' ? blogPosts : blogPosts.filter(p => p.category === active)),
+    () => postsByCategory[active],
     [active],
   );
 
@@ -40,12 +70,7 @@ const Blog: React.FC = () => {
 
       {/* Stats bar */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-primary/10 border border-primary/10">
-        {[
-          { label: 'ARTICLES', value: String(blogPosts.length) },
-          { label: 'CATEGORIES', value: String(blogCategories.length - 1) },
-          { label: 'AVG_READ', value: `${Math.round(blogPosts.reduce((s, p) => s + p.readTime, 0) / blogPosts.length)} MIN` },
-          { label: 'STATUS', value: 'ACTIVE' },
-        ].map(stat => (
+        {blogStats.map(stat => (
           <div key={stat.label} className="bg-bg-dark px-6 py-4 flex flex-col gap-1">
             <span className="text-primary text-2xl font-black font-display">{stat.value}</span>
             <span className="text-slate-400 text-[9px] font-bold tracking-[0.3em] uppercase">{stat.label}</span>
@@ -66,7 +91,7 @@ const Blog: React.FC = () => {
               {cat.replace(/_/g, '\u00a0')}
               {cat !== 'ALL' && (
                 <span className="ml-1.5 opacity-50">
-                  {blogPosts.filter(p => p.category === cat).length}
+                  {categoryCounts[cat]}
                 </span>
               )}
             </button>

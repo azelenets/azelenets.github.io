@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useDeferredValue, useMemo, useState } from 'react';
 import { stackColumns, specCards } from '@/constants/arsenal';
 import StackColumn from './StackColumn';
 import SpecCard from './SpecCard';
@@ -7,16 +7,19 @@ import PageHeader from '@/components/layout/PageHeader';
 
 const Arsenal: React.FC = () => {
   const [query, setQuery] = useState('');
+  const deferredQuery = useDeferredValue(query);
+  const normalizedQuery = deferredQuery.trim().toLowerCase();
+  const hasQuery = query.trim().length > 0;
 
   const filteredColumns = useMemo(() => {
-    const transformedQuery = query.trim().toLowerCase();
-    if (!transformedQuery) return stackColumns;
+    if (!normalizedQuery) return stackColumns;
+
     return stackColumns.filter(
       col =>
-        col.title.toLowerCase().includes(transformedQuery) ||
-        col.items.some(item => item.name.toLowerCase().includes(transformedQuery)),
+        col.title.toLowerCase().includes(normalizedQuery) ||
+        col.items.some(item => item.name.toLowerCase().includes(normalizedQuery)),
     );
-  }, [query]);
+  }, [normalizedQuery]);
 
   return (
     <section className="max-w-[1500px] mx-auto w-full space-y-8 px-6 py-16 relative">
@@ -43,13 +46,13 @@ const Arsenal: React.FC = () => {
       </section>
 
       {/* CLI Filter */}
-      <CliFilter value={query} onChange={setQuery} />
+      <CliFilter value={query} onChange={setQuery} isPending={query !== deferredQuery} />
 
       {/* Matrix Grid */}
       {filteredColumns.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredColumns.map(col => (
-            <StackColumn key={col.id} type={col.type} title={col.title} id={col.id} desc={col.desc} items={col.items} forceShowAll={!!query.trim()} />
+            <StackColumn key={col.id} type={col.type} title={col.title} id={col.id} desc={col.desc} items={col.items} forceShowAll={hasQuery} />
           ))}
         </div>
       ) : (

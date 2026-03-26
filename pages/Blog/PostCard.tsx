@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { type BlogPost } from '@/constants/blog';
 import Tag from '@/components/Tag';
+import { preloadRouteModule } from '@/lib/routeModules';
 
 const CATEGORY_COLORS: Record<string, string> = {
   DISTRIBUTED_SYSTEMS: 'text-primary border-primary/30 bg-primary/5',
@@ -72,8 +73,15 @@ const PostCard = ({ id, title, excerpt, category, date, readTime, tags, slug, li
   );
 
   if (slug) {
+    const path = `/blog/${slug}`;
+
     return (
-      <Link to={`/blog/${slug}`} className="flex flex-col">
+      <Link
+        to={path}
+        className="flex flex-col"
+        onMouseEnter={() => preloadRouteModule(path)}
+        onFocus={() => preloadRouteModule(path)}
+      >
         {inner}
       </Link>
     );
