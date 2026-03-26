@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="'JetBrains Mono',monospace">
+  <defs>
+    <filter id="glow-c" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-y" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-g" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="bg-glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#001a1f"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <marker id="arr-c" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,9 3.5,0 7" fill="#00f3ff" opacity="0.9"/>
+    </marker>
+    <marker id="arr-y" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,9 3.5,0 7" fill="#facc15" opacity="0.9"/>
+    </marker>
+    <marker id="arr-g" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,9 3.5,0 7" fill="#4ade80" opacity="0.85"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-glow)"/>
+
+  <!-- Subtle grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0L0 0 0 40" fill="none" stroke="rgba(0,243,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Top-left ambient glow -->
+  <ellipse cx="200" cy="180" rx="320" ry="220" fill="rgba(0,243,255,0.04)"/>
+  <!-- Bottom-right ambient glow -->
+  <ellipse cx="1050" cy="480" rx="280" ry="200" fill="rgba(74,222,128,0.04)"/>
+
+  <!-- ── Top label bar ── -->
+  <rect width="1200" height="42" fill="rgba(0,243,255,0.04)"/>
+  <line x1="0" y1="42" x2="1200" y2="42" stroke="rgba(0,243,255,0.12)" stroke-width="1"/>
+  <text x="24" y="26" fill="rgba(0,243,255,0.5)" font-size="10" font-weight="700" letter-spacing="4">DISTRIBUTED_SYSTEMS  ·  RELIABILITY_PATTERN</text>
+  <text x="1176" y="26" fill="rgba(0,243,255,0.25)" font-size="10" font-weight="700" letter-spacing="3" text-anchor="end">KAFKA  ·  CDC  ·  POSTGRES</text>
+
+  <!-- ── Article title block ── -->
+  <text x="60" y="108" fill="rgba(0,243,255,0.18)" font-size="11" font-weight="700" letter-spacing="4">THE OUTBOX PATTERN</text>
+  <text x="57" y="172" fill="white" font-size="52" font-weight="900" letter-spacing="-1" font-family="'Orbitron','JetBrains Mono',monospace">GUARANTEED</text>
+  <text x="57" y="232" fill="white" font-size="52" font-weight="900" letter-spacing="-1" font-family="'Orbitron','JetBrains Mono',monospace">EVENT</text>
+  <text x="57" y="292" fill="#00f3ff" font-size="52" font-weight="900" letter-spacing="-1" font-family="'Orbitron','JetBrains Mono',monospace" filter="url(#glow-c)">PUBLISHING</text>
+  <text x="57" y="338" fill="rgba(255,255,255,0.35)" font-size="18" font-weight="400" letter-spacing="1">without two-phase commit</text>
+
+  <!-- Accent line under title -->
+  <rect x="57" y="354" width="480" height="2" fill="rgba(0,243,255,0.3)"/>
+  <rect x="57" y="354" width="80" height="2" fill="#00f3ff" filter="url(#glow-c)"/>
+
+  <!-- Author / meta -->
+  <text x="57" y="392" fill="rgba(0,243,255,0.4)" font-size="11" font-weight="700" letter-spacing="3">ANDRII ZELENETS  ·  11 MIN READ</text>
+
+  <!-- Tags -->
+  <rect x="57" y="412" width="82" height="22" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="98" y="427" fill="rgba(0,243,255,0.7)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">KAFKA</text>
+
+  <rect x="149" y="412" width="56" height="22" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="177" y="427" fill="rgba(0,243,255,0.7)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">CDC</text>
+
+  <rect x="215" y="412" width="98" height="22" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="264" y="427" fill="rgba(0,243,255,0.7)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">POSTGRES</text>
+
+  <rect x="323" y="412" width="116" height="22" fill="rgba(0,243,255,0.08)" stroke="rgba(0,243,255,0.25)" stroke-width="1"/>
+  <text x="381" y="427" fill="rgba(0,243,255,0.7)" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">RELIABILITY</text>
+
+  <!-- ═══════════════════════════════════════════════
+       FLOW DIAGRAM (right side)
+  ═══════════════════════════════════════════════ -->
+
+  <!-- Container -->
+  <rect x="608" y="58" width="568" height="540" fill="rgba(0,243,255,0.015)" stroke="rgba(0,243,255,0.08)" stroke-width="1"/>
+
+  <!-- ── App Service ── -->
+  <rect x="636" y="90" width="120" height="76" fill="rgba(0,243,255,0.06)" stroke="rgba(0,243,255,0.3)" stroke-width="1.5"/>
+  <text x="696" y="116" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">SERVICE</text>
+  <text x="696" y="135" fill="white" font-size="12" font-weight="700" text-anchor="middle">ORDER</text>
+  <text x="696" y="152" fill="rgba(0,243,255,0.3)" font-size="8" text-anchor="middle">db.transaction()</text>
+
+  <!-- Arrow: App → PG -->
+  <line x1="756" y1="128" x2="820" y2="128" stroke="rgba(0,243,255,0.55)" stroke-width="2" marker-end="url(#arr-c)"/>
+  <text x="788" y="120" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">SINGLE TX</text>
+
+  <!-- ── PostgreSQL ── -->
+  <rect x="822" y="74" width="148" height="156" fill="rgba(0,243,255,0.03)" stroke="rgba(0,243,255,0.18)" stroke-width="1.5"/>
+  <text x="896" y="96" fill="rgba(0,243,255,0.4)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="3">POSTGRESQL</text>
+
+  <!-- orders table -->
+  <rect x="840" y="104" width="112" height="42" fill="rgba(0,243,255,0.07)" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+  <text x="896" y="122" fill="rgba(0,243,255,0.4)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="2">TABLE</text>
+  <text x="896" y="137" fill="white" font-size="10" font-weight="700" text-anchor="middle">orders</text>
+
+  <!-- outbox table -->
+  <rect x="840" y="154" width="112" height="52" fill="rgba(250,204,21,0.07)" stroke="rgba(250,204,21,0.35)" stroke-width="1.5" filter="url(#glow-y)"/>
+  <text x="896" y="172" fill="rgba(250,204,21,0.6)" font-size="7" font-weight="700" text-anchor="middle" letter-spacing="2">OUTBOX</text>
+  <text x="896" y="187" fill="white" font-size="10" font-weight="700" text-anchor="middle">outbox_events</text>
+  <text x="896" y="199" fill="rgba(250,204,21,0.3)" font-size="7" text-anchor="middle">published_at IS NULL</text>
+
+  <!-- ATOMIC bracket -->
+  <line x1="828" y1="102" x2="828" y2="210" stroke="rgba(0,243,255,0.4)" stroke-width="1.5"/>
+  <line x1="828" y1="102" x2="836" y2="102" stroke="rgba(0,243,255,0.4)" stroke-width="1.5"/>
+  <line x1="828" y1="210" x2="836" y2="210" stroke="rgba(0,243,255,0.4)" stroke-width="1.5"/>
+
+  <!-- Arrow: Outbox → Relay (WAL tail) -->
+  <line x1="896" y1="230" x2="896" y2="282" stroke="rgba(250,204,21,0.55)" stroke-width="2" marker-end="url(#arr-y)"/>
+  <text x="910" y="261" fill="rgba(250,204,21,0.5)" font-size="8" font-weight="700" letter-spacing="1">WAL</text>
+
+  <!-- ── CDC Relay ── -->
+  <rect x="822" y="284" width="148" height="68" fill="rgba(250,204,21,0.05)" stroke="rgba(250,204,21,0.3)" stroke-width="1.5"/>
+  <text x="896" y="306" fill="rgba(250,204,21,0.55)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">CDC RELAY</text>
+  <text x="896" y="322" fill="white" font-size="11" font-weight="700" text-anchor="middle">Debezium</text>
+  <text x="896" y="340" fill="rgba(250,204,21,0.3)" font-size="8" text-anchor="middle">resumes from offset</text>
+
+  <!-- Arrow: Relay → Kafka -->
+  <line x1="896" y1="352" x2="896" y2="400" stroke="rgba(0,243,255,0.55)" stroke-width="2" marker-end="url(#arr-c)"/>
+  <text x="912" y="381" fill="rgba(0,243,255,0.45)" font-size="8" font-weight="700" letter-spacing="1">PUBLISH</text>
+  <text x="912" y="393" fill="rgba(0,243,255,0.3)" font-size="7">at-least-once</text>
+
+  <!-- ── Kafka ── -->
+  <rect x="822" y="402" width="148" height="72" fill="rgba(0,243,255,0.05)" stroke="rgba(0,243,255,0.3)" stroke-width="1.5" filter="url(#glow-c)"/>
+  <text x="896" y="423" fill="rgba(0,243,255,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="3">KAFKA</text>
+  <rect x="840" y="430" width="112" height="11" fill="rgba(0,243,255,0.07)" stroke="rgba(0,243,255,0.12)" stroke-width="1"/>
+  <rect x="840" y="443" width="112" height="11" fill="rgba(0,243,255,0.05)" stroke="rgba(0,243,255,0.08)" stroke-width="1"/>
+  <text x="896" y="440" fill="rgba(0,243,255,0.35)" font-size="7" text-anchor="middle">outbox.Order [p0]</text>
+  <text x="896" y="453" fill="rgba(0,243,255,0.25)" font-size="7" text-anchor="middle">outbox.Order [p1]</text>
+  <text x="896" y="467" fill="rgba(0,243,255,0.2)" font-size="7" text-anchor="middle">consumer-group: services</text>
+
+  <!-- Arrows: Kafka → Consumers -->
+  <line x1="970" y1="424" x2="1038" y2="404" stroke="rgba(74,222,128,0.5)" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <line x1="970" y1="438" x2="1038" y2="448" stroke="rgba(74,222,128,0.5)" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <line x1="970" y1="452" x2="1038" y2="490" stroke="rgba(74,222,128,0.5)" stroke-width="1.5" marker-end="url(#arr-g)"/>
+
+  <!-- Consumer 1 -->
+  <rect x="1040" y="380" width="120" height="44" fill="rgba(74,222,128,0.05)" stroke="rgba(74,222,128,0.22)" stroke-width="1"/>
+  <text x="1100" y="398" fill="rgba(74,222,128,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">INVENTORY</text>
+  <text x="1100" y="413" fill="rgba(74,222,128,0.3)" font-size="7" text-anchor="middle">idempotent ✓</text>
+
+  <!-- Consumer 2 -->
+  <rect x="1040" y="432" width="120" height="44" fill="rgba(74,222,128,0.05)" stroke="rgba(74,222,128,0.22)" stroke-width="1"/>
+  <text x="1100" y="450" fill="rgba(74,222,128,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">NOTIF_SVC</text>
+  <text x="1100" y="465" fill="rgba(74,222,128,0.3)" font-size="7" text-anchor="middle">idempotent ✓</text>
+
+  <!-- Consumer 3 -->
+  <rect x="1040" y="484" width="120" height="44" fill="rgba(74,222,128,0.05)" stroke="rgba(74,222,128,0.22)" stroke-width="1"/>
+  <text x="1100" y="502" fill="rgba(74,222,128,0.5)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="1">ANALYTICS</text>
+  <text x="1100" y="517" fill="rgba(74,222,128,0.3)" font-size="7" text-anchor="middle">idempotent ✓</text>
+
+  <!-- ── Guarantee pills at bottom of diagram ── -->
+  <rect x="636" y="480" width="166" height="48" fill="rgba(0,243,255,0.04)" stroke="rgba(0,243,255,0.14)" stroke-width="1"/>
+  <text x="719" y="499" fill="rgba(0,243,255,0.6)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">ATOMIC WRITE</text>
+  <text x="719" y="515" fill="rgba(0,243,255,0.3)" font-size="7" text-anchor="middle">orders + outbox in one TX</text>
+
+  <rect x="636" y="536" width="166" height="48" fill="rgba(250,204,21,0.04)" stroke="rgba(250,204,21,0.14)" stroke-width="1"/>
+  <text x="719" y="555" fill="rgba(250,204,21,0.6)" font-size="8" font-weight="700" text-anchor="middle" letter-spacing="2">DURABLE RELAY</text>
+  <text x="719" y="571" fill="rgba(250,204,21,0.3)" font-size="7" text-anchor="middle">resumes from WAL offset</text>
+
+  <!-- ── Vertical divider between title and diagram ── -->
+  <line x1="601" y1="58" x2="601" y2="598" stroke="rgba(0,243,255,0.08)" stroke-width="1"/>
+
+  <!-- ── Bottom bar ── -->
+  <line x1="0" y1="598" x2="1200" y2="598" stroke="rgba(0,243,255,0.08)" stroke-width="1"/>
+  <rect x="0" y="598" width="1200" height="32" fill="rgba(0,0,0,0.4)"/>
+  <text x="24" y="618" fill="rgba(0,243,255,0.25)" font-size="9" letter-spacing="3">azelenets.github.io/blog/outbox-pattern-guaranteed-event-publishing</text>
+  <text x="1176" y="618" fill="rgba(0,243,255,0.2)" font-size="9" letter-spacing="2" text-anchor="end">NO 2PC · NO XA BRIDGE · NO DISTRIBUTED COORDINATOR</text>
+</svg>

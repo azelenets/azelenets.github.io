@@ -12,7 +12,7 @@ const MetricCard: React.FC<{
   <div className={`border p-5 ${color}`}>
     <div className="flex items-baseline gap-2 mb-2">
       <span className="text-white font-black font-display text-lg">{name}</span>
-      <span className="text-[9px] font-mono text-slate-600 tracking-wider">{full}</span>
+      <span className="text-[9px] font-mono text-slate-400 tracking-wider">{full}</span>
     </div>
     <p className="text-xs font-mono text-slate-500 leading-5 mb-4">{description}</p>
     <div className="grid grid-cols-3 gap-1 text-[9px] font-bold font-mono text-center">
@@ -31,7 +31,7 @@ const MetricCard: React.FC<{
 
 const PhaseBar: React.FC<{ label: string; width: string; color: string; note?: string }> = ({ label, width, color, note }) => (
   <div className="mb-3">
-    <div className="flex justify-between text-[9px] font-mono text-slate-600 mb-1">
+    <div className="flex justify-between text-[9px] font-mono text-slate-400 mb-1">
       <span>{label}</span>
       {note && <span className="text-slate-700">{note}</span>}
     </div>
@@ -126,7 +126,7 @@ const CoreWebVitalsINP: React.FC = () => (
       <PhaseBar label="INPUT DELAY"        width="20%" color="bg-yellow-400/70" note="Time from interaction to event handler start" />
       <PhaseBar label="PROCESSING DURATION" width="50%" color="bg-red-400/70"    note="Time spent running event handlers" />
       <PhaseBar label="PRESENTATION DELAY" width="30%" color="bg-primary/60"    note="Time from handler done to next frame paint" />
-      <div className="mt-4 flex justify-between text-[9px] font-mono text-slate-600">
+      <div className="mt-4 flex justify-between text-[9px] font-mono text-slate-400">
         <span>0ms</span>
         <span className="text-primary/60">← INP = sum of all three phases →</span>
         <span>200ms good threshold</span>

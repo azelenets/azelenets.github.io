@@ -89,7 +89,7 @@ export const courses: CourseData[] = [
 
 export const combatLanguages: string[] = ['RUBY', 'TYPESCRIPT', 'JAVASCRIPT'];
 
-export const tacticalFrameworks: string[] = ['RAILS', 'NESTJS', 'GRAPE', 'SINATRA'];
+export const tacticalFrameworks: string[] = ['RAILS', 'REACT.JS', 'NESTJS', 'GRAPE', 'SINATRA'];
 
 export interface DetailField {
   label: string;

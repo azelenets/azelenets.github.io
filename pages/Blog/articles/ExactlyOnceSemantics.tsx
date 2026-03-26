@@ -15,9 +15,9 @@ const GuaranteeCard: React.FC<{
       <span className={`font-bold text-xs uppercase tracking-widest ${labelCls.replace('border-', 'text-').replace('/30', '/90')}`}>{label}</span>
     </div>
     <div className="grid grid-cols-1 gap-2 text-xs font-mono">
-      <div><span className="text-slate-600">WHAT: </span><span className="text-slate-400">{what}</span></div>
-      <div><span className="text-slate-600">HOW:  </span><span className="text-slate-400">{how}</span></div>
-      <div><span className="text-slate-600">COST: </span><span className="text-slate-400">{cost}</span></div>
+      <div><span className="text-slate-400">WHAT: </span><span className="text-slate-400">{what}</span></div>
+      <div><span className="text-slate-400">HOW:  </span><span className="text-slate-400">{how}</span></div>
+      <div><span className="text-slate-400">COST: </span><span className="text-slate-400">{cost}</span></div>
     </div>
   </div>
 );

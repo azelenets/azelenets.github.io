@@ -55,7 +55,7 @@ const Arsenal: React.FC = () => {
       ) : (
         <div className="border border-dashed border-primary/20 p-16 text-center">
           <div className="text-primary/30 text-xs font-bold tracking-[0.4em] uppercase mb-2">NO_ASSETS_FOUND</div>
-          <p className="text-slate-600 text-xs font-mono uppercase">
+          <p className="text-slate-400 text-xs font-mono uppercase">
             SEARCH: <span className="text-primary/40">{query}</span> — returned 0 results
           </p>
         </div>

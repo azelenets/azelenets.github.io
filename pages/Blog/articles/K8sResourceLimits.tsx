@@ -63,7 +63,7 @@ const K8sResourceLimits: React.FC = () => (
 
     <div className="my-7 border border-primary/10 overflow-hidden">
       <div className="grid grid-cols-3 gap-px bg-primary/10 text-[9px] font-bold font-mono tracking-widest">
-        <div className="bg-bg-dark px-4 py-2 text-slate-600">ASPECT</div>
+        <div className="bg-bg-dark px-4 py-2 text-slate-400">ASPECT</div>
         <div className="bg-primary/10 px-4 py-2 text-primary/60">REQUESTS</div>
         <div className="bg-yellow-400/10 px-4 py-2 text-yellow-400/60">LIMITS</div>
       </div>

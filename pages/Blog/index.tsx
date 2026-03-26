@@ -48,7 +48,7 @@ const Blog: React.FC = () => {
         ].map(stat => (
           <div key={stat.label} className="bg-bg-dark px-6 py-4 flex flex-col gap-1">
             <span className="text-primary text-2xl font-black font-display">{stat.value}</span>
-            <span className="text-slate-600 text-[9px] font-bold tracking-[0.3em] uppercase">{stat.label}</span>
+            <span className="text-slate-400 text-[9px] font-bold tracking-[0.3em] uppercase">{stat.label}</span>
           </div>
         ))}
       </div>
@@ -84,7 +84,7 @@ const Blog: React.FC = () => {
       ) : (
         <div className="border border-dashed border-primary/20 p-16 text-center">
           <div className="text-primary/30 text-xs font-bold tracking-[0.4em] uppercase mb-2">NO_INTEL_FOUND</div>
-          <p className="text-slate-600 text-xs font-mono uppercase">
+          <p className="text-slate-400 text-xs font-mono uppercase">
             CATEGORY: <span className="text-primary/40">{active}</span> — returned 0 results
           </p>
         </div>
