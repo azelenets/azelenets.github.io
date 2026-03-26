@@ -1,6 +1,11 @@
-import { describe, expect, it } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Footer from '@/components/layout/Footer';
+
+vi.mock('@/components/layout/PrivacyModal', async () => {
+  const actual = await vi.importActual<typeof import('@/components/layout/PrivacyModal')>('@/components/layout/PrivacyModal');
+  return actual;
+});
 
 describe('Footer', () => {
   it('renders footer metadata', () => {
@@ -11,13 +16,15 @@ describe('Footer', () => {
     expect(screen.getByText(new RegExp(String(new Date().getFullYear())))).toBeInTheDocument();
   });
 
-  it('opens and closes the privacy modal', () => {
+  it('opens and closes the privacy modal', async () => {
     render(<Footer />);
 
     fireEvent.click(screen.getByRole('button', { name: 'PRIVACY_POLICY' }));
-    expect(screen.getByText(/Terms of Use/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Terms of Use/i)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: /Close/i }));
-    expect(screen.queryByText(/Terms of Use/i)).toBeNull();
+    await waitFor(() => {
+      expect(screen.queryByText(/Terms of Use/i)).toBeNull();
+    });
   });
 });

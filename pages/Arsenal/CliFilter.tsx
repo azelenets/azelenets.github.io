@@ -3,10 +3,11 @@ import { memo } from 'react';
 interface CliFilterProps {
   value: string;
   onChange: (value: string) => void;
+  isPending?: boolean;
 }
 
-const CliFilter = ({ value, onChange }: CliFilterProps) => (
-  <search className="mb-12">
+const CliFilter = ({ value, onChange, isPending = false }: CliFilterProps) => (
+  <div role="search" className="mb-12">
     <div className="bg-surface-terminal border border-primary/20 p-4 font-mono shadow-2xl relative">
       <div className="flex items-center gap-3">
         <span className="text-primary shrink-0 hidden sm:inline">visitor@andrii.zelenets:~$</span>
@@ -18,10 +19,14 @@ const CliFilter = ({ value, onChange }: CliFilterProps) => (
           value={value}
           onChange={e => onChange(e.target.value)}
         />
-        <div className="w-2 h-5 bg-primary animate-pulse shrink-0" />
+        {isPending ? (
+          <span className="text-[9px] font-bold tracking-[0.25em] text-primary/60 uppercase shrink-0">SCANNING</span>
+        ) : (
+          <div className="w-2 h-5 bg-primary animate-pulse shrink-0" />
+        )}
       </div>
     </div>
-  </search>
+  </div>
 );
 
 export default memo(CliFilter);

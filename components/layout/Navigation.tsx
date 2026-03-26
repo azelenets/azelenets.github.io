@@ -1,6 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { navItems } from '@/constants/navigation';
+import { preloadRouteModule } from '@/lib/routeModules';
 
 type GeoState =
   | { status: 'pending' }
@@ -55,6 +56,10 @@ const Navigation = () => {
     },
     [navigate],
   );
+
+  const handleRouteIntent = useCallback((path: string) => {
+    preloadRouteModule(path);
+  }, []);
 
   const locationText = useMemo(() => {
     if (geo.status !== 'granted') {
@@ -115,6 +120,8 @@ const Navigation = () => {
                 key={item.path}
                 to={item.path}
                 end={item.path === '/'}
+                onMouseEnter={() => handleRouteIntent(item.path)}
+                onFocus={() => handleRouteIntent(item.path)}
                 className={({ isActive }) =>
                   `group relative px-4 py-2 flex flex-col transition-all text-left ${isActive ? 'border-b-2 border-primary' : 'hover:opacity-80'}`
                 }
@@ -141,6 +148,8 @@ const Navigation = () => {
                 key={item.path}
                 to={item.path}
                 end={item.path === '/'}
+                onMouseEnter={() => handleRouteIntent(item.path)}
+                onFocus={() => handleRouteIntent(item.path)}
                 className={({ isActive }) =>
                   `text-[10px] font-bold tracking-wider ${isActive ? 'text-primary' : 'text-slate-500'}`
                 }
@@ -196,6 +205,8 @@ const Navigation = () => {
               to={item.path}
               end={item.path === '/'}
               onClick={() => handleNavClick(item.path)}
+              onMouseEnter={() => handleRouteIntent(item.path)}
+              onFocus={() => handleRouteIntent(item.path)}
               className={({ isActive }) =>
                 `w-full flex items-center justify-between py-3 border-b border-primary/10 last:border-0 group transition-all ${isActive ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`
               }

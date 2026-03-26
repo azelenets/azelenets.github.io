@@ -1,10 +1,11 @@
-import { Suspense, lazy, useEffect } from 'react';
+import { Suspense, lazy, useEffect, type ComponentType } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import PrivacyBanner from '@/components/layout/PrivacyBanner';
 import Hero from '@/pages/Hero';
 import { initializeAnalytics, readConsentChoice, setupClickTracking, trackVirtualPageView } from '@/lib/analytics';
+import { loadKnownRouteModule } from '@/lib/routeModules';
 
 const SITE_URL = 'https://azelenets.github.io';
 
@@ -178,28 +179,31 @@ const AnalyticsBindings = () => {
   return null;
 };
 
-const MissionLog = lazy(() => import('@/pages/MissionLog'));
-const Arsenal = lazy(() => import('@/pages/Arsenal'));
-const Laboratory = lazy(() => import('@/pages/Laboratory'));
-const Protocols = lazy(() => import('@/pages/Protocols'));
-const Credentials = lazy(() => import('@/pages/Credentials'));
-const DistributedNodes = lazy(() => import('@/pages/DistributedNodes'));
-const CloudNative = lazy(() => import('@/pages/CloudNative'));
-const TacticalUI = lazy(() => import('@/pages/TacticalUI'));
-const DataForge = lazy(() => import('@/pages/DataForge'));
-const Blog = lazy(() => import('@/pages/Blog'));
-const MonolithInDisguise = lazy(() => import('@/pages/Blog/articles/MonolithInDisguise'));
-const OutboxPattern = lazy(() => import('@/pages/Blog/articles/OutboxPattern'));
-const GitOpsCultureShift = lazy(() => import('@/pages/Blog/articles/GitOpsCultureShift'));
-const K8sResourceLimits = lazy(() => import('@/pages/Blog/articles/K8sResourceLimits'));
-const FiniteStateMachinesReact = lazy(() => import('@/pages/Blog/articles/FiniteStateMachinesReact'));
-const CoreWebVitalsINP = lazy(() => import('@/pages/Blog/articles/CoreWebVitalsINP'));
-const KafkaConsumerLag = lazy(() => import('@/pages/Blog/articles/KafkaConsumerLag'));
-const ExactlyOnceSemantics = lazy(() => import('@/pages/Blog/articles/ExactlyOnceSemantics'));
-const OnCallDesignProblem = lazy(() => import('@/pages/Blog/articles/OnCallDesignProblem'));
-const SeniorEngineerSayingNo = lazy(() => import('@/pages/Blog/articles/SeniorEngineerSayingNo'));
-const DbPerformanceKillers = lazy(() => import('@/pages/Blog/articles/DbPerformanceKillers'));
-const NotFound = lazy(() => import('@/pages/NotFound'));
+const lazyRoute = (path: Parameters<typeof loadKnownRouteModule>[0]) =>
+  lazy<ComponentType<any>>(() => loadKnownRouteModule(path));
+
+const MissionLog = lazyRoute('/mission');
+const Arsenal = lazyRoute('/arsenal');
+const Laboratory = lazyRoute('/lab');
+const Protocols = lazyRoute('/protocols');
+const Credentials = lazyRoute('/credentials');
+const DistributedNodes = lazyRoute('/distributed-nodes');
+const CloudNative = lazyRoute('/cloud-native');
+const TacticalUI = lazyRoute('/tactical-ui');
+const DataForge = lazyRoute('/data-forge');
+const Blog = lazyRoute('/blog');
+const MonolithInDisguise = lazyRoute('/blog/why-microservices-are-still-a-monolith');
+const OutboxPattern = lazyRoute('/blog/outbox-pattern-guaranteed-event-publishing');
+const GitOpsCultureShift = lazyRoute('/blog/gitops-is-not-just-argo-it-is-a-culture-shift');
+const K8sResourceLimits = lazyRoute('/blog/kubernetes-resource-requests-vs-limits');
+const FiniteStateMachinesReact = lazyRoute('/blog/rethinking-component-state-finite-state-machines-react');
+const CoreWebVitalsINP = lazyRoute('/blog/core-web-vitals-inp-is-the-new-lcp');
+const KafkaConsumerLag = lazyRoute('/blog/kafka-consumer-lag-is-a-symptom-not-the-disease');
+const ExactlyOnceSemantics = lazyRoute('/blog/exactly-once-semantics-what-it-actually-means');
+const OnCallDesignProblem = lazyRoute('/blog/on-call-rota-is-a-design-problem-not-a-people-problem');
+const SeniorEngineerSayingNo = lazyRoute('/blog/the-senior-engineers-guide-to-saying-no');
+const DbPerformanceKillers = lazyRoute('/blog/top-database-performance-killers');
+const NotFound = lazyRoute('*');
 
 const App = () => (
   <div className="min-h-screen flex flex-col font-mono selection:bg-primary selection:text-black">

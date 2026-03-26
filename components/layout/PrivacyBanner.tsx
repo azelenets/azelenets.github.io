@@ -1,18 +1,8 @@
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { applyConsentChoice, persistConsentChoice, readConsentChoice } from '@/lib/analytics';
 
 const PrivacyBanner = () => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const storedChoice = readConsentChoice();
-    if (!storedChoice) {
-      setVisible(true);
-      return;
-    }
-
-    setVisible(false);
-  }, []);
+  const [visible, setVisible] = useState(() => readConsentChoice() === null);
 
   const selectConsent = useCallback((choice: 'accepted' | 'rejected') => {
     persistConsentChoice(choice);
