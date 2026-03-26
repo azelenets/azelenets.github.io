@@ -32,7 +32,7 @@ The interface presents professional experience and capabilities as a mission con
 - React Router 7
 - ESLint 9 + TypeScript/React plugins
 - Tailwind CSS (via CDN config in `index.html`)
-- Google Fonts + Material Symbols
+- Local font assets (JetBrains Mono, Orbitron, Space Grotesk, Material Symbols)
 
 ## Local development
 
