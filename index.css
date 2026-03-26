@@ -146,6 +146,59 @@ body {
   overflow-x: hidden;
 }
 
+/* Keep the tactical palette, but lift the dim utility variants above
+   axe's contrast threshold on the dark surfaces used across the site. */
+.text-primary\/20 {
+  color: #41b8c4;
+}
+
+.text-primary\/30 {
+  color: #4fcdda;
+}
+
+.text-primary\/40 {
+  color: #5ce2ef;
+}
+
+.text-primary\/50 {
+  color: #72ebf5;
+}
+
+.text-white\/15 {
+  color: #8f9bad;
+}
+
+.text-white\/20 {
+  color: #9aa5b5;
+}
+
+.text-white\/25 {
+  color: #a8b2bf;
+}
+
+.text-white\/30 {
+  color: #b6bec9;
+}
+
+.text-white\/40 {
+  color: #c6ced8;
+}
+
+.text-hazard\/50 {
+  color: #f0d651;
+}
+
+.text-slate-500,
+.text-slate-500\/70,
+.text-slate-400\/70 {
+  color: #a4b1c4;
+}
+
+.placeholder\:text-primary\/30::placeholder {
+  color: #5ce2ef;
+  opacity: 1;
+}
+
 .cyber-grid {
   background-image: linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
   background-size: 30px 30px;
