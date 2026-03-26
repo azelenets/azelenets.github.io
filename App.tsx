@@ -180,7 +180,7 @@ const AnalyticsBindings = () => {
 };
 
 const lazyRoute = (path: Parameters<typeof loadKnownRouteModule>[0]) =>
-  lazy<ComponentType<any>>(() => loadKnownRouteModule(path));
+  lazy<ComponentType<object>>(() => loadKnownRouteModule(path));
 
 const MissionLog = lazyRoute('/mission');
 const Arsenal = lazyRoute('/arsenal');

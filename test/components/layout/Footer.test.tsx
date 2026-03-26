@@ -1,11 +1,6 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Footer from '@/components/layout/Footer';
-
-vi.mock('@/components/layout/PrivacyModal', async () => {
-  const actual = await vi.importActual<typeof import('@/components/layout/PrivacyModal')>('@/components/layout/PrivacyModal');
-  return actual;
-});
 
 describe('Footer', () => {
   it('renders footer metadata', () => {

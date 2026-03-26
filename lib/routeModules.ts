@@ -1,7 +1,7 @@
 import type { ComponentType } from 'react';
 
 type RouteModule = {
-  default: ComponentType<any>;
+  default: ComponentType<object>;
 };
 
 type RouteLoader = () => Promise<RouteModule>;
