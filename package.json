@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "checks": "npm run lint && npm run typecheck && npm run test"
   },
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
