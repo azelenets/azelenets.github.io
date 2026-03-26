@@ -102,7 +102,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full pt-12 pb-12 md:py-12 relative overflow-hidden">
+    <section className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-140px)] w-full pt-12 relative overflow-hidden">
       <aside className="absolute left-6 bottom-48 hidden xl:block text-[9px] leading-tight text-primary/40 space-y-1 font-mono">
         <p>ENCRYPTION: AES-256-GCM</p>
         <p>IP: {localIP ?? 'UNKNOWN'}</p>
