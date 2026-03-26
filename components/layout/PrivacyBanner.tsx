@@ -11,7 +11,6 @@ const PrivacyBanner = () => {
       return;
     }
 
-    applyConsentChoice(storedChoice);
     setVisible(false);
   }, []);
 

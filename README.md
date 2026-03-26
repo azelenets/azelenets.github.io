@@ -32,7 +32,7 @@ The interface presents professional experience and capabilities as a mission con
 - React Router 7
 - ESLint 9 + TypeScript/React plugins
 - Tailwind CSS (via CDN config in `index.html`)
-- Local font assets (JetBrains Mono, Orbitron, Space Grotesk, Material Symbols)
+- Local font assets bundled by Vite (JetBrains Mono, Orbitron, Space Grotesk, Material Symbols)
 
 ## Local development
 
@@ -100,3 +100,9 @@ Deployment is automated through GitHub Actions:
 - Trigger: push to `main`
 - Build output: `dist/`
 - Target: GitHub Pages (`actions/deploy-pages`)
+
+## Asset caching
+
+Font files are bundled through Vite's asset pipeline rather than served from `public/`.
+That gives them content-hashed URLs in `dist/assets`, which is the safe prerequisite for long cache lifetimes recommended by Chrome's "Use efficient cache lifetimes" guidance.
+GitHub Pages header policy is not configured in this repo, so if you later front the site with a proxy/CDN, set font responses to `Cache-Control: public, max-age=31536000, immutable`.

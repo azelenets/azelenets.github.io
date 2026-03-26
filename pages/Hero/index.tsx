@@ -65,13 +65,34 @@ const Hero = () => {
   const [localIP, setLocalIP] = useState<string>();
 
   useEffect(() => {
+    const shouldLoadIp = typeof window.matchMedia !== 'function'
+      || window.matchMedia('(min-width: 1280px)').matches;
+
+    if (!shouldLoadIp) return;
+
     const controller = new AbortController();
 
-    fetch('https://api.ipify.org?format=json', { signal: controller.signal })
-      .then((response) => response.json())
-      .then((data: { ip?: string }) => setLocalIP(data.ip));
+    const loadIp = () => {
+      fetch('https://api.ipify.org?format=json', { signal: controller.signal })
+        .then((response) => response.json())
+        .then((data: { ip?: string }) => setLocalIP(data.ip))
+        .catch(() => {});
+    };
 
-    return () => controller.abort();
+    if (typeof window.requestIdleCallback === 'function') {
+      const idleId = window.requestIdleCallback(loadIp, { timeout: 3000 });
+      return () => {
+        window.cancelIdleCallback(idleId);
+        controller.abort();
+      };
+    }
+
+    const timeoutId = globalThis.setTimeout(loadIp, 1500);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      controller.abort();
+    };
   }, []);
 
   useEffect(() => {
@@ -144,7 +165,7 @@ const Hero = () => {
 
           <div className="relative w-full h-full hud-border bg-black overflow-hidden z-10">
             <div className="absolute inset-0 bg-primary/5 z-10" />
-            <img alt="Tactical Avatar" className="w-full h-full object-cover glitch-img opacity-60 z-30" src="/images/desktop.avif" />
+            <img alt="Tactical Avatar" className="w-full h-full object-cover glitch-img opacity-60 z-30" decoding="async" fetchPriority="low" loading="lazy" src="/images/desktop.avif" />
 
             <div className="absolute inset-0 z-20 pointer-events-none">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-32 border border-primary/30 rounded-full" />

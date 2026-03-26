@@ -3,7 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import PrivacyBanner from '@/components/layout/PrivacyBanner';
-import { setupClickTracking, trackVirtualPageView } from '@/lib/analytics';
+import Hero from '@/pages/Hero';
+import { initializeAnalytics, readConsentChoice, setupClickTracking, trackVirtualPageView } from '@/lib/analytics';
 
 const SITE_URL = 'https://azelenets.github.io';
 
@@ -170,13 +171,13 @@ const ScrollToTop = () => {
 
 const AnalyticsBindings = () => {
   useEffect(() => {
+    initializeAnalytics(readConsentChoice());
     return setupClickTracking();
   }, []);
 
   return null;
 };
 
-const Hero = lazy(() => import('@/pages/Hero'));
 const MissionLog = lazy(() => import('@/pages/MissionLog'));
 const Arsenal = lazy(() => import('@/pages/Arsenal'));
 const Laboratory = lazy(() => import('@/pages/Laboratory'));

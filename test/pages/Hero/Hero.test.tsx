@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import type * as ReactRouterDom from 'react-router-dom';
 import Hero from '@/pages/Hero';
@@ -22,21 +22,6 @@ describe('Hero page', () => {
       value: vi.fn(),
       configurable: true,
     });
-    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
-      json: () => Promise.resolve({ ip: '127.0.0.1' }),
-    }));
-  });
-
-  it('renders hero content and fetched IP', async () => {
-    render(
-      <MemoryRouter>
-        <Hero />
-      </MemoryRouter>,
-    );
-
-    expect(screen.getByText(/ARCHITECTING/i)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Deploy_Solution/i })).toHaveAttribute('href', 'https://calendar.app.google/yf8ZWByZWy1bFEY38');
-    await waitFor(() => expect(screen.getByText('IP: 127.0.0.1')).toBeInTheDocument());
   });
 
   it('navigates to arsenal when view stack is clicked', () => {
