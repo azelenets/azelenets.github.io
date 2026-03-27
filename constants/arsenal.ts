@@ -331,19 +331,19 @@ export const specCards: SpecCardData[] = [
   {
     title: 'CLOUD_NATIVE',
     subtitle: 'K8S_SERVERLESS_INFRA',
-    img: './images/articles/cloud-native-web.png',
+    img: './images/articles/cloud-native-web.avif',
     link: '/cloud-native',
   },
   {
     title: 'DATA_FORGE',
     subtitle: 'ETL_REALTIME_STREAMING',
-    img: './images/articles/realtime.jpg',
+    img: './images/articles/realtime.avif',
     link: '/data-forge',
   },
   {
     title: 'TACTICAL_UI',
     subtitle: 'DESIGN_SYSTEMS_VX',
-    img: './images/articles/uiux.png',
+    img: './images/articles/uiux.avif',
     link: '/tactical-ui',
   },
 ];
