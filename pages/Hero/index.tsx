@@ -121,7 +121,6 @@ const Hero = () => {
             <div className="flex items-center gap-3">
               <span className="hazard-stripe h-4 w-12" />
               <TypedText active={true} text="Tactical Software Engineering" className="text-hazard font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase" as="span" />
-              {/*<span className="text-hazard font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase">Tactical Software Engineering</span>*/}
             </div>
             <h1 className="font-display text-4xl md:text-7xl pt-3 font-black text-white leading-none tracking-tighter">
               ARCHITECTING <br />
