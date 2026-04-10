@@ -37,7 +37,6 @@ describe('Arsenal leaf components', () => {
       <StackColumn
         type="Backend"
         title="Core Stack"
-        id="STACK_01"
         desc="Main services"
         items={[
           { name: 'Node.js', version: '22', status: 'ACTIVE' },

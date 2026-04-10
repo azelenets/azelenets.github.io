@@ -52,7 +52,7 @@ const Arsenal: React.FC = () => {
       {filteredColumns.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredColumns.map(col => (
-            <StackColumn key={col.id} type={col.type} title={col.title} id={col.id} desc={col.desc} items={col.items} forceShowAll={hasQuery} />
+            <StackColumn key={col.type} type={col.type} title={col.title} desc={col.desc} items={col.items} forceShowAll={hasQuery} />
           ))}
         </div>
       ) : (

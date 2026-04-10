@@ -16,7 +16,7 @@ const labCardChildren: Record<string, React.ReactNode> = {
   PRJ_0174: (
     <div className="h-24 w-full bg-black/40 rounded flex items-center justify-between px-3 gap-1.5">
       {(['COMMAND', 'QUERY', 'EVENT', 'HANDLER'] as const).map((label) => (
-        <div key={label} className="flex-1 border border-primary/20 bg-primary/5 flex items-center justify-center text-xs text-primary/50 font-bold py-2">
+        <div key={label} className="flex-1 border border-hazard/20 bg-hazard/5 flex items-center justify-center text-xs text-hazard/50 font-bold py-2">
           {label}
         </div>
       ))}

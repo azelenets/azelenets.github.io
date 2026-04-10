@@ -19,7 +19,7 @@ const TypedText = ({ text, active, as: Wrapper = 'span', className, duration = 1
       setTimeout(() => setDisplayed(text.slice(0, i + 1)), i * delay),
     );
     return () => ids.forEach(clearTimeout);
-  }, [active, text]);
+  }, [active, text, duration]);
 
   return <Wrapper className={className}>{displayed}</Wrapper>;
 };

@@ -10,7 +10,6 @@ describe('stackColumns', () => {
     for (const col of stackColumns) {
       expect(col.type).toBeTruthy();
       expect(col.title).toBeTruthy();
-      expect(col.id).toBeTruthy();
       expect(col.desc).toBeTruthy();
       expect(Array.isArray(col.items)).toBe(true);
       expect(col.items.length).toBeGreaterThan(0);
@@ -18,7 +17,7 @@ describe('stackColumns', () => {
   });
 
   it('column ids are unique', () => {
-    const ids = stackColumns.map((c) => c.id);
+    const ids = stackColumns.map((c) => c.type);
     expect(new Set(ids).size).toBe(ids.length);
   });
 
