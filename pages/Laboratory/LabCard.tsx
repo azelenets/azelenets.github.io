@@ -43,8 +43,8 @@ const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats,
   const actionClasses = ACTION_CLASS_MAP[color];
   const descriptionHoverClass = DESCRIPTION_HOVER_CLASS_MAP[color];
 
-  return (
-    <article className={`hud-border bg-panel-dark/80 backdrop-blur-sm p-6 group transition-all duration-300 ${COLOR_CLASS_MAP[color]}`}>
+  const content = (
+    <>
       <div className="flex justify-between items-start mb-4">
         <span className="text-[10px] font-bold opacity-60">
           {id}{' // '}{codename}
@@ -58,23 +58,22 @@ const LabCard = ({ id, codename, title, desc, status, statusColor, color, stats,
         {children}
         <div className={`flex justify-between items-center text-[10px] ${actionClasses.text}`}>
           <span>{stats}</span>
-          {link ? (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-1 uppercase ${actionClasses.hover}`}
-            >
-              <span className="material-symbols-outlined text-xs">{icon}</span> {action}
-            </a>
-          ) : (
-            <span className={`flex items-center gap-1 cursor-pointer uppercase ${actionClasses.hover}`}>
-              <span className="material-symbols-outlined text-xs">{icon}</span> {action}
-            </span>
-          )}
+          <span className={`flex items-center gap-1 uppercase ${actionClasses.hover}`}>
+            <span className="material-symbols-outlined text-xs">{icon}</span> {action}
+          </span>
         </div>
       </div>
-    </article>
+    </>
+  );
+
+  const cardClass = `hud-border bg-panel-dark/80 backdrop-blur-sm p-6 group transition-all duration-300 ${COLOR_CLASS_MAP[color]}`;
+
+  return link ? (
+    <a href={link} target="_blank" rel="noopener noreferrer" className={cardClass}>
+      {content}
+    </a>
+  ) : (
+    <article className={cardClass}>{content}</article>
   );
 };
 
