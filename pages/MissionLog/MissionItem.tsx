@@ -67,8 +67,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
 
       <div className={`space-y-4 ${align === 'right' ? 'md:text-right' : 'md:order-2'}`}>
         <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/30 text-primary text-[10px] font-bold tracking-widest uppercase">OPS_DATE: {date}</div>
-        <TypedText text={`${role}`} active={active} as="h2" className="text-2xl font-display font-black text-white uppercase tracking-tight" />
-        <TypedText text={outcome} active={active} className="text-primary/60 text-xs font-bold tracking-tighter uppercase" as="div" />
+        <h2 className="text-2xl font-display text-primary/20 tracking-tighter uppercase">{role}</h2>
 
         <figure className="border border-primary/10 bg-black/20 p-4 mt-4 inline-block group hover:border-primary/40 transition-colors w-full">
           {isShield ? (
@@ -106,14 +105,19 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
       </div>
 
       <div ref={ref} className="hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6">
-        <div className="pb-4 border-b border-white/5 flex items-center justify-between gap-4">
-          <div>
-            <span className="text-xl font-display font-black text-white tracking-widest">Operation: </span>
-            <TypedText text={title} active={active} as="span" className="text-xl font-display font-black text-white tracking-widest"/>
+        <div className="pb-4 border-b border-white/5 space-y-2">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <span className="text-xl font-display font-black text-white tracking-widest">Operation: </span>
+              <TypedText text={title} active={active} as="span" className="text-xl font-display font-black text-white tracking-widest"/>
+            </div>
+            <div className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`}>
+              {status}
+            </div>
           </div>
-          <div className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`}>
-            {status}
-          </div>
+          <p className="text-primary/20 text-xs font-bold tracking-tighter uppercase">
+            {outcome}
+          </p>
         </div>
 
         <div className="space-y-2">
