@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StatBlock from './StatBlock';
+import TypedText from '@/components/TypedText.tsx';
 
 const MORSE_PATTERN: number[] = (() => {
   const DOT = 100;
@@ -119,7 +120,8 @@ const Hero = () => {
           <header className="space-y-2">
             <div className="flex items-center gap-3">
               <span className="hazard-stripe h-4 w-12" />
-              <span className="text-hazard font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase">Tactical Software Engineering</span>
+              <TypedText active={true} text="Tactical Software Engineering" className="text-hazard font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase" as="span" />
+              {/*<span className="text-hazard font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase">Tactical Software Engineering</span>*/}
             </div>
             <h1 className="font-display text-4xl md:text-7xl pt-3 font-black text-white leading-none tracking-tighter">
               ARCHITECTING <br />
@@ -168,7 +170,7 @@ const Hero = () => {
           </div>
 
           <div className="absolute -top-4 -right-1 z-30 bg-primary text-black px-4 py-2 font-black -skew-x-12 shadow-[0_0_15px_rgba(250,204,21,0.4)] opacity-75">
-            <div className="text-[10px] tracking-widest opacity-70">EXP_LEVEL</div>
+            <div className="text-[10px] tracking-widest opacity-70">EXPERIENCE</div>
             <div className="text-2xl font-display">13+ YRS</div>
           </div>
         </figure>
