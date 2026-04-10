@@ -1,4 +1,5 @@
 import { memo, useEffect, useRef, useState } from 'react';
+import TypedText from '@/components/TypedText.tsx';
 
 interface StatBlockProps {
   label: string;
@@ -62,7 +63,8 @@ const StatBlock = ({ label, value, barColor, width }: StatBlockProps) => {
   return (
     <div ref={ref} className="space-y-1">
       <div className="text-[10px] text-primary/60 font-bold tracking-widest uppercase">{label}</div>
-      <div className="text-3xl font-display font-black text-white">{displayed}</div>
+      <TypedText text={displayed} active={true} as="div" className="text-3xl font-display font-black text-white" duration={100} />
+      {/*<div className="text-3xl font-display font-black text-white">{displayed}</div>*/}
       <div className="h-1 bg-white/5 w-full mt-2">
         <div className={`h-full ${barColor}`} style={{ width }} />
       </div>
