@@ -31,11 +31,11 @@ const Arsenal: React.FC = () => {
       />
 
       {/* Specializations Footer */}
-      <section className="mt-24">
+      <section className="mt-16">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 border-b border-primary/20 pb-4 gap-4">
-          <h2 className="text-2xl font-black uppercase tracking-widest text-white">System_Specializations</h2>
-          <a className="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-70 transition-opacity" href="#">
-            Download_Full_Schematics <span className="material-symbols-outlined text-sm">arrow_outward</span>
+          <h2 className="text-2xl font-black uppercase tracking-widest text-white">Specializations</h2>
+          <a className="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-70 transition-opacity" href="/blog">
+            Full_Schematics <span className="material-symbols-outlined text-sm">arrow_outward</span>
           </a>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
@@ -52,7 +52,7 @@ const Arsenal: React.FC = () => {
       {filteredColumns.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredColumns.map(col => (
-            <StackColumn key={col.id} type={col.type} title={col.title} id={col.id} desc={col.desc} items={col.items} forceShowAll={hasQuery} />
+            <StackColumn key={col.type} type={col.type} title={col.title} desc={col.desc} items={col.items} forceShowAll={hasQuery} />
           ))}
         </div>
       ) : (

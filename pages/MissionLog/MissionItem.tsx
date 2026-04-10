@@ -1,4 +1,6 @@
-import { memo } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import DeclassifiedText from '@/components/DeclassifiedText';
+import TypedText from '@/components/TypedText';
 
 interface MissionItemProps {
   date: string;
@@ -17,7 +19,49 @@ interface MissionItemProps {
   imageUrl?: string;
 }
 
+const BLOCK_GAP = 3;
+
 const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, outcome, status, statusColor, align, isShield, isGhost, imageUrl }: MissionItemProps) => {
+  const [active, setActive] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActive(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const offsets = useMemo(() => {
+    const toolsArr = tools ?? [];
+    const texts = [objective, ...tactics, ...toolsArr, outcome, status];
+    const { starts } = texts.reduce<{ starts: number[]; cursor: number }>(
+      ({ starts, cursor }, text) => ({
+        starts: [...starts, cursor * BLOCK_GAP],
+        cursor: cursor + text.length + BLOCK_GAP,
+      }),
+      { starts: [], cursor: 0 },
+    );
+    const tLen = tactics.length;
+    const toolLen = toolsArr.length;
+    return {
+      objective: starts[0],
+      tactics: tactics.map((_, i) => starts[1 + i]),
+      tools: toolsArr.map((_, i) => starts[1 + tLen + i]),
+      outcome: starts[1 + tLen + toolLen],
+      status: starts[2 + tLen + toolLen],
+    };
+  }, [objective, tactics, tools, outcome, status]);
+
   return (
     <article className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 z-10">
@@ -28,8 +72,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
 
       <div className={`space-y-4 ${align === 'right' ? 'md:text-right' : 'md:order-2'}`}>
         <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/30 text-primary text-[10px] font-bold tracking-widest uppercase">OPS_DATE: {date}</div>
-        <h2 className="text-2xl font-display font-black text-white uppercase tracking-tight">{title}</h2>
-        <div className="text-primary/60 text-xs font-bold tracking-tighter uppercase">ROLE: {role}</div>
+        <h2 className="text-2xl font-display text-primary/20 tracking-tighter uppercase">{role}</h2>
 
         <figure className="border border-primary/10 bg-black/20 p-4 mt-4 inline-block group hover:border-primary/40 transition-colors w-full">
           {isShield ? (
@@ -66,12 +109,28 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
         </figure>
       </div>
 
-      <div className="hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6">
+      <div ref={ref} className="hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6">
+        <div className="pb-4 border-b border-white/5 space-y-2">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <span className="text-xl font-display font-black text-white tracking-widest uppercase">Operation: </span>
+              <TypedText text={title} active={active} as="span" className="text-xl font-display font-black text-white tracking-widest"/>
+            </div>
+            <div className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`}>
+              {status}
+            </div>
+          </div>
+          <p className="text-primary/20 text-xs font-bold tracking-tighter uppercase">
+            {outcome}
+          </p>
+        </div>
+
         <div className="space-y-2">
           <div className="text-hazard text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2">
             <span className="material-symbols-outlined text-xs">priority_high</span> MISSION_OBJECTIVE
           </div>
-          <p className="text-sm text-slate-400 leading-relaxed">{objective}</p>
+
+          <DeclassifiedText text={objective} startMs={offsets.objective} active={active} as="p" className="text-sm text-slate-400 leading-relaxed" />
         </div>
 
         <div className="space-y-2">
@@ -79,10 +138,10 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
             <span className="material-symbols-outlined text-xs">architecture</span> TACTICAL_IMPLEMENTATION
           </div>
           <ul className="text-xs text-slate-300 space-y-2 list-none font-mono">
-            {tactics.map((tactic) => (
+            {tactics.map((tactic, i) => (
               <li key={tactic} className="flex gap-2">
                 <span className="text-primary font-bold">&gt;&gt;</span>
-                <span>{tactic}</span>
+                <DeclassifiedText text={tactic} startMs={offsets.tactics[i]} active={active} as="span"/>
               </li>
             ))}
           </ul>
@@ -94,19 +153,12 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
               <span className="material-symbols-outlined text-xs">memory</span> TECH_STACK
             </div>
             <div className="flex flex-wrap gap-1.5">
-              {tools.map((tool) => (
-                <span key={tool} className="px-2 py-0.5 bg-primary/5 border border-primary/15 text-primary/60 text-[9px] font-mono tracking-wider">
-                  {tool}
-                </span>
+              {tools.map((tool, i) => (
+                <DeclassifiedText key={tool} text={tool} startMs={offsets.tools[i]} active={active} as="span" className="px-2 py-0.5 bg-primary/5 border border-primary/15 text-primary/60 text-[9px] font-mono tracking-wider" />
               ))}
             </div>
           </div>
         )}
-
-        <div className="pt-4 border-t border-white/5 flex items-center justify-between gap-4">
-          <div className="text-xl font-display font-black text-white tracking-widest">{outcome}</div>
-          <div className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`}>{status}</div>
-        </div>
       </div>
     </article>
   );

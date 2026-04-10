@@ -9,7 +9,6 @@ export interface TechItemData {
 export interface StackColumnData {
   type: string;
   title: string;
-  id: string;
   desc: string;
   items: TechItemData[];
 }
@@ -25,7 +24,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '01_LANG',
     title: 'Languages_Src',
-    id: 'LANG-99',
     desc: 'Core languages powering system integration.',
     items: [
       { name: 'Ruby', version: 'v4.0.1.', status: 'DEPLOY_READY', isCritical: true },
@@ -37,7 +35,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '02_BKN',
     title: 'Backend_Frameworks',
-    id: 'BKN-33',
     desc: 'Server-side frameworks for high-throughput APIs.',
     items: [
       { name: 'Ruby_on_Rails', version: 'v8.0', status: 'CORE_COMMAND', isCritical: true },
@@ -52,7 +49,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '03_UI',
     title: 'Frontend/UI_Frameworks',
-    id: 'UI-44',
     desc: 'Reactive UI construction and design system command.',
     items: [
       { name: 'React', version: 'v19.0', status: 'RENDER_PRIME', isCritical: true },
@@ -70,7 +66,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '04_DB',
     title: 'DB_Clusters',
-    id: 'DB-77',
     desc: 'Relational, document, and in-memory persistence layers.',
     items: [
       { name: 'PostgreSQL', version: 'v16.2', status: 'PERSISTENCE_LAYER', isCritical: true },
@@ -84,7 +79,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '05_ORM',
     title: 'ORM_Layer',
-    id: 'ORM-09',
     desc: 'Type-safe database abstraction and schema management.',
     items: [
       { name: 'ActiveRecord', version: 'v8.0', status: 'CORE_ORM', isCritical: true },
@@ -100,7 +94,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '06_BG',
     title: 'Background_Ops',
-    id: 'BG-76',
     desc: 'Async job execution and queue management.',
     items: [
       { name: 'Sidekiq', version: 'v7.0', status: 'JOB_PROCESSOR', isCritical: true },
@@ -111,7 +104,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '07_MSG',
     title: 'Message_Brokers',
-    id: 'MSG-08',
     desc: 'Event-driven transport for distributed microservices.',
     items: [
       { name: 'Apache_Kafka', version: 'v3.x', status: 'STREAM_CORE', isMaster: true },
@@ -123,7 +115,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '08_AUTH',
     title: 'Auth_Protocols',
-    id: 'AUTH-11',
     desc: 'Identity verification and access control.',
     items: [
       { name: 'Devise', version: 'v4.9', status: 'IDENTITY_CORE', isCritical: true },
@@ -140,7 +131,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '09_PAY',
     title: 'Payments_Stack',
-    id: 'PAY-00',
     desc: 'Multi-gateway transaction infrastructure.',
     items: [
       { name: 'Stripe', version: 'v13.x', status: 'PRIME_GATEWAY', isCritical: true },
@@ -152,7 +142,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '10_ORCH',
     title: 'Infra_Systems',
-    id: 'CLOUD-88',
     desc: 'Cloud-native infrastructure and container orchestration.',
     items: [
       { name: 'Docker', version: 'v27.0', status: 'CONTAINER_OPS', isMaster: true },
@@ -169,7 +158,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '11_CICD',
     title: 'CI_CD_Pipelines',
-    id: 'CICD-87',
     desc: 'Automated build, test, and deploy pipelines.',
     items: [
       { name: 'GitHub_Actions', version: 'v3.x', status: 'CI_CD_PIPELINE', isCritical: true },
@@ -183,7 +171,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '12_TEST',
     title: 'Test_Ops',
-    id: 'TEST-55',
     desc: 'Validation across unit, integration, and E2E layers.',
     items: [
       { name: 'RSpec', version: 'v3.13', status: 'UNIT_STRIKE', isCritical: true },
@@ -197,7 +184,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '13_QA',
     title: 'Code_Quality',
-    id: 'QA-07',
     desc: 'Static analysis, linting, and security scanning.',
     items: [
       { name: 'RuboCop', version: 'v1.65', status: 'STYLE_ENFORCER', isCritical: true },
@@ -213,7 +199,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '14_OBS',
     title: 'Observability',
-    id: 'OBS-10',
     desc: 'Traces, metrics, logs, and error intelligence.',
     items: [
       { name: 'Datadog', version: 'APM_v2', status: 'TELEMETRY_HUB', isMaster: true },
@@ -231,7 +216,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '15_DOCS',
     title: 'Documentation',
-    id: 'DOCS-22',
     desc: 'API docs, schemas, and component knowledge systems.',
     items: [
       { name: 'Swagger / OpenAPI', version: 'v3.1', status: 'API_MANIFEST', isCritical: true },
@@ -247,7 +231,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '16_SEARCH',
     title: 'Search',
-    id: 'SRCH-05',
     desc: 'Full-text and vector search infrastructure.',
     items: [
       { name: 'Elasticsearch', version: 'v8.x', status: 'SEARCH_CORE', isMaster: true },
@@ -260,7 +243,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '17_STOR',
     title: 'File_Storage',
-    id: 'STOR-04',
     desc: 'Asset storage, CDN delivery, and file processing.',
     items: [
       { name: 'AWS_S3', version: 'REST_v4', status: 'OBJECT_STORE', isCritical: true },
@@ -273,7 +255,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '18_EMAIL',
     title: 'Email_Notifications',
-    id: 'EMAIL-03',
     desc: 'Transactional email, SMS, and push notifications.',
     items: [
       { name: 'SendGrid', version: 'v8.x', status: 'MAIL_GATEWAY', isCritical: true },
@@ -286,7 +267,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '19_RT',
     title: 'Real_Time',
-    id: 'RT-02',
     desc: 'WebSocket and event-driven real-time communication.',
     items: [
       { name: 'Action_Cable', version: 'v8.0', status: 'WS_CORE', isCritical: true },
@@ -298,7 +278,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '20_STATE',
     title: 'State_Management',
-    id: 'STATE-01',
     desc: 'Client-side state orchestration for reactive UIs.',
     items: [
       { name: 'Redux', version: 'v5.x', status: 'STATE_CORE', isCritical: true },
@@ -309,7 +288,6 @@ export const stackColumns: StackColumnData[] = [
   {
     type: '21_AI',
     title: 'AI_Tools',
-    id: 'AI-66',
     desc: 'Intelligence augmentation and LLM integration.',
     items: [
       { name: 'Claude Code', version: 'claude-sonnet-4-6', status: 'PRIME_DIRECTIVE', isCritical: true },
