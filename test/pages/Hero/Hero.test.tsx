@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import type * as ReactRouterDom from 'react-router-dom';
 import Hero from '@/pages/Hero';
@@ -38,6 +38,7 @@ describe('Hero page', () => {
 
 describe('Hero StatBlock', () => {
   beforeEach(() => {
+    vi.useFakeTimers();
     vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
       cb(performance.now() + 2000);
       return 0;
@@ -61,11 +62,13 @@ describe('Hero StatBlock', () => {
   });
 
   afterEach(() => {
+    vi.useRealTimers();
     vi.unstubAllGlobals();
   });
 
-  it('renders label, value, and bar width', () => {
+  it('renders label, value, and bar width', async () => {
     const { container } = render(<StatBlock label="Nodes_Managed" value="90+" barColor="bg-primary" width="66%" />);
+    await act(async () => { vi.runAllTimers(); });
     expect(screen.getByText('Nodes_Managed')).toBeInTheDocument();
     expect(screen.getByText('90+')).toBeInTheDocument();
     expect(container.querySelector('[style="width: 66%;"]')).toBeInTheDocument();
