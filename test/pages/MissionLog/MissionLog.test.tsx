@@ -25,9 +25,9 @@ describe('MissionItem', () => {
 
     expect(screen.getByText('Operation Test')).toBeInTheDocument();
     expect(screen.getByText(/MISSION_OBJECTIVE/)).toBeInTheDocument();
-    expect(screen.getByText('React')).toBeInTheDocument();
-    expect(screen.getByText('TypeScript')).toBeInTheDocument();
     expect(screen.getByAltText('Wireframe')).toBeInTheDocument();
+    expect(document.body.textContent).toContain('React');
+    expect(document.body.textContent).toContain('TypeScript');
   });
 });
 

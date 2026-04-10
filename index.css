@@ -288,3 +288,29 @@ body {
   0%   { top: 0%; }
   100% { top: 100%; }
 }
+
+@keyframes declassify {
+  from { transform: translateX(0.0001px); }
+  to   { transform: translateX(0); }
+}
+
+.declassify-pending {
+  /* outer span: no background needed, inner span handles it */
+}
+
+.declassify-char {
+  animation: declassify 0.77s linear forwards;
+}
+
+.declassify-block {
+  background-color: black;
+  color: black;
+  transition: background-color 0.35s ease-out;
+}
+
+.declassify-done {
+  filter: opacity(100%);
+  color: currentColor;
+
+  background-color: transparent;
+}
