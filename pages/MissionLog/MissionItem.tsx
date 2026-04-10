@@ -54,6 +54,8 @@ const DeclassifiedText = ({ text, startMs = 0, active, as: Wrapper, className }:
 
 const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, outcome, status, statusColor, align, isShield, isGhost, imageUrl }: MissionItemProps) => {
   const [active, setActive] = useState(false);
+  const [titleText, setTitleText] = useState('_');
+  const [roleText, setRoleText] = useState('_');
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -71,6 +73,25 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!active) return;
+    const delay = 1400 / title.length;
+    const ids = title.split('').map((_, i) =>
+      setTimeout(() => setTitleText(title.slice(0, i + 1)), i * delay),
+    );
+    return () => ids.forEach(clearTimeout);
+  }, [active, title]);
+
+  useEffect(() => {
+    if (!active) return;
+    const full = role;
+    const delay = 1400 / full.length;
+    const ids = full.split('').map((_, i) =>
+      setTimeout(() => setRoleText(full.slice(0, i + 1)), i * delay),
+    );
+    return () => ids.forEach(clearTimeout);
+  }, [active, role]);
 
   const offsets = useMemo(() => {
     let cursor = 0;
@@ -98,8 +119,8 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
 
       <div className={`space-y-4 ${align === 'right' ? 'md:text-right' : 'md:order-2'}`}>
         <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/30 text-primary text-[10px] font-bold tracking-widest uppercase">OPS_DATE: {date}</div>
-        <DeclassifiedText text={title} startMs={0} active={active} as="h2" className="text-2xl font-display font-black text-white uppercase tracking-tight" />
-        <DeclassifiedText text={`ROLE: ${role}`} startMs={role.length} active={active} as="div" className="text-primary/60 text-xs font-bold tracking-tighter uppercase" />
+        <h2 className="text-2xl font-display font-black text-white uppercase tracking-tight">{titleText}</h2>
+        <div className="text-primary/60 text-xs font-bold tracking-tighter uppercase">ROLE: {roleText}</div>
 
         <figure className="border border-primary/10 bg-black/20 p-4 mt-4 inline-block group hover:border-primary/40 transition-colors w-full">
           {isShield ? (
