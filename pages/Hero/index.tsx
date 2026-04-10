@@ -159,7 +159,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <figure className="relative w-full lg:w-1/2 aspect-square max-w-md hidden xl:block">
+        <figure className="relative w-full lg:w-1/2 aspect-square max-w-2xl hidden xl:block">
           <div className="absolute inset-0 border border-primary/10 rounded-full scale-110" />
           <div className="absolute inset-0 border border-dashed border-primary/20 rounded-full scale-125 animate-spin-slow" />
 
@@ -167,7 +167,7 @@ const Hero = () => {
             <img alt="Tactical radar display" className="w-full h-full object-contain z-10" decoding="async" fetchPriority="low" loading="lazy" src="/images/radar.svg" />
           </div>
 
-          <div className="absolute -bottom-4 -left-4 z-30 bg-hazard text-black px-4 py-2 font-black -skew-x-12 shadow-[0_0_15px_rgba(250,204,21,0.4)]">
+          <div className="absolute -top-4 -right-1 z-30 bg-primary text-black px-4 py-2 font-black -skew-x-12 shadow-[0_0_15px_rgba(250,204,21,0.4)] opacity-75">
             <div className="text-[10px] tracking-widest opacity-70">EXP_LEVEL</div>
             <div className="text-2xl font-display">13+ YRS</div>
           </div>
