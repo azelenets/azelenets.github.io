@@ -1,0 +1,285 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"
+     width="600" height="600" role="img" aria-label="Tactical radar display">
+  <defs>
+
+    <!-- ── Filters ─────────────────────────────────── -->
+    <filter id="r-glow-green" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="r-glow-node" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="4.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="r-glow-amber" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="r-glow-cyan" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- ── Gradients ─────────────────────────────────── -->
+<!--    <radialGradient id="r-bg" cx="50%" cy="50%" r="50%">-->
+<!--      <stop offset="0%" stop-color="#0a0a0a"/>-->
+<!--      <stop offset="100%" stop-color="#050505"/>-->
+<!--    </radialGradient>-->
+<!--    <radialGradient id="r-fill" cx="50%" cy="50%" r="50%">-->
+<!--      <stop offset="0%" stop-color="#001a2a" stop-opacity="0.55"/>-->
+<!--      <stop offset="70%" stop-color="#060c10" stop-opacity="0.25"/>-->
+<!--      <stop offset="100%" stop-color="transparent"/>-->
+<!--    </radialGradient>-->
+    <radialGradient id="r-sweep" cx="0%" cy="50%" r="100%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.60"/>
+      <stop offset="55%" stop-color="#00f3ff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0"/>
+    </radialGradient>
+<!--    <radialGradient id="r-vignette" cx="50%" cy="50%" r="50%">-->
+<!--      <stop offset="60%" stop-color="transparent"/>-->
+<!--      <stop offset="100%" stop-color="#050505" stop-opacity="0.55"/>-->
+<!--    </radialGradient>-->
+
+    <!-- ── Clip paths ────────────────────────────────── -->
+    <clipPath id="r-clip">
+      <circle cx="300" cy="300" r="265"/>
+    </clipPath>
+
+    <!-- ── Patterns ──────────────────────────────────── -->
+    <pattern id="r-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0L0 0 0 30" fill="none" stroke="#0c181e" stroke-width="0.35"/>
+    </pattern>
+
+    <!-- ── CSS Animations ────────────────────────────── -->
+    <style>
+      @keyframes r-sweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+      }
+      @keyframes r-ring-pulse-a {
+      0%, 100% { opacity: 0.20; }
+      50% { opacity: 0.42; }
+      }
+      @keyframes r-ring-pulse-b {
+      0%, 100% { opacity: 0.14; }
+      50% { opacity: 0.32; }
+      }
+      @keyframes r-ring-pulse-c {
+      0%, 100% { opacity: 0.09; }
+      50% { opacity: 0.22; }
+      }
+      @keyframes r-blip-expand {
+      0% { r: 4; opacity: 0.75; }
+      100% { r: 42; opacity: 0; }
+      }
+      @keyframes r-blip-expand-sm {
+      0% { r: 3; opacity: 0.65; }
+      100% { r: 28; opacity: 0; }
+      }
+      @keyframes r-blip-pulse {
+      0%, 100% { opacity: 0.90; }
+      50% { opacity: 0.40; }
+      }
+      @keyframes r-blip-pulse-slow {
+      0%, 100% { opacity: 0.80; }
+      50% { opacity: 0.30; }
+      }
+      @keyframes r-tick-blink {
+      0%, 80%, 100% { opacity: 0.35; }
+      85% { opacity: 0.90; }
+      }
+      @keyframes r-label-fade {
+      0%, 100% { opacity: 0.38; }
+      50% { opacity: 0.62; }
+      }
+    </style>
+
+  </defs>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!--  BACKGROUND                                     -->
+  <!-- ════════════════════════════════════════════════ -->
+<!--  <rect width="600" height="600" fill="url(#r-bg)"/>-->
+<!--  <rect width="600" height="600" fill="url(#r-grid)" opacity="0.8"/>-->
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!--  RADAR DISH                                     -->
+  <!-- ════════════════════════════════════════════════ -->
+
+  <!-- Soft green interior fill -->
+  <circle cx="300" cy="300" r="265" fill="url(#r-fill)"/>
+
+  <!-- Concentric range rings -->
+  <circle cx="300" cy="300" r="66.25"
+          fill="none" stroke="#00f3ff" stroke-width="0.55"
+          style="animation: r-ring-pulse-a 3.6s ease-in-out infinite;"/>
+  <circle cx="300" cy="300" r="132.5"
+          fill="none" stroke="#00f3ff" stroke-width="0.55"
+          style="animation: r-ring-pulse-b 3.6s ease-in-out 0.6s infinite;"/>
+  <circle cx="300" cy="300" r="198.75"
+          fill="none" stroke="#00f3ff" stroke-width="0.55"
+          style="animation: r-ring-pulse-c 3.6s ease-in-out 1.2s infinite;"/>
+  <!-- Outer hard ring -->
+  <circle cx="300" cy="300" r="264"
+          fill="none" stroke="#00f3ff" stroke-width="1.1" opacity="0.28"/>
+  <!-- Outer bezel ring -->
+  <circle cx="300" cy="300" r="278"
+          fill="none" stroke="#0a2a35" stroke-width="2" opacity="0.70"/>
+
+  <!-- Cross hairs -->
+  <g stroke="#00f3ff" stroke-width="0.45" opacity="0.16" clip-path="url(#r-clip)">
+    <line x1="35" y1="300" x2="565" y2="300"/>
+    <line x1="300" y1="35" x2="300" y2="565"/>
+    <line x1="113" y1="113" x2="487" y2="487"/>
+    <line x1="487" y1="113" x2="113" y2="487"/>
+  </g>
+
+  <!-- Range tick marks (cardinal + 45°) -->
+  <g stroke="#00f3ff" stroke-width="1.2" opacity="0.42" filter="url(#r-glow-green)">
+    <line x1="300" y1="36" x2="300" y2="52"/>
+    <line x1="300" y1="564" x2="300" y2="548"/>
+    <line x1="36" y1="300" x2="52" y2="300"/>
+    <line x1="564" y1="300" x2="548" y2="300"/>
+    <line x1="300" y1="102" x2="300" y2="110"/>
+    <line x1="300" y1="498" x2="300" y2="490"/>
+    <line x1="102" y1="300" x2="110" y2="300"/>
+    <line x1="498" y1="300" x2="490" y2="300"/>
+    <line x1="300" y1="168" x2="300" y2="174"/>
+    <line x1="300" y1="432" x2="300" y2="426"/>
+    <line x1="168" y1="300" x2="174" y2="300"/>
+    <line x1="432" y1="300" x2="426" y2="300"/>
+    <line x1="113" y1="113" x2="121" y2="121"/>
+    <line x1="487" y1="113" x2="479" y2="121"/>
+    <line x1="113" y1="487" x2="121" y2="479"/>
+    <line x1="487" y1="487" x2="479" y2="479"/>
+  </g>
+
+  <!-- Cardinal labels -->
+<!--  <g font-family="JetBrains Mono, monospace" font-size="9.5" text-anchor="middle"-->
+<!--     fill="#00f3ff" opacity="0.50">-->
+<!--    <text x="300" y="26">N</text>-->
+<!--    <text x="300" y="582">S</text>-->
+<!--    <text x="25" y="303">W</text>-->
+<!--    <text x="577" y="303">E</text>-->
+<!--  </g>-->
+
+  <!-- Range labels -->
+  <g font-family="JetBrains Mono, monospace" font-size="8.5" fill="#00f3ff"
+     style="animation: r-label-fade 4s ease-in-out infinite;">
+    <text x="305" y="230" opacity="0.75">066</text>
+    <text x="305" y="162" opacity="0.5">132</text>
+    <text x="305" y="95" opacity="0.35">198</text>
+  </g>
+
+  <!-- Sweep arm (rotating) -->
+  <g clip-path="url(#r-clip)">
+    <g style="transform-origin:300px 300px; animation: r-sweep 7s linear infinite;">
+      <path d="M300 300 L565 300 A265 265 0 0 0 300 35 Z"
+            fill="url(#r-sweep)" opacity="0.50"/>
+      <line x1="300" y1="300" x2="300" y2="36"
+            stroke="#00f3ff" stroke-width="1.2" opacity="0.70"
+            filter="url(#r-glow-green)"/>
+    </g>
+  </g>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!--  BLIPS                                          -->
+  <!-- ════════════════════════════════════════════════ -->
+
+  <!-- Expanding ping rings -->
+  <circle cx="213" cy="200" r="4" fill="none" stroke="#00f3ff" stroke-width="0.8" opacity="0"
+          style="animation: r-blip-expand 3.0s ease-out infinite;"/>
+  <circle cx="410" cy="240" r="3" fill="none" stroke="#00f3ff" stroke-width="0.8" opacity="0"
+          style="animation: r-blip-expand-sm 3.0s ease-out 0.9s infinite;"/>
+  <circle cx="320" cy="390" r="4" fill="none" stroke="#facc15" stroke-width="0.8" opacity="0"
+          style="animation: r-blip-expand 3.5s ease-out 1.7s infinite;"/>
+  <circle cx="170" cy="312" r="3" fill="none" stroke="#00f3ff" stroke-width="0.8" opacity="0"
+          style="animation: r-blip-expand-sm 3.0s ease-out 2.4s infinite;"/>
+  <circle cx="445" cy="355" r="4" fill="none" stroke="#00f3ff" stroke-width="0.8" opacity="0"
+          style="animation: r-blip-expand-sm 3.2s ease-out 0.4s infinite;"/>
+
+  <!-- Blip dots -->
+  <circle cx="213" cy="200" r="4.5" fill="#00f3ff" filter="url(#r-glow-node)" opacity="0.92"
+          style="animation: r-blip-pulse 2.4s ease-in-out infinite;"/>
+  <circle cx="410" cy="240" r="3.5" fill="#00f3ff" filter="url(#r-glow-node)" opacity="0.82"
+          style="animation: r-blip-pulse 3.0s ease-in-out 0.5s infinite;"/>
+  <circle cx="320" cy="390" r="5.5" fill="#facc15" filter="url(#r-glow-amber)" opacity="0.90"
+          style="animation: r-blip-pulse-slow 2.8s ease-in-out 1.2s infinite;"/>
+  <circle cx="170" cy="312" r="3" fill="#00f3ff" filter="url(#r-glow-node)" opacity="0.74"/>
+  <circle cx="445" cy="355" r="4" fill="#00f3ff" filter="url(#r-glow-cyan)" opacity="0.82"
+          style="animation: r-blip-pulse 3.2s ease-in-out 0.8s infinite;"/>
+  <circle cx="257" cy="138" r="3" fill="#00f3ff" filter="url(#r-glow-node)" opacity="0.68"
+          style="animation: r-blip-pulse-slow 3.5s ease-in-out 2.0s infinite;"/>
+  <circle cx="360" cy="462" r="3" fill="#00f3ff" filter="url(#r-glow-node)" opacity="0.72"/>
+
+  <!-- Blip ID labels -->
+  <g font-family="JetBrains Mono, monospace" font-size="7.5" fill="#00f3ff" opacity="0.52">
+    <text x="222" y="197">TGT-01</text>
+    <text x="419" y="237">TGT-02</text>
+    <text x="329" y="402">TGT-03</text>
+    <text x="179" y="309">TGT-04</text>
+    <text x="454" y="352">TGT-05</text>
+    <text x="266" y="135">TGT-06</text>
+    <text x="367" y="462">TGT-07</text>
+  </g>
+
+  <!-- Blinking activity ticks -->
+  <g style="animation: r-tick-blink 2.5s ease-in-out infinite;">
+    <rect x="207" y="203" width="3" height="3" fill="#00f3ff" opacity="0.8"/>
+  </g>
+  <g style="animation: r-tick-blink 2.5s ease-in-out 0.8s infinite;">
+    <rect x="404" y="243" width="3" height="3" fill="#00f3ff" opacity="0.8"/>
+  </g>
+  <g style="animation: r-tick-blink 3.0s ease-in-out 1.4s infinite;">
+    <rect x="314" y="393" width="3" height="3" fill="#facc15" opacity="0.8"/>
+  </g>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!--  HUD OVERLAYS                                   -->
+  <!-- ════════════════════════════════════════════════ -->
+
+  <!-- Center cross dot -->
+  <circle cx="300" cy="300" r="3.5" fill="#00f3ff" opacity="0.62" filter="url(#r-glow-green)"/>
+  <circle cx="300" cy="300" r="7" fill="none" stroke="#00f3ff" stroke-width="0.6" opacity="0.35"/>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!--  BEZEL + CORNER DECORATIONS                     -->
+  <!-- ════════════════════════════════════════════════ -->
+
+  <!-- Layered outer bezel rings -->
+<!--  <circle cx="300" cy="300" r="295" fill="none" stroke="#0a1520" stroke-width="5" opacity="0.60"/>-->
+<!--  <circle cx="300" cy="300" r="290" fill="none" stroke="#0d1117" stroke-width="8" opacity="0.90"/>-->
+<!--  <circle cx="300" cy="300" r="285" fill="none" stroke="#0a2a35" stroke-width="1" opacity="0.55"/>-->
+
+  <!-- Vignette -->
+  <circle cx="300" cy="300" r="295" fill="url(#r-vignette)"/>
+
+  <!-- Degree arc labels (every 30°) -->
+  <g font-family="JetBrains Mono, monospace" font-size="7" fill="#00f3ff" opacity="0.28" text-anchor="middle">
+    <text x="300" y="20">000</text>
+    <text x="440" y="58">030</text>
+    <text x="546" y="165">060</text>
+    <text x="582" y="306">090</text>
+    <text x="546" y="448">120</text>
+    <text x="440" y="554">150</text>
+    <text x="300" y="590">180</text>
+    <text x="160" y="554">210</text>
+    <text x="54" y="448">240</text>
+    <text x="18" y="306">270</text>
+    <text x="54" y="165">300</text>
+    <text x="160" y="58">330</text>
+  </g>
+</svg>

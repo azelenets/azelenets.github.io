@@ -163,19 +163,8 @@ const Hero = () => {
           <div className="absolute inset-0 border border-primary/10 rounded-full scale-110" />
           <div className="absolute inset-0 border border-dashed border-primary/20 rounded-full scale-125 animate-spin-slow" />
 
-          <div className="relative w-full h-full hud-border bg-black overflow-hidden z-10">
-            <div className="absolute inset-0 bg-primary/5 z-10" />
-            <img alt="Tactical Avatar" className="w-full h-full object-cover glitch-img opacity-60 z-30" decoding="async" fetchPriority="low" loading="lazy" src="/images/desktop.avif" />
-
-            <div className="absolute inset-0 z-20 pointer-events-none">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-32 border border-primary/30 rounded-full" />
-              <div className="absolute top-1/2 left-0 w-full h-[1px] bg-primary/20" />
-              <div className="absolute left-1/2 top-0 h-full w-[1px] bg-primary/20" />
-
-              <div className="absolute top-4 left-4 text-[10px] text-experimental/80 font-bold">REC [●]</div>
-              <div className="absolute top-4 right-4 text-[10px] text-primary/60 font-bold">CAM_01</div>
-              <div className="absolute bottom-4 right-4 text-[10px] text-primary/60 font-bold">SIG_STRENGTH: 98%</div>
-            </div>
+          <div className="relative w-full h-full overflow-hidden z-10">
+            <img alt="Tactical radar display" className="w-full h-full object-contain z-10" decoding="async" fetchPriority="low" loading="lazy" src="/images/radar.svg" />
           </div>
 
           <div className="absolute -bottom-4 -left-4 z-30 bg-hazard text-black px-4 py-2 font-black -skew-x-12 shadow-[0_0_15px_rgba(250,204,21,0.4)]">
