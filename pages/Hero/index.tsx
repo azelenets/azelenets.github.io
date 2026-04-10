@@ -153,7 +153,7 @@ const Hero = () => {
               data-cta-section="hero"
               data-cta-label="View Stack"
               onClick={() => navigate('/arsenal')}
-              className="px-8 py-4 border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-all flex items-center gap-2 justify-center"
+              className="px-8 py-4 border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/10 transition-all flex items-center gap-2 justify-center cursor-pointer"
             >
               <span className="material-symbols-outlined text-sm">terminal</span> View_Stack
             </button>
