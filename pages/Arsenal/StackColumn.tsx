@@ -44,7 +44,7 @@ const StackColumn = ({ type, title, id, desc, items, forceShowAll = false }: Sta
       {items.length > VISIBLE_COUNT && !forceShowAll && (
         <button
           onClick={() => setShowAll(prev => !prev)}
-          className="mt-4 text-[10px] font-mono font-bold uppercase tracking-widest text-hazard/50 hover:text-hazard transition-colors text-center"
+          className="mt-4 text-[10px] font-mono font-bold uppercase tracking-widest text-hazard/50 hover:text-hazard transition-colors text-center cursor-pointer"
         >
           {showAll ? '[ COLLAPSE ]' : `[ +${hidden} MORE ]`}
         </button>

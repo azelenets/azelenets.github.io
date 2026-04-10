@@ -31,7 +31,7 @@ const Arsenal: React.FC = () => {
       />
 
       {/* Specializations Footer */}
-      <section className="mt-24">
+      <section className="mt-16">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 border-b border-primary/20 pb-4 gap-4">
           <h2 className="text-2xl font-black uppercase tracking-widest text-white">Specializations</h2>
           <a className="text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-70 transition-opacity" href="/blog">
