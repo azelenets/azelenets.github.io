@@ -17,7 +17,7 @@ interface MissionItemProps {
   imageUrl?: string;
 }
 
-const CHAR_DELAY = 50;
+const WORD_DELAY = 50;
 const BLOCK_GAP = 5;
 
 type DeclassifiedTextProps = {
@@ -34,7 +34,7 @@ const DeclassifiedText = ({ text, startMs = 0, active, as: Wrapper, className }:
 
   const nodes = tokens.map((token, i) => {
     if (/^\s+$/.test(token)) return <span key={i}>{token}</span>;
-    const delay = startMs + wordIdx++ * CHAR_DELAY;
+    const delay = startMs + wordIdx++ * WORD_DELAY;
     return (
       <span
         key={i}
