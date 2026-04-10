@@ -1,11 +1,35 @@
-import { describe, expect, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { act, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import MissionLog from '@/pages/MissionLog';
 import MissionItem from '@/pages/MissionLog/MissionItem';
 
 describe('MissionItem', () => {
-  it('renders core mission data with tools', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        private cb: IntersectionObserverCallback;
+        constructor(cb: IntersectionObserverCallback) { this.cb = cb; }
+        observe(el: Element) {
+          this.cb(
+            [{ isIntersecting: true, target: el } as IntersectionObserverEntry],
+            this as unknown as IntersectionObserver,
+          );
+        }
+        disconnect() {}
+        unobserve() {}
+      },
+    );
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+  });
+
+  it('renders core mission data with tools', async () => {
     render(
       <MissionItem
         date="2026.Q1"
@@ -22,6 +46,8 @@ describe('MissionItem', () => {
         imageUrl="/images/desktop.avif"
       />,
     );
+
+    await act(async () => { vi.runAllTimers(); });
 
     expect(screen.getByText('Operation Test')).toBeInTheDocument();
     expect(screen.getByText(/MISSION_OBJECTIVE/)).toBeInTheDocument();

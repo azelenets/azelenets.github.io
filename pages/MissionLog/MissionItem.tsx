@@ -42,18 +42,23 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
   }, []);
 
   const offsets = useMemo(() => {
-    let cursor = 0;
-    const next = (text: string) => {
-      const ms = cursor * BLOCK_GAP;
-      cursor += text.length + BLOCK_GAP;
-      return ms;
-    };
+    const toolsArr = tools ?? [];
+    const texts = [objective, ...tactics, ...toolsArr, outcome, status];
+    const { starts } = texts.reduce<{ starts: number[]; cursor: number }>(
+      ({ starts, cursor }, text) => ({
+        starts: [...starts, cursor * BLOCK_GAP],
+        cursor: cursor + text.length + BLOCK_GAP,
+      }),
+      { starts: [], cursor: 0 },
+    );
+    const tLen = tactics.length;
+    const toolLen = toolsArr.length;
     return {
-      objective: next(objective),
-      tactics: tactics.map(next),
-      tools: (tools ?? []).map(next),
-      outcome: next(outcome),
-      status: next(status),
+      objective: starts[0],
+      tactics: tactics.map((_, i) => starts[1 + i]),
+      tools: toolsArr.map((_, i) => starts[1 + tLen + i]),
+      outcome: starts[1 + tLen + toolLen],
+      status: starts[2 + tLen + toolLen],
     };
   }, [objective, tactics, tools, outcome, status]);
 
@@ -108,7 +113,7 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
         <div className="pb-4 border-b border-white/5 space-y-2">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <span className="text-xl font-display font-black text-white tracking-widest">Operation: </span>
+              <span className="text-xl font-display font-black text-white tracking-widest uppercase">Operation: </span>
               <TypedText text={title} active={active} as="span" className="text-xl font-display font-black text-white tracking-widest"/>
             </div>
             <div className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`}>

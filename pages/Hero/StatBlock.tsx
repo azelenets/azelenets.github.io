@@ -7,7 +7,7 @@ interface StatBlockProps {
   width: string;
 }
 
-const DURATION = 1400;
+const DURATION = 1;
 
 function parseNumeric(value: string): { num: number; suffix: string } | null {
   const match = value.match(/^(\d+(?:\.\d+)?)(.*)$/);
@@ -52,7 +52,7 @@ const StatBlock = ({ label, value, barColor, width }: StatBlockProps) => {
           });
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0 },
     );
 
     observer.observe(el);
