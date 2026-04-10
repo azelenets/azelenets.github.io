@@ -18,7 +18,7 @@ export interface MissionData {
 export const missions: MissionData[] = [
   {
     date: '2025.Q3 — 2026.Q1',
-    title: 'Operation: WONDER LAKE',
+    title: 'WONDER LAKE',
     role: 'Software Engineer, Full-Stack',
     scanId: 'BWF-OPS-24',
     objective:
@@ -39,7 +39,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2025.Q4 — 2025.Q4',
-    title: 'Operation: Metropolitan Bride',
+    title: 'Metropolitan Bride',
     role: 'Software Engineer, Front-End',
     scanId: 'PW-OPS-24',
     objective:
@@ -60,7 +60,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2022.Q2 — 2026.Q1',
-    title: 'Operation: Twisted Science',
+    title: 'Twisted Science',
     role: 'Software Engineer, Full-Stack',
     scanId: 'TW-BSCI-24',
     objective:
@@ -82,7 +82,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2021.Q3 — 2025.Q1',
-    title: 'Operation: Seeking Alpha',
+    title: 'Seeking Alpha',
     role: 'Software Engineer, Back-End',
     scanId: 'SA-OPS-22',
     objective:
@@ -103,7 +103,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2021.Q2 — 2021.Q4',
-    title: 'Operation: Iron Ledger',
+    title: 'Iron Ledger',
     role: 'Founding Partner, Full-Stack Engineer',
     scanId: 'PM-OPS-20',
     objective:
@@ -125,7 +125,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2020.Q2 — 2021.Q4',
-    title: 'Operation: Skills Factory',
+    title: 'Skills Factory',
     role: 'Lead Solution Engineer',
     scanId: 'SK-OPS-19',
     objective:
@@ -145,7 +145,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2020.Q3 — 2020.Q4',
-    title: 'Operation: Unpaid Loans',
+    title: 'Unpaid Loans',
     role: 'Software Engineer, Full-Stack',
     scanId: 'VLT-OPS-19',
     objective:
@@ -166,7 +166,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2020.Q2 — 2020.Q4',
-    title: 'Operation: 1-2-3-4',
+    title: '1-2-3-4',
     role: 'Software Engineer, Full-Stack',
     scanId: 'VC-OPS-19',
     objective:
@@ -187,7 +187,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2020.Q2 — 2020.Q3',
-    title: 'Operation: News Desk',
+    title: 'News Desk',
     role: 'Software Engineer, Full-Stack',
     scanId: 'MND-OPS-18',
     objective:
@@ -208,7 +208,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2020.Q3 — 2020.Q3',
-    title: 'Operation: NJ-SIGN',
+    title: 'NJ-SIGN',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NS-OPS-19',
     objective:
@@ -229,7 +229,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2020.Q3 — 2020.Q4',
-    title: 'Operation: BVP',
+    title: 'BVP',
     role: 'Software Engineer, Full-Stack',
     scanId: 'BAV-OPS-19',
     objective:
@@ -250,7 +250,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2020.Q2 — 2020.Q3',
-    title: 'Operation: KEFIR',
+    title: 'KEFIR',
     role: 'Software Engineer, Full-Stack',
     scanId: 'KP-OPS-20',
     objective:
@@ -271,7 +271,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2020.Q1 — 2020.Q2',
-    title: 'Operation: Study Power',
+    title: 'Study Power',
     role: 'Software Engineer, Full-Stack',
     scanId: 'MP-OPS-18',
     objective:
@@ -292,7 +292,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2019.Q3 — 2020.Q1',
-    title: 'Operation: Sophisticate',
+    title: 'Sophisticate',
     role: 'Software Engineer, Front-End',
     scanId: 'SOPH-OPS-19',
     objective:
@@ -313,7 +313,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2019.Q1 — 2019.Q3',
-    title: 'Operation: Cipher Gate',
+    title: 'Cipher Gate',
     role: 'Team Lead | Software Engineer, Full-Stack',
     scanId: 'SAI-OPS-19',
     objective:
@@ -334,7 +334,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q2 — 2018.Q4',
-    title: 'Operation: Holy Book',
+    title: 'Holy Book',
     role: 'Software Engineer, Full-Stack',
     scanId: 'WBS-OPS-18',
     objective:
@@ -355,7 +355,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q2 — 2018.Q4',
-    title: 'Operation: Iron March',
+    title: 'Iron March',
     role: 'Software Engineer, Back-End',
     scanId: 'TW-OPS-16',
     objective:
@@ -376,7 +376,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q2 — 2018.Q3',
-    title: 'Operation: Phantom Echo',
+    title: 'Phantom Echo',
     role: 'Software Engineer, Back-End',
     scanId: 'VV-OPS-15',
     objective:
@@ -397,7 +397,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q3 — 2020.Q3',
-    title: 'Operation: Yalta',
+    title: 'Yalta',
     role: 'Software Engineer, Full-Stack',
     scanId: 'YW-OPS-15',
     objective:
@@ -418,7 +418,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2018.Q2 — 2018.Q3',
-    title: 'Operation: Shadow Invitation',
+    title: 'Shadow Invitation',
     role: 'Software Engineer, Back-End',
     scanId: 'INV-OPS-15',
     objective:
@@ -439,7 +439,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2017.Q4 — 2018.Q2',
-    title: 'Operation: Supremacy Energy',
+    title: 'Supremacy Energy',
     role: 'Software Engineer, Full-Stack',
     scanId: 'EC-OPS-17',
     objective:
@@ -460,7 +460,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2017.Q3 — 2017.Q4',
-    title: 'Operation: Thunder Strike',
+    title: 'Thunder Strike',
     role: 'Software Engineer, Back-End',
     scanId: 'FNG-OPS-17',
     objective:
@@ -481,7 +481,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2017.Q2 — 2017.Q3',
-    title: 'Operation: Budget Barracks',
+    title: 'Budget Barracks',
     role: 'Software Engineer, Back-End',
     scanId: 'HCH-OPS-16',
     objective:
@@ -502,7 +502,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2016.Q4 — 2017.Q2',
-    title: 'Operation: Reinforced Staffing',
+    title: 'Reinforced Staffing',
     role: 'Software Engineer, Back-End',
     scanId: 'SP-OPS-16',
     objective:
@@ -523,7 +523,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q3 — 2016.Q4',
-    title: 'Operation: LoopMe',
+    title: 'LoopMe',
     role: 'Software Engineer, Full-Stack',
     scanId: 'LM-OPS-15',
     objective:
@@ -544,7 +544,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q3 — 2015.Q4',
-    title: 'Operation: Steel Vanguard',
+    title: 'Steel Vanguard',
     role: 'Software Engineer, Full-Stack',
     scanId: 'R9-OPS-14',
     objective:
@@ -565,7 +565,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q3 — 2015.Q4',
-    title: 'Operation: Capital Swarm',
+    title: 'Capital Swarm',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NEN-OPS-14',
     objective:
@@ -586,7 +586,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q2 — 2015.Q3',
-    title: 'Operation: Night Gambit',
+    title: 'Night Gambit',
     role: 'Software Engineer, Full-Stack',
     scanId: 'GMB-OPS-14',
     objective:
@@ -607,7 +607,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2015.Q1 — 2015.Q3',
-    title: 'Operation: Flash Market',
+    title: 'Flash Market',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NOW-OPS-13',
     objective:
@@ -628,7 +628,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2014.Q2 — 2015.Q1',
-    title: 'Operation: Safety Sophite',
+    title: 'Safety Sophite',
     role: 'Software Engineer, Full-Stack',
     scanId: 'SFTY-OPS-15',
     objective:
@@ -649,7 +649,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2014.Q2 — 2015.Q1',
-    title: 'Operation: Urban Taxi',
+    title: 'Urban Taxi',
     role: 'Software Engineer, Full-Stack',
     scanId: 'STX-OPS-16',
     objective:
@@ -670,7 +670,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2014.Q2 — 2014.Q4',
-    title: 'Operation: Waypoint Omega',
+    title: 'Waypoint Omega',
     role: 'Software Engineer, Full-Stack',
     scanId: 'TRP-OPS-13',
     objective:
@@ -691,7 +691,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2013.Q2 — 2014.Q3',
-    title: 'Operation: Rapid Discount',
+    title: 'Rapid Discount',
     role: 'Software Engineer, Full-Stack',
     scanId: 'D4Y-OPS-13',
     objective:
@@ -711,7 +711,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2013.Q3 — 2013.Q4',
-    title: 'Operation: Zero Hour',
+    title: 'Zero Hour',
     role: 'Software Engineer, Full-Stack',
     scanId: 'NWB-OPS-14',
     objective:
@@ -732,7 +732,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2013.Q3 — 2014.Q2',
-    title: 'Operation: Kyiv',
+    title: 'Kyiv',
     role: 'Software Engineer, Full-Stack',
     scanId: 'KGA-OPS-14',
     objective:
@@ -753,7 +753,7 @@ export const missions: MissionData[] = [
   },
   {
     date: '2013.Q2 — 2013.Q4',
-    title: 'Operation: Dark Script',
+    title: 'Dark Script',
     role: 'Software Engineer, Full-Stack',
     scanId: 'SCR-OPS-13',
     objective:
@@ -774,7 +774,7 @@ export const missions: MissionData[] = [
   },
   // {
   //   date: '2020.Q2 — 2022.Q4',
-  //   title: 'Operation: Data Citadel',
+  //   title: 'Data Citadel',
   //   role: 'Full-Stack Engineer',
   //   scanId: 'DC-OPS-88',
   //   objective:
@@ -793,7 +793,7 @@ export const missions: MissionData[] = [
   // },
   // {
   //   date: '2017.Q1 — 2020.Q1',
-  //   title: 'Operation: Foundation Layer',
+  //   title: 'Foundation Layer',
   //   role: 'Software Engineer, Full Stack',
   //   scanId: 'FL-CORE-33',
   //   objective:

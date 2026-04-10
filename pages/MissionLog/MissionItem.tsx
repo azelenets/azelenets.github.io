@@ -1,4 +1,6 @@
-import { JSX, memo, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import DeclassifiedText from '@/components/DeclassifiedText';
+import TypedText from '@/components/TypedText';
 
 interface MissionItemProps {
   date: string;
@@ -17,45 +19,10 @@ interface MissionItemProps {
   imageUrl?: string;
 }
 
-const WORD_DELAY = 50;
-const BLOCK_GAP = 5;
-
-type DeclassifiedTextProps = {
-  text: string;
-  startMs: number;
-  active: boolean;
-  as?: keyof JSX.IntrinsicElements;
-  className?: string;
-};
-
-const DeclassifiedText = ({ text, startMs = 0, active, as: Wrapper, className }: DeclassifiedTextProps) => {
-  const tokens = text.split(/(\s+)/);
-  let wordIdx = 0;
-
-  const nodes = tokens.map((token, i) => {
-    if (/^\s+$/.test(token)) return <span key={i}>{token}</span>;
-    const delay = startMs + wordIdx++ * WORD_DELAY;
-    return (
-      <span
-        key={i}
-        className={active ? 'declassify-char' : 'declassify-pending'}
-        style={active ? { animationDelay: `${delay}ms` } : undefined}
-        onAnimationEnd={(e) => {
-          (e.currentTarget.firstElementChild as HTMLElement | null)?.classList.add('declassify-done');
-        }}
-      >
-        <span className="declassify-block">{token}</span>
-      </span>
-    );
-  });
-
-  return Wrapper ? <Wrapper className={className}>{nodes}</Wrapper> : <>{nodes}</>;
-};
+const BLOCK_GAP = 3;
 
 const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, outcome, status, statusColor, align, isShield, isGhost, imageUrl }: MissionItemProps) => {
   const [active, setActive] = useState(false);
-  const [titleText, setTitleText] = useState('_');
-  const [roleText, setRoleText] = useState('_');
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -73,25 +40,6 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (!active) return;
-    const delay = 1400 / title.length;
-    const ids = title.split('').map((_, i) =>
-      setTimeout(() => setTitleText(title.slice(0, i + 1)), i * delay),
-    );
-    return () => ids.forEach(clearTimeout);
-  }, [active, title]);
-
-  useEffect(() => {
-    if (!active) return;
-    const full = role;
-    const delay = 1400 / full.length;
-    const ids = full.split('').map((_, i) =>
-      setTimeout(() => setRoleText(full.slice(0, i + 1)), i * delay),
-    );
-    return () => ids.forEach(clearTimeout);
-  }, [active, role]);
 
   const offsets = useMemo(() => {
     let cursor = 0;
@@ -119,8 +67,8 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
 
       <div className={`space-y-4 ${align === 'right' ? 'md:text-right' : 'md:order-2'}`}>
         <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/30 text-primary text-[10px] font-bold tracking-widest uppercase">OPS_DATE: {date}</div>
-        <h2 className="text-2xl font-display font-black text-white uppercase tracking-tight">{titleText}</h2>
-        <div className="text-primary/60 text-xs font-bold tracking-tighter uppercase">ROLE: {roleText}</div>
+        <TypedText text={`${role}`} active={active} as="h2" className="text-2xl font-display font-black text-white uppercase tracking-tight" />
+        <TypedText text={outcome} active={active} className="text-primary/60 text-xs font-bold tracking-tighter uppercase" as="div" />
 
         <figure className="border border-primary/10 bg-black/20 p-4 mt-4 inline-block group hover:border-primary/40 transition-colors w-full">
           {isShield ? (
@@ -158,6 +106,16 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
       </div>
 
       <div ref={ref} className="hud-border p-6 bg-white/5 backdrop-blur-sm space-y-6">
+        <div className="pb-4 border-b border-white/5 flex items-center justify-between gap-4">
+          <div>
+            <span className="text-xl font-display font-black text-white tracking-widest">Operation: </span>
+            <TypedText text={title} active={active} as="span" className="text-xl font-display font-black text-white tracking-widest"/>
+          </div>
+          <div className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`}>
+            {status}
+          </div>
+        </div>
+
         <div className="space-y-2">
           <div className="text-hazard text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2">
             <span className="material-symbols-outlined text-xs">priority_high</span> MISSION_OBJECTIVE
@@ -192,11 +150,6 @@ const MissionItem = ({ date, title, role, scanId, objective, tactics, tools, out
             </div>
           </div>
         )}
-
-        <div className="pt-4 border-t border-white/5 flex items-center justify-between gap-4">
-          <DeclassifiedText text={outcome} startMs={offsets.outcome} active={active} as="div" className="text-xl font-display font-black text-white tracking-widest"/>
-          <DeclassifiedText text={status} startMs={offsets.status} active={active} as="div" className={`text-[10px] font-bold px-2 py-1 uppercase shrink-0 ${statusColor}`} />
-        </div>
       </div>
     </article>
   );
