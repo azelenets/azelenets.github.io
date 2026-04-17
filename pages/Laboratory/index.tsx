@@ -33,6 +33,34 @@ const labCardChildren: Record<string, React.ReactNode> = {
       </svg>
     </div>
   ),
+  PRJ_0538: (
+    <div className="h-24 w-full bg-black/40 rounded relative overflow-hidden flex items-center justify-center gap-3 px-4">
+      {/* Peer A */}
+      <div className="flex flex-col items-center gap-1 shrink-0">
+        <div className="size-8 border border-primary/40 rounded-full flex items-center justify-center">
+          <div className="size-1.5 bg-primary/70 rounded-full animate-ping" />
+        </div>
+        <span className="text-[8px] font-mono text-primary/40 uppercase">PEER_A</span>
+      </div>
+      {/* Signal line */}
+      <div className="flex-1 flex items-center gap-px">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div
+            key={i}
+            className="flex-1 h-px bg-primary/30 animate-pulse"
+            style={{ animationDelay: `${i * 0.08}s` }}
+          />
+        ))}
+      </div>
+      {/* Peer B */}
+      <div className="flex flex-col items-center gap-1 shrink-0">
+        <div className="size-8 border border-primary/40 rounded-full flex items-center justify-center">
+          <div className="size-1.5 bg-primary/70 rounded-full animate-ping" style={{ animationDelay: '0.35s' }} />
+        </div>
+        <span className="text-[8px] font-mono text-primary/40 uppercase">PEER_B</span>
+      </div>
+    </div>
+  ),
   PRJ_0330: (
     <div className="h-24 w-full bg-black/40 rounded flex items-center justify-around px-4">
       <div className="text-xs text-alert/50 border border-alert/20 px-2 py-1.5 font-bold">FORM</div>
