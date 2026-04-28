@@ -29,7 +29,7 @@ export const courses: CourseData[] = [
     instructor: 'Stephen Grider',
     description: 'Build a large-scale microservices application with Node, React, Docker, and Kubernetes from scratch.',
     topics: ['Microservices architecture & design', 'Docker & Kubernetes orchestration', 'Event-driven communication with NATS Streaming', 'Authentication & authorization across services', 'CI/CD with GitHub Actions & DigitalOcean'],
-    url: 'https://www.udemy.com/course/microservices-with-node-js-and-react/',
+    url: 'https://www.udemy.com/certificate/UC-bcadede3-bd19-4d40-86f0-8269ed7b8bd0/',
   },
   {
     id: 'pm-005',
@@ -38,7 +38,7 @@ export const courses: CourseData[] = [
     instructor: 'Cole Mercer & Evan Kimbrell',
     description: 'End-to-end product management training from ideation and UX to metrics and leadership.',
     topics: ['Product ideation & market research', 'UX wireframing & prototyping', 'Metrics & data-driven decisions', 'User stories & scoping', 'PM interview preparation'],
-    url: 'https://www.udemy.com/course/become-a-product-manager-learn-the-skills-get-a-job/',
+    url: 'https://www.udemy.com/certificate/UC-c674e43e-935a-47c4-abe7-324aa82fe36f/',
   },
   {
     id: 'mfe-003',
@@ -47,7 +47,7 @@ export const courses: CourseData[] = [
     instructor: 'Stephen Grider',
     description: 'Learn to split React monoliths into independently deployable microfrontend applications.',
     topics: ['Microfrontend architecture patterns', 'Webpack Module Federation', 'Build-time vs run-time integration', 'Auth across microfrontends', 'Multi-framework composition'],
-    url: 'https://www.udemy.com/course/microfrontend-course/',
+    url: 'https://www.udemy.com/certificate/UC-ba5a8b55-00b5-4c25-8b93-c57ce8138a22/',
   },
   {
     id: 'ts-002',
@@ -56,7 +56,7 @@ export const courses: CourseData[] = [
     instructor: 'Maximilian Schwarzmüller',
     description: 'Master TypeScript from core basics to advanced features with React and Node integration.',
     topics: ['Types, interfaces & generics', 'Classes & ES6 modules', 'Decorators & advanced types', 'TypeScript with React', 'TypeScript with Node/Express'],
-    url: 'https://www.udemy.com/course/understanding-typescript/',
+    url: 'https://www.udemy.com/certificate/UC-b69825f5-018f-4ebc-a0a9-cd9f3654995c/',
   },
   {
     id: 'js-004',
@@ -65,7 +65,7 @@ export const courses: CourseData[] = [
     instructor: 'Maximilian Schwarzmüller',
     description: 'Deep-dive into JavaScript from core syntax to expert topics like performance and testing.',
     topics: ['Variables, functions, objects & arrays', 'DOM manipulation & events', 'Async JS & HTTP requests', 'OOP & prototypes', 'Performance, security & testing'],
-    url: 'https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/',
+    url: 'https://www.udemy.com/certificate/UC-e71280ab-6f25-49d2-8238-d56626cd8802/',
   },
   {
     id: 'es6-005',
@@ -74,7 +74,7 @@ export const courses: CourseData[] = [
     instructor: 'Maximilian Schwarzmüller',
     description: 'Fast-paced coverage of all key ES6 features for developers familiar with ES5.',
     topics: ['let, const & arrow functions', 'Rest & spread operators', 'Promises & async patterns', 'Maps, Sets & new built-ins', 'Reflect & Proxy API'],
-    url: 'https://www.udemy.com/course/es6-bootcamp-next-generation-javascript/',
+    url: 'https://www.udemy.com/certificate/UC-6b4c28db-6ab4-44e3-afe4-a91890023ccc/',
   },
   {
     id: 'ml-006',
@@ -83,7 +83,7 @@ export const courses: CourseData[] = [
     instructor: 'Andrew Ng — DeepLearning.AI / Stanford',
     description: 'Build and train supervised ML models in Python using NumPy and scikit-learn.',
     topics: ['Linear & logistic regression', 'Supervised vs unsupervised learning', 'Classification algorithms', 'Model evaluation & feature engineering', 'Practical ML with NumPy & scikit-learn'],
-    url: 'https://www.coursera.org/learn/machine-learning',
+    url: 'https://www.coursera.org/account/accomplishments/verify/5BCZEQK4VDNL',
   },
 ];
 
