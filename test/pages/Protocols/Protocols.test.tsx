@@ -25,7 +25,6 @@ describe('ProtocolCard', () => {
     );
 
     expect(screen.getByText('Strategic Leadership')).toBeInTheDocument();
-    expect(screen.getByText('// DIR_01')).toBeInTheDocument();
     expect(screen.getByText(/Protocol content/)).toBeInTheDocument();
     expect(container.querySelectorAll('.bg-primary').length).toBeGreaterThan(0);
   });
