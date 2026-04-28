@@ -35,8 +35,9 @@ const Credentials: React.FC = () => {
             <div className="relative aspect-square overflow-hidden bg-zinc-900 flex items-center justify-center">
               <img
                 alt="Biometric Scan Avatar"
-                className="w-full h-full object-cover grayscale opacity-50 brightness-125"
-                src="/images/desktop.avif"
+                className="w-full h-full object-cover object-top opacity-50 brightness-125"
+                src="/images/avatar-transparent.png"
+                style={{ objectPosition: '10% 13%' }}
               />
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute w-full h-0.5 bg-primary/20" style={{ animation: 'scan-line 3s linear infinite alternate' }} />
